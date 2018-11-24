@@ -1,4 +1,4 @@
-"Backed up old pbo to exile.malden.pbo.2018_11_24-19-26-37. Starting build at 2018_11_24-19-26-37" 
+"Backed up old pbo to exile.malden.pbo.2018_11_24-21-09-18. Starting build at 2018_11_24-21-09-18" 
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\call.fsm
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\CfgRemoteExec.hpp
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\config.cpp
@@ -21,6 +21,8 @@ C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\RscDefines.hpp
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\stringtable.xml
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\xm8_server_info.html
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\ClaimVehicles_Client\ClaimVehicles_Client_init.sqf
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\ClaimVehicles_Client\functions\ExileClient_ClaimVehicles_network_claimRequestSend.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\ExAdClient\CfgFunctions.cpp
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\ExAdClient\CfgNetworkMessages.cpp
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\ExAdClient\ExAd.cpp

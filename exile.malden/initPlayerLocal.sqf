@@ -157,3 +157,5 @@ missionon = true;
 		};
  };
 };
+
+[] execVM "ClaimVehicles_Client\ClaimVehicles_Client_init.sqf";
