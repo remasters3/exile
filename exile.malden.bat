@@ -20,6 +20,7 @@ REM # Commit to git
 echo "Commiting to git"
 git add %INPUT%\* >> %NAME%.build.log
 git add %OUTPUT% >> %NAME%.build.log
+git add %NAME%.pbo.%DATETIME% >> %NAME%.build.log
 git commit * -m "%date% - %time%" >> %NAME%.build.log
 git push >> %NAME%.build.log
 
