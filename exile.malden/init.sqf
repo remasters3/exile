@@ -52,7 +52,7 @@ bridge_ASL = GetPosASL bridge_00;
 		    ["Land_Flush_Light_red_F",[1543.02,4858.88,0],270,3,14],
 			["Land_Flush_Light_red_F",[1543.02,4868.88,0],270,3,14],
 			["Land_Flush_Light_red_F",[1542.64,4487.78,0],270,3,14],
-            ["Land_Flush_Light_yellow_F",[1520.69,4487.55,0],0,20,20],
+            ["Land_Flush_Light_yellow_F",[1520.69,4487.55,0],0,40,10],
 			["Land_Flush_Light_green_F",[1501.68,4500.75,0],0,20,20],
             ["Land_Flush_Light_green_F",[1542.64,4487.78,0],0,20,20],
 			["Land_LampStreet_small_F",[(bridge_ASL select 0),(bridge_ASL select 1)-3.5,(bridge_ASL select 2)+6],(GetDir bridge_00)+90,65,12],
