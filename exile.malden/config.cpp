@@ -7348,7 +7348,7 @@ class CfgVirtualGarage
 class CfgXM8 
 {
 
-    extraApps[] = {"ExAd_VG"};	
+    /*extraApps[] = {"ExAd_VG"};	
     class ExAd_VG 
     {
     	title = "Virtual Garage";
@@ -7356,7 +7356,7 @@ class CfgXM8
     	onLoad = "ExAdClient\XM8\Apps\VG\onLoad.sqf";
     	onOpen = "ExAdClient\XM8\Apps\VG\onOpen.sqf";
     	onClose = "ExAdClient\XM8\Apps\VG\onClose.sqf";
-    };
+    };*/
 		
 	class settings
 	{

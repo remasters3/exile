@@ -23,7 +23,7 @@ class ExAd
 	#include "Core\CfgFunctions.cpp"
 	//#include "AdminEvents\CfgFunctions.cpp"
 	//#include "HaloParachute\CfgFunctions.cpp"	
-	#include "XM8\CfgFunctions.cpp"	
+	//#include "XM8\CfgFunctions.cpp"	
 	//#include "StatsBar\CfgFunctions.cpp"	
 	//#include "VehicleSalvage\CfgFunctions.cpp"
 };
