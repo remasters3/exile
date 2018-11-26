@@ -78,7 +78,7 @@ showHUD[] =
 #include "infiSTAR_KeyBinds.hpp"
 #include "R3F_LOG\desc_include.h"
 
-class CfgFunctions
-{
-	#include "ExAdClient\CfgFunctions.cpp"
-};
+//class CfgFunctions
+//{
+//	#include "ExAdClient\CfgFunctions.cpp"
+//};

@@ -159,3 +159,7 @@ missionon = true;
 };
 
 [] execVM "ClaimVehicles_Client\ClaimVehicles_Client_init.sqf";
+
+//[] Spawn {
+//  SystemChat 'if u bind "use action 20" in custom controls you can spawn a temp quad'
+//};

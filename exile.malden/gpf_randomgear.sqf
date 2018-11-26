@@ -87,3 +87,12 @@ _unit linkItem "ItemWatch";
 _unit linkItem "ItemRadio";
 _unit linkItem "ItemGPS";
 _unit linkItem "Exile_Item_XM8";
+
+//exile cash
+_AIMoney = SelectRandom [100,110,120,130,140,150,100,160,170,180,190,195,100,200,300,400,500,600,800,900];
+_unit setVariable
+[
+	"ExileMoney",
+	_AIMoney,
+	true
+];
