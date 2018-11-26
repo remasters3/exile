@@ -19,8 +19,8 @@ if (_Side == east) Then {_Model = SelectRandom _EastLightVeh;};
 if (_Side == resistance) Then {_Model = SelectRandom _ResLightVeh;};  
 
 _Safepos = _startpos;
-_TroopTruck = [_Safepos, 0, _Model, _Side] call bis_fnc_spawnvehicle; _TroopTruck setVariable ["ExileOwnerUID", nil];
-_TroopTruckV = _TroopTruck select 0;
+_TroopTruck = [_Safepos, 0, _Model, _Side] call bis_fnc_spawnvehicle; //_TroopTruck setVariable ["ExileOwnerUID", nil];
+_TroopTruckV = _TroopTruck select 0; _TroopTruckV setVariable ["ExileOwnerUID", nil];
 _TroopTruckGroup = group _TroopTruckV;
 _crew = crew _TroopTruckV;
 (driver _TroopTruckV) action ["lightOn", _TroopTruckV];
