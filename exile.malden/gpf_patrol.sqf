@@ -23,7 +23,7 @@ if (_Side == resistance) Then {_Model = SelectRandom _ResLightVeh;};
 
 _Safepos = _startpos;//[_startpos,0,100, 10, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 _PatrolCar = [_Safepos, 0, _Model, _Side] call bis_fnc_spawnvehicle; //_PatrolCar setVariable ["ExileOwnerUID", nil];
-_PatrolCarV = _PatrolCar select 0; _PatrolCarV setVariable ["ExileOwnerUID",""];
+_PatrolCarV = _PatrolCar select 0; _PatrolCarV setVariable ["ExileIsPersistent", false];
 _PatrolCarGroup = group _PatrolCarV; 
 _crew = crew _PatrolCarV;
 (driver _PatrolCarV) action ["lightOn", _PatrolCarV];
