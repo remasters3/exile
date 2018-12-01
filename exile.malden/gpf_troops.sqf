@@ -28,8 +28,16 @@ _crew = crew _TroopTruckV;
 _grp = [ _startpos, EAST, 12] call BIS_fnc_spawnGroup;
 {[_x] join _TroopTruckGroup; _x moveInCargo _TroopTruckV; } ForEach units _grp;
 
-{[_x] execVM "gpf_randomgear.sqf";} ForEach units _TroopTruckGroup;
+{[_x,false] execVM "gpf_randomgear.sqf";} ForEach units _TroopTruckGroup;
 
+[_TroopTruckV] Spawn{_TroopTruckV = _this select 0;
+   while {alive _TroopTruckV} Do {
+       {
+        if (!alive _x) Then { _pos = GetPos _TroopTruckV;_x SetPos _pos;};
+       } foreach crew _TroopTruckV;
+    sleep 10;
+    };
+};
 
 {
   _way = _TroopTruckGroup addWaypoint [_x, 0];

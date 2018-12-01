@@ -29,7 +29,16 @@ _crew = crew _PatrolCarV;
 (driver _PatrolCarV) action ["lightOn", _PatrolCarV];
 
 
-{[_x] execVM "gpf_randomgear.sqf";} ForEach _crew;
+{[_x,false] execVM "gpf_randomgear.sqf";} ForEach _crew;
+
+[_PatrolCarV] Spawn{_PatrolCarV = _this select 0;
+   while {alive _PatrolCarV} Do {
+       {
+        if (!alive _x) Then { _pos = GetPos _PatrolCarV;_x SetPos _pos;};
+       } foreach crew _PatrolCarV;
+    sleep 10;
+    };
+};
 
 
 {

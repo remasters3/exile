@@ -19,10 +19,10 @@ if (_Side == resistance) Then {_Model = SelectRandom _ResLightVeh;};
 
 private _Safepos = SelectRandom _places; //[_startpos,10,200, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 private _Helo = [_Safepos, 0, _Model, _Side] call bis_fnc_spawnvehicle; 
-private _HeloV = _Helo select 0;
+private _HeloV = _Helo select 0; 
 private _HeloGroup = group _HeloV;
 private _crew = crew _HeloV;
-
+_HeloV setVariable ["ExileIsPersistent", false];
 { 
 removeAllWeapons _x;
 removeAllItems _x;
@@ -77,7 +77,7 @@ private _pplace = SelectRandom _places;
 	_txt = Format["%1",_type];
 	sleep 1;
   };
-  heloOn = heloOn-1; ; publicVariable "heloOn";
+  heloOn = heloOn-1; publicVariable "heloOn";
 };
 
 [_HeloV,_Timeout,_crew] Spawn {

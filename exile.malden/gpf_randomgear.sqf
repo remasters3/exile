@@ -1,5 +1,6 @@
 //[player] execVM "gpf_randomgear.sqf";
 _unit = _this Select 0;
+_air = _this Select 1;
 _priweapons = [
                ["arifle_AK12_GL_F","30Rnd_762x39_Mag_F"],
                ["Exile_Weapon_PK","Exile_Magazine_100Rnd_762x54_PK_Green"],
@@ -50,22 +51,27 @@ removeGoggles _unit;
 //adding storage
 _unit forceAddUniform (SelectRandom _uni);
 _unit addVest (SelectRandom _vests);
-_unit addBackpack (SelectRandom _bags);
+if (_air) Then {_unit addBackpack "B_Parachute";} else {_unit addBackpack (SelectRandom _bags);};
+
 
 //adding ammo
-for "_i" from 1 to 3 do {_unit addItemToUniform _sndammo;};
-for "_i" from 1 to 3 do {_unit addItemToBackpack _priammo;};
-for "_i" from 1 to 3 do {_unit addItemToBackpack "1Rnd_HE_Grenade_shell";};
-for "_i" from 1 to 2 do {_unit addItemToBackpack "Exile_Item_EMRE";};
-for "_i" from 1 to 2 do {_unit addItemToBackpack "Exile_Item_InstaDoc";};
+_unit addItemToUniform _sndammo;
+_unit addItemToUniform "Exile_Item_CanOpener";
+
+if (!_air) Then {
+  for "_i" from 1 to 3 do {_unit addItemToBackpack _priammo;};
+  for "_i" from 1 to 3 do {_unit addItemToBackpack "1Rnd_HE_Grenade_shell";};
+  for "_i" from 1 to 2 do {_unit addItemToBackpack "Exile_Item_EMRE";};
+  for "_i" from 1 to 2 do {_unit addItemToBackpack "Exile_Item_InstaDoc";};
+};
 
 //adding items to vest
-_unit addItemToVest "Exile_Item_CanOpener";
-_unit addItemToVest "Exile_Item_DuctTape";
+_unit addItemToVest _priammo;
+_unit addItemToVest _priammo;
 _unit addItemToVest "Exile_Item_MacasCheese_Cooked";
-_unit addItemToVest "Exile_Item_Moobar";
 _unit addItemToVest "Exile_Item_MountainDupe";
 _unit addItemToVest "Exile_Item_Vishpirin";
+_unit addItemToVest "Exile_Item_DuctTape";
 
 //putting a hat on
 _unit addHeadgear (SelectRandom _headgear);
