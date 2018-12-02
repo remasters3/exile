@@ -8,10 +8,12 @@ if (alive _vic) then {
     {if ((_vic distance GetMarkerPos _x) < 75) Then {_notNearTrader = false;}} Foreach allMapMarkers;
     if (_notNearTrader) then {systemchat "its on";deathsqdon = true;publicVariable "deathsqdon";};
     if (deathsqdon) then {dsVictim = _vic;publicVariable "dsVictim";};
-	} Else {{deathsqdon = false; publicVariable "deathsqdon";};};
+	} Else {deathsqdon = false; publicVariable "deathsqdon";};
 sleep 5;
+};
+
 systemchat Format ["is %1 Alive? %2",name dsVictim,alive dsVictim];
-//["InfoTitleAndText", ["Death Squad!",format ["A death squad hs been sent for %1",name dsVictim]]] call ExileClient_gui_toaster_addTemplateToast;
+["InfoTitleAndText", ["Death Squad!",format ["A death squad hs been sent for %1",name dsVictim]]] call ExileClient_gui_toaster_addTemplateToast;
 waitUntil {deathsqdon};
 
 // spawn the bandits
