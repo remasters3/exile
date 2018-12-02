@@ -157,7 +157,14 @@ missionon = true;
 		};
  };
 };
-
+[] Spawn { 
+ while {mission} Do {
+ waitUntil {deathsqdon};
+ Sleep 30;
+ SystemChat Format ["A deathsquad as been sent after %1",name dsVictim];
+ waitUntil {!deathsqdon};
+ };
+};
 [] execVM "ClaimVehicles_Client\ClaimVehicles_Client_init.sqf";
 
 //[] Spawn {

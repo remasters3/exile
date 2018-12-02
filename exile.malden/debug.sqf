@@ -28,7 +28,28 @@ _path = [];
 // [12697.4,158.103,19.3] upperdeck
 // [12715,138.985,9.6] lowerdeck
 
-_count =  {alive} count AllPlayers;
-systemchat format ["%1",_count];
+//_count =  {alive} count AllPlayers;
+//systemchat format ["%1",_count];ExileTraderZone
+deathsqdon = false; publicVariable "deathsqdon";
 
+
+
+
+
+publicVariable "dsVictim";
+while {!deathsqdon} Do {
+_vic = SelectRandom AllPlayers; systemchat Format ["%1",name _vic];
+if (alive _vic) then {
+    _notNearTrader = true;
+    {if ((_vic distance GetMarkerPos _x) < 75) Then {_notNearTrader = false;}} Foreach allMapMarkers;
+    if (_notNearTrader) then {systemchat "its on";deathsqdon = true;};
+    if (deathsqdon) then {dsVictim = _vic;};
+	} Else {{deathsqdon = false; };};
+sleep 5;
+};
+systemchat Format ["is %1 Alive? %2",name dsVictim,alive dsVictim];
+
+//{_txt = Format ["%1",markerType _x]; systemChat _txt;diag_log _txt;} forEach allMapMarkers; //_markers;
+//allMapMarkers
 //[] execVM "gpf_troopdrop.sqf";
+
