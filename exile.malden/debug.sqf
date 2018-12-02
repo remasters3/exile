@@ -30,24 +30,20 @@ _path = [];
 
 //_count =  {alive} count AllPlayers;
 //systemchat format ["%1",_count];ExileTraderZone
-deathsqdon = false; publicVariable "deathsqdon";
+playerQuad = false;
+missionon = true;
+dsVictim = nil;
+//waitUntil {!isNil "missionon"};
 
-
-
-
-
-publicVariable "dsVictim";
-while {!deathsqdon} Do {
-_vic = SelectRandom AllPlayers; systemchat Format ["%1",name _vic];
-if (alive _vic) then {
-    _notNearTrader = true;
-    {if ((_vic distance GetMarkerPos _x) < 75) Then {_notNearTrader = false;}} Foreach allMapMarkers;
-    if (_notNearTrader) then {systemchat "its on";deathsqdon = true;};
-    if (deathsqdon) then {dsVictim = _vic;};
-	} Else {{deathsqdon = false; };};
-sleep 5;
+[] Spawn { 
+ while {missionon} Do {
+ waitUntil {!isNil "dsVictim"};
+ waitUntil {deathsqdon};
+ sleep 10;
+ SystemChat Format ["A death squad as been sent after %1",name dsVictim];
+ waitUntil {!deathsqdon};
+ };
 };
-systemchat Format ["is %1 Alive? %2",name dsVictim,alive dsVictim];
 
 //{_txt = Format ["%1",markerType _x]; systemChat _txt;diag_log _txt;} forEach allMapMarkers; //_markers;
 //allMapMarkers

@@ -54,7 +54,7 @@ _way1 setWaypointType "MOVE";
 _way1 setWaypointBehaviour "CARELESS";
 _way1 setWaypointCombatMode "GREEN";
 _way1 setWaypointSpeed "FULL";
-_way1 setWaypointCompletionRadius 100;
+_way1 setWaypointCompletionRadius 300;
 _way1 setWaypointStatements ["true","_veh = vehicle this;_list = (crew _veh) select {(assignedVehicleRole _x) select 0 isEqualTo 'cargo'};{unassignVehicle _x; _x action ['GetOut', vehicle _x]} forEach _list;"];
 
 _way2Pos = [_DropPos,2000,2500, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
@@ -77,6 +77,6 @@ waitUntil {!deathsqdon};
    {deleteVehicle _x;}foreach units _DropTroopsGroup;
    {deleteVehicle _x;}foreach units _DropHeliGroup;
    deleteVehicle _DropHeliV;
-   dsVictim = "none"; publicVariable "dsVictim";
+   dsVictim = nil;publicVariable "dsVictim";
 };
 _DropTroopsGroup 

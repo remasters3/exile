@@ -157,16 +157,19 @@ missionon = true;
 		};
  };
 };
-[] Spawn { 
- while {mission} Do {
- waitUntil {deathsqdon};
- Sleep 30;
- SystemChat Format ["A deathsquad as been sent after %1",name dsVictim];
- waitUntil {!deathsqdon};
- };
-};
+
 [] execVM "ClaimVehicles_Client\ClaimVehicles_Client_init.sqf";
 
+//[] Spawn { 
+// while {missionon} Do {
+// waitUntil {!isNil "dsVictim"};
+// waitUntil {deathsqdon};
+// sleep 5;
+// SystemChat Format ["A death squad as been sent after %1",name dsVictim];
+// waitUntil {!deathsqdon};
+// };
+//};
+//
 //[] Spawn {
 //  SystemChat 'if u bind "use action 20" in custom controls you can spawn a temp quad'
 //};
