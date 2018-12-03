@@ -34,4 +34,3 @@ _path = [];
 //allMapMarkers
 //[] execVM "gpf_troopdrop.sqf";
 //deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {if (!deathsqdon) Then {sleep 30;[]execVM "gpf_troopdrop.sqf";};waitUntil {deathsqdon};sleep 300;};};
-
