@@ -1,22 +1,23 @@
 // [_DropPos,_HeliModel,_Side,_Model,_timeout,_patrol] Call GPF_fnc_TroopDrop;
 private ["_DropPos","_HeliModel","_Side","_Model","_DropHeliSpawn","_DropHeli","_DropHeliV","_DropHeliGroup","_DropTroopsGroup","_way1","_way2","_way2Pos","_models"];
 // Find a victim
-//while {!deathsqdon} Do {
-//_vic = SelectRandom AllPlayers; systemchat Format ["%1",name _vic];
-//if (alive _vic) then {
-//    _notNearTrader = true;
-//    {if ((_vic distance GetMarkerPos _x) < 75) Then {_notNearTrader = false;}} Foreach allMapMarkers;
-//    if (_notNearTrader) then {systemchat "its on";deathsqdon = true;publicVariable "deathsqdon";};
-//    if (deathsqdon) then {dsVictim = _vic;publicVariable "dsVictim";};
-//	} Else {deathsqdon = false; publicVariable "deathsqdon";};
-//sleep 5;
-//};
-//
-//systemchat Format ["is %1 Alive? %2",name dsVictim,alive dsVictim];
-//[] remoteExec ['["InfoTitleAndText", ["Death Squad!",format ["A death squad hs been sent for %1",name dsVictim]]] call ExileClient_gui_toaster_addTemplateToast;', 0];
+while {!deathsqdon} Do {
+_vic = SelectRandom AllPlayers; systemchat Format ["%1",name _vic];
+if (alive _vic) then {
+    _notNearTrader = true;
+    {if ((_vic distance GetMarkerPos _x) < 75) Then {_notNearTrader = false;}} Foreach allMapMarkers;
+    if (_notNearTrader) then {systemchat "its on";deathsqdon = true;publicVariable "deathsqdon";};
+    if (deathsqdon) then {dsVictim = _vic;publicVariable "dsVictim";};
+	} Else {deathsqdon = false; publicVariable "deathsqdon";};
+sleep 5;
+};
+
+systemchat Format ["is %1 Alive? %2",name dsVictim,alive dsVictim];
+["InfoTitleAndText", ["Death Squad!",format ["A death squad hs been sent for %1",name dsVictim]]] call ExileClient_gui_toaster_addTemplateToast;
 waitUntil {deathsqdon};
+
 // spawn the bandits
-_vic = _this select 0;
+_vic = dsVictim;
 _DropPos = GetPos _vic;
 _HeliModel = SelectRandom ["O_Heli_Transport_04_bench_F"];
 _Side = East;
