@@ -359,7 +359,7 @@ forEach _simpleObjects;
 patrolon = 0; publicVariable "patrolon";[] Spawn { while {true} Do {if (patrolon < 6) Then {sleep 60;[]execVM "gpf_patrol.sqf";};Sleep 300;};};
 heloOn = 0; publicVariable "heloOn";[] Spawn { while {true} Do {if (heloOn < 2) Then {sleep 60;[]execVM "gpf_helo.sqf";};Sleep 300;};};
 troopson = 0; publicVariable "troopson";[] Spawn { while {true} Do {if (troopson < 3) Then {sleep 30;[]execVM "gpf_troops.sqf";};Sleep 300;};};
-deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {if (!deathsqdon) Then {sleep 30;[]execVM "gpf_troopdrop.sqf";};waitUntil {deathsqdon};sleep 3600;};};
+deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {if ((count AllPlayers) > 0) Then {if (!deathsqdon) Then {sleep 30;[]execVM "gpf_troopdrop.sqf";};waitUntil {deathsqdon};};sleep 3600;};};
 
 /*[] Spawn {
     while {true} do{
