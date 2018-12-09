@@ -33,4 +33,6 @@ _path = [];
 //{_txt = Format ["%1",markerType _x]; systemChat _txt;diag_log _txt;} forEach allMapMarkers; //_markers;
 //allMapMarkers
 //[] execVM "gpf_troopdrop.sqf";
-deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {waituntil {((count AllPlayers) > 0)}; if (!deathsqdon) Then {[]execVM "gpf_troopdrop.sqf";};sleep 3600;};};
+
+_isNil = isNil {player getVariable 'GPF_Target'};
+if (_isNil) Then 

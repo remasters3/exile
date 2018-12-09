@@ -14,6 +14,7 @@ _player = param[9];
 _Count = _inc;
 _units = [];
 _tty = 0;
+_FirstRun = isNil {_player getVariable 'GPF_Target'}; if (_FirstRun) Then {_player setVariable ["GPF_Target", false,false];};
 if ((_player getVariable "GPF_Target")) then {SystemChat Format ["Please wait till the last run is over before trying again!"];} Else {
    _player setVariable ["GPF_Target_Score", 0,false];
    _Score = _player getVariable "GPF_Target_Score";

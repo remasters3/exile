@@ -161,8 +161,8 @@ GPF_Target = false;
 };
 
 [] execVM "ClaimVehicles_Client\ClaimVehicles_Client_init.sqf";
-waitUntil {(alive player)};
-player setVariable ["GPF_Target", false,true];
+//player setVariable ["GPF_Target", false,true];
+
 //[] Spawn { 
 // while {missionon} Do {
 // waitUntil {!isNil "dsVictim"};
