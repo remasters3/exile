@@ -2,7 +2,7 @@
 private _StartObj = _this select 0;
 private _player = _this select 1;
 private _GPF_fnc_target = compile preprocessFile 'gpf_fn_targets.sqf';
-systemchat format ["%1",GetDir _StartObj];
+
 [
 (GetPos _StartObj),
 50,
