@@ -129,6 +129,7 @@ private _npcs = [
 forEach _npcs;
 playerQuad = false;
 missionon = true;
+GPF_Target = true;
 
 [] spawn {
     while {missionon} Do {
