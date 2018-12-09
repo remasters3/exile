@@ -129,7 +129,7 @@ private _npcs = [
 forEach _npcs;
 playerQuad = false;
 missionon = true;
-player setVariable ["GPF_Target", false,false];
+player setVariable ["GPF_Target", false,true];
 [] spawn {
     while {missionon} Do {
 	   player enableFatigue false;
