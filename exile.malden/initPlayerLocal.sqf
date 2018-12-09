@@ -129,7 +129,7 @@ private _npcs = [
 forEach _npcs;
 playerQuad = false;
 missionon = true;
-player setVariable ["GPF_Target", false,true];
+
 [] spawn {
     while {missionon} Do {
 	   player enableFatigue false;
@@ -160,7 +160,8 @@ player setVariable ["GPF_Target", false,true];
 };
 
 [] execVM "ClaimVehicles_Client\ClaimVehicles_Client_init.sqf";
-
+waitUntil {(alive player)};
+player setVariable ["GPF_Target", false,true];
 //[] Spawn { 
 // while {missionon} Do {
 // waitUntil {!isNil "dsVictim"};
