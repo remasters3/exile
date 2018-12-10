@@ -7,7 +7,7 @@ private _GPF_fnc_target = compile preprocessFile 'gpf_fn_targets.sqf';
 (GetPos _StartObj),
 50,
 20,
-1,
+2,
 East,
 ["O_A_soldier_F"],
 (GetDir _StartObj),
