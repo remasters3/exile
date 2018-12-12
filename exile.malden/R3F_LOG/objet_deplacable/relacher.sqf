@@ -2,7 +2,7 @@
  * Passe la variable R3F_LOG_joueur_deplace_objet à objNull pour informer le script "deplacer" d'arrêter de déplacer l'objet
  */
 
-/*if (R3F_LOG_mutex_local_verrou) then
+if (R3F_LOG_mutex_local_verrou) then
 {
 	hintC STR_R3F_LOG_mutex_action_en_cours;
 }
@@ -14,7 +14,7 @@ else
 	sleep 0.25;
 	
 	R3F_LOG_mutex_local_verrou = false;
-};*/
+};
 
 /**
 	R3F Crate Selling Script by [GADD]Monkeynutz
@@ -23,7 +23,7 @@ else
 	Shows Toasts and deletes the crate after adding the money and respect to the player.
 	Public Variables fixed by [FPS]Kuplion. Tks bby.
 **/
-
+/*
 private _useInfiSTAR = true; 	// If you use infiSTAR, set this to true to have the crate selling logged in infiSTAR_Logs
 private _convenience = 1;		// Change this to what ever you want. Default = 0.9. 0.9 = 10% taken from the earnings for convenience.
 private _crateList = [	
@@ -66,7 +66,7 @@ else
 	
 		["getMoneyAndRespect", [_targetUID, _target]] call ExileClient_system_network_send;
 		
-		private _target = player;
+		private _target = player; 
 		private _targetUID = getPlayerUID player;
 		private _targetName = name player;
 		private _crate = R3F_LOG_joueur_deplace_objet;
@@ -137,3 +137,4 @@ else
 	
 	R3F_LOG_mutex_local_verrou = false;
 };
+*/
