@@ -9,7 +9,7 @@ private _evacReturn = [];
 if ((_plyr getVariable "GPF_EvacOn")) then {SystemChat Format ["no helicopters are available at this time! Please try again in a few mins."];} Else {
     openMap true;waitUntil {inputAction 'ActionInMap' > 0}; SystemChat "Click where you would like to go.";
     private _cords = (findDisplay 12 displayCtrl 51) ctrlMapScreenToWorld getMousePosition;
-    If (Side _plyr == resistance) Then {PF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf';_evacReturn = [_pos,_cords,(Side _plyr),"B_Heli_Light_01_F",[40,41,42]] Call GPF_fnc_plyrEvac;};	
+    If (Side _plyr == resistance) Then {GPF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf';_evacReturn = [_pos,_cords,(Side _plyr),"B_Heli_Light_01_F",[40,41,42]] Call GPF_fnc_plyrEvac;};	
     //If (Side _plyr == west) Then {PF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf';_evacReturn = [_pos,_cords,(Side _plyr),"B_Heli_Light_01_F",[40,41,42]] Call GPF_fnc_plyrEvac;};
     //If (Side _plyr == east) Then {PF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf';_evacReturn = [_pos,_cords,(Side _plyr),"O_Heli_Light_02_unarmed_F",[40,41,42]] Call GPF_fnc_plyrEvac;};
     //If (Side _plyr == resistance) Then {GPF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf'; _evacReturn = [_pos,_cords,(Side _plyr),"I_Heli_light_03_unarmed_F",[40,41,42]] Call GPF_fnc_plyrEvac;};
@@ -25,7 +25,7 @@ if ((_plyr getVariable "GPF_EvacOn")) then {SystemChat Format ["no helicopters a
       _pilot = driver _EvacHeliV;
      While {(alive _EvacHeliV)} do {
 	    sleep 5;
-         //if ((!alive _pilot)) Then {_EvacHeliV SetDamage 1;};
+          if ((!alive _pilot)) Then {_EvacHeliV SetDamage 1;};
          };
 	 _plyr setVariable ["GPF_EvacOn", false,false];
     };
