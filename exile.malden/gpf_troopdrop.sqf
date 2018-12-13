@@ -3,7 +3,7 @@ private ["_DropPos","_HeliModel","_Side","_Model","_DropHeliSpawn","_DropHeli","
 // Find a victim
 
 while {!deathsqdon} Do {
-waituntil {((count AllPlayers) > 0)};
+waituntil {((count AllPlayers) > 1)};
 _vic = SelectRandom AllPlayers; systemchat Format ["%1",name _vic];
 if (alive _vic) then {
     _notNearTrader = true;
