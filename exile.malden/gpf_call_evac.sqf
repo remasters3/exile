@@ -17,6 +17,7 @@ if ((_plyr getVariable "GPF_EvacOn")) then {SystemChat Format ["no helicopters a
     //If (Side _plyr == civilian) Then {PF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf';_evacReturn = [_pos,_cords,(Side _plyr),"C_Heli_Light_01_civil_F",[40,41,42]] Call GPF_fnc_plyrEvac;};
     openMap false;
 	Systemchat "Evac is on route, please make your way to the landing zone.";
+	sleep 1;
 	["InfoTitleAndText", ["Go to the Landing Zone!",format ["Evac for %1 is on route. Please make your way to the purple smoke.",name _plyr]]] call ExileClient_gui_toaster_addTemplateToast;
     _plyr setVariable ["GPF_EvacOn", true,false];
     
