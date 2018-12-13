@@ -141,21 +141,13 @@ GPF_Target = false;
 
 [] Spawn {
  while {missionon} Do {
-    _benifits = [
-      "76561198121313381",
-      "76561197971753110",
-      "76561197969191559",
-	  "76561198086056680",
-	  "76561198275044972",
-	  "76561197970725589"
-     ];
     _Zones = [
       [ussfreedom,200]
      ];
     sleep 20;
 	private _isVil = false;
     private _uid = getPlayerUID player;
-    private _isBenifit = _uid in _benifits;
+    private _isBenifit = _uid in GPF_Benifits;
 	{_zone = _x select 0; _rad = _x select 1;if ((_zone distance player) < _rad) Then{_isVil = true;};} Foreach _Zones;
  	if (_isVil) Then {
 	    if (!_isBenifit) Then { _dmg = damage player; _dmg = _dmg+0.4; player Setdamage _dmg; systemChat FORMAT ["Leave this place or die!"]; };

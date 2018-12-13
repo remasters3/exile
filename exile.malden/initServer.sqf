@@ -361,6 +361,20 @@ heloOn = 0; publicVariable "heloOn";[] Spawn { while {true} Do {if (heloOn < 2) 
 troopson = 0; publicVariable "troopson";[] Spawn { while {true} Do {if (troopson < 3) Then {sleep 30;[]execVM "gpf_troops.sqf";};Sleep 300;};};
 deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {waituntil {((count AllPlayers) > 0)}; if (!deathsqdon) Then {[]execVM "gpf_troopdrop.sqf";};sleep 3600;};};
 
+GPF_Benifits = [
+"76561198121313381",
+"76561197971753110",
+"76561197969191559",
+"76561198086056680",
+"76561198275044972",
+"76561197970725589"
+];
+publicVariable "GPF_Benifits";
+
+
+
+
+
 /*[] Spawn {
     while {true} do{
 		   Sleep 900;
