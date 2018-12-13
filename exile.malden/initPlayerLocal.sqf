@@ -127,6 +127,7 @@ private _npcs = [
     _trader addEventHandler ["AnimDone", {_this call ExileClient_object_trader_event_onAnimationDone}];
 }
 forEach _npcs;
+
 playerQuad = false;
 missionon = true;
 GPF_Target = false;
@@ -139,12 +140,14 @@ GPF_Target = false;
 	   };
 };
 
-if ((getPlayerUID player in GPF_Benifits)) Then {
+if ((getPlayerUID player in GPF_Testers)) Then {
 [] Spawn {
-  while {true} do {
+  while {missionon} do {
   waitUntil	{(alive pveh)};
-  pveh Addaction ["USS Freedom",{_this select 1 SetPosASL [12768.5,93.637,22.7843];}];
+  sleep 0.25;
+  pveh Addaction ["Call evac",{[(_this select 1)] execVM 'gpf_call_evac.sqf';}];
   waitUntil	{(!alive pveh)};
+  sleep 0.25;
    };
  };
 

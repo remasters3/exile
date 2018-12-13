@@ -362,14 +362,20 @@ troopson = 0; publicVariable "troopson";[] Spawn { while {true} Do {if (troopson
 deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {waituntil {((count AllPlayers) > 0)}; if (!deathsqdon) Then {[]execVM "gpf_troopdrop.sqf";};sleep 3600;};};
 
 GPF_Benifits = [
-"76561198121313381",
-"76561197971753110",
-"76561197969191559",
-"76561198086056680",
-"76561198275044972",
-"76561197970725589"
+"76561198121313381", //sadass
+"76561197971753110", //remasters
+"76561197969191559", //stig
+"76561198086056680", //dario
+"76561198275044972", //giamm
+"76561197970725589"  //budpico
 ];
 publicVariable "GPF_Benifits";
+
+GPF_Testers = [
+"76561197971753110",
+"76561198121313381"
+];
+publicVariable "GPF_Testers";
 
 
 
