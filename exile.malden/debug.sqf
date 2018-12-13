@@ -23,7 +23,7 @@ _path = [];
 //copyToClipboard str(GetPos Player);
 
 //_txt = Format ["%1,%2,%3",GetPosASL player,vectorDir player,vectorUp player]; copyToClipboard _txt;diag_log _txt; 
-
+//copyToClipboard str(GetPosASL Player); systemChat Format ["%1",GetPosASL Player];
 
 // [12697.4,158.103,19.3] upperdeck
 // [12715,138.985,9.6] lowerdeck
@@ -34,5 +34,4 @@ _path = [];
 //allMapMarkers
 //[] execVM "gpf_troopdrop.sqf";
 
-_isNil = isNil {player getVariable 'GPF_Target'};
-if (_isNil) Then 
+player SetPosASL [12768.5,93.637,22.7843];
