@@ -8,8 +8,8 @@ _EvacHeliSpawn = [_EvacPos,1000,1100, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc
 _EvacHeli = [_EvacHeliSpawn, 0, _Model, _Side] call bis_fnc_spawnvehicle;
 _EvacHeliV = _EvacHeli select 0;
 _EvacHeliGroup = group _EvacHeliV;
-_HeliPadE = "Land_HelipadEmpty_F" createVehicle _EvacPos;
-_HeliPadT = "Land_HelipadEmpty_F" createVehicle _TargetPos;
+_HeliPadE = "Land_HelipadEmpty_F" createVehicle _EvacPos; [_EvacHeliV,_HeliPadE] spawn {_EvacHeliV _this select 0;_HeliPadE _this select 1;while {(alive _HeliPadE)} Do { if ((_HeliPadE distance _EvacHeliV) < 1) Then {sleep 10;DeleteVehicle _HeliPadE};};};
+_HeliPadT = "Land_HelipadEmpty_F" createVehicle _TargetPos; [_EvacHeliV,_HeliPadT] spawn {_EvacHeliV _this select 0;_HeliPadT _this select 1;while {(alive _HeliPadT)} Do { if ((_HeliPadT distance _EvacHeliV) < 1) Then {sleep 10;DeleteVehicle _HeliPadT};};};
 _Signal = "SmokeShellPurple" createVehicle _EvacPos;
 
 _way1 = _EvacHeliGroup addWaypoint [_EvacPos, 0];
@@ -36,3 +36,8 @@ _way3 setWaypointSpeed "FULL";
 _way3 setWaypointCompletionRadius 10;
 _way3 setWaypointTimeout _Wait;
 _way3 setWaypointStatements ["true", "_veh = vehicle this; _veh SetDamage 1; _grp = group this;{deleteVehicle _x;} forEach units _grp"];
+
+[_EvacHeliV ] Spawn {_EvacHeliV = _this select 0:sleep 300;_EvacHeliV SetDamage 1;};
+
+_return = [_EvacHeliV,_HeliPadE,_HeliPadT];
+_return 
