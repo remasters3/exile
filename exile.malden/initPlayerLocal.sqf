@@ -142,9 +142,9 @@ GPF_Target = false;
 if ((getPlayerUID player in GPF_Benifits)) Then {
 [] Spawn {
   while {true} do {
-  waitUntil	{playerQuad};
+  waitUntil	{(alive pveh)};
   pveh Addaction ["USS Freedom",{_this select 1 SetPosASL [12768.5,93.637,22.7843];}];
-  waitUntil	{!playerQuad};
+  waitUntil	{(!alive pveh)};
    };
  };
 
