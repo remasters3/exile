@@ -24,7 +24,8 @@ if ((_plyr getVariable "GPF_EvacOn")) then {SystemChat Format ["no helicopters a
       _HeliPadT = _evacReturn select 2;
       _pilot = driver _EvacHeliV;
      While {(alive _EvacHeliV)} do {
-         if ((!alive _pilot)) Then {_EvacHeliV SetDamage 1;};
+	    sleep 5;
+         //if ((!alive _pilot)) Then {_EvacHeliV SetDamage 1;};
          };
 	 _plyr setVariable ["GPF_EvacOn", false,false];
     };
