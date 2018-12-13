@@ -78,6 +78,12 @@ showHUD[] =
 #include "infiSTAR_KeyBinds.hpp"
 #include "R3F_LOG\desc_include.h"
 
+class RscTitles
+{
+
+#include "addons\statusbar\statusBar.hpp"                                                     // Statusbar
+
+};
 //class CfgFunctions
 //{
 //	#include "ExAdClient\CfgFunctions.cpp"

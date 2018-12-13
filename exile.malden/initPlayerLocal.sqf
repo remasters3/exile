@@ -164,6 +164,7 @@ GPF_Target = false;
 };
 
 [] execVM "ClaimVehicles_Client\ClaimVehicles_Client_init.sqf";
+[] execVM "Addons\StatusBar\Statusbar.sqf";
 //player setVariable ["GPF_Target", false,true];
 
 //[] Spawn { 

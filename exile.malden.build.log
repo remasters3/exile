@@ -1,4 +1,4 @@
-"Backed up old pbo to exile.malden.pbo.2018_12_12-20.41.40. Starting build at 2018_12_12-20.41.40" 
+"Backed up old pbo to exile.malden.pbo.2018_12_13- 0.31.56. Starting build at 2018_12_13- 0.31.56" 
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\call.fsm
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\CfgRemoteExec.hpp
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\config.cpp
@@ -24,6 +24,20 @@ C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\RscDefines.hpp
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\stringtable.xml
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\xm8_server_info.html
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\statusBar.hpp
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\statusBar.sqf
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\body.paa
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\compass.paa
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\exile.paa
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\fps.paa
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\health.paa
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\hunger.paa
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\locker.paa
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\players.paa
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\poptab_ca.paa
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\restart.paa
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\temp.paa
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\thirst.paa
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\ClaimVehicles_Client\ClaimVehicles_Client_init.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\ClaimVehicles_Client\functions\ExileClient_ClaimVehicles_network_claimRequestSend.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\ExAdClient\CfgFunctions.cpp
