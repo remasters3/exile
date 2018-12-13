@@ -140,7 +140,7 @@ GPF_Target = false;
 	   };
 };
 
-if ((getPlayerUID player in GPF_Testers)) Then {
+
 [] Spawn {
   while {missionon} do {
   waitUntil	{(alive pveh)};
@@ -149,9 +149,9 @@ if ((getPlayerUID player in GPF_Testers)) Then {
   waitUntil	{(!alive pveh)};
   sleep 0.25;
    };
- };
-
 };
+
+
 
 [] Spawn {
  while {missionon} Do {
