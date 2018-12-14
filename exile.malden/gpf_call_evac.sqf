@@ -2,7 +2,7 @@ private _plyr = _this Select 0;
 
 _FirstRun = isNil {_plyr getVariable 'GPF_EvacOn'}; if (_FirstRun) Then {_plyr setVariable ["GPF_EvacOn", false,false];};
 _cash = _plyr getVariable 'ExileMoney';
-_price = 3000;
+_price = 1000;
 
 systemChat Format ["%1 - %2", name _plyr,_cash];
 if (_cash >= _price) Then {
