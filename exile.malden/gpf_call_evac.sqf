@@ -2,7 +2,7 @@ private _plyr = _this Select 0;
 
 _FirstRun = isNil {_plyr getVariable 'GPF_EvacOn'}; if (_FirstRun) Then {_plyr setVariable ["GPF_EvacOn", false,false];};
 _cash = _plyr getVariable 'ExileMoney';
-_price = 1000;
+_price = 3000;
 
 systemChat Format ["%1 - %2", name _plyr,_cash];
 if (_cash >= _price) Then {
@@ -18,9 +18,10 @@ if (_cash >= _price) Then {
         //If (Side _plyr == resistance) Then {GPF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf'; _evacReturn = [_pos,_cords,(Side _plyr),"I_Heli_light_03_unarmed_F",[40,41,42]] Call GPF_fnc_plyrEvac;};
         //If (Side _plyr == civilian) Then {PF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf';_evacReturn = [_pos,_cords,(Side _plyr),"C_Heli_Light_01_civil_F",[40,41,42]] Call GPF_fnc_plyrEvac;};
         openMap false;
-    	Systemchat "Evac is on route, please make your way to the landing zone.";
-    	sleep 1;
-    	["InfoTitleAndText", ["Go to the Landing Zone!",format ["Evac for %1 is on route. Please make your way to the purple smoke.",name _plyr]]] call ExileClient_gui_toaster_addTemplateToast;
+		_cash = _plyr getVariable 'ExileMoney'; _cash = _cash-_price;_plyr setVariable ["ExileMoney", _cash,false];
+		sleep 1;
+		["InfoTitleAndText", ["Go to the Landing Zone!",format ["%2 tabs removed from %1. Helicopter on route.",name _plyr,_price]]] call ExileClient_gui_toaster_addTemplateToast;
+    	Systemchat Format ["%1 tabs removed from %2, please make your way to the landing zone.",_price,name _plyr];
         _plyr setVariable ["GPF_EvacOn", true,false];
         
         [_evacReturn,_plyr] Spawn { _evacReturn = _this select 0; _plyr = _this select 1;
@@ -37,7 +38,7 @@ if (_cash >= _price) Then {
         };
     };
 } Else {
-  ["InfoTitleAndText", ["Not Enough Tabs",format ["You need atleast %1 tabs to use this",_price]]] call ExileClient_gui_toaster_addTemplateToast;
+  ["InfoTitleAndText", ["Not Enough Tabs",format ["You need atleast %1 tabs to call evac",_price]]] call ExileClient_gui_toaster_addTemplateToast;
 };
 //_cash = _plyr getVariable 'ExileMoney';
 //_unit setVariable
