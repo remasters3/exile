@@ -136,11 +136,13 @@ GPF_Target = false;
     while {missionon} Do {
 	   player enableFatigue false;
 	   waitUntil {inputAction "User20" > 0};
-	   if (playerQuad) Then { deleteVehicle pveh; pveh = createVehicle ['B_Quadbike_01_F', position player, [], 0, 'FORM'];pveh addEventHandler ["GetOut", "if (count crew pveh <= 0) Then {deleteVehicle pveh;};playerQuad = false;"]; playerQuad = true;} Else {pveh = createVehicle ['B_Quadbike_01_F', position player, [], 0, 'FORM'];pveh addEventHandler ["GetOut", "if (count crew pveh <= 0) Then {deleteVehicle pveh;};playerQuad = false;"]; playerQuad = true;};sleep 1;
+	   if (playerQuad) Then { deleteVehicle pveh; pveh = createVehicle ['B_Quadbike_01_F', position player, [], 0, 'FORM'];pveh addEventHandler ["GetOut", "if (count crew pveh <= 0) Then {deleteVehicle pveh;};playerQuad = false;"]; playerQuad = true;} Else {pveh = createVehicle ['B_Quadbike_01_F', position player, [], 0, 'FORM'];pveh addEventHandler ["GetOut", "if (count crew pveh <= 0) Then {deleteVehicle pveh;};playerQuad = false;"]; playerQuad = true;};
+	   pveh Addaction ["Call evac",{[(_this select 1)] execVM 'gpf_call_evac.sqf';}];
+	   sleep 1;
 	   };
 };
 
-
+/*
 [] Spawn {
   while {missionon} do {
   waitUntil	{(alive pveh)};
@@ -150,7 +152,7 @@ GPF_Target = false;
   sleep 0.25;
    };
 };
-
+*/
 
 
 [] Spawn {
