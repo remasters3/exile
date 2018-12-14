@@ -4,9 +4,9 @@ _FirstRun = isNil {_plyr getVariable 'GPF_EvacOn'}; if (_FirstRun) Then {_plyr s
 
 //systemChat Format ["%1 - %2", name _plyr,_plyr getVariable 'GPF_EvacOn'];
 
-private _pos = [(GetPos _plyr),0,50, 7, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+private _pos = [(GetPos _plyr),0,50, 10, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 private _evacReturn = [];
-if ((_plyr getVariable "GPF_EvacOn")) then {SystemChat Format ["no helicopters are available at this time! Please try again in a few mins."];} Else {
+if ((_plyr getVariable "GPF_EvacOn")) then {SystemChat Format ["no helicopters are available at this time! Please try again later."];} Else {
     Systemchat "Click on the map where you would like to go.";
     openMap true;waitUntil {inputAction 'ActionInMap' > 0}; 
     private _cords = (findDisplay 12 displayCtrl 51) ctrlMapScreenToWorld getMousePosition;
