@@ -1,8 +1,9 @@
 private _plyr = _this Select 0;
 
 _FirstRun = isNil {_plyr getVariable 'GPF_EvacOn'}; if (_FirstRun) Then {_plyr setVariable ["GPF_EvacOn", false,false];};
+_cash = _plyr getVariable 'ExileMoney';
 
-//systemChat Format ["%1 - %2", name _plyr,_plyr getVariable 'GPF_EvacOn'];
+systemChat Format ["%1 - %2", name _plyr,_cash];
 
 private _pos = [(GetPos _plyr),0,50, 10, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 private _evacReturn = [];
@@ -34,3 +35,10 @@ if ((_plyr getVariable "GPF_EvacOn")) then {SystemChat Format ["no helicopters a
 	 _plyr setVariable ["GPF_EvacOn", false,false];
     };
 };
+//_cash = _plyr getVariable 'ExileMoney';
+//_unit setVariable
+//[
+//	"ExileMoney",
+//	_AIMoney,
+//	true
+//];
