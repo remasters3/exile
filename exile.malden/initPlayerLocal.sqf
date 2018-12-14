@@ -145,7 +145,7 @@ GPF_Target = false;
   while {missionon} do {
   waitUntil	{(alive pveh)};
   sleep 0.25;
-  pveh Addaction ["Call evac",{[(_this select 1)] execVM 'gpf_call_evac.sqf';deleteVehicle pveh;playerQuad = false;}];
+  pveh Addaction ["Call evac",{[(_this select 1)] execVM 'gpf_call_evac.sqf';}];
   waitUntil	{(!alive pveh)};
   sleep 0.25;
    };
