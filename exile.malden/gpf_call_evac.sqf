@@ -18,7 +18,7 @@ if (_cash >= _price) Then {
         //If (Side _plyr == resistance) Then {GPF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf'; _evacReturn = [_pos,_cords,(Side _plyr),"I_Heli_light_03_unarmed_F",[40,41,42]] Call GPF_fnc_plyrEvac;};
         //If (Side _plyr == civilian) Then {PF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf';_evacReturn = [_pos,_cords,(Side _plyr),"C_Heli_Light_01_civil_F",[40,41,42]] Call GPF_fnc_plyrEvac;};
         openMap false;
-		_cash = _plyr getVariable 'ExileMoney'; _cash = _cash-_price;_plyr setVariable ["ExileMoney", _cash,false];
+		_cash = _plyr getVariable 'ExileMoney'; _cash = _cash-_price;_plyr setVariable ["ExileMoney", _cash,true];
 		sleep 1;
 		["InfoTitleAndText", ["Go to the Landing Zone!",format ["%2 tabs removed from %1. Helicopter on route.",name _plyr,_price]]] call ExileClient_gui_toaster_addTemplateToast;
     	Systemchat Format ["%1 tabs removed from %2, please make your way to the landing zone.",_price,name _plyr];
