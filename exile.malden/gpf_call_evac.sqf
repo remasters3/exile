@@ -6,7 +6,7 @@ _price = 1000;
 
 //systemChat Format ["%1 - %2", name _plyr,_cash];
 if (_cash >= _price) Then {
-    private _pos = [(GetPos _plyr),0,50, 15, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+    private _pos = [(GetPos _plyr),0,50, 10, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
     private _evacReturn = [];
     if ((_plyr getVariable "GPF_EvacOn")) then {SystemChat Format ["no helicopters are available at this time! Please try again later."];} Else {
         Systemchat "Click on the map where you would like to go.";
@@ -40,10 +40,3 @@ if (_cash >= _price) Then {
 } Else {
   ["InfoTitleAndText", ["Not Enough Tabs",format ["You need atleast %1 tabs to call evac",_price]]] call ExileClient_gui_toaster_addTemplateToast;
 };
-//_cash = _plyr getVariable 'ExileMoney';
-//_unit setVariable
-//[
-//	"ExileMoney",
-//	_AIMoney,
-//	true
-//];
