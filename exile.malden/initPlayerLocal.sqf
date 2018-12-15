@@ -142,17 +142,21 @@ GPF_Target = false;
 	   };
 };
 
-/*
+
 [] Spawn {
   while {missionon} do {
-  waitUntil	{(alive pveh)};
-  sleep 0.25;
-  pveh Addaction ["Call evac",{[(_this select 1)] execVM 'gpf_call_evac.sqf';}];
-  waitUntil	{(!alive pveh)};
-  sleep 0.25;
+    _msgs = [
+	'Tired of walking? Bind "USE ACTION 20" in "Custom Controls" to spawn temporary transport',
+	'You can call air evacs from your temporary transport.',
+	'Temporary transport will disappear after use.',
+	'For more details about the server please see www.chernochumz.com'
+	];
+	_txt = SelectRandom _msgs;
+    SystemChat Format ["%1",_txt];
+	sleep 300;
    };
 };
-*/
+
 
 
 [] Spawn {
