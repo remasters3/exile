@@ -4,7 +4,7 @@ _Side = _this Select 2;
 _Model = _this Select 3;
 _Wait = _this Select 4;
 
-_EvacHeliSpawn = [_EvacPos,1000,1100, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+_EvacHeliSpawn = [_EvacPos,1000,1100, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 _EvacHeli = [_EvacHeliSpawn, 0, _Model, _Side] call bis_fnc_spawnvehicle;
 _EvacHeliV = _EvacHeli select 0;
 _EvacHeliGroup = group _EvacHeliV;
