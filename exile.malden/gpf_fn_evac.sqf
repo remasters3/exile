@@ -8,8 +8,22 @@ _EvacHeliSpawn = [_EvacPos,1000,1100, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc
 _EvacHeli = [_EvacHeliSpawn, 0, _Model, _Side] call bis_fnc_spawnvehicle;
 _EvacHeliV = _EvacHeli select 0;
 _EvacHeliGroup = group _EvacHeliV;
-_HeliPadE = "Land_HelipadEmpty_F" createVehicle _EvacPos; [_EvacHeliV,_HeliPadE] spawn {_EvacHeliV =_this select 0;_HeliPadE =_this select 1;while {(alive _HeliPadE)} Do { if ((_HeliPadE distance _EvacHeliV) < 1) Then {sleep 10;DeleteVehicle _HeliPadE};};};
-_HeliPadT = "Land_HelipadEmpty_F" createVehicle _TargetPos; [_EvacHeliV,_HeliPadT] spawn {_EvacHeliV =_this select 0;_HeliPadT =_this select 1;while {(alive _HeliPadT)} Do { if ((_HeliPadT distance _EvacHeliV) < 1) Then {sleep 10;DeleteVehicle _HeliPadT};};};
+_EvacPosMarker = createMarkerLocal ["EvacPoint",_EvacPos]; _EvacPosMarker setMarkerTextLocal "Landing Zone.";_EvacPosMarker setMarkerTypeLocal "hd_pickup";
+_TargetPosMarker = createMarkerLocal ["DropPoint",_TargetPos]; _TargetPosMarker setMarkerTextLocal "Drop Zone."; _TargetPosMarker setMarkerTypeLocal "hd_arrow";
+_HeliPadE = "Land_HelipadEmpty_F" createVehicle _EvacPos; 
+[_EvacHeliV,_HeliPadE,_EvacPosMarker] spawn {_EvacHeliV =_this select 0;_HeliPadE =_this select 1;_EvacPosMarker = _this select 2;
+        while {(alive _HeliPadE)} Do {
+		  if ((_HeliPadE distance _EvacHeliV) < 1) Then {sleep 10;DeleteVehicle _HeliPadE;deleteMarker _EvacPosMarker;};
+		  };
+};
+_HeliPadT = "Land_HelipadEmpty_F" createVehicle _TargetPos; 
+[_EvacHeliV,_HeliPadT,_TargetPosMarker] spawn {_EvacHeliV =_this select 0;_HeliPadT =_this select 1;_TargetPosMarker =_this select 2;
+        while {(alive _HeliPadT)} Do { 
+		  if ((_HeliPadT distance _EvacHeliV) < 1) Then {sleep 10;DeleteVehicle _HeliPadT;deleteMarker _TargetPosMarker;};
+		  
+		  };
+
+};
 _Signal = "SmokeShellPurple" createVehicle _EvacPos;
 
 _way1 = _EvacHeliGroup addWaypoint [_EvacPos, 0];
@@ -38,16 +52,18 @@ _way3 setWaypointTimeout _Wait;
 _way3 setWaypointStatements ["true", "_veh = vehicle this; _veh SetDamage 1; _grp = group this;{deleteVehicle _x;} forEach units _grp"];
 
 [_EvacHeliV ] Spawn {_EvacHeliV = _this select 0:sleep 300;_EvacHeliV SetDamage 1;};
-
-
-[_EvacHeliV,_HeliPadE,_HeliPadT] Spawn { 
-       _EvacHeliV = _this select 0;
-       _HeliPadE = _this select 1;
-	   _HeliPadT = _this select 2;
+_markers = [_EvacPosMarker,_TargetPosMarker];
+_vehicles = [_EvacHeliV,_HeliPadE,_HeliPadT];
+[_vehicles,_markers] Spawn {
+       _vehicles = _this select 0;
+	   _markers = _this select 1;
+       _EvacHeliV = _vehicles select 0;
+       _HeliPadE = _vehicles select 1;
+	   _HeliPadT = _vehicles select 2;
 	   sleep 300;
 	   _EvacHeliV SetDamage 1;
-	   deleteVehicle _HeliPadE;
-	   deleteVehicle _HeliPadT;
+	   {deleteVehicle _x} foreach _vehicles;
+	   {deleteMarkerLocal _x} foreach _markers;
 };
-_return = [_EvacHeliV,_HeliPadE,_HeliPadT];
-_return 
+
+_vehicles 
