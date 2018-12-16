@@ -20,8 +20,8 @@ if (_cash >= _price) Then {
         openMap false;
 		_cash = _plyr getVariable 'ExileMoney'; _cash = _cash-_price;_plyr setVariable ["ExileMoney", _cash,true];
 		sleep 1;
-		["InfoTitleAndText", ["Go to the Landing Zone!",format ["%2 tabs removed from %1. Helicopter on route.",name _plyr,_price]]] call ExileClient_gui_toaster_addTemplateToast;
-    	Systemchat Format ["%1 tabs removed from %2, please make your way to the landing zone.",_price,name _plyr];
+		["InfoTitleAndText", ["Get to the Choppa!",format ["%2 tabs removed from %1. Helicopter on route.",name _plyr,_price]]] call ExileClient_gui_toaster_addTemplateToast;
+    	Systemchat Format ["%1 tabs removed from %2. Get to the Choppa!",_price,name _plyr];
         _plyr setVariable ["GPF_EvacOn", true,false];
         
         [_evacReturn,_plyr] Spawn { _things = _this select 0; _plyr = _this select 1;
@@ -33,8 +33,8 @@ if (_cash >= _price) Then {
 		  _EvacPosMarker = _markers select 0;
 		  _TargetPosMarker = _markers select 1;
           _pilot = driver _EvacHeliV;
-		  _EvacPosMarker setMarkerTextLocal Format ["%1's Landing Zone.",name _plyr];
-		  _TargetPosMarker setMarkerTextLocal Format ["%1's Drop Zone.",name _plyr];
+		  _EvacPosMarker setMarkerTextLocal Format ["%1! Get to the Choppa!",name _plyr];
+		  _TargetPosMarker setMarkerTextLocal Format [" Drop Zone for %1.",name _plyr];
     	  {[_x,true] execVM "gpf_randomgear.sqf";} foreach crew _EvacHeliV;
          While {(alive _EvacHeliV)} do {
     	    sleep 5;
