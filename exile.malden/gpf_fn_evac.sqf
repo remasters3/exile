@@ -9,17 +9,17 @@ _EvacHeli = [_EvacHeliSpawn, 0, _Model, _Side] call bis_fnc_spawnvehicle;
 _EvacHeliV = _EvacHeli select 0;
 _EvacHeliGroup = group _EvacHeliV;
 _EvacPosMarker = createMarkerLocal ["EvacPoint",_EvacPos]; _EvacPosMarker setMarkerTextLocal "Landing Zone.";_EvacPosMarker setMarkerTypeLocal "hd_pickup";
-_TargetPosMarker = createMarkerLocal ["DropPoint",_TargetPos]; _TargetPosMarker setMarkerTextLocal "Drop Zone."; _TargetPosMarker setMarkerTypeLocal "hd_arrow";
+_TargetPosMarker = createMarkerLocal ["DropPoint",_TargetPos]; _TargetPosMarker setMarkerTextLocal "Drop Zone."; _TargetPosMarker setMarkerTypeLocal "hd_dot";
 _HeliPadE = "Land_HelipadEmpty_F" createVehicle _EvacPos; 
 [_EvacHeliV,_HeliPadE,_EvacPosMarker] spawn {_EvacHeliV =_this select 0;_HeliPadE =_this select 1;_EvacPosMarker = _this select 2;
-        while {(alive _HeliPadE)} Do {
+        while {alive _HeliPadE} Do {
 		  if ((_HeliPadE distance _EvacHeliV) < 1) Then {sleep 10;DeleteVehicle _HeliPadE;deleteMarkerLocal _EvacPosMarker;};
 		  sleep 1;
 		  };
 };
 _HeliPadT = "Land_HelipadEmpty_F" createVehicle _TargetPos; 
 [_EvacHeliV,_HeliPadT,_TargetPosMarker] spawn {_EvacHeliV =_this select 0;_HeliPadT =_this select 1;_TargetPosMarker =_this select 2;
-        while {(alive _HeliPadT)} Do { 
+        while {alive _HeliPadT} Do {
 		  if ((_HeliPadT distance _EvacHeliV) < 1) Then {sleep 10;DeleteVehicle _HeliPadT;deleteMarkerLocal _TargetPosMarker;};
 		  sleep 1;
 		  };
