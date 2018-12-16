@@ -11,13 +11,13 @@ if (_cash >= _price) Then {
     if ((_plyr getVariable "GPF_EvacOn")) then {SystemChat Format ["no helicopters are available at this time! Please try again later."];} Else {
         Systemchat "Click on the map where you would like to go.";
         openMap true;waitUntil {inputAction 'ActionInMap' > 0}; 
-        private _cords = (findDisplay 12 displayCtrl 51) ctrlMapScreenToWorld getMousePosition;
+        private _cords = (findDisplay 12 displayCtrl 51) ctrlMapScreenToWorld getMousePosition; openMap false;
         If (Side _plyr == resistance) Then {GPF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf';_evacReturn = [_pos,_cords,(Side _plyr),"I_Heli_light_03_unarmed_F",[40,41,42]] Call GPF_fnc_plyrEvac;};	
         //If (Side _plyr == west) Then {PF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf';_evacReturn = [_pos,_cords,(Side _plyr),"B_Heli_Light_01_F",[40,41,42]] Call GPF_fnc_plyrEvac;};
         //If (Side _plyr == east) Then {PF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf';_evacReturn = [_pos,_cords,(Side _plyr),"O_Heli_Light_02_unarmed_F",[40,41,42]] Call GPF_fnc_plyrEvac;};
         //If (Side _plyr == resistance) Then {GPF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf'; _evacReturn = [_pos,_cords,(Side _plyr),"I_Heli_light_03_unarmed_F",[40,41,42]] Call GPF_fnc_plyrEvac;};
         //If (Side _plyr == civilian) Then {PF_fnc_plyrEvac = compile preprocessFile 'gpf_fn_evac.sqf';_evacReturn = [_pos,_cords,(Side _plyr),"C_Heli_Light_01_civil_F",[40,41,42]] Call GPF_fnc_plyrEvac;};
-        openMap false;
+        
 		_cash = _plyr getVariable 'ExileMoney'; _cash = _cash-_price;_plyr setVariable ["ExileMoney", _cash,true];
 		sleep 1;
 		["InfoTitleAndText", ["Get to the Choppa!",format ["%2 tabs removed from %1. Helicopter on route.",name _plyr,_price]]] call ExileClient_gui_toaster_addTemplateToast;
