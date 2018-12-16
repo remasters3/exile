@@ -34,4 +34,28 @@ _path = [];
 //allMapMarkers
 //[] execVM "gpf_troopdrop.sqf";
 
-player SetPosASL [12768.5,93.637,22.7843];
+/*_places = [];
+{
+ if (typeof _x == "B_Survivor_F") Then {
+ _posASL = GetPosASL _x;
+ _dir = GetDir _x;
+ _txt = Format ['[%1,%2],',_posASL,_dir];
+ _places = _places + [[_posASL,_dir]];
+ };
+} Foreach allUnits;
+copyToClipboard Format ['%1',_places];
+*/
+
+_places = [[[9166.86,3704.67,5.66516],135],[[9166.65,3723.58,5.66511],45],[[9135.14,3722.74,5.70165],180],[[9134.95,3705.56,5.70165],0],[[9089.1,3713.59,4.17023],0],[[9063.87,3715.27,4.16999],90],[[9056.4,3708.79,7.26196],0],[[9039.6,3714.77,16.0916],270],[[9040.28,3704.5,15.7209],180],[[8998.21,3714,8.98907],270],[[9091.85,3714.1,8.78219],90],[[9039.33,3723.74,15.7209],0]];
+_units = [];
+{
+  _posASL = _x select 0;
+  _dir = _x select 1;
+  _group = createGroup east;
+  _unit = _group createUnit ["O_G_Sharpshooter_F", _posASL, [], 0, "CAN_COLLIDE"];
+  _unit setDir _dir;
+  _unit SetPosASL _posASL;
+  [_unit,false] execVM "gpf_randomgear.sqf";
+  _units = _units + [_unit];
+  sleep 1;
+} Foreach _places;

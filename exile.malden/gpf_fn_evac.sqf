@@ -39,5 +39,15 @@ _way3 setWaypointStatements ["true", "_veh = vehicle this; _veh SetDamage 1; _gr
 
 [_EvacHeliV ] Spawn {_EvacHeliV = _this select 0:sleep 300;_EvacHeliV SetDamage 1;};
 
+
+[_EvacHeliV,_HeliPadE,_HeliPadT] Spawn { 
+       _EvacHeliV = _this select 0;
+       _HeliPadE = _this select 1;
+	   _HeliPadT = _this select 2;
+	   sleep 300;
+	   _EvacHeliV SetDamage 1;
+	   deleteVehicle _HeliPadE;
+	   deleteVehicle _HeliPadT;
+};
 _return = [_EvacHeliV,_HeliPadE,_HeliPadT];
 _return 

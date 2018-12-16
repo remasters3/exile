@@ -3,10 +3,10 @@ private _plyr = _this Select 0;
 _FirstRun = isNil {_plyr getVariable 'GPF_EvacOn'}; if (_FirstRun) Then {_plyr setVariable ["GPF_EvacOn", false,false];};
 _cash = _plyr getVariable 'ExileMoney';
 _price = 1000;
-
+//60 * (pi / 180)
 //systemChat Format ["%1 - %2", name _plyr,_cash];
 if (_cash >= _price) Then {
-    private _pos = [(GetPos _plyr),0,50, 10, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+    private _pos = [(GetPos _plyr),0,50, 10, 0, 0.1, 0, [],(GetPos _plyr)] call BIS_fnc_findSafePos;
     private _evacReturn = [];
     if ((_plyr getVariable "GPF_EvacOn")) then {SystemChat Format ["no helicopters are available at this time! Please try again later."];} Else {
         Systemchat "Click on the map where you would like to go.";
