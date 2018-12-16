@@ -24,11 +24,17 @@ if (_cash >= _price) Then {
     	Systemchat Format ["%1 tabs removed from %2, please make your way to the landing zone.",_price,name _plyr];
         _plyr setVariable ["GPF_EvacOn", true,false];
         
-        [_evacReturn,_plyr] Spawn { _evacReturn = _this select 0; _plyr = _this select 1;
-          _EvacHeliV = _evacReturn select 0;
-          _HeliPadE = _evacReturn select 1;
-          _HeliPadT = _evacReturn select 2;
+        [_evacReturn,_plyr] Spawn { _things = _this select 0; _plyr = _this select 1;
+		  _vehs = _things select 0;
+		  _markers = _things select 1;
+          _EvacHeliV = _vehs select 0;
+          _HeliPadE = _vehs select 1;
+          _HeliPadT = _vehs select 2;
+		  _EvacPosMarker = _markers select 0;
+		  _TargetPosMarker = _markers select 1;
           _pilot = driver _EvacHeliV;
+		  _EvacPosMarker setMarkerTextLocal Format ["%1's Landing Zone.",name _plyr];
+		  _TargetPosMarker setMarkerTextLocal Format ["%1's Drop Zone.",name _plyr];
     	  {[_x,true] execVM "gpf_randomgear.sqf";} foreach crew _EvacHeliV;
          While {(alive _EvacHeliV)} do {
     	    sleep 5;
