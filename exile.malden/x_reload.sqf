@@ -88,6 +88,7 @@ while {fuel _object < 0.99} do {
 	sleep 0.01;
 };
 sleep x_reload_time_factor;
+["SuccessTitleAndText", [format ["%1 is ready...", _type], format ["%1 is repaired, refuled and rearmed. Good Luck, it's a jungle out there.", _type]]] call ExileClient_gui_toaster_addTemplateToast;
 systemChat format ["%1 is ready...", _type];
 
 if (true) exitWith {};
