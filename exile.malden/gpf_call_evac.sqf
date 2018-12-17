@@ -8,7 +8,10 @@ _price = 1000;
 if (_cash >= _price) Then {
     private _pos = [(GetPos _plyr),0,100, 10, 0, 0.25, 0, [],(GetPos _plyr)] call BIS_fnc_findSafePos;
     private _evacReturn = [];
-    if ((_plyr getVariable "GPF_EvacOn")) then {SystemChat Format ["no helicopters are available at this time! Please try again later."];} Else {
+    if ((_plyr getVariable "GPF_EvacOn")) then {
+	    SystemChat Format ["no helicopters are available at this time! Please try again later."];
+		["ErrorTitleAndText", ["Please try again later.", format ["no helicopters are available at this time!"]]] call ExileClient_gui_toaster_addTemplateToast;
+		} Else {
         Systemchat "Click on the map where you would like to go.";
         openMap true;waitUntil {inputAction 'ActionInMap' > 0}; 
         private _cords = (findDisplay 12 displayCtrl 51) ctrlMapScreenToWorld getMousePosition; openMap false;
@@ -40,5 +43,6 @@ if (_cash >= _price) Then {
         };
     };
 } Else {
-  ["InfoTitleAndText", ["Not Enough Tabs",format ["You need atleast %1 tabs to call evac",_price]]] call ExileClient_gui_toaster_addTemplateToast;
+  //["InfoTitleAndText", ["Not Enough Tabs",format ["You need atleast %1 tabs to call evac",_price]]] call ExileClient_gui_toaster_addTemplateToast;
+  ["ErrorTitleAndText", ["Not Enough Tabs", format ["You need atleast %1 tabs to call evac",_price]]] call ExileClient_gui_toaster_addTemplateToast;
 };
