@@ -1,6 +1,7 @@
 _object = _this;
 //systemChat Format ["%1",_object];
-
+_driver = driver _object;
+if (_driver == _object ) exitWith {};
 _type = typeOf _object;
 //systemChat Format ["%1 - %2",_object,_type];
 x_reload_time_factor = 1;
