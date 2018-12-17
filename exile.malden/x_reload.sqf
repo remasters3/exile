@@ -4,9 +4,9 @@ _driver = driver _object;
 if (_driver == _object ) exitWith {};
 _cash = _driver getVariable 'ExileMoney';
 _price = 1000;
-if (_cash == _price ) exitWith {["ErrorTitleAndText", ["Not Enough Tabs", format ["you need %1 to rearm and repair here!",_price]]] call ExileClient_gui_toaster_addTemplateToast;};
+if (_cash < _price ) exitWith {["ErrorTitleAndText", ["Not Enough Tabs", format ["you need %1 to rearm and repair here!",_price]]] call ExileClient_gui_toaster_addTemplateToast;};
 _type = typeOf _object;
-//systemChat Format ["%1 - %2",_object,_type];
+systemChat Format ["%1 - %2",_cash,_price];
 x_reload_time_factor = 1;
 
 _object setVehicleAmmo 1;
