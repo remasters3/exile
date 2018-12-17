@@ -2,7 +2,7 @@ _object = _this;
 
 _type = typeOf _object;
 
-x_reload_time_factor = 5;
+x_reload_time_factor = 1;
 
 _object setVehicleAmmo 1;
 

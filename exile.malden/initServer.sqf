@@ -376,6 +376,7 @@ GPF_Testers = [
 "76561198121313381"
 ];
 publicVariable "GPF_Testers";
+[] execVM "gpf_fuelstations.sqf";
 
 
 
