@@ -3,7 +3,7 @@ _object = _this;
 _driver = driver _object;
 if (_driver == _object ) exitWith {};
 _cash = _driver getVariable 'ExileMoney';
-_price = 1000;
+_price = 0;
 if (_cash < _price ) exitWith {["ErrorTitleAndText", ["Not Enough Tabs!", format ["%1 needs to have %2 tabs to rearm and repair here!",name _driver,_price]]] call ExileClient_gui_toaster_addTemplateToast;};
 
 _type = typeOf _object;
