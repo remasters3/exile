@@ -29,12 +29,12 @@ _mknum = 0;
  //_mrkr setMarkerColorLocal "ColorYellow";
  //_mrkr setMarkerAlphaLocal 0.2;
  //_mknum = _mknum+1;
- _x Addaction ['Repair & Rearm',{_driver = _this select 1;_veh = vehicle _driver;[_veh]execVM 'x_reload.sqf';}];
+ //_x Addaction ['Repair & Rearm',{_driver = _this select 1;_veh = vehicle _driver;[_veh]execVM 'x_reload.sqf';}];
  
- //_trg = createTrigger ["EmptyDetector", _pos,false];
- //_trg setTriggerArea [10, 10, _dir, true];
- //_trg setTriggerActivation ["GUER", "PRESENT", true];
-  //_trg setTriggerStatements ["this", "_xhandle= (thislist select 0) execVM 'x_reload.sqf';", ""];
+_trg = createTrigger ["EmptyDetector", _pos,false];
+_trg setTriggerArea [10, 10, _dir, true];
+_trg setTriggerActivation ["GUER", "PRESENT", true];
+_trg setTriggerStatements ["this", "_xhandle= (thislist select 0) execVM 'x_reload.sqf';", ""];
   //_trg setTriggerStatements ["this", "_veh thislist select 0;_veh Addaction ['Repair & Rearm',{_veh = _this select 0;[_veh]execVM 'x_reload.sqf';}];", "_veh thislist select 0;removeAllActions _veh"];
 } foreach _Allbuild;
 
