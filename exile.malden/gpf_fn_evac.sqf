@@ -7,6 +7,7 @@ _Wait = _this Select 4;
 _EvacHeliSpawn = [_EvacPos,1000,1100, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 _EvacHeli = [_EvacHeliSpawn, 0, _Model, _Side] call bis_fnc_spawnvehicle;
 _EvacHeliV = _EvacHeli select 0;
+_EvacHeliV addEventHandler ["GetOut", "_veh = _this Select 0; if (count crew _veh  <= 0) Then {deleteVehicle _veh;};
 _EvacHeliGroup = group _EvacHeliV;
 _EvacPosMarker = createMarkerLocal ["EvacPoint",_EvacPos]; _EvacPosMarker setMarkerTextLocal "Landing Zone.";_EvacPosMarker setMarkerTypeLocal "hd_pickup";
 _TargetPosMarker = createMarkerLocal ["DropPoint",_TargetPos]; _TargetPosMarker setMarkerTextLocal "Drop Zone."; _TargetPosMarker setMarkerTypeLocal "hd_dot";
