@@ -1,4 +1,5 @@
 _object = _this;
+systemChat "x_reload";
 
 _type = typeOf _object;
 
