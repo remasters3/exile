@@ -1,13 +1,13 @@
 _object = _this;
-systemChat Format ["%1",_object];
+//systemChat Format ["%1",_object];
 
 _type = typeOf _object;
-systemChat Format ["%1 - %2",_object,_type];
+/systemChat Format ["%1 - %2",_object,_type];
 x_reload_time_factor = 1;
 
 _object setVehicleAmmo 1;
 
-_object vehicleChat format ["Servicing %1... Please stand by...", _type];
+systemChat format ["Servicing %1... Please stand by...", _type];
 
 _magazines = getArray(configFile >> "CfgVehicles" >> _type >> "magazines");
 
@@ -20,7 +20,7 @@ if (count _magazines > 0) then {
 		};
 	} forEach _magazines;
 	{
-		_object vehicleChat format ["Reloading %1", _x];
+		systemChat format ["Reloading %1", _x];
 		sleep x_reload_time_factor;
 		_object addMagazine _x;
 	} forEach _magazines;
@@ -41,7 +41,7 @@ if (_count > 0) then {
 			};
 		} forEach _magazines;
 		{
-			_object vehicleChat format ["Reloading %1", _x];
+			systemChat format ["Reloading %1", _x];
 			sleep x_reload_time_factor;
 			_object addMagazine _x;
 			sleep x_reload_time_factor;
@@ -59,7 +59,7 @@ if (_count > 0) then {
 					};
 				} forEach _magazines;
 				{
-					_object vehicleChat format ["Reloading %1", _x]; 
+					systemChat format ["Reloading %1", _x]; 
 					sleep x_reload_time_factor;
 					_object addMagazine _x;
 					sleep x_reload_time_factor;
@@ -71,16 +71,16 @@ if (_count > 0) then {
 _object setVehicleAmmo 1;	// Reload turrets / drivers magazine
 
 sleep x_reload_time_factor;
-_object vehicleChat "Repairing...";
+systemChat "Repairing...";
 _object setDamage 0;
 sleep x_reload_time_factor;
-_object vehicleChat "Refueling...";
+systemChat "Refueling...";
 while {fuel _object < 0.99} do {
 	//_object setFuel ((fuel _vehicle + 0.1) min 1);
 	_object setFuel 1;
 	sleep 0.01;
 };
 sleep x_reload_time_factor;
-_object vehicleChat format ["%1 is ready...", _type];
+systemChat format ["%1 is ready...", _type];
 
 if (true) exitWith {};

@@ -33,5 +33,5 @@ _mknum = 0;
  _trg = createTrigger ["EmptyDetector", _pos,false];
  _trg setTriggerArea [10, 10, _dir, true];
  _trg setTriggerActivation ["GUER", "PRESENT", true];
- _trg setTriggerStatements ["this", "_xhandle= (thislist select 0) execVM 'x_reload.sqf';Systemchat Format ['%1',thislist select 0]", ""];
+ _trg setTriggerStatements ["this", "_xhandle= (thislist select 0) execVM 'x_reload.sqf';", ""];
 } foreach _Allbuild;
