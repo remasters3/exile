@@ -22,14 +22,14 @@ _mknum = 0;
 {
  _pos = GetPos _x;
  _dir = GetDir _x;
- //_txt = Format ["Marker_0%1",_mknum];
+ _txt = Format ["Marker_0%1",_mknum];
  
- //_mrkr = createMarkerLocal [_txt,_x];
- //_mrkr setMarkerTextLocal "";
- //_mrkr setMarkerTypeLocal "mil_box";
- //_mrkr setMarkerColorLocal "ColorYellow";
- //_mrkr setMarkerAlphaLocal 0.2;
- //_mknum = _mknum+1;
+ _mrkr = createMarkerLocal [_txt,_x];
+ _mrkr setMarkerTextLocal "";
+ _mrkr setMarkerTypeLocal "mil_box";
+ _mrkr setMarkerColorLocal "ColorYellow";
+ _mrkr setMarkerAlphaLocal 0.2;
+ _mknum = _mknum+1;
  
  _trg = createTrigger ["EmptyDetector", _pos,false];
  _trg setTriggerArea [10, 10, _dir, true];
