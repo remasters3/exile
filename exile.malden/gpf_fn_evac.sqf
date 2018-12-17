@@ -13,7 +13,7 @@ _TargetPosMarker = createMarkerLocal ["DropPoint",_TargetPos]; _TargetPosMarker 
 _HeliPadE = "Land_HelipadEmpty_F" createVehicle _EvacPos; 
 [_EvacHeliV,_HeliPadE,_EvacPosMarker] spawn {_EvacHeliV =_this select 0;_HeliPadE =_this select 1;_EvacPosMarker = _this select 2;
         while {alive _HeliPadE} Do {
-		  if ((_HeliPadE distance _EvacHeliV) < 10) Then {_Signal = "SmokeShellPurple" createVehicle GetPos _HeliPadE;deleteMarkerLocal _EvacPosMarker;sleep 10;DeleteVehicle _HeliPadE;};
+		  if ((_HeliPadE distance _EvacHeliV) < 10) Then {deleteMarkerLocal _EvacPosMarker;sleep 10;DeleteVehicle _HeliPadE;};
 		  sleep 1;
 		  };
 };
@@ -49,7 +49,7 @@ _way3 setWaypointBehaviour "CARELESS";
 _way3 setWaypointCombatMode "GREEN";
 _way3 setWaypointSpeed "FULL";
 _way3 setWaypointCompletionRadius 10;
-_way3 setWaypointTimeout _Wait;
+//_way3 setWaypointTimeout _Wait;
 _way3 setWaypointStatements ["true", "_veh = vehicle this; _veh SetDamage 1; _grp = group this;{deleteVehicle _x;} forEach units _grp"];
 
 [_EvacHeliV ] Spawn {_EvacHeliV = _this select 0;_EvacHeliGroup = group _EvacHeliV;sleep 300;{deleteVehicle _x} foreach units _EvacHeliGroup;_EvacHeliV SetDamage 1;};
