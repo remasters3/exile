@@ -177,7 +177,7 @@ GPF_Target = false;
 
 [] execVM "ClaimVehicles_Client\ClaimVehicles_Client_init.sqf";
 [] execVM "Addons\StatusBar\Statusbar.sqf";
-//[] execVM "gpf_fuelstations.sqf";
+[] execVM "gpf_fuelstations.sqf";
 //player setVariable ["GPF_Target", false,true];
 
 //[] Spawn { 

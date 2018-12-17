@@ -30,8 +30,8 @@ _mknum = 0;
  //_mrkr setMarkerAlphaLocal 0.2;
  //_mknum = _mknum+1;
  
- _trg = createTrigger ["EmptyDetector", _pos,true];
+ _trg = createTrigger ["EmptyDetector", _pos,false];
  _trg setTriggerArea [10, 10, _dir, true];
- _trg setTriggerActivation ["ANY", "PRESENT", true];
- _trg setTriggerStatements ["this", "_xhandle= (thislist select 0) execVM 'x_reload.sqf'", ""];
+ _trg setTriggerActivation ["GUER", "PRESENT", true];
+ _trg setTriggerStatements ["this", "_xhandle= (thislist select 0) execVM 'x_reload.sqf';systemchat 'Trigger fired';", ""];
 } foreach _Allbuild;
