@@ -2,7 +2,7 @@ _object = _this;
 //systemChat Format ["%1",_object];
 
 _type = typeOf _object;
-/systemChat Format ["%1 - %2",_object,_type];
+//systemChat Format ["%1 - %2",_object,_type];
 x_reload_time_factor = 1;
 
 _object setVehicleAmmo 1;
