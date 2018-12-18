@@ -34,7 +34,7 @@ if ((_player getVariable "GPF_Target")) then {SystemChat Format ["Please wait ti
    		_unit addEventHandler ["killed", "_d = _this select 0;_k = _this select 1;SystemChat format ['%1 Killed %2 from %3 meters',name _k,name _d, _k distance _d];"];
    		_unit addEventHandler ["killed", "_k = _this select 1;_score = _k getVariable 'GPF_Target_Score'; _score = _score+1; _k setVariable ['GPF_Target_Score', _score,false]; SystemChat format ['you have %1 Kills',_k getVariable 'GPF_Target_Score'];"];
    		if ((count _Veh) > 0) Then {_unit moveInDriver vt; } else {_unit disableAI "ANIM";_unit disableAI "FSM";_unit disableAI "AUTOTARGET";_unit disableAI "TARGET";};
-           while {alive _unit} do {_player setAmmo [currentWeapon _player, 1];sleep 1; _tty = _tty + 1;if (_tty > _Timeout) Then {deleteVehicle _unit};};
+           while {alive _unit} do {_player setVehicleAmmo 1;sleep 1; _tty = _tty + 1;if (_tty > _Timeout) Then {deleteVehicle _unit};};
    		_Count = _Count + _inc;
    		if ((surfaceIsWater _pos)) Then {deleteVehicle ft};
            _pos = [_ShooterPos, _Count, _dir] call BIS_fnc_relPos;
