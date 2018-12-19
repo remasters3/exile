@@ -34,41 +34,29 @@ _path = [];
 //allMapMarkers
 //[] execVM "gpf_troopdrop.sqf";
 
-/*_places = [];
+_places = [];
 {
- if (typeof _x == "B_Survivor_F") Then {
+ if (typeof _x == "I_HMG_01_high_F") Then {
  _posASL = GetPosASL _x;
  _dir = GetDir _x;
- _txt = Format ['[%1,%2],',_posASL,_dir];
- _places = _places + [[_posASL,_dir]];
+ _txt = Format ['[%1],',_posASL,_dir];
+ _places = _places + [_posASL];
  };
 } Foreach allUnits;
 copyToClipboard Format ['%1',_places];
-*/
 
-_places = [
-[9166.86,3704.67,5.66516],
-[9166.65,3723.58,5.66511],
-[9135.14,3722.74,5.70165],
-[9134.95,3705.56,5.70165],
-[9089.1,3713.59,4.17023],
-[9063.87,3715.27,4.16999],
-[9056.4,3708.79,7.26196],
-[9039.6,3714.77,16.0916],
-[9040.28,3704.5,15.7209],
-[8998.21,3714,8.98907],
-[9091.85,3714.1,8.78219],
-[9039.33,3723.74,15.7209]
-];
-_units = [];
-{
-  _posASL = _x select 0;
-  _dir = _x select 1;
-  _group = createGroup east;
-  _unit = _group createUnit ["O_G_Sharpshooter_F", _posASL, [], 0, "CAN_COLLIDE"];
-  _unit setDir _dir;
-  _unit SetPosASL _posASL;
-  [_unit,false] execVM "gpf_randomgear.sqf";
-  _units = _units + [_unit];
-  sleep 1;
-} Foreach _places;
+//_places = [
+//[[[9100.71,3749,4.38746],192.388],[[9077.14,3749.07,4.38518],0],[[9164.8,3705.64,5.66464],0],[[9165.42,3722.3,5.6648],0],[[9133.93,3721.36,5.70165],0],[[9139.07,3716.93,5.67625],14.2313],[[9133.53,3706.4,5.70165],0],[[9138.28,3701.08,5.6791],36.8862],[[9091.04,3722.71,4.17019],0],[[9096.32,3717.93,4.17019],52.1042],[[9040.35,3723.37,15.7209],0],[[8998.57,3713.86,8.97995],0],[[9040.31,3704.97,15.7209],0],[[9042.99,3706.74,6.86623],337.264],[[9090.6,3704.05,4.17019],0],[[9112.59,3713.78,16.1177],0],[[9067.71,3714.03,4.17011],0],[[9055.48,3711.73,7.26196],0],[[9029.73,3713.8,11.9889],0],[[9044.54,3714.27,7.25537],0]]
+//];
+//_units = [];
+//{
+//  _posASL = _x select 0;
+//  _dir = _x select 1;
+//  _group = createGroup east;
+//  _unit = _group createUnit ["O_G_Sharpshooter_F", _posASL, [], 0, "CAN_COLLIDE"];
+//  _unit setDir _dir;
+//  _unit SetPosASL _posASL;
+//  [_unit,false] execVM "gpf_randomgear.sqf";
+//  _units = _units + [_unit];
+//  sleep 1;
+//} Foreach _places;
