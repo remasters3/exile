@@ -319,7 +319,8 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
     ["C_supplyCrate_F", 25],
     ["IG_supplyCrate_F", 25],
 	["I_supplyCrate_F", 25],
-    ["Box_IND_AmmoVeh_F", 25]
+    ["Box_IND_AmmoVeh_F", 25],
+	["Box_NATO_AmmoOrd_F",25]
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
