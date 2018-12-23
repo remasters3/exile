@@ -37,7 +37,7 @@ _path = [];
 _places = [];
 {
  if (typeof _x == "B_Survivor_F") Then {
- _posASL = GetPosASL _x;
+ _posASL = GetPos _x;
  _dir = GetDir _x;
  _txt = Format ['[%1],',_posASL,_dir];
  _places = _places + [_posASL];
