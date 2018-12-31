@@ -3011,7 +3011,9 @@ class CfgExileArsenal
 	class B_Heli_Light_01_dynamicLoadout_F                      { quality = 6; price = 120000;};
 	class O_Heli_Attack_02_dynamicLoadout_F                     { quality = 6; price = 250000;};
 	
-	class B_LSV_01_armed_F                                      { quality = 4; price = 60000; };
+	class B_T_LSV_01_armed_F                                      { quality = 4; price = 60000; };
+	class O_T_LSV_02_armed_F                                      { quality = 4; price = 60000; };
+    class B_LSV_01_armed_F                                      { quality = 4; price = 60000; };
 	class O_LSV_02_armed_F                                      { quality = 4; price = 60000; };
 	class B_MRAP_01_hmg_F                                       { quality = 5; price = 65000; };
 	class I_MRAP_03_hmg_F                                       { quality = 5; price = 65000; };
@@ -6078,6 +6080,8 @@ class CfgTraderCategories
 			"Exile_Car_MB4WDOpen",
 			"B_LSV_01_armed_F",
             "O_LSV_02_armed_F",
+			"B_T_LSV_01_armed_F",
+			"O_T_LSV_02_armed_F",
             "B_MRAP_01_hmg_F",
             "I_MRAP_03_hmg_F",
             "B_APC_Wheeled_01_cannon_F"
