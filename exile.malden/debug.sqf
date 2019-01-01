@@ -11,16 +11,23 @@ _STR = Format ["%1",_all];
 copyToClipboard _STR;
 */
 
-/*
 _path = [];
+/*
 { 
  _pos = GetMarkerPos _x;
  _path = _path + [_pos];
 } Foreach ["path_00","path_01","path_02","path_03","path_04","path_05","path_06","path_07","path_08","path_09","path_10"];
-
 */
+
 //hint str(typeOf cursortarget); copyToClipboard str(typeOf cursortarget);
-//copyToClipboard str(GetPos Player);
+
+for "_i" from 0 to 80 do {
+  _markerName = Format ["path_%1",_i];
+ _pos = GetMarkerPos _markerName;
+ _path = _path + [_pos];
+
+};
+copyToClipboard Format ["%1",_path];
 
 //_txt = Format ["%1,%2,%3",GetPosASL player,vectorDir player,vectorUp player]; copyToClipboard _txt;diag_log _txt; 
 //copyToClipboard str(GetPosASL Player); systemChat Format ["%1",GetPosASL Player];
@@ -34,6 +41,7 @@ _path = [];
 //allMapMarkers
 //[] execVM "gpf_troopdrop.sqf";
 
+/*
 _places = [];
 {
  if (typeof _x == "B_Survivor_F") Then {
@@ -45,6 +53,7 @@ _places = [];
 } Foreach allUnits;
 copyToClipboard Format ['%1',_places];
 //copyToClipboard Format ['%1',GetPosASL player];
+*/
 
 //{ if ((side _x) == east) Then {_x SetDamage 1;};} Foreach allUnits;
 //_places = [

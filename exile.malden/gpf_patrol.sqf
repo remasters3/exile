@@ -44,7 +44,7 @@ _crew = crew _PatrolCarV;
 {
   _way = _PatrolCarGroup addWaypoint [_x, 0];
   _way setWaypointType "MOVE";
-  _way setWaypointBehaviour "COMBAT";
+  _way setWaypointBehaviour "AWARE";
   _way setWaypointCombatMode "RED";
   _way setWaypointSpeed "NORMAL";
   _way setWaypointCompletionRadius 50;
@@ -52,7 +52,7 @@ _crew = crew _PatrolCarV;
 
 _way = _PatrolCarGroup addWaypoint [(_Path Select _count-1), 0];
 _way setWaypointType "MOVE";
-_way setWaypointBehaviour "COMBAT";
+_way setWaypointBehaviour "AWARE";
 _way setWaypointCombatMode "RED";
 _way setWaypointSpeed "NORMAL";
 _way setWaypointCompletionRadius 50;

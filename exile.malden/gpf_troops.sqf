@@ -42,7 +42,7 @@ _grp = [ _startpos, EAST, 12] call BIS_fnc_spawnGroup;
 {
   _way = _TroopTruckGroup addWaypoint [_x, 0];
   _way setWaypointType "MOVE";
-  _way setWaypointBehaviour "COMBAT";
+  _way setWaypointBehaviour "AWARE";
   _way setWaypointCombatMode "RED";
   _way setWaypointSpeed "NORMAL";
   _way setWaypointCompletionRadius 50;
@@ -50,7 +50,7 @@ _grp = [ _startpos, EAST, 12] call BIS_fnc_spawnGroup;
 
 _way = _TroopTruckGroup addWaypoint [(_Path Select _count-1), 0];
 _way setWaypointType "MOVE";
-_way setWaypointBehaviour "COMBAT";
+_way setWaypointBehaviour "AWARE";
 _way setWaypointCombatMode "RED";
 _way setWaypointSpeed "NORMAL";
 _way setWaypointCompletionRadius 50;
