@@ -2183,7 +2183,7 @@ class CfgExileArsenal
 	class Exile_Item_MetalPole						{ quality = 1; price = 800; };
 	class Exile_Item_MetalScrews					{ quality = 1; price = 100; };
 	//class Exile_Item_MetalWire					{ quality = 1; price = 100; };
-	//class Exile_Item_Cement						{ quality = 1; price = 20; };
+	class Exile_Item_Cement						    { quality = 1; price = 15000; };
 	//class Exile_Item_Sand							{ quality = 1; price = 20; };
 	//class Exile_Item_CarWheel						{ quality = 1; price = 1000; };
 	
@@ -2268,8 +2268,7 @@ class CfgExileArsenal
 	class Exile_Item_Vishpirin						{ quality = 3; price = 300; };
 	class Exile_Item_Bandage	                    { quality = 2; price = 100; };
 	class Exile_Item_Heatpack	                    { quality = 1; price = 50; };
-
-	//class Exile_Item_Defibrillator				{ quality = 1; price = 7500; };
+	class Exile_Item_Defibrillator				    { quality = 1; price = 7500; };
 
 	///////////////////////////////////////////////////////////////////////////////
 	// Tools
@@ -5363,6 +5362,7 @@ class CfgTraderCategories
 			"Exile_Item_SafeKit",
 			"Exile_Item_CamoTentKit",
 			"Exile_Item_CodeLock",
+			"Exile_Item_Cement",
 			"Exile_Item_MetalScrews"
 
 			/*
@@ -5552,7 +5552,8 @@ class CfgTraderCategories
 			"Exile_Item_InstaDoc",
 			"Exile_Item_Bandage",
 			"Exile_Item_Vishpirin",
-			"Exile_Item_Heatpack"
+			"Exile_Item_Heatpack",
+			"Exile_Item_Defibrillator"
 
 			// Not available in 0.9.4!
 			//"Exile_Item_Defibrillator"
