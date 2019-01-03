@@ -170,10 +170,14 @@ GPF_Target = false;
     private _isBenifit = _uid in GPF_Benifits;
 	{_zone = _x select 0; _rad = _x select 1;if ((_zone distance player) < _rad) Then{_isVil = true;};} Foreach _Zones;
  	if (_isVil) Then {
-	    if (!_isBenifit) Then { _dmg = damage player; _dmg = _dmg+0.4; player Setdamage _dmg; systemChat FORMAT ["Leave this place or die!"]; };
+	    if (!_isBenifit) Then { _dmg = damage player; _dmg = _dmg+0.4; player Setdamage _dmg; systemChat FORMAT ["Leave this place or die!"];};
 		};
  };
 };
+
+[] execVM "ClaimVehicles_Client\ClaimVehicles_Client_init.sqf";
+[] execVM "Addons\StatusBar\Statusbar.sqf";
+[] execVM "gpf_rearm.sqf";
 
 [] Spawn {
   manhunton = false;
@@ -184,10 +188,6 @@ GPF_Target = false;
   };
 };
 
-
-[] execVM "ClaimVehicles_Client\ClaimVehicles_Client_init.sqf";
-[] execVM "Addons\StatusBar\Statusbar.sqf";
-[] execVM "gpf_rearm.sqf";
 //player setVariable ["GPF_Target", false,true];
 
 //[] Spawn { 
