@@ -175,6 +175,16 @@ GPF_Target = false;
  };
 };
 
+[] Spawn {
+  manhunton = false;
+  while {missionon} Do {
+    waitUntil {manhunton};
+	SystemChat "Manhunt Time!"
+	Sleep 10;
+  };
+};
+
+
 [] execVM "ClaimVehicles_Client\ClaimVehicles_Client_init.sqf";
 [] execVM "Addons\StatusBar\Statusbar.sqf";
 [] execVM "gpf_rearm.sqf";

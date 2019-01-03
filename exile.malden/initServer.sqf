@@ -357,7 +357,7 @@ private _simpleObjects = [
 forEach _simpleObjects;
 
 
-Seapatrolon = 0; publicVariable "Seapatrolon";[] Spawn { while {true} Do {if (Seapatrolon < 5) Then {sleep 120;[]execVM "gpf_boats.sqf";};Sleep 300;};};
+Seapatrolon = 0; publicVariable "Seapatrolon";[] Spawn { while {true} Do {if (Seapatrolon < 5) Then {sleep 240;[]execVM "gpf_boats.sqf";};Sleep 300;};};
 patrolon = 0; publicVariable "patrolon";[] Spawn { while {true} Do {if (patrolon < 6) Then {sleep 60;[]execVM "gpf_patrol.sqf";};Sleep 300;};};
 heloOn = 0; publicVariable "heloOn";[] Spawn { while {true} Do {if (heloOn < 2) Then {sleep 60;[]execVM "gpf_helo.sqf";};Sleep 300;};};
 troopson = 0; publicVariable "troopson";[] Spawn { while {true} Do {if (troopson < 3) Then {sleep 30;[]execVM "gpf_troops.sqf";};Sleep 300;};};

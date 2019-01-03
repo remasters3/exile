@@ -22,11 +22,7 @@ _uni = [
         "U_I_C_Soldier_Bandit_1_F",
         "U_I_C_Soldier_Para_2_F",
         "U_I_C_Soldier_Para_4_F",
-		"U_I_pilotCoveralls",
-		"U_I_CombatUniform_shortsleeve",
-		"U_I_G_Story_Protagonist_F",
-		"U_I_OfficerUniform",
-		"U_I_G_resistanceLeader_F"
+		"U_I_pilotCoveralls"
        ];
 
 _headgear = [
