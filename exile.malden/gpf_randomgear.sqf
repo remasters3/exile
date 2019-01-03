@@ -1,6 +1,14 @@
-//[player] execVM "gpf_randomgear.sqf";
+//[player,false] execVM "gpf_randomgear.sqf";
 _unit = _this Select 0;
 _air = _this Select 1;
+_rocketChance = [0,0,0,1,1,1,1,1,1,1]; //30% chance unit will get a rocket launcher
+_rockets = [
+["launch_NLAW_F","NLAW_F"],
+["launch_RPG32_F","RPG32_F"],
+["launch_RPG7_F","RPG7_F"],
+["launch_B_Titan_F","Titan_AA"],
+["launch_B_Titan_short_F","Titan_AT"]
+];
 _priweapons = [
                ["arifle_AK12_GL_F","30Rnd_762x39_Mag_F"],
                ["Exile_Weapon_PK","Exile_Magazine_100Rnd_762x54_PK_Green"],
@@ -14,8 +22,11 @@ _uni = [
         "U_I_C_Soldier_Bandit_1_F",
         "U_I_C_Soldier_Para_2_F",
         "U_I_C_Soldier_Para_4_F",
-		"U_BG_Guerilla2_1",
-		"U_BG_Guerilla3_1"
+		"U_I_pilotCoveralls",
+		"U_I_CombatUniform_shortsleeve",
+		"U_I_G_Story_Protagonist_F",
+		"U_I_OfficerUniform",
+		"U_I_G_resistanceLeader_F"
        ];
 
 _headgear = [
@@ -27,10 +38,11 @@ _headgear = [
 _vests = ["V_BandollierB_cbr","V_HarnessO_gry","V_BandollierB_blk"];
 _bags = ["B_FieldPack_cbr","B_Messenger_Gray_F","B_Carryall_oucamo","B_FieldPack_oli"];
 _riflescopes = ["optic_Aco","optic_AMS","optic_DMS","optic_Arco"];
-_at = [];
+
 _pistols = [
             ["hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder"],
-			["hgun_ACPC2_F","9Rnd_45ACP_Mag"]
+			["hgun_ACPC2_F","9Rnd_45ACP_Mag"],
+			["hgun_P07_F","30Rnd_9x21_Mag"]
 		   ];
 _nvgs = [];
 
@@ -102,3 +114,14 @@ _unit setVariable
 	_AIMoney,
 	true
 ];
+if (!_air) Then {
+   if ((selectRandom _rocketChance) == 0) Then {
+   removeBackpack _unit;
+   private _rocket = SelectRandom _rockets;
+   private _rocketluancher = _rocket select 0;
+   private _rocketammo = _rocket select 1;
+   _unit addBackpack "B_Carryall_oucamo";
+   _unit addWeapon  _rocketluancher;
+   for "_i" from 1 to 3 do {_unit addItemToBackpack _rocketammo;};
+   };  
+};
