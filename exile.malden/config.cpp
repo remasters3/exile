@@ -1408,7 +1408,7 @@ class CookTurtleFilet: Exile_AbstractCraftingRecipe
 };
 
 
-class EmptyFuelCanister: Exile_AbstractCraftingRecipe
+class EmptyCanister: Exile_AbstractCraftingRecipe
 {
 	name = "Empty Fuel Canister";
 	pictureItem = "Exile_Item_FuelCanisterEmpty";
@@ -1515,6 +1515,24 @@ class FillFuelCanister: Exile_AbstractCraftingRecipe
 	components[] = 
 	{
 		{1, "Exile_Item_FuelCanisterEmpty"}
+	};
+};
+class FillSandBag: Exile_AbstractCraftingRecipe
+{
+	name = "Fill Sandbag";
+	pictureItem = "Exile_Item_Sand";
+	requiresOcean = 1;
+	returnedItems[] = 
+	{
+		{4, "Exile_Item_Sand"}
+	};
+	tools[] =
+	{
+		"Exile_Item_Shovel"
+	};
+	components[] = 
+	{
+		{1, "Exile_Item_CamoTentKit"}
 	};
 };
 class UpgradeToConcreteDoor: Exile_AbstractCraftingRecipe
