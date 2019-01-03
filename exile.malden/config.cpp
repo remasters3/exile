@@ -1524,16 +1524,16 @@ class FillSandBag: Exile_AbstractCraftingRecipe
 	requiresOcean = 1;
 	returnedItems[] = 
 	{
-		{4, "Exile_Item_Sand"}
+		{1, "Exile_Item_Sand"}
 	};
 	tools[] =
 	{
 		"Exile_Item_Shovel"
 	};
-	//components[] = {};
 	/*
+	components[] =
 	{
-		{1, "Exile_Item_CamoTentKit"}
+		{1, "Exile_Item_Shovel"}
 	};
 	*/
 };
@@ -2307,7 +2307,7 @@ class CfgExileArsenal
 	//class Exile_Item_Hammer						{ quality = 1; price = 600; };
 	//class Exile_Item_OilCanister					{ quality = 1; price = 1750; };
 	//class Exile_Item_Screwdriver					{ quality = 1; price = 250; };
-	class Exile_Item_Shovel						{ quality = 1; price = 700; };
+	class Exile_Item_Shovel						    { quality = 3; price = 7000; };
 	//class Exile_Item_Wrench						{ quality = 1; price = 250; };
 	//class Exile_Item_SleepingMat					{ quality = 1; price = 1250; };
 	//class Exile_Item_ToiletPaper					{ quality = 1; price = 5; };
