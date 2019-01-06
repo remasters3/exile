@@ -3,13 +3,13 @@ _object = _this;
 _driver = driver _object;
 if (_driver == _object ) exitWith {};
 _cash = _driver getVariable 'ExileMoney';
-_price = 0;
+_price = 500;
 if (_cash < _price ) exitWith {["ErrorTitleAndText", ["Not Enough Tabs!", format ["%1 needs to have %2 tabs to rearm and repair here!",name _driver,_price]]] call ExileClient_gui_toaster_addTemplateToast;};
 
 _type = typeOf _object;
 //systemChat Format ["%1 - %2",_cash,_price];
 _cash = _driver getVariable 'ExileMoney'; _cash = _cash-_price;_driver setVariable ["ExileMoney", _cash,true];
-["InfoTitleAndText", [format ["%2 tabs removed from %1.",name _driver,_price],format ["Servicing %1... Please stand by...", _type]]] call ExileClient_gui_toaster_addTemplateToast;
+//["InfoTitleAndText", [format ["%2 tabs removed from %1.",name _driver,_price],format ["Servicing %1... Please stand by...", _type]]] call ExileClient_gui_toaster_addTemplateToast;
 
 x_reload_time_factor = 1;
 
@@ -89,7 +89,7 @@ while {fuel _object < 0.99} do {
 	sleep 0.01;
 };
 sleep x_reload_time_factor;
-["SuccessTitleAndText", [format ["%1 is ready...", _type], format ["%1 is repaired, refuled and rearmed. Good Luck, it's a jungle out there.", _type]]] call ExileClient_gui_toaster_addTemplateToast;
+//["SuccessTitleAndText", [format ["%1 is ready...", _type], format ["%1 is repaired, refuled and rearmed. Good Luck, it's a jungle out there.", _type]]] call ExileClient_gui_toaster_addTemplateToast;
 systemChat format ["%1 is ready...", _type];
 
 if (true) exitWith {};

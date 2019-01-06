@@ -179,14 +179,7 @@ GPF_Target = false;
 [] execVM "Addons\StatusBar\Statusbar.sqf";
 [] execVM "gpf_rearm.sqf";
 
-[] Spawn {
-  manhunton = false;
-  while {missionon} Do {
-    waitUntil {manhunton};
-	SystemChat "Manhunt Time!"
-	Sleep 10;
-  };
-};
+
 
 //player setVariable ["GPF_Target", false,true];
 

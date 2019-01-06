@@ -1,3 +1,12 @@
+[] Spawn {
+  manhunton = false;
+  while {missionon} Do {
+    waitUntil {manhunton};
+	SystemChat "Manhunt Time!"
+	Sleep 10;
+  };
+};
+
 [(GetPos player)] execVM "gpf_manhunt.sqf";
 
 
