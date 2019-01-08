@@ -1,7 +1,7 @@
 //[player,false] execVM "gpf_randomgear.sqf";
 _unit = _this Select 0;
 _air = _this Select 1;
-_rocketChance = [0,0,0,1,1,1,1,1,1,1]; //30% chance unit will get a rocket launcher
+_rocketChance = [0,0,1,1,1,1,1,1,1,1]; //20% chance unit will get a rocket launcher
 _rockets = [
 ["launch_NLAW_F","NLAW_F"],
 ["launch_RPG32_F","RPG32_F"],
