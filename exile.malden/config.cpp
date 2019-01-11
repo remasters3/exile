@@ -1528,12 +1528,12 @@ class FillSandBag: Exile_AbstractCraftingRecipe
 	};
 	tools[] =
 	{
-		"Exile_Item_Shovel"
+		"Exile_Melee_Shovel"
 	};
 	/*
 	components[] =
 	{
-		{1, "Exile_Item_Shovel"}
+		{1, "Exile_Melee_Shovel"}
 	};
 	*/
 };
@@ -2202,7 +2202,7 @@ class CfgExileArsenal
 	class Exile_Item_CamoTentKit					{ quality = 1; price = 250; };
 	class Exile_Item_MetalPole						{ quality = 1; price = 800; };
 	class Exile_Item_MetalScrews					{ quality = 1; price = 100; };
-	//class Exile_Item_MetalWire					{ quality = 1; price = 100; };
+	class Exile_Item_MetalWire					    { quality = 1; price = 100; };
 	class Exile_Item_Cement						    { quality = 1; price = 15000; };
 	//class Exile_Item_Sand							{ quality = 1; price = 20; };
 	//class Exile_Item_CarWheel						{ quality = 1; price = 1000; };
@@ -2307,7 +2307,7 @@ class CfgExileArsenal
 	//class Exile_Item_Hammer						{ quality = 1; price = 600; };
 	//class Exile_Item_OilCanister					{ quality = 1; price = 1750; };
 	//class Exile_Item_Screwdriver					{ quality = 1; price = 250; };
-	class Exile_Item_Shovel						    { quality = 3; price = 7000; };
+	class Exile_Melee_Shovel						    { quality = 3; price = 7000; };
 	//class Exile_Item_Wrench						{ quality = 1; price = 250; };
 	//class Exile_Item_SleepingMat					{ quality = 1; price = 1250; };
 	//class Exile_Item_ToiletPaper					{ quality = 1; price = 5; };
@@ -5383,7 +5383,8 @@ class CfgTraderCategories
 			"Exile_Item_CamoTentKit",
 			"Exile_Item_CodeLock",
 			"Exile_Item_Cement",
-			"Exile_Item_MetalScrews"
+			"Exile_Item_MetalScrews",
+			"Exile_Item_MetalWire"
 
 			/*
 			--Not for Sale--
@@ -5528,14 +5529,14 @@ class CfgTraderCategories
 			"Exile_Item_Pliers",
 			"Exile_Item_Grinder",
 			"Exile_Item_Foolbox",
-            "Exile_Item_Shovel",
+            "Exile_Melee_Shovel",
 			/*
 			"Exile_Item_CordlessScrewdriver",
 			"Exile_Item_FireExtinguisher",
 			"Exile_Item_Hammer",
 			"Exile_Item_OilCanister",
 			"Exile_Item_Screwdriver",
-			"Exile_Item_Shovel",
+			"Exile_Melee_Shovel",
 			"Exile_Item_Wrench",
 			"Exile_Item_SleepingMat",
 			"Exile_Item_ToiletPaper",
