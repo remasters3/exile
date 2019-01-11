@@ -1528,12 +1528,12 @@ class FillSandBag: Exile_AbstractCraftingRecipe
 	};
 	tools[] =
 	{
-		"Exile_Melee_Shovel"
+		"Exile_Item_Shovel"
 	};
 	/*
 	components[] =
 	{
-		{1, "Exile_Melee_Shovel"}
+		{1, "Exile_Item_Shovel"}
 	};
 	*/
 };
@@ -2307,7 +2307,7 @@ class CfgExileArsenal
 	//class Exile_Item_Hammer						{ quality = 1; price = 600; };
 	//class Exile_Item_OilCanister					{ quality = 1; price = 1750; };
 	//class Exile_Item_Screwdriver					{ quality = 1; price = 250; };
-	class Exile_Melee_Shovel						    { quality = 3; price = 7000; };
+	class Exile_Item_Shovel      				    { quality = 3; price = 7000; };
 	//class Exile_Item_Wrench						{ quality = 1; price = 250; };
 	//class Exile_Item_SleepingMat					{ quality = 1; price = 1250; };
 	//class Exile_Item_ToiletPaper					{ quality = 1; price = 5; };
@@ -5529,14 +5529,14 @@ class CfgTraderCategories
 			"Exile_Item_Pliers",
 			"Exile_Item_Grinder",
 			"Exile_Item_Foolbox",
-            "Exile_Melee_Shovel",
+            "Exile_Item_Shovel",
 			/*
 			"Exile_Item_CordlessScrewdriver",
 			"Exile_Item_FireExtinguisher",
 			"Exile_Item_Hammer",
 			"Exile_Item_OilCanister",
 			"Exile_Item_Screwdriver",
-			"Exile_Melee_Shovel",
+			"Exile_Item_Shovel",
 			"Exile_Item_Wrench",
 			"Exile_Item_SleepingMat",
 			"Exile_Item_ToiletPaper",
