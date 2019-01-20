@@ -19,11 +19,6 @@ if (_Side == west) Then {_Model = SelectRandom _WestLightBoat;};
 if (_Side == east) Then {_Model = SelectRandom _EastLightBoat;}; 
 if (_Side == resistance) Then {_Model = SelectRandom _ResLightBoat;};
 
-
-
-
-
-
 private _Safepos = _startpos;//[_startpos,0,100, 10, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 private _SeaPatrolBoat = [_Safepos, 0, _Model, _Side] call bis_fnc_spawnvehicle; //_SeaPatrolBoat setVariable ["ExileOwnerUID", nil];
 private _SeaPatrolBoatV = _SeaPatrolBoat select 0; _SeaPatrolBoatV setVariable ["ExileIsPersistent", false];
@@ -93,7 +88,7 @@ _way setWaypointStatements ["true", "_veh = Vehicle this; {deleteVehicle _x;} Fo
 };
 
 
-
+/*
 [_SeaPatrolBoatV,_Timeout,_crew] Spawn {
     _SeaPatrolBoatV = _this Select 0; 
 	_Timeout = _this select 1; 
@@ -104,6 +99,6 @@ _way setWaypointStatements ["true", "_veh = Vehicle this; {deleteVehicle _x;} Fo
     {deleteVehicle _x;} foreach _crew;
     If ((count (crew _SeaPatrolBoatV)) == 0) Then {deleteVehicle _SeaPatrolBoatV;};	
 };
-
+*/
 //_output = [_crew,_SeaPatrolBoatV];
 //_output;

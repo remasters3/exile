@@ -24,33 +24,9 @@ private _HeloGroup = group _HeloV;
 private _crew = crew _HeloV;
 _HeloV setVariable ["ExileIsPersistent", false];
 { 
-removeAllWeapons _x;
-removeAllItems _x;
-removeAllAssignedItems _x;
-removeUniform _x;
-removeVest _x;
-removeBackpack _x;
-removeHeadgear _x;
-removeGoggles _x;
-_x forceAddUniform "U_O_PilotCoveralls";
-for "_i" from 1 to 3 do {_x addItemToUniform "11Rnd_45ACP_Mag";};
-_x addVest "V_TacVest_brn";
-for "_i" from 1 to 3 do {_x addItemToVest "30Rnd_762x39_Mag_F";};
-_x addBackpack "B_Parachute";
-_x addHeadgear "H_PilotHelmetHeli_I";
-_x addWeapon "arifle_AKM_F";
-_x addWeapon "hgun_Pistol_heavy_01_F";
-_x addHandgunItem "muzzle_snds_acp";
-_x addHandgunItem "acc_flashlight_pistol";
-_x addHandgunItem "optic_MRD";
-_x addWeapon "Binocular";
-_x linkItem "ItemMap";
-_x linkItem "ItemCompass";
-_x linkItem "ItemWatch";
-_x linkItem "ItemRadio";
-_x linkItem "ItemGPS";
-_x enableAI "ALL";
+ [_x,true] execVM "gpf_randomgear.sqf"; 
 } forEach _crew;
+
 private _pplace = SelectRandom _places;
 [_HeloGroup,_pplace,3000] call bis_fnc_taskPatrol;
 
@@ -79,7 +55,7 @@ private _pplace = SelectRandom _places;
   };
   heloOn = heloOn-1; publicVariable "heloOn";
 };
-
+/*
 [_HeloV,_Timeout,_crew] Spawn {
     _HeloV = _this Select 0; 
 	_Timeout = _this select 1; 
@@ -90,3 +66,4 @@ private _pplace = SelectRandom _places;
     {deleteVehicle _x;} foreach _crew;
     If ((count (crew _HeloV)) == 0) Then {deleteVehicle _HeloV;};	
 };
+*/
