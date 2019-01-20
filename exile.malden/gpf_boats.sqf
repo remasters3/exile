@@ -1,4 +1,4 @@
-_EastLightBoat = ["C_Boat_Transport_02_F"];
+_EastLightBoat = ["C_Boat_Transport_02_F","C_Boat_Transport_02_F","C_Boat_Transport_02_F","C_Boat_Transport_02_F","I_Boat_Armed_01_minigun_F","C_Boat_Transport_02_F","C_Boat_Transport_02_F","C_Boat_Transport_02_F","C_Boat_Transport_02_F","C_Boat_Transport_02_F"];
 				 
 _WestLightBoat = [];
 

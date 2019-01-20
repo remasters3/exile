@@ -3038,6 +3038,8 @@ class CfgExileArsenal
 	class I_MRAP_03_hmg_F                                       { quality = 5; price = 65000; };
 	class B_APC_Wheeled_01_cannon_F                             { quality = 6; price = 125000;};
 	
+	class I_Boat_Armed_01_minigun_F								{ quality = 6; price = 60000; };
+	
 	///////////////////////////////////////////////////////////////////////////////
 	// Hatchback
 	///////////////////////////////////////////////////////////////////////////////
@@ -6170,7 +6172,8 @@ class CfgTraderCategories
 			"Exile_Boat_SDV_Digital",
 			"Exile_Boat_SDV_Grey",
 			"Exile_Boat_WaterScooter",
-			"Exile_Boat_RHIB"
+			"Exile_Boat_RHIB",
+			"I_Boat_Armed_01_minigun_F"
 		};
 	};
 
