@@ -86,7 +86,7 @@ _way setWaypointStatements ["true", "_veh = Vehicle this; {deleteVehicle _x;} Fo
 };
 
 
-/*
+
 [_PatrolCarV,_Timeout,_crew] Spawn {
     _PatrolCarV = _this Select 0; 
 	_Timeout = _this select 1; 
@@ -95,8 +95,8 @@ _way setWaypointStatements ["true", "_veh = Vehicle this; {deleteVehicle _x;} Fo
     Sleep _Timeout;
 	{deleteVehicle _x;} foreach units _grp;
     {deleteVehicle _x;} foreach _crew;
-    If ((count (crew _PatrolCarV)) == 0) Then {deleteVehicle _PatrolCarV;};	
+    //If ((count (crew _PatrolCarV)) == 0) Then {deleteVehicle _PatrolCarV;};	
 };
-*/
+
 //_output = [_crew,_PatrolCarV];
 //_output;

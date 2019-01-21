@@ -55,7 +55,7 @@ private _pplace = SelectRandom _places;
   };
   heloOn = heloOn-1; publicVariable "heloOn";
 };
-/*
+
 [_HeloV,_Timeout,_crew] Spawn {
     _HeloV = _this Select 0; 
 	_Timeout = _this select 1; 
@@ -64,6 +64,5 @@ private _pplace = SelectRandom _places;
     Sleep _Timeout;
 	{deleteVehicle _x;} foreach units _grp;
     {deleteVehicle _x;} foreach _crew;
-    If ((count (crew _HeloV)) == 0) Then {deleteVehicle _HeloV;};	
+    //If ((count (crew _HeloV)) == 0) Then {deleteVehicle _HeloV;};	
 };
-*/
