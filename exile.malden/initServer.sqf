@@ -361,7 +361,7 @@ Seapatrolon = 0; publicVariable "Seapatrolon";[] Spawn { while {true} Do {if (Se
 patrolon = 0; publicVariable "patrolon";[] Spawn { while {true} Do {if (patrolon < 6) Then {sleep 60;[]execVM "gpf_patrol.sqf";};Sleep 300;};};
 heloOn = 0; publicVariable "heloOn";[] Spawn { while {true} Do {if (heloOn < 2) Then {sleep 60;[]execVM "gpf_helo.sqf";};Sleep 300;};};
 troopson = 0; publicVariable "troopson";[] Spawn { while {true} Do {if (troopson < 3) Then {sleep 30;[]execVM "gpf_troops.sqf";};Sleep 300;};};
-deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {waituntil {((count AllPlayers) > 6)}; if (!deathsqdon) Then {[]execVM "gpf_troopdrop.sqf";};sleep 1800;};};
+deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {waituntil {((count AllPlayers) > 10)}; if (!deathsqdon) Then {[]execVM "gpf_troopdrop.sqf";};sleep 1800;};};
 
 GPF_Benifits = [
 "76561198121313381", //sadass.insane
