@@ -41,6 +41,9 @@ _pistols = [
 			["hgun_P07_F","30Rnd_9x21_Mag"]
 		   ];
 _nvgs = [];
+_foods = ["Exile_Item_EMRE","Exile_Item_MountainDupe","Exile_Item_MacasCheese_Cooked"];
+_meds = ["Exile_Item_InstaDoc","Exile_Item_Vishpirin"];
+_items = ["Exile_Item_DuctTape","1Rnd_HE_Grenade_shell"];
 
 private _fetchrifle = SelectRandom _priweapons;
 private _fetchpistol = SelectRandom _pistols;
@@ -65,21 +68,23 @@ if (_air) Then {_unit addBackpack "B_Parachute";} else {_unit addBackpack (Selec
 //adding ammo
 _unit addItemToUniform _sndammo;
 _unit addItemToUniform "Exile_Item_CanOpener";
+for "_i" from 1 to 2 do {_unit addItemToUniform (SelectRandom _meds);};
+for "_i" from 1 to 1 do {_unit addItemToUniform (SelectRandom _items);};
+for "_i" from 1 to 1 do {_unit addItemToUniform (SelectRandom _foods);};
 
 if (!_air) Then {
   for "_i" from 1 to 3 do {_unit addItemToBackpack _priammo;};
-  for "_i" from 1 to 3 do {_unit addItemToBackpack "1Rnd_HE_Grenade_shell";};
-  for "_i" from 1 to 2 do {_unit addItemToBackpack "Exile_Item_EMRE";};
-  for "_i" from 1 to 2 do {_unit addItemToBackpack "Exile_Item_InstaDoc";};
+  for "_i" from 1 to 3 do { _unit addItemToBackpack (SelectRandom _items);};
+  for "_i" from 1 to 2 do {_unit addItemToBackpack (SelectRandom _foods);};
+  for "_i" from 1 to 2 do {_unit addItemToBackpack (SelectRandom _meds);};
 };
 
 //adding items to vest
 _unit addItemToVest _priammo;
 _unit addItemToVest _priammo;
-_unit addItemToVest "Exile_Item_MacasCheese_Cooked";
-_unit addItemToVest "Exile_Item_MountainDupe";
-_unit addItemToVest "Exile_Item_Vishpirin";
-_unit addItemToVest "Exile_Item_DuctTape";
+for "_i" from 1 to 3 do {_unit addItemToVest (SelectRandom _foods);};
+for "_i" from 1 to 2 do {_unit addItemToVest (SelectRandom _meds);};
+for "_i" from 1 to 2 do {_unit addItemToVest (SelectRandom _items);};
 
 //putting a hat on
 _unit addHeadgear (SelectRandom _headgear);
@@ -94,7 +99,7 @@ _unit addWeapon _sndgun;
 //Adding binos
 _unit addWeapon "Binocular";
 
-//items
+//Gadgets
 _unit linkItem "ItemMap";
 _unit linkItem "ItemCompass";
 _unit linkItem "ItemWatch";
@@ -121,3 +126,5 @@ if (!_air) Then {
    for "_i" from 1 to 3 do {_unit addItemToBackpack _rocketammo;};
    };  
 };
+
+if (true) ExitWith {};

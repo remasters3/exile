@@ -1,4 +1,15 @@
-[] Spawn {
+
+{[_x]execVM "gpf_BambiNPC.sqf" } Foreach [
+[3823.36,3280.39],
+[3151.14,6339.17],
+[7121.23,6079.1],
+[5558.22,11197.1],
+[6010.19,8635.74],
+[8237.62,3175.62],
+[5403.96,2785.38]
+];
+
+/*[] Spawn {
   manhunton = false;
   while {!manhunton} Do {
     waitUntil {manhunton};
@@ -8,7 +19,7 @@
 };
 
 [(GetPos ManhutFlag)] execVM "gpf_manhunt.sqf";
-
+/*
 
 
 
@@ -88,3 +99,4 @@ copyToClipboard Format ['%1',_places];
 //  _units = _units + [_unit];
 //  sleep 1;
 //} Foreach _places;
+if (true) ExitWith {};
