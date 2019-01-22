@@ -77,4 +77,15 @@ bridge_ASL = GetPosASL bridge_00;
 			["Land_LampStreet_small_F",[(bridge_ASL select 0),(bridge_ASL select 1)-3.5,(bridge_ASL select 2)+6],(GetDir bridge_00)+90,65,12],
 			["Land_LampStreet_small_F",[(bridge_ASL select 0),(bridge_ASL select 1)+3.5,(bridge_ASL select 2)+6],(GetDir bridge_00)+90,65,12]
 		   ];
+		   
+	waituntil {((count AllPlayers) > 0)};
+	{[_x]execVM "gpf_BambiNPC.sqf" } Foreach [
+	[3823.36,3280.39],
+	[3151.14,6339.17],
+	[7121.23,6079.1],
+	[5558.22,11197.1],
+	[6010.19,8635.74],
+	[8237.62,3175.62],
+	[5403.96,2785.38]
+	];		   
 };
