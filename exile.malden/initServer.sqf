@@ -377,13 +377,14 @@ GPF_Benifits = [
 ];
 publicVariable "GPF_Benifits";
 
+/*
 GPF_Testers = [
 "76561197971753110",
 "76561198121313381"
 ];
 publicVariable "GPF_Testers";
-
-
+*/
+waituntil {((count AllPlayers) > 0)};
 {[_x]execVM "gpf_BambiNPC.sqf" } Foreach [
 [3823.36,3280.39],
 [3151.14,6339.17],

@@ -13,13 +13,13 @@ private _priweapons = [
 			   ["SMG_02_F","30Rnd_9x21_Mag_SMG_02"]
 			  ];
 while {true} Do {
- private _list = _pos nearObjects ["Man", 20];
+ private _list = _pos nearObjects ["Man", 200];
  private _players = [];
 
   if ((count _list) > 0) Then {
     {if (_x == player) Then {_players = _players + [_x];}; } Foreach _list;
    };
-  if ((count _players) == 0 ) Then {{_u = _x select 0; _p = _x select 1; deleteVehicle _u;deleteVehicle _p;} foreach _bambiNPC; SystemChat "No players near";} Else {
+  if ((count _players) == 0 ) Then {{_u = _x select 0; _p = _x select 1; deleteVehicle _u;deleteVehicle _p;} foreach _bambiNPC; } Else {
     private _units = []; {_u = _x Select 0;_units = _units + [_u]} Foreach _bambiNPC;  
     if ( ({alive _x} count _units) == 0) Then {
 	private _HasRifle = SelectRandom [0,0,0,0,1,0,0,0,0,0];
