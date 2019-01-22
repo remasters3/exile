@@ -1,5 +1,4 @@
-//[[9967.92,2256.35,0]]execVM "gpf_BambiNPC.sqf"
- _pos = _this select 0; //= [9967.92,2256.35,0];
+ _pos = _this select 0;
  _bambiNPC = [];
  _pistols = [
             ["hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder"],
@@ -22,7 +21,7 @@ while {true} Do {
   if ((count _BambiPlayers) == 0 ) Then {{_u = _x select 0; _p = _x select 1; deleteVehicle _u;deleteVehicle _p;} foreach _bambiNPC; } Else {
      _units = []; {_u = _x Select 0;_units = _units + [_u]} Foreach _bambiNPC;  
     if ( ({alive _x} count _units) == 0) Then {
-	Sleep 1;
+	Sleep 30;
 	 _HasRifle = SelectRandom [0,0,0,0,1,0,0,0,0,0];
      _fetchpistol = SelectRandom _pistols;
      _sndgun = _fetchpistol Select 0;
@@ -56,8 +55,8 @@ while {true} Do {
 	//SystemChat "bambi away";
 	};
   
-  //{SystemChat Format ["%1",name _x];}Foreach _BambiPlayers;
+  //{SystemChat Format ["%1 is in the bambi zone",name _x];}Foreach _BambiPlayers;
    
   };
-sleep 5;
+sleep 30;
 };
