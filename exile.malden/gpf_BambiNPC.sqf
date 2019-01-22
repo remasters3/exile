@@ -18,7 +18,7 @@ while {true} Do {
   private _BambiPlayers = [];
 
   if ((count _list) > 0) Then {
-    {if (_x == player) Then {_BambiPlayers = _BambiPlayers + [_x];}; } Foreach _list;
+    {if (isPlayer _x) Then {_BambiPlayers = _BambiPlayers + [_x];}; } Foreach _list;
    };
   if ((count _BambiPlayers) == 0 ) Then {{_u = _x select 0; _p = _x select 1; deleteVehicle _u;deleteVehicle _p;} foreach _bambiNPC; } Else {
     private _units = []; {_u = _x Select 0;_units = _units + [_u]} Foreach _bambiNPC;  
@@ -28,8 +28,9 @@ while {true} Do {
      private _fetchpistol = SelectRandom _pistols;
      private _sndgun = _fetchpistol Select 0;
      private _sndammo = _fetchpistol Select 1; 
-	 _group = createGroup east;
+	 _group = createGroup [east,true];
 	_unit = _group createUnit ["O_G_Sharpshooter_F", [0,0,0], [], 0, "FORM"];
+	_unit setSkill 0.85;
 	removeAllWeapons _unit;
 	removeAllItems _unit;
 	removeAllAssignedItems _unit;
