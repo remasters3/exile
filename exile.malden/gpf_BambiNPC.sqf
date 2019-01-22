@@ -11,7 +11,7 @@ private _priweapons = [
 			   ["SMG_05_F","30Rnd_9x21_Mag_SMG_02"],
 			   ["hgun_PDW2000_F","30Rnd_9x21_Red_Mag"],
 			   ["SMG_02_F","30Rnd_9x21_Mag_SMG_02"],
-			   ["SMG_01_F","30Rnd_45ACP_Mag_SMG_01"]
+			   ["SMG_01_F","30Rnd_45ACP_Mag_SMG_01_tracer_green"]
 			  ];
 while {true} Do {
   private _list = _pos nearObjects ["Man", 200];
@@ -45,7 +45,7 @@ while {true} Do {
 	_unit linkItem "ItemCompass";
 	_unit linkItem "Exile_Item_XM8";
 	_unit linkItem "ItemRadio";
-	if (_HasRifle == 0) Then {  _fetchrifle = SelectRandom _priweapons; _prigun = _fetchrifle Select 0; _priammo = _fetchrifle Select 1;
+	if (_HasRifle == 1) Then {  _fetchrifle = SelectRandom _priweapons; _prigun = _fetchrifle Select 0; _priammo = _fetchrifle Select 1;
      _unit addWeapon _prigun;
 	 _unit addItemToUniform _priammo;
 	};
