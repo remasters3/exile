@@ -14,14 +14,15 @@ private _priweapons = [
 			  ];
 while {true} Do {
  private _list = _pos nearObjects ["Man", 200];
- private _players = [];
+ private _BambiPlayers = [];
 
   if ((count _list) > 0) Then {
-    {if (_x == player) Then {_players = _players + [_x];}; } Foreach _list;
+    {if (_x == player) Then {_BambiPlayers = _BambiPlayers + [_x];}; } Foreach _list;
    };
-  if ((count _players) == 0 ) Then {{_u = _x select 0; _p = _x select 1; deleteVehicle _u;deleteVehicle _p;} foreach _bambiNPC; } Else {
+  if ((count _BambiPlayers) == 0 ) Then {{_u = _x select 0; _p = _x select 1; deleteVehicle _u;deleteVehicle _p;} foreach _bambiNPC; } Else {
     private _units = []; {_u = _x Select 0;_units = _units + [_u]} Foreach _bambiNPC;  
     if ( ({alive _x} count _units) == 0) Then {
+	Sleep 30;
 	private _HasRifle = SelectRandom [0,0,0,0,1,0,0,0,0,0];
     private _fetchpistol = SelectRandom _pistols;
     private _sndgun = _fetchpistol Select 0;
@@ -52,11 +53,11 @@ while {true} Do {
     _unit moveIndriver _chute;
 	[_group,_pos,30] call bis_fnc_taskPatrol;
 	_bambiNPC = _bambiNPC + [[_unit,_chute]];
-	SystemChat "bambi away";
+	//SystemChat "bambi away";
 	};
   
-  {SystemChat Format ["%1",name _x];}Foreach _players;
+  //{SystemChat Format ["%1",name _x];}Foreach _BambiPlayers;
    
   };
-sleep 5;
+sleep 10;
 };
