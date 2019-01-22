@@ -174,7 +174,18 @@ GPF_Target = false;
 		};
  };
 };
-
+[] spawn {
+    waituntil {((count AllPlayers) > 0)};
+	{[_x]execVM "gpf_BambiNPC.sqf" } Foreach [
+	[3823.36,3280.39],
+	[3151.14,6339.17],
+	[7121.23,6079.1],
+	[5558.22,11197.1],
+	[6010.19,8635.74],
+	[8237.62,3175.62],
+	[5403.96,2785.38]
+	];
+};
 [] execVM "ClaimVehicles_Client\ClaimVehicles_Client_init.sqf";
 [] execVM "Addons\StatusBar\Statusbar.sqf";
 [] execVM "gpf_rearm.sqf";

@@ -6,7 +6,7 @@
 			["Exile_Weapon_Colt1911","Exile_Magazine_7Rnd_45ACP"]
 		   ];
  _priweapons = [
-			   ["Exile_Weapon_M1014","30Rnd_762x39_Mag_F","Exile_Magazine_8Rnd_74Slug"],
+			   ["Exile_Weapon_M1014","Exile_Magazine_8Rnd_74Slug"],
 			   ["SMG_05_F","30Rnd_9x21_Mag_SMG_02"],
 			   ["hgun_PDW2000_F","30Rnd_9x21_Mag"],
 			   ["SMG_02_F","30Rnd_9x21_Mag_SMG_02"]

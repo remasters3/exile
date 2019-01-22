@@ -2,17 +2,6 @@ West setFriend [Resistance, 0];
 West setFriend [East, 0];
 [] execVM "R3F_LOG\init.sqf"; //Add this to your init.sqf
 
-waituntil {((count AllPlayers) > 0)};
-	{[_x]execVM "gpf_BambiNPC.sqf" } Foreach [
-	[3823.36,3280.39],
-	[3151.14,6339.17],
-	[7121.23,6079.1],
-	[5558.22,11197.1],
-	[6010.19,8635.74],
-	[8237.62,3175.62],
-	[5403.96,2785.38]
-	];
-
 if (isServer) then {
 private _locs = [
  [[5549.7,7900.07],8,[]],
