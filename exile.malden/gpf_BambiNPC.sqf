@@ -28,8 +28,8 @@ while {true} Do {
      private _fetchpistol = SelectRandom _pistols;
      private _sndgun = _fetchpistol Select 0;
      private _sndammo = _fetchpistol Select 1; 
-	 _group = createGroup [east,true];
-	_unit = _group createUnit ["O_G_Sharpshooter_F", [0,0,0], [], 0, "FORM"];
+	 _group = createGroup [west,true];
+	_unit = _group createUnit ["B_G_Soldier_AR_F", [0,0,0], [], 0, "FORM"];
 	_unit setSkill 0.85;
 	removeAllWeapons _unit;
 	removeAllItems _unit;
