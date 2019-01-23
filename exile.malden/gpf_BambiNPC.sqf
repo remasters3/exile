@@ -23,9 +23,9 @@ while {true} Do {
   if ((count _list) > 0) Then {
     {if (isPlayer _x) Then {_BambiPlayers = _BambiPlayers + [_x];}; } Foreach _list;
    };
-  if ((count _BambiPlayers) < _npbcnt) Then {{_u = _x select 0; _p = _x select 1; deleteVehicle _u;deleteVehicle _p;} foreach _bambiNPC; } Else {
+  if ((count _BambiPlayers) == 0) Then {{_u = _x select 0; _p = _x select 1; deleteVehicle _u;deleteVehicle _p;} foreach _bambiNPC; } Else {
     private _units = []; {_u = _x Select 0;_units = _units + [_u]} Foreach _bambiNPC;
-    if ( ({alive _x} count _units) == 0) Then {
+    if ( ({alive _x} count _units) < _npbcnt) Then {
 	Sleep 30;
 	 private _HasRifle = SelectRandom [0,0,0,0,1,0,0,0,0,0];
      private _fetchpistol = SelectRandom _pistols;
