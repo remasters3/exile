@@ -1,4 +1,7 @@
+//[_pos,_rad,_npbcnt] execM "gpf_BambiNPC.sqf";
 private  _pos = _this select 0;
+private  _rad = _this select 1;
+private  _npbcnt = _this select 2;
 private _bambiNPC = [];
 private _pistols = [
             ["hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder"],
@@ -14,13 +17,13 @@ private _priweapons = [
 			   ["SMG_01_F","30Rnd_45ACP_Mag_SMG_01_tracer_green"]
 			  ];
 while {true} Do {
-  private _list = _pos nearObjects ["Man", 200];
+  private _list = _pos nearObjects ["Man", _rad];
   private _BambiPlayers = [];
 
   if ((count _list) > 0) Then {
     {if (isPlayer _x) Then {_BambiPlayers = _BambiPlayers + [_x];}; } Foreach _list;
    };
-  if ((count _BambiPlayers) == 0 ) Then {{_u = _x select 0; _p = _x select 1; deleteVehicle _u;deleteVehicle _p;} foreach _bambiNPC; } Else {
+  if ((count _BambiPlayers) < _npbcnt) Then {{_u = _x select 0; _p = _x select 1; deleteVehicle _u;deleteVehicle _p;} foreach _bambiNPC; } Else {
     private _units = []; {_u = _x Select 0;_units = _units + [_u]} Foreach _bambiNPC;  
     if ( ({alive _x} count _units) == 0) Then {
 	Sleep 30;
