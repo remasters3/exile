@@ -361,7 +361,7 @@ Seapatrolon = 0; publicVariable "Seapatrolon";[] Spawn { while {true} Do {if (Se
 patrolon = 0; publicVariable "patrolon";[] Spawn { while {true} Do {if (patrolon < 6) Then {sleep 60;[]execVM "gpf_patrol.sqf";};Sleep 300;};};
 heloOn = 0; publicVariable "heloOn";[] Spawn { while {true} Do {if (heloOn < 2) Then {sleep 60;[]execVM "gpf_helo.sqf";};Sleep 300;};};
 troopson = 0; publicVariable "troopson";[] Spawn { while {true} Do {if (troopson < 3) Then {sleep 30;[]execVM "gpf_troops.sqf";};Sleep 300;};};
-deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {waituntil {((count AllPlayers) > 10)}; if (!deathsqdon) Then {[]execVM "gpf_troopdrop.sqf";};sleep 1800;};};
+deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {waituntil {((count AllPlayers) > 10)}; if (!deathsqdon) Then {[]execVM "gpf_deathsquad.sqf";};sleep 1800;};};
 
 GPF_Benifits = [
 "76561198121313381", //sadass.insane
@@ -383,10 +383,18 @@ publicVariable "GPF_Benifits";
 	[[3823.36,3280.39],300,1],
 	[[3151.14,6339.17],300,1],
 	[[7121.23,6079.1],300,1],
-	[[5558.22,11197.1],150,1],
+	[[5558.22,11197.1],200,1],
 	[[6010.19,8635.74],400,2],
 	[[8237.62,3175.62],300,1],
 	[[5403.96,2785.38],300,1]
+	];
+};
+
+[] spawn {
+	{_x execVM "gpf_GuardNPC.sqf";} Foreach [
+	[[9739.08,3954.33,0],300,6,false],
+	[[10116.1,4035.11,0],300,6,false],
+	[[7228.2,10581.6,0],200,8],false]
 	];
 };
 /*
@@ -408,3 +416,4 @@ publicVariable "GPF_Testers";
 		   {deleteVehicle _x;} forEach nearestObjects [[5491.72,6267.94,0],["WeaponHolder","GroundWeaponHolder"],14000];
 		};
 };*/
+if (true) ExitWith {};
