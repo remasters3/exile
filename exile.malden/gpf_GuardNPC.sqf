@@ -22,10 +22,7 @@ while {true} Do {
 	 [_x] Join _grp;
 	} foreach units _troops;
 	Sleep 300;
-	};
-  
-  //{SystemChat Format ["%1 is in the bambi zone",name _x];}Foreach _RealPlayers;
-   
+	}; 
   };
 sleep 30;
 };

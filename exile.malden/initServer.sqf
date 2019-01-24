@@ -394,7 +394,7 @@ publicVariable "GPF_Benifits";
 	{_x execVM "gpf_GuardNPC.sqf";} Foreach [
 	[[9739.08,3954.33,0],300,6,false],
 	[[10116.1,4035.11,0],300,6,false],
-	[[7228.2,10581.6,0],200,8],false]
+	[[7228.2,10581.6,0],200,8,false]
 	];
 };
 /*
