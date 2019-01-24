@@ -16,12 +16,12 @@ while {true} Do {
   if ((count _RealPlayers) == 0) Then { {deleteVehicle _x} foreach units _grp; } Else {
     if ( ({alive _x} count units _grp) < _npgcnt) Then {
 	Sleep 30;
-	private _troops = [_pos,"O_Heli_Transport_04_bench_F",East,_npgcnt,0,_patrol] Call _gpf_TroopDrop;
+	_troops = [_pos,"O_Heli_Transport_04_bench_F",East,_npgcnt,0,_patrol] Call _gpf_TroopDrop;
 	{
 	  _x setSkill 0.85;
 	 [_x] Join _grp;
 	} foreach units _troops;
-	Sleep 300;
+	//Sleep 300;
 	}; 
   };
 sleep 30;
