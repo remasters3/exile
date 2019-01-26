@@ -8,7 +8,7 @@ _Number = param[3];
 _Timeout = param[4];
 _patrol = param[5];
 
-_DropHeliSpawn = [_DropPos,900,1000, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+_DropHeliSpawn = [_DropPos,900,1000, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 _DropHeli = [_DropHeliSpawn, 0, _HeliModel,_Side] call bis_fnc_spawnvehicle;
 _DropHeliV = _DropHeli select 0;
 _DropHeliGroup = group _DropHeliV;
@@ -31,7 +31,7 @@ _way1 setWaypointSpeed "FULL";
 _way1 setWaypointCompletionRadius 100;
 _way1 setWaypointStatements ["true","_veh = vehicle this;_list = (crew _veh) select {(assignedVehicleRole _x) select 0 isEqualTo 'cargo'};{unassignVehicle _x; _x action ['GetOut', vehicle _x]} forEach _list;"];
 
-_way2Pos = [_DropPos,2000,2500, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+_way2Pos = [_DropPos,2000,2500, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 _way2 = _DropHeliGroup addWaypoint [_way2Pos, 0];
 _way2 setWaypointType "MOVE";
 _way2 setWaypointBehaviour "CARELESS";
