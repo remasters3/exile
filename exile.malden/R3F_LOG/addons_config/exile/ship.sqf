@@ -6,8 +6,6 @@ All_Ships = [
 "B_T_Boat_Transport_01_F",
 "I_C_Boat_Transport_01_F",
 "O_T_Boat_Transport_01_F",
-"O_T_Boat_Armed_01_hmg_F",
-"B_T_Boat_Armed_01_minigun_F",
 "Exile_Boat_WaterScooter",
 "C_Scooter_Transport_01_F",
 "Exile_Boat_SDV_Grey",
@@ -32,14 +30,11 @@ All_Ships = [
 "O_SDV_01_F",
 "B_SDV_01_F",
 "I_Boat_Transport_01_F",
-"I_Boat_Armed_01_minigun_F",
 "C_Rubberboat",
 "O_Lifeboat",
 "B_Lifeboat",
 "O_Boat_Transport_01_F",
-"B_Boat_Transport_01_F",
-"O_Boat_Armed_01_hmg_F",
-"B_Boat_Armed_01_minigun_F"
+"B_Boat_Transport_01_F"
 ];
 
 R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
