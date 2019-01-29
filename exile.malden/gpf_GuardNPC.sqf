@@ -13,10 +13,10 @@ while {true} Do {
   if ((count _list) > 0) Then {
     {if (isPlayer _x) Then {_RealPlayers = _RealPlayers + [_x];}; } Foreach _list;
    };
-  if ((count _RealPlayers) == 0) Then { if ((count _grp) > 0)Then {Sleep 300;{deleteVehicle _x;} foreach _grp;_grp = [];}; } Else {
+  if ((count _RealPlayers) == 0) Then { if ((count _grp) > 0)Then {/*{deleteVehicle _x;} foreach _grp;*/_grp = [];}; } Else {
     if ( ({alive _x} count _grp) < _npgcnt) Then {
 	Sleep 30;
-	private _troops = [_pos,"O_Heli_Transport_04_bench_F",East,_npgcnt,0,_patrol] Call _gpf_TroopDrop;
+	private _troops = [_pos,"O_Heli_Transport_04_bench_F",East,_npgcnt,900,_patrol] Call _gpf_TroopDrop;
 	{
 	  _x setSkill 0.85;
 	 _grp = _grp + [_x];
