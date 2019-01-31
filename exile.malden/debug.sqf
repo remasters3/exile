@@ -1,4 +1,12 @@
-
+[] Spawn {
+ {
+    _location = createLocation [ "Mount" ,(_x select 0), 100, 100];
+    _location setText (_x select 1);
+ } Foreach [
+  [[12623,12775,77.0662],"Seafort"],
+  [[3025.7,77.6329,99.3498],"USS Freedom"],
+ ];
+};
 /*[] Spawn {
   manhunton = false;
   while {!manhunton} Do {
@@ -59,7 +67,7 @@ copyToClipboard Format ["%1",_path];
 //allMapMarkers
 //[] execVM "gpf_troopdrop.sqf";
 
-
+/*
 _places = [];
 {
  if (typeof _x == "O_G_Soldier_LAT2_F") Then {
@@ -71,7 +79,7 @@ _places = [];
 } Foreach allUnits;
 copyToClipboard Format ['%1',_places];
 //copyToClipboard Format ['%1',GetPosASL player];
-
+*/
 
 //{ if ((side _x) == east) Then {_x SetDamage 1;};} Foreach allUnits;
 //_places = [
