@@ -405,16 +405,6 @@ publicVariable "GPF_Benifits";
  ];
 };
 
-[] Spawn {
- {
-    _location = createLocation [ "NameLocal" ,(_x select 0), 30, 30];
-    _location setText (_x select 1);
- } Foreach [
-  [[12623,12775,77.0662],"Seafort"],
-  [[3025.7,77.6329,99.3498],"USS Freedom"],
-  [[9221.45,3784.24,19.7751],"USS Liberty"],
-  [[7250.29,10462.4,0],"Shooting Range"]
- ];
-};
+
 
 if (true) ExitWith {};
