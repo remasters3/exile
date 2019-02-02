@@ -1,12 +1,3 @@
-[] Spawn {
- {
-    _location = createLocation [ "Mount" ,(_x select 0), 100, 100];
-    _location setText (_x select 1);
- } Foreach [
-  [[12623,12775,77.0662],"Seafort"],
-  [[3025.7,77.6329,99.3498],"USS Freedom"],
- ];
-};
 /*[] Spawn {
   manhunton = false;
   while {!manhunton} Do {
@@ -43,7 +34,6 @@ _path = [];
 */
 
 //hint str(typeOf cursortarget); copyToClipboard str(typeOf cursortarget);
-
 /*
 for "_i" from 0 to 80 do {
   _markerName = Format ["path_%1",_i];
@@ -67,6 +57,7 @@ copyToClipboard Format ["%1",_path];
 //allMapMarkers
 //[] execVM "gpf_troopdrop.sqf";
 
+
 /*
 _places = [];
 {
@@ -80,6 +71,40 @@ _places = [];
 copyToClipboard Format ['%1',_places];
 //copyToClipboard Format ['%1',GetPosASL player];
 */
+
+
+
+
+
+
+
+_cnt = 0;
+_places = [];
+{
+  _placeASL = [(_x select 0),(_x select 1),(_x select 2)+20];
+   _places = _places + [_placeASL];
+  } foreach [
+  [2913.62,48.2814,0.00143623+1],
+  [2921.13,46.5778,0.00143433+1],
+  [2913.63,41.0477,0.00143814],
+  [2926.08,55.3898,0.000656128+22],
+  [2920.78,50.5389,0.00144196+26],
+  [3025.89,124.953,0.00143909-5],
+  [3140.46,102.58,0.00144005-6],
+  [2863.35,101.73,0.00158119-3],
+  [2895.39,31.4037,0.00143814+5],
+  [2982.52,121.034,0.00143814],
+  [2838.23,82.5841,0.00143814-12],
+  [2935.65,48.9374,0.00143814],
+  [2903.28,49.1912,0.00143814]
+  ];
+copyToClipboard Format ['%1',_places];
+{
+  player SetPosASL _x; player SetDamage 0;
+  _cnt = _cnt+1; SystemChat Format ["%1",_cnt];
+  sleep 2;
+} Foreach _places;
+
 
 //{ if ((side _x) == east) Then {_x SetDamage 1;};} Foreach allUnits;
 //_places = [

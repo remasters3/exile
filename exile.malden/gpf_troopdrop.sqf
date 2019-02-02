@@ -29,6 +29,7 @@ _way1 setWaypointBehaviour "CARELESS";
 _way1 setWaypointCombatMode "GREEN";
 _way1 setWaypointSpeed "FULL";
 _way1 setWaypointCompletionRadius 100;
+_way1 setWaypointTimeout [4,5,6];
 _way1 setWaypointStatements ["true","_veh = vehicle this;_list = (crew _veh) select {(assignedVehicleRole _x) select 0 isEqualTo 'cargo'};{unassignVehicle _x; _x action ['GetOut', vehicle _x]} forEach _list;"];
 
 _way2Pos = [_DropPos,2000,2500, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
