@@ -21,7 +21,8 @@ while {true} Do {
 	  _x setSkill 0.85;
 	 _grp = _grp + [_x];
 	} foreach units _troops;
-	Sleep ({alive _x} count _grp)*10;
+	_wavetime = ({alive _x} count _grp)*60;
+	Sleep _wavetime;
 	};
   };
 sleep 30;
