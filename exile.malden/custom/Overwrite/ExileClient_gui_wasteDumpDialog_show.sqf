@@ -11,7 +11,7 @@
  
 private["_nearVehicles","_localVehicles","_display","_revenue","_sellButton","_dropdown","_vehicleObject","_vehicleName","_index"];
 disableSerialization;
-_nearVehicles = nearestObjects [player, ["LandVehicle", "Air", "Ship", "CargoNet_01_box_F","Exile_Container_SupplyBox","I_CargoNet_01_ammo_F","O_CargoNet_01_ammo_F","B_CargoNet_01_ammo_F","I_supplyCrate_F","Box_NATO_AmmoVeh_F","Box_East_AmmoVeh_F","B_supplyCrate_F","I_CargoNET_01_F","Box_NATO_Wps_F"], 150];
+_nearVehicles = nearestObjects [player, ["LandVehicle", "Air", "Ship","Box_IND_AmmoVeh_F","CUP_BAF_BasicAmmunitionBox","Box_NATO_Uniforms_F","CargoNet_01_box_F","Exile_Container_SupplyBox","Box_NATO_AmmoVeh_F","B_supplyCrate_F","I_CargoNET_01_F","Box_NATO_Wps_F","C_supplyCrate_F","IG_supplyCrate_F","I_supplyCrate_F","Box_IND_AmmoVeh_F","Box_NATO_AmmoOrd_F"], 150];
 _localVehicles = [];
 {
     if (local _x) then
