@@ -395,9 +395,8 @@ publicVariable "GPF_Benifits";
 	[[7228.2,10581.6,0],200,6,false], //milbase box
 	[[9521,4238.48,0],200,4,false], //SandMilBase
 	[[7728.5,4186.25,0],100,4,false], //montimilbase
-	[[1005.39,12348.4,0],50,10,false], //morrayHummingBird
-	[[3025.7,77.6329,99.3498],50,10,false], //uss freedom
-	[[5551.19,7887.43,0],100,6,false] //FOB Hillside
+	[[1005.39,12348.4,0],50,4,false], //morrayHummingBird
+	[[5551.19,7887.43,0],100,4,false] //FOB Hillside
 	];
 };
 
