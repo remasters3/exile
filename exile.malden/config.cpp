@@ -3400,6 +3400,8 @@ class CfgExileCustomCode
 {
    //ExileClient_gui_xm8_slide = "ExAdClient\XM8\CustomCode\ExileClient_gui_xm8_slide.sqf";
    //ExileClient_gui_xm8_show = "ExAdClient\XM8\CustomCode\ExileClient_gui_xm8_show.sqf"; 
+   ExileClient_gui_wasteDumpDialog_show = "custom\Overwrite\ExileClient_gui_wasteDumpDialog_show.sqf";  //Sell Crates fix
+   ExileClient_gui_traderDialog_updateInventoryDropdown = "custom\Overwrite\ExileClient_gui_traderDialog_updateInventoryDropdown.sqf";  //Sell Crates fix
 };
 class CfgExileEnvironment
 {
