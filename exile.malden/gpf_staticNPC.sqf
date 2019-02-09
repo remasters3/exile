@@ -3,7 +3,7 @@ private _PositionsASL = _this select 0;
 private _units = [];
 {
 private _group = createGroup [east, true];
-private _unit = _group createUnit ["O_G_Soldier_LAT2_F", _x, [], 0, "FORM"];
+private _unit = _group createUnit ["O_G_Sharpshooter_F", _x, [], 0, "FORM"];
 _unit SetPosASL [(_x Select 0),(_x Select 1),(_x Select 2)];
 [_unit,false] execVM "gpf_randomgear.sqf";
 _units = _units + [_unit];
