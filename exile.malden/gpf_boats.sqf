@@ -13,7 +13,7 @@ private _count = count _Path;
 patrolon = patrolon+1; publicVariable "patrolon";
 private _Side = east;
 private _Model = [];
-private _Timeout = 60*60;
+private _Timeout = 60*90;
 
 if (_Side == west) Then {_Model = SelectRandom _WestLightBoat;};
 if (_Side == east) Then {_Model = SelectRandom _EastLightBoat;}; 
