@@ -1,4 +1,4 @@
-"Backed up old pbo to exile.malden.pbo.2019_02_15-18.54.41. Starting build at 2019_02_15-18.54.41" 
+"Backed up old pbo to exile.malden.pbo.2019_02_15-19.15.06. Starting build at 2019_02_15-19.15.06" 
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\call.fsm
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\CfgRemoteExec.hpp
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\config.cpp
@@ -50,6 +50,11 @@ C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\Addons\StatusBar\icons\thirst.paa
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\ClaimVehicles_Client\ClaimVehicles_Client_init.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\ClaimVehicles_Client\functions\ExileClient_ClaimVehicles_network_claimRequestSend.sqf
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\custom\EnigmaRevive\compiles.sqf
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\custom\EnigmaRevive\Enigma_RevivePlyr.sqf
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\custom\EnigmaRevive\ExileClient_object_player_death_startBleedingOut.sqf
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\custom\EnigmaRevive\ExileClient_object_player_event_onInventoryOpened.sqf
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\custom\EnigmaRevive\init.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\custom\Overwrite\ExileClient_gui_traderDialog_updateInventoryDropdown.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\custom\Overwrite\ExileClient_gui_wasteDumpDialog_show.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\ExAdClient\CfgFunctions.cpp

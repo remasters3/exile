@@ -1,6 +1,7 @@
 West setFriend [Resistance, 0];
 West setFriend [East, 0];
 [] execVM "R3F_LOG\init.sqf"; //Add this to your init.sqf
+[] execVM "Custom\EnigmaRevive\init.sqf";
 
 if (isServer) then {
 private _locs = [

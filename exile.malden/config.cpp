@@ -3402,6 +3402,8 @@ class CfgExileCustomCode
    //ExileClient_gui_xm8_show = "ExAdClient\XM8\CustomCode\ExileClient_gui_xm8_show.sqf"; 
    ExileClient_gui_wasteDumpDialog_show = "custom\Overwrite\ExileClient_gui_wasteDumpDialog_show.sqf";  //Sell Crates fix
    ExileClient_gui_traderDialog_updateInventoryDropdown = "custom\Overwrite\ExileClient_gui_traderDialog_updateInventoryDropdown.sqf";  //Sell Crates fix
+   ExileClient_object_player_death_startBleedingOut = "custom\EnigmaRevive\ExileClient_object_player_death_startBleedingOut.sqf"; //Happys Revive
+   ExileClient_object_player_event_onInventoryOpened = "custom\EnigmaRevive\ExileClient_object_player_event_onInventoryOpened.sqf"; //Happys Revive AntiDupe ---NEW with v0.65
 };
 class CfgExileEnvironment
 {
@@ -4370,6 +4372,15 @@ class CfgInteractionMenus
 				condition = "!(alive ExileClientInteractionObject)";
 				action = "_this call ExileClient_object_player_identifyBody";
 			};
+			
+			//////////////Added by [_ZEN_]happydayz/////////////////
+			
+			class Revive: ExileAbstractAction
+			{
+				title = "Perform CPR";
+				condition = "(!(alive ExileClientInteractionObject) && (ExileClientInteractionObject getVariable ['EnigmaRevivePermitted', true]) && (magazines player find 'Exile_Item_Defibrillator' >= 0))";
+				action = "_this spawn Enigma_RevivePlyr";
+			};	
 			
 			class HideCorpse: ExileAbstractAction
 			{
