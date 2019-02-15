@@ -54,7 +54,7 @@ _way setWaypointBehaviour "AWARE";
 _way setWaypointCombatMode "RED";
 _way setWaypointSpeed "NORMAL";
 _way setWaypointCompletionRadius 50;
-_way setWaypointStatements ["true", "_veh = Vehicle this; {deleteVehicle _x;} ForEach crew _veh; _veh setDamage 1;troopson = troopson-1; publicVariable 'troopson';"];
+_way setWaypointStatements ["true", "_veh = Vehicle this; {deleteVehicle _x;} ForEach crew _veh; deleteVehicle _veh;troopson = troopson-1; publicVariable 'troopson';"];
 
 [_TroopTruckV] Spawn {
     _TroopTruckV = _this select 0;
