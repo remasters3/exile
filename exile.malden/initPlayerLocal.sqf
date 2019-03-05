@@ -3,7 +3,7 @@
  * www.exilemod.com
  * Exile.Malden by [FPS]kuplion
  */
-if (!hasInterface || isServer) exitWith {};
+//if (!hasInterface || isServer) exitWith {};
 
 // 34 NPCs
 private _npcs = [
@@ -132,13 +132,30 @@ playerQuad = false;
 missionon = true;
 GPF_Target = false;
 
-[] spawn {
+gpf_SpawnLandTransport = {
+	_pos = _this Select 0;
+	_quad = createVehicle ['B_Quadbike_01_F', _pos, [], 0, 'FORM'];
+	_quad addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
+	_quad addAction ["Convert to JetSki (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnSeaTransport;pveh SetDir _dir;pveh SetPos _pos;"];
+	_quad Addaction ["Call Air Evac (1000 tabs)",{[(_this select 1)] execVM 'gpf_call_evac.sqf';}];
+	_quad};
+	
+gpf_SpawnSeaTransport = {
+	_pos = _this Select 0;
+	_jetski = createVehicle ['C_Scooter_Transport_01_F', _pos, [], 0, 'FORM'];
+	_jetski addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
+	_jetski addAction ["Convert to Quad (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnLandTransport;pveh SetDir _dir;pveh SetPos _pos;"];
+	_jetski Addaction ["Call Air Evac (1000 tabs)",{[(_this select 1)] execVM 'gpf_call_evac.sqf';}];
+	_jetski};
+	
+
+[] Spawn {
     while {missionon} Do {
 	   player enableFatigue false;
 	   waitUntil {inputAction "User20" > 0};
-	   if (playerQuad) Then { deleteVehicle pveh; pveh = createVehicle ['B_Quadbike_01_F', position player, [], 0, 'FORM'];pveh addEventHandler ["GetOut", "if (count crew pveh <= 0) Then {deleteVehicle pveh;};playerQuad = false;"]; playerQuad = true;} Else {pveh = createVehicle ['B_Quadbike_01_F', position player, [], 0, 'FORM'];pveh addEventHandler ["GetOut", "if (count crew pveh <= 0) Then {deleteVehicle pveh;};playerQuad = false;"]; playerQuad = true;};
-	   pveh Addaction ["Call evac",{[(_this select 1)] execVM 'gpf_call_evac.sqf';}];
-	   sleep 1;
+	   if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPos player)] Call gpf_SpawnLandTransport; playerQuad = true;} 
+					   Else {pveh = [(GetPos player)] Call gpf_SpawnLandTransport; playerQuad = true;}; 
+	sleep 1;
 	   };
 };
 
