@@ -45,8 +45,19 @@ private _locs = [
  [[5017.66,5143.96,0],10,[]],	//banditcave
  [[5015.01,5126.27,0],10,[]],	//banditcave
  [[5021.94,5116.04,0],10,[]],	//banditcave
- [[9247.72,6846.5,1],2,[]],		//taffhouse top
- [[9317.03,6859.87,0],10,[]]	//taffhouse beach
+ [[9247.72,6846.5,1],8,[]],		//taffhouse top
+ [[9317.03,6859.87,0],10,[]],	//taffhouse beach
+ [[9243.24,6809.31,0],20,[]],	//taffhouse top rocks
+ [[9228.15,6838.11,0],20,[]],	//taffhouse top rocks
+ [[9234.16,6794.28,0],20,[]],	//taffhouse top rocks
+ [[9224.04,6811.02,0],10,[]],	//taffhouse top rocks
+ [[9253.38,6834.88,0],10,[]],	//taffhouse top trees
+ [[9248.94,6856.22,0],2,[]],	//taffhouse top trees
+ [[9259.31,6845.7,0],2,[]],		//taffhouse top trees
+ [[9259.41,6826.61,0],4,[]],	//taffhouse top trees
+ [[9260.73,6820.39,0],2,[]],	//taffhouse top trees
+ [[9739.48,5921.2,0],2,[]],		//noctiLH rock
+ [[9711.67,5933.29,0],6,[]]		//noctiLH bushes'n'rocks
 ];
 {
   private _loc = _x;
