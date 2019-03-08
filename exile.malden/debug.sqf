@@ -64,7 +64,7 @@ _path = [];
 */
 
 //hint str(typeOf cursortarget); copyToClipboard str(typeOf cursortarget);
-
+/*
 for "_i" from 1 to 13 do {
   _markerName = Format ["path_%1",_i];
  _pos = GetMarkerPos _markerName;
@@ -75,6 +75,7 @@ copyToClipboard Format ["%1",_path];
 [[5707.67,2005.71,0],[8622.13,2741.32,0],[8902.38,4883.91,0],[8935.06,8600.58,0],[7309.82,11777.1,0],[6078.81,12144.2,0],[3423.31,10117,0],[7735.03,5445.5,0],[2299.42,7478.4,0],[1155.36,5925.76,0],[1021.24,2485.33,0],[3318.59,2143.9,0],[947.376,84.5116,0]]
 //_txt = Format ["%1,%2,%3",GetPosASL player,vectorDir player,vectorUp player]; copyToClipboard _txt;diag_log _txt; 
 //copyToClipboard str(GetPosASL Player); systemChat Format ["%1",GetPosASL Player];
+*/
 
 // [12697.4,158.103,19.3] upperdeck
 // [12715,138.985,9.6] lowerdeck
@@ -86,19 +87,23 @@ copyToClipboard Format ["%1",_path];
 //[] execVM "gpf_troopdrop.sqf";
 
 
-/*
+
 _places = [];
 {
  if (typeof _x == "O_G_Soldier_LAT2_F") Then {
  _posASL = GetPos _x;
  _dir = GetDir _x;
- _txt = Format ['[%1],',_posASL,_dir];
- _places = _places + [_posASL];
+ _dirVector = vectorDir _x;
+ _UpVector = vectorUp _x;
+ _name = name _x;
+ _txt = Format ['%1 - %2,%3,%4],',_name,_posASL,_dirVector,_UpVector];
+ _places = _places + [_txt];
  };
 } Foreach allUnits;
 copyToClipboard Format ['%1',_places];
 //copyToClipboard Format ['%1',GetPosASL player];
-*/
+// [_posASL,_dirVector,_UpVector]
+// "%1 - %2,%3,%4],"
 /*
 _cnt = 0;
 _places = [];
