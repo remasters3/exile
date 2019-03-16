@@ -91,7 +91,7 @@ copyToClipboard Format ["%1",_path];
 _places = [];
 {
  if (typeof _x == "O_G_Soldier_LAT2_F") Then {
- _posASL = GetPos _x;
+ _posASL = GetPosASL _x;
  _dir = GetDir _x;
  _dirVector = vectorDir _x;
  _UpVector = vectorUp _x;
@@ -104,7 +104,7 @@ copyToClipboard Format ['%1',_places];
 //copyToClipboard Format ['%1',GetPosASL player];
 // [_posASL,_dirVector,_UpVector]
 // "%1 - %2,%3,%4],"
-/*
+/* ["Angelos Kanelloupou - [8680.86,6461.19,-0.0131063],[-0.390274,0.920699,0],[0,0,1]],"]
 _cnt = 0;
 _places = [];
 {
