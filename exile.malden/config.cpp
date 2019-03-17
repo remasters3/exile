@@ -3404,6 +3404,7 @@ class CfgExileCustomCode
    ExileClient_gui_traderDialog_updateInventoryDropdown = "custom\Overwrite\ExileClient_gui_traderDialog_updateInventoryDropdown.sqf";  //Sell Crates fix
    ExileClient_object_player_death_startBleedingOut = "custom\EnigmaRevive\ExileClient_object_player_death_startBleedingOut.sqf"; //Happys Revive
    ExileClient_object_player_event_onInventoryOpened = "custom\EnigmaRevive\ExileClient_object_player_event_onInventoryOpened.sqf"; //Happys Revive AntiDupe ---NEW with v0.65
+   ExileServer_system_trading_network_purchaseVehicleRequest = "ExileServer_system_trading_network_purchaseVehicleRequest.sqf";
 };
 class CfgExileEnvironment
 {
