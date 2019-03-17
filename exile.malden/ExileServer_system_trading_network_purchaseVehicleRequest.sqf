@@ -56,7 +56,7 @@ try
 	else 
 	{
 	if (_vehicleClass isKindOf "LandVehicle") then {
-	 if ((_playerObject distance [8659.29,6466.72,0]) <= 20 ) then {_position = [8659.29,6466.72,0]} else {_position = (getPos _playerObject) findEmptyPosition [10, 250, _vehicleClass];}
+	 if ((_playerObject distance [8659.29,6466.72,0]) <= 30 ) then {_position = [8659.29,6466.72,0]} else {_position = (getPos _playerObject) findEmptyPosition [10, 250, _vehicleClass];}
 	} else {
 		_position = (getPos _playerObject) findEmptyPosition [10, 250, _vehicleClass];
 		};
