@@ -55,8 +55,11 @@ try
 	}
 	else 
 	{
-	/*if (_vehicleClass isKindOf "LandVehicle") then { if ((_playerObject distance [8659.29,6466.72,0]) < 5 ) then {_position = [8659.29,6466.72,0]};} else {_position = (getPos _playerObject) findEmptyPosition [10, 250, _vehicleClass];};*/
+	if (_vehicleClass isKindOf "LandVehicle") then {
+	 if ((_playerObject distance [8659.29,6466.72,0]) <= 10 ) then {_position = [8659.29,6466.72,0]} else {_position = (getPos _playerObject) findEmptyPosition [10, 250, _vehicleClass];}
+	} else {
 		_position = (getPos _playerObject) findEmptyPosition [10, 250, _vehicleClass];
+		};
 		if (_position isEqualTo []) then 
 		{
 			throw 13;
