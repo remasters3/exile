@@ -3,7 +3,7 @@ private _Dist = param[1];
 private _Incr = param[2];
 private _FullRound = param[3];
 private _Side = East;
-private _Model = "O_A_soldier_F";
+private _Model = ["O_A_soldier_F"];
 private _Count = 0;
 private _units = [];
 _WaveGroup = createGroup [_Side, false];
@@ -55,12 +55,12 @@ while {_Count < _FullRound} Do {
   
 } else {[_unit,false] execVM "gpf_randomgear.sqf";};
  _way1 = _WaveGroup addWaypoint [GetPos _sourceObject, 0];
- _way1 setWaypointType "MOVE";
+ _way1 setWaypointType "HOLD";
  _way1 setWaypointBehaviour "COMBAT";
  _way1 setWaypointCombatMode "RED";
  _way1 setWaypointSpeed "FULL";
  _way1 setWaypointCompletionRadius 10;
- _way1 setWaypointStatements ["true","deleteVehicle this;"];
+ _way1 setWaypointStatements ["true","[this] Spawn {_man = _this select 0;sleep 600; deleteVehicle _man;}"];
  _Count = _Count+_Incr;
  _units = _units + [_unit];
  sleep 0.5;
