@@ -2748,9 +2748,9 @@ class CfgExileArsenal
 	class O_NVGoggles_urb_F           { quality = 3; price = 150; };
 	class O_NVGoggles_ghex_F          { quality = 3; price = 150; };
 	class NVGoggles_tna_F             { quality = 2; price = 100; };
-	class NVGogglesB_blk_F            { quality = 1; price = 1000; };   //Normal NightV but fullscreen thermal
-	class NVGogglesB_grn_F            { quality = 1; price = 1000; };	//Normal NightV but fullscreen thermal
-	class NVGogglesB_gry_F            { quality = 1; price = 1000; };	//Normal NightV but fullscreen thermal
+	class NVGogglesB_blk_F            { quality = 5; price = 1000; };   //Normal NightV but fullscreen thermal
+	class NVGogglesB_grn_F            { quality = 5; price = 1000; };	//Normal NightV but fullscreen thermal
+	class NVGogglesB_gry_F            { quality = 5; price = 1000; };	//Normal NightV but fullscreen thermal
 	class Laserdesignator_01_khk_F    { quality = 1; price = 1000; };	//Thermal
 	class Laserdesignator_02_ghex_F   { quality = 1; price = 1000; };	//Thermal
 	class U_B_T_Soldier_F             { quality = 2; price = 40; };
