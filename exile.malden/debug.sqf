@@ -86,7 +86,7 @@ copyToClipboard Format ["%1",_path];
 //allMapMarkers
 //[] execVM "gpf_troopdrop.sqf";
 
-
+//[_x,200,45,360] execVM "gpf_fn_enemyWave.sqf";
 
 _places = [];
 {
