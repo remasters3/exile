@@ -126,5 +126,5 @@ if (!_air) Then {
    for "_i" from 1 to 3 do {_unit addItemToBackpack _rocketammo;};
    };  
 };
-
+_unit addMPEventHandler ["MPKilled",'if (isServer) then {_this call DMS_fnc_OnKilled;};'];
 if (true) ExitWith {};
