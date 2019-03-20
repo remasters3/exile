@@ -24,7 +24,7 @@ private _HeloGroup = group _HeloV;
 private _crew = crew _HeloV;
 _HeloV setVariable ["ExileIsPersistent", false];
 { 
- [_x,true] execVM "gpf_randomgear.sqf"; 
+ [_x,true,true] execVM "gpf_randomgear.sqf"; 
 } forEach _crew;
 
 private _pplace = SelectRandom _places;

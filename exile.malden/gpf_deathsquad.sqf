@@ -32,7 +32,7 @@ _DropHeli = [_DropHeliSpawn, 0, _HeliModel,_Side] call bis_fnc_spawnvehicle;
 _DropHeliV = _DropHeli select 0;
 _DropHeliGroup = group _DropHeliV;
 _DropTroopsGroup = [_DropHeliSpawn, _Side,_models] call BIS_fnc_spawnGroup;
-{[_x,true] execVM "gpf_randomgear.sqf";} foreach units _DropTroopsGroup;
+{[_x,true,true] execVM "gpf_randomgear.sqf";} foreach units _DropTroopsGroup;
 
 if (_patrol) then {[_DropTroopsGroup, _DropPos, 50,[]] call BIS_fnc_taskPatrol;} else {
  [_vic,_DropTroopsGroup] Spawn { _vic = _this select 0; _DropTroopsGroup = _this select 1;

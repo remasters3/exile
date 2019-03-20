@@ -53,7 +53,7 @@ while {_Count < _FullRound} Do {
     _unit linkItem "ItemWatch";
     _unit linkItem "ItemRadio";
   
-} else {[_unit,false] execVM "gpf_randomgear.sqf";};
+} else {[_unit,false,true] execVM "gpf_randomgear.sqf";};
  _way1 = _WaveGroup addWaypoint [GetPos _sourceObject, 0];
  _way1 setWaypointType "HOLD";
  _way1 setWaypointBehaviour "COMBAT";

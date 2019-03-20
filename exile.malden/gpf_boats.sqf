@@ -30,7 +30,7 @@ private _CargoGroup = [ getPos _SeaPatrolBoatV, EAST, 5] call BIS_fnc_spawnGroup
 
 //player moveincargo _SeaPatrolBoatV;
 
-{[_x,false] execVM "gpf_randomgear.sqf";} ForEach units _SeaPatrolBoatGroup;
+{[_x,false,true] execVM "gpf_randomgear.sqf";} ForEach units _SeaPatrolBoatGroup;
 
 [_SeaPatrolBoatV] Spawn{_SeaPatrolBoatV = _this select 0;
    while {alive _SeaPatrolBoatV} Do {

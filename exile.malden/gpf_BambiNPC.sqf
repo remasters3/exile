@@ -56,6 +56,7 @@ while {true} Do {
 	_chute = "Steerable_Parachute_F" createVehicle [0,0,0]; 
     _chute setPos [(_pos select 0), (_pos select 1), 100]; 
     _unit moveIndriver _chute;
+	_unit addMPEventHandler ["MPKilled",'if (isServer) then {_this call DMS_fnc_OnKilled;};'];
 	[_group,_pos,30] call bis_fnc_taskPatrol;
 	_bambiNPC = _bambiNPC + [[_unit,_chute]];
 	//SystemChat "bambi away";

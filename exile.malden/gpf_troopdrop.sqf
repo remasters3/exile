@@ -13,8 +13,8 @@ _DropHeli = [_DropHeliSpawn, 0, _HeliModel,_Side] call bis_fnc_spawnvehicle;
 _DropHeliV = _DropHeli select 0;
 _DropHeliGroup = group _DropHeliV;
 _DropTroopsGroup = [_DropHeliSpawn, _Side,_Number] call BIS_fnc_spawnGroup;
-{[_x,true] execVM "gpf_randomgear.sqf";} foreach units _DropHeliGroup;
-{[_x,true] execVM "gpf_randomgear.sqf";} foreach units _DropTroopsGroup;
+{[_x,true,true] execVM "gpf_randomgear.sqf";} foreach units _DropHeliGroup;
+{[_x,true,true] execVM "gpf_randomgear.sqf";} foreach units _DropTroopsGroup;
 
 if (_patrol) then {[_DropTroopsGroup, _DropPos, 50,[]] call BIS_fnc_taskPatrol;} else {
   _way = _DropTroopsGroup addWaypoint [_DropPos, 0];
