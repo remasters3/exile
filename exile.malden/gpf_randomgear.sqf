@@ -129,6 +129,6 @@ if (!_air) Then {
    };  
 };
 
-if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'if (isServer) then {[(_this select 1), (_this select 0), "bandit", "soldier", false] call DMS_fnc_PlayerAwardOnAIKill;};'];};
+if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'if (isServer) then {[(_this Select 0),(_this Select 1)]execVM "gpf_fn_killmsg.sqf"};'];};
 
 if (true) ExitWith {};

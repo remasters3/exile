@@ -1,4 +1,4 @@
-"Backed up old pbo to exile.malden.pbo.2019_03_21- 0.15.04. Starting build at 2019_03_21- 0.15.04" 
+"Backed up old pbo to exile.malden.pbo.2019_03_21- 1.10.28. Starting build at 2019_03_21- 1.10.28" 
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\call.fsm
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\CfgRemoteExec.hpp
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\config.cpp
@@ -12,6 +12,7 @@ C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_deathsquad.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_fn_enemyWave.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_fn_evac.sqf
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_fn_killmsg.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_fn_targets.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_GuardNPC.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_helo.sqf
