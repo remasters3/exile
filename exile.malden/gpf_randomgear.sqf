@@ -1,7 +1,7 @@
 //[player,false,killmsg] execVM "gpf_randomgear.sqf";
 _unit = _this Select 0;
 _air = _this Select 1;
-
+//_killmsg = true;
 if ((count _this) >= 3) Then {_killmsg = _this select 2;} Else {_killmsg = false;};
 _rocketChance = [0,0,1,1,1,1,1,1,1,1]; //20% chance unit will get a rocket launcher
 _rockets = [
@@ -129,6 +129,6 @@ if (!_air) Then {
    };  
 };
 
-if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'if (isServer) then {_this call DMS_fnc_OnKilled;};'];};
+if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'if (isServer) then {[(_this select 1), (_this select 0), "bandit", "soldier", false] call DMS_fnc_PlayerAwardOnAIKill;};'];};
 
 if (true) ExitWith {};

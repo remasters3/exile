@@ -55,7 +55,7 @@ while {_Count < _FullRound} Do {
   
 } else {[_unit,false,true] execVM "gpf_randomgear.sqf";};
  _way1 = _WaveGroup addWaypoint [GetPos _sourceObject, 0];
- _way1 setWaypointType "HOLD";
+ _way1 setWaypointType "MOVE";
  _way1 setWaypointBehaviour "COMBAT";
  _way1 setWaypointCombatMode "RED";
  _way1 setWaypointSpeed "FULL";
