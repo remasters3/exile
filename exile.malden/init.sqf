@@ -2,7 +2,7 @@ West setFriend [Resistance, 0];
 West setFriend [East, 0];
 [] execVM "R3F_LOG\init.sqf"; //Add this to your init.sqf
 [] execVM "Custom\EnigmaRevive\init.sqf";
-[] Spawn {
+/*[] Spawn {
 	private _centerWorld =  getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
 	private _AllSimpleThings = [];
 	private _SimpleThings = [
@@ -19,19 +19,19 @@ West setFriend [East, 0];
 	"Land_Fortress_01_outterCorner_90_F",
 	"Land_Fortress_01_5m_F",
 	"Land_Pier_F",
-	"Land_SharpRock_monolith"
+	"Land_SharpRock_monolith",
 	"Land_HBarrierWall_corner_F",
 	"Land_HBarrierWall6_F"
 	];
 	
 	{
 	_model = _x;
-	_SimpleThing = _centerWorld nearObjects [_model, 20000];
+	_SimpleThing = _centerWorld nearObjects [_model, 30000];
 	_AllSimpleThings = _AllSimpleThings + _SimpleThing;
 	} Foreach _SimpleThings;
 	
 	{[_x] call BIS_fnc_replaceWithSimpleObject;} Foreach _AllSimpleThings;
-};
+};*/
 if (isServer) then {
 private _locs = [
  [[5549.7,7900.07],8,[]],
