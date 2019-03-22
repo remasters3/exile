@@ -2,35 +2,36 @@ West setFriend [Resistance, 0];
 West setFriend [East, 0];
 [] execVM "R3F_LOG\init.sqf"; //Add this to your init.sqf
 [] execVM "Custom\EnigmaRevive\init.sqf";
-private _centerWorld =  getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
-private _AllSimpleThings = [];
-private _SimpleThings = [
-"Land_PierWooden_02_16m_F",
-"Land_SharpRock_wallH",
-"Land_PierWooden_02_30deg_F",
-"Land_PierWooden_02_barrel_F",
-"Land_PierWooden_02_hut_F",
-"Land_Shoot_House_Tunnel_F",
-"Land_Canal_Wall_Stairs_F",
-"Land_Canal_Wall_10m_F",
-"Land_Walkover_01_F",
-"Land_SharpRock_spike",
-"Land_Fortress_01_outterCorner_90_F",
-"Land_Fortress_01_5m_F",
-"Land_Pier_F",
-"Land_SharpRock_monolith"
-"Land_HBarrierWall_corner_F",
-"Land_HBarrierWall6_F"
-];
-
-{
- _model = _x;
- _SimpleThing = _centerWorld nearObjects [_model, 20000];
- _AllSimpleThings = _AllSimpleThings + _SimpleThing;
-} Foreach _SimpleThings;
-
-{[_x] call BIS_fnc_replaceWithSimpleObject;} Foreach _AllSimpleThings;
-
+[] Spawn {
+	private _centerWorld =  getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
+	private _AllSimpleThings = [];
+	private _SimpleThings = [
+	"Land_PierWooden_02_16m_F",
+	"Land_SharpRock_wallH",
+	"Land_PierWooden_02_30deg_F",
+	"Land_PierWooden_02_barrel_F",
+	"Land_PierWooden_02_hut_F",
+	"Land_Shoot_House_Tunnel_F",
+	"Land_Canal_Wall_Stairs_F",
+	"Land_Canal_Wall_10m_F",
+	"Land_Walkover_01_F",
+	"Land_SharpRock_spike",
+	"Land_Fortress_01_outterCorner_90_F",
+	"Land_Fortress_01_5m_F",
+	"Land_Pier_F",
+	"Land_SharpRock_monolith"
+	"Land_HBarrierWall_corner_F",
+	"Land_HBarrierWall6_F"
+	];
+	
+	{
+	_model = _x;
+	_SimpleThing = _centerWorld nearObjects [_model, 20000];
+	_AllSimpleThings = _AllSimpleThings + _SimpleThing;
+	} Foreach _SimpleThings;
+	
+	{[_x] call BIS_fnc_replaceWithSimpleObject;} Foreach _AllSimpleThings;
+};
 if (isServer) then {
 private _locs = [
  [[5549.7,7900.07],8,[]],
