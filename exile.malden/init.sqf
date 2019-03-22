@@ -2,6 +2,30 @@ West setFriend [Resistance, 0];
 West setFriend [East, 0];
 [] execVM "R3F_LOG\init.sqf"; //Add this to your init.sqf
 [] execVM "Custom\EnigmaRevive\init.sqf";
+private _AllSimpleThings = [];
+private _SimpleThings = [
+"Land_PierWooden_02_16m_F",
+"Land_SharpRock_wallH",
+"Land_PierWooden_02_30deg_F",
+"Land_PierWooden_02_barrel_F",
+"Land_PierWooden_02_hut_F",
+"Land_Shoot_House_Tunnel_F",
+"Land_Canal_Wall_Stairs_F",
+"Land_Canal_Wall_10m_F",
+"Land_Walkover_01_F",
+"Land_SharpRock_spike",
+"Land_Fortress_01_outterCorner_90_F",
+"Land_Fortress_01_5m_F",
+"Land_Pier_F"
+];
+
+{
+ _model = _x;
+ _SimpleThing = _centerWorld nearObjects [_model, 25000];
+ _AllSimpleThings = _AllSimpleThings + _SimpleThing;
+} Foreach _SimpleThings;
+
+{[_x] call BIS_fnc_replaceWithSimpleObject;} Foreach _AllSimpleThings;
 
 if (isServer) then {
 private _locs = [
@@ -26,7 +50,7 @@ private _locs = [
  [[9971.43,2218.43],300,[]], //island
  [[6813.97,2740.29,0],10,[]], //trader trees
  [[5533.94,11627.2,0],4,[]], //nwtrader
- [[6510.33,6056.87],10,[]],//db
+ [[6510.33,6056.87],10,[]],  //db
  [[6509,6052.17],10,[]],
  [[6524.34,6051.84],10,[]],
  [[6559.24,6031.51,0],5,[]],
