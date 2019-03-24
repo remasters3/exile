@@ -130,6 +130,6 @@ if (!_air) Then {
 };
 
 //if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'/*if (isServer) then {*/[(_this Select 0),(_this Select 1)]execVM "gpf_fn_killmsg.sqf"};'];};
-if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'_killed = _this Select 0; _killer = _this Select 1;systemchat Format ["%1 killed by %2",name _killed,name _killer];'];};
+if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'_killed = _this Select 0; _killer = _this Select 1;[_killed,_killer]execVM "gpf_fn_killmsg.sqf";'];};
 
 if (true) ExitWith {};
