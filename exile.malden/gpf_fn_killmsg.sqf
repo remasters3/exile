@@ -2,6 +2,7 @@
 private = _killed = _this select 0;
 private _killer = _this select 1;
 private _msg = Format ["You killed %1",name _killed];
-_msg remoteExecCall ["systemChat", _killer];
-["SuccessTitleAndText", [format ["Bandit Kill", name _killer], format ["%1", _msg]]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",_killer];
+//_msg remoteExecCall ["systemChat", _killer];
+//["SuccessTitleAndText", [format ["Bandit Kill", name _killer], format ["%1", _msg]]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",_killer];
 //["SuccessTitleAndText", [format ["Bandit Kill for %1", _killer], format ["%1", _msg]]] call ExileClient_gui_toaster_addTemplateToast;
+["SuccessTitleAndText", ["Kill!", format ["-%1<img image='\exile_assets\texture\ui\poptab_inline_ca.paa' size='24'/>", _killed]]] call ExileClient_gui_toaster_addTemplateToast;
