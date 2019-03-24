@@ -130,6 +130,6 @@ if (!_air) Then {
 };
 
 //if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'/*if (isServer) then {*/[(_this Select 0),(_this Select 1)]execVM "gpf_fn_killmsg.sqf"};'];};
-if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'[(_this Select 0),(_this Select 1)]execVM "gpf_fn_killmsg.sqf";'];};
+if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'if (isServer) Then {[(_this Select 0),(_this Select 1)]execVM "gpf_fn_killmsg.sqf";};'];};
 
 if (true) ExitWith {};
