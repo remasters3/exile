@@ -129,6 +129,6 @@ if (!_air) Then {
    };  
 };
 
-if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'SystemChat Format ["EH test"];if (isServer) then {[(_this Select 0),(_this Select 1)]execVM "gpf_fn_killmsg.sqf"};'];};
+if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'/*SystemChat Format ["EH test"];*/if (isServer) then {[(_this Select 0),(_this Select 1)]execVM "gpf_fn_killmsg.sqf"};'];};
 
 if (true) ExitWith {};
