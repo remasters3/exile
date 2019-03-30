@@ -14,11 +14,33 @@ _places = [];
 
 private _timeout = 60*30;
 private _pos = [(selectRandom _places),10,200, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+private _score = floor (_pos distance _target);
 
 _gpf_rescure_extras = {
     _group = _this select 0;
 	{
 		[_x,false,false] execVM "gpf_randomgear.sqf";
+		_x setVariable["gpf_reward",_score,true];
+		_x setVariable["gpf_target_pos",_pos,true];
+		
+		
+        _x addEventHandler ["GetOutMan", {
+			_unit = _this select 0;_
+			_veh = _this select 2;
+			_driver = driver _veh;
+			_txt=Format["%1 has been saved by %2",name _unit,name _driver]; 
+			_target = _unit getVariable 'gpf_target_pos';
+			if ((_unit distance _target) <= 10) Then {["Rescue!",_txt,_driver] execVM 'gpf_fn_msg.sqf';};
+		}];
+		
+		_x addEventHandler ["GetOutMan", {
+			_unit = _this select 0;_
+			_veh = _this select 2;
+			_driver = driver _veh;
+			_score = _unit getVariable 'gpf_reward';
+			_target = _unit getVariable 'gpf_target_pos';
+			if ((_unit distance _target) <= 10) Then {[_player,100]execVM 'gpf_score.sqf';};
+		}];
 		
 	} Foreach units _group;
 };
