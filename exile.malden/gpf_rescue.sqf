@@ -36,8 +36,9 @@ _gpf_rescure_extras = {
 			_driver = driver _veh;
 			_score = _unit getVariable 'gpf_reward';
 			_target = _unit getVariable 'gpf_target_pos';
-			[_driver,100]execVM 'gpf_score.sqf';
-			if ((_unit distance _target) < 40) Then {[_driver,100]execVM 'gpf_score.sqf';};
+			_unitPos = GetPos _unit;
+			//[_driver,_score]execVM 'gpf_score.sqf';
+			if ((_unitPos distance _target) < 40) Then {[_driver,_score]execVM 'gpf_score.sqf';};
 		}];
 		
 	} Foreach units _group;
