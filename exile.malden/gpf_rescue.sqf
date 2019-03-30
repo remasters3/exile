@@ -3,9 +3,9 @@ private _centerWorld =  [5491.72,6267.94,0];
 //private _NameCityCapital = nearestLocations [_centerWorld, ["NameCityCapital"], 10000];
 private _NameVillage = nearestLocations [_centerWorld, ["NameVillage"], 10000];
 //private _NameLocal = nearestLocations [_centerWorld, ["NameLocal"], 10000];
-private _allpos = _NameLocal;
+private _allpos = _NameVillage;
 private _trgt = SelectRandom [[8013.65,9687.79,0],[5530.35,11624.5,0],[7424.16,8112.4,0],[1559.47,4612.97,0],[6820.24,2741.86,0]];
-private _GPF_fnc_rescueEvac = compile preprocessFile "GPF_fn_rescueEvac.sqf";
+private _GPF_fnc_rescueEvac = compile preprocessFile "gpf_fn_rescueEvac.sqf";
 
 _places = [];
 {_nl = locationPosition _x;_places = _places + [_nl];} Foreach _allpos;
