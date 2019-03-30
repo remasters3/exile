@@ -15,9 +15,20 @@ _places = [];
 private _timeout = 60*30;
 private _pos = [(selectRandom _places),10,200, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 
+_gpf_rescure_extras = {
+    _group = _this select 0;
+	{
+		[_x,false,false] execVM "gpf_randomgear.sqf";
+		removeHeadgear _x;
+		_x addHeadgear "H_PASGT_basic_blue_F";
+		
+	} Foreach units _group;
+};
+
 Sleep 60;
 
-_evac = [_models,resistance,_pos,_target,40,20] call _GPF_fnc_rescueEvac; {[_x,false,false] execVM "gpf_randomgear.sqf";} Foreach units _evac; {removeHeadgear _x;_x addHeadgear "Headgear_H_Beret_gen_F";}Foreach units _evac;
+_evac = [_models,resistance,_pos,_target,40,20] call _GPF_fnc_rescueEvac;
+[_evac] Call _gpf_rescure_extras;
 [_evac] Spawn {_evac = _this select 0;
 		   while {_cnt = count units _evac;_cnt > 0} Do {
             _firesmoke = false;
@@ -33,8 +44,9 @@ while {true} do {
   _pos = [(selectRandom _places),10,200, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
   _cnt = {alive _x} count units _evac;
   if (_cnt == 0) Then {
-        _evac = [_models,resistance,_pos,_target,40,20] call _GPF_fnc_rescueEvac;{[_x,false,false] execVM "gpf_randomgear.sqf";removeHeadgear _x;_x addHeadgear "Headgear_H_Beret_gen_F";} Foreach units _evac;{removeHeadgear _x;_x addHeadgear "Headgear_H_Beret_gen_F";}Foreach units _evac;
-		//[_pos,_target,resistance,"B_Heli_Light_01_F",[40,41,42]] Call GPF_fnc_playerEvac;
+		_target = SelectRandom _targets;
+        _evac = [_models,resistance,_pos,_target,40,20] call _GPF_fnc_rescueEvac;
+		[_evac] Call _gpf_rescure_extras;
 		[_evac] Spawn {_evac = _this select 0;
 		   while {_cnt = {alive _x} count units _evac;_cnt > 0} Do {
             _firesmoke = false;
