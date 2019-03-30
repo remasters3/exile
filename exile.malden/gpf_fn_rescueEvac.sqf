@@ -26,6 +26,8 @@ private _walkers = units _rescuegroup;
   _leader = leader _rescuegroup;
   _side = side _leader;
   _smc = Format ["color%1",_side];
+
+
   _marker = createMarker [_txt,GetPos _leader];
   _marker setMarkerType "hd_pickup";
   _marker setMarkerText _txt;
@@ -38,7 +40,9 @@ private _walkers = units _rescuegroup;
   _marker1 setMarkerColor _smc;
   _marker1 setMarkerAlpha 0.8;
     while {_cnt > 0} do {
-    _txt = Format ["%1 Pickup %2 units",_rescuegroup,_cnt];
+    
+	_txt = Format ["%1 Pickup %2 units",_rescuegroup,_cnt];
+	_leader = leader _rescuegroup;
 	_marker setMarkerText _txt;
 	_marker SetMarkerPos GetPos _leader;
     _civs = [];
@@ -100,6 +104,6 @@ private _walkers = units _rescuegroup;
  _cnt = {alive _x} count units _rescuegroup;
  Sleep 1;  
  };
- deleteMarker _marker;deleteMarker _marker1;
+ {deleteMarker _x} Foreach _markers;deleteMarker _marker1;
 };
 _rescuegroup;
