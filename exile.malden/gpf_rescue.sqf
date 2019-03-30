@@ -1,4 +1,4 @@
-private _centerWorld = _this select 0;
+private _centerWorld =  [5491.72,6267.94,0];
 //private _NameCity = nearestLocations [_centerWorld, ["NameCity"], 10000];
 //private _NameCityCapital = nearestLocations [_centerWorld, ["NameCityCapital"], 10000];
 private _NameVillage = nearestLocations [_centerWorld, ["NameVillage"], 10000];
@@ -15,7 +15,7 @@ private _pos = [(selectRandom _places),10,200, 5, 0, 60 * (pi / 180), 0, []] cal
 
 Sleep 60;
 
-_evac = [["I_G_Soldier_TL_F"],resistance,_pos,_trgt,40,20] call _GPF_fnc_rescueEvac;
+_evac = [["I_G_Soldier_TL_F"],resistance,_pos,_trgt,40,20] call _GPF_fnc_rescueEvac; {[_x,false,false] execVM "gpf_randomgear.sqf";removeHeadgear _x;_x addHeadgear "Headgear_H_Beret_gen_F";} Foreach units _evac;
 [_evac] Spawn {_evac = _this select 0;
 		   while {_cnt = count units _evac;_cnt > 0} Do {
             _firesmoke = false;
@@ -32,7 +32,7 @@ while {true} do {
   _pos = [(selectRandom _places),10,200, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
   _cnt = {alive _x} count units _evac;
   if (_cnt == 0) Then {
-        _evac = [["I_G_Soldier_TL_F"],resistance,_pos,_trgt,40,20] call _GPF_fnc_rescueEvac;
+        _evac = [["I_G_Soldier_TL_F"],resistance,_pos,_trgt,40,20] call _GPF_fnc_rescueEvac;{[_x,false,false] execVM "gpf_randomgear.sqf";removeHeadgear _x;_x addHeadgear "Headgear_H_Beret_gen_F";} Foreach units _evac;
 		//[_pos,_trgt,resistance,"B_Heli_Light_01_F",[40,41,42]] Call GPF_fnc_playerEvac;
 		[_evac] Spawn {_evac = _this select 0;
 		   while {_cnt = {alive _x} count units _evac;_cnt > 0} Do {
