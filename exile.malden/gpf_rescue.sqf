@@ -36,6 +36,7 @@ _gpf_rescure_extras = {
 			_driver = driver _veh;
 			_score = _unit getVariable 'gpf_reward';
 			_target = _unit getVariable 'gpf_target_pos';
+			[_driver,100]execVM 'gpf_score.sqf';
 			if ((_unit distance _target) < 40) Then {[_driver,100]execVM 'gpf_score.sqf';};
 		}];
 		
