@@ -62,7 +62,7 @@ removeBackpack _unit;
 removeHeadgear _unit;
 removeGoggles _unit;
 //adding storage
-_unit forceAddUniform (SelectRandom _uni);
+if ((side _unit) == resistance) Then {_unit forceAddUniform "U_B_GEN_Commander_F";} Else  {_unit forceAddUniform (SelectRandom _uni);};
 if ((side _unit) == resistance) Then {_unit addVest "V_TacVest_gen_F";} Else {_unit addVest (SelectRandom _vests);};
 
 if (_air) Then {_unit addBackpack "B_Parachute";} else {
