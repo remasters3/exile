@@ -24,22 +24,19 @@ _gpf_rescure_extras = {
 		_x setVariable["gpf_target_pos",_pos,true];
 		
 		
-        _x addEventHandler ["GetOutMan", {
-			_unit = _this select 0;
-			_veh = _this select 2;
-			_driver = driver _veh;
-			_txt=Format["%1 has been saved by %2",name _unit,name _driver]; 
-			_target = _unit getVariable 'gpf_target_pos';
-			if ((_unit distance _target) <= 40) Then {["Rescue!",_txt,_driver] execVM 'gpf_fn_msg.sqf';};
+		_x addEventHandler ["GetInMan", {
+		_unit = _this select 0;
+		_veh = vehicle _unit;
+		_unit setVariable["gpf_rescue_veh",_veh,true];
 		}];
 		
 		_x addEventHandler ["GetOutMan", {
 			_unit = _this select 0;
-			_veh = _this select 2;
+			_veh = _unit getVariable 'gpf_rescue_veh';
 			_driver = driver _veh;
 			_score = _unit getVariable 'gpf_reward';
 			_target = _unit getVariable 'gpf_target_pos';
-			if ((_unit distance _target) < 40) Then {[_player,100]execVM 'gpf_score.sqf';};
+			if ((_unit distance _target) < 40) Then {[_driver,100]execVM 'gpf_score.sqf';};
 		}];
 		
 	} Foreach units _group;
