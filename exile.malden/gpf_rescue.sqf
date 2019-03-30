@@ -19,8 +19,6 @@ _gpf_rescure_extras = {
     _group = _this select 0;
 	{
 		[_x,false,false] execVM "gpf_randomgear.sqf";
-		removeHeadgear _x;
-		_x addHeadgear "H_PASGT_basic_blue_F";
 		
 	} Foreach units _group;
 };

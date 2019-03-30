@@ -89,7 +89,7 @@ for "_i" from 1 to 2 do {_unit addItemToVest (SelectRandom _meds);};
 for "_i" from 1 to 2 do {_unit addItemToVest (SelectRandom _items);};
 
 //putting a hat on
-_unit addHeadgear (SelectRandom _headgear);
+if ((side _unit) == resistance) Then {_unit addHeadgear "H_PASGT_basic_blue_F";} Else {_unit addHeadgear (SelectRandom _headgear)};
 
 //adding rifle
 _unit addWeapon _prigun;
