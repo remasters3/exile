@@ -37,7 +37,7 @@ private _walkers = units _rescuegroup;
   _marker setMarkerText _txt;
   _marker setMarkerColor _smc;
   _marker setMarkerAlpha 0.8;
-  _txt = Format ["%1 Drop Off",_rescuegroup];
+  _txt = Format ["%1 Drop Zone",_rescuegroup];
   _marker1 = createMarker [_txt,_targetPos];
   _marker1 setMarkerType "hd_dot";
   _marker1 setMarkerText _txt;
@@ -45,7 +45,7 @@ private _walkers = units _rescuegroup;
   _marker1 setMarkerAlpha 0.8;
     while {_cnt > 0} do {
     
-	_txt = Format ["%1 Pickup %2 units",_rescuegroup,_cnt];
+	_txt = Format ["%1 Evacuate %2 units",_rescuegroup,_cnt];
 	_leader = leader _rescuegroup;
 	_marker setMarkerText _txt;
 	_marker SetMarkerPos GetPos _leader;

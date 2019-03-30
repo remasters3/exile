@@ -38,8 +38,11 @@ _gpf_rescure_extras = {
 			_target = _unit getVariable 'gpf_target_pos';
 			_unitPos = GetPos _unit;
 			_dist = _unitPos distance _target;
+			
+			if (_dist < 40) Then {
+			[_driver,_score]execVM 'gpf_score.sqf';
 			[(Format ["%1 Evacuation",group _unit]),(Format ["%1 Has evacuated %2 to safety",name _driver,name _unit]),(selectrandom Allplayers)] execvm "gpf_fn_msg.sqf";
-			if (_dist < 40) Then {[_driver,_score]execVM 'gpf_score.sqf';};
+			};
 		}];
 		
 	} Foreach units _group;
