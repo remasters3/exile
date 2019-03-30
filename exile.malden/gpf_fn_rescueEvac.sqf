@@ -20,7 +20,11 @@ private _walkers = units _rescuegroup;
 } foreach units _rescuegroup;
 
 // waiting for the pickup
-[_rescuegroup,_targetPos,_targetRadias,_score] Spawn {_rescuegroup = _this select 0;_targetPos = _this Select 1;_targetRadias = _this Select 2;_score = _this Select 3;
+[_rescuegroup,_targetPos,_targetRadias,_score] Spawn {
+	_rescuegroup = _this select 0;
+	_targetPos = _this Select 1;
+	_targetRadias = _this Select 2;
+	_score = _this Select 3;
   _cnt = {alive _x} count units _rescuegroup;
   _txt = Format ["%1",_rescuegroup];
   _leader = leader _rescuegroup;
@@ -104,6 +108,6 @@ private _walkers = units _rescuegroup;
  _cnt = {alive _x} count units _rescuegroup;
  Sleep 1;  
  };
- {deleteMarker _x} Foreach _markers;deleteMarker _marker1;
+ {deleteMarker _x;} Foreach [_marker,_marker1];
 };
 _rescuegroup;
