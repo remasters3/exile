@@ -43,7 +43,7 @@ _gpf_rescure_extras = {
 			
 			if (_dist < 40) Then {
 			[_driver,_score]execVM 'gpf_score.sqf';
-			[(Format ["%1 Evacuation",group _unit]),(Format ["%1 Has evacuated %2 to safety",name _driver,name _unit]),(selectrandom Allplayers)] execvm "gpf_fn_msg.sqf";
+			[(Format ["%1 Evacuation",group _unit]),(Format ["%1 Has evacuated %2 to safety",name _driver,name _unit]),_driver] execvm "gpf_fn_msg.sqf";
 			};
 		}];
 		
