@@ -133,6 +133,6 @@ if (!_air) Then {
 };
 
 //if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'/*if (isServer) then {*/[(_this Select 0),(_this Select 1)]execVM "gpf_fn_killmsg.sqf"};'];};
-if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'if (isServer) Then {_dst = (_this Select 0) distance (_this Select 1); _score = floor _dst; [(_this Select 1),_score]execVM "gpf_score.sqf";[(_this Select 0),(_this Select 1)]execVM "gpf_fn_killmsg.sqf";};'];};
+if (_killmsg) Then {_unit addMPEventHandler ["MPKilled",'if (isServer) Then {_dst = (_this Select 0) distance (_this Select 1); _score = floor (_dst/2); [(_this Select 1),_score]execVM "gpf_score.sqf";[(_this Select 0),(_this Select 1)]execVM "gpf_fn_killmsg.sqf";};'];};
 
 if (true) ExitWith {};
