@@ -25,7 +25,7 @@ _gpf_rescure_extras = {
 		
 		
         _x addEventHandler ["GetOutMan", {
-			_unit = _this select 0;_
+			_unit = _this select 0;
 			_veh = _this select 2;
 			_driver = driver _veh;
 			_txt=Format["%1 has been saved by %2",name _unit,name _driver]; 
@@ -34,7 +34,7 @@ _gpf_rescure_extras = {
 		}];
 		
 		_x addEventHandler ["GetOutMan", {
-			_unit = _this select 0;_
+			_unit = _this select 0;
 			_veh = _this select 2;
 			_driver = driver _veh;
 			_score = _unit getVariable 'gpf_reward';
