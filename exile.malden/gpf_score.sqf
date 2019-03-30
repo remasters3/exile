@@ -2,7 +2,7 @@
 if (isServer) then {
 	private _player = _this select 0;
 	private _tabs = _this select 1;
-	private _respect = _tabs/10;
+	private _respect = floor (_tabs/10);
 	private _playerUID = getPlayerUID _player;
 	private _moneyonplayer = _player getVariable ['ExileMoney',0];
 	private _playerRespect = _player getVariable ['ExileScore',0];
