@@ -21,7 +21,7 @@ _gpf_rescure_extras = {
 	{
 		[_x,false,false] execVM "gpf_randomgear.sqf";
 		_x setVariable["gpf_reward",_score,true];
-		_x setVariable["gpf_target_pos",_pos,true];
+		_x setVariable["gpf_target_pos",_target,true];
 		
 		
 		_x addEventHandler ["GetInMan", {
@@ -38,7 +38,7 @@ _gpf_rescure_extras = {
 			_target = _unit getVariable 'gpf_target_pos';
 			_unitPos = GetPos _unit;
 			_dist = _unitPos distance _target;
-			["Debug MSG",(Format ["_dist=%1 , _driver=%2 , _score=%3",_dist,_driver,_score]),(selectrandom Allplayers)] execvm "gpf_fn_msg.sqf";
+			[(Format ["%1 Evacuation",group _unit]),(Format ["%1 Has evacuated %2 to safety",name _driver,name _unit]),(selectrandom Allplayers)] execvm "gpf_fn_msg.sqf";
 			if (_dist < 40) Then {[_driver,_score]execVM 'gpf_score.sqf';};
 		}];
 		
