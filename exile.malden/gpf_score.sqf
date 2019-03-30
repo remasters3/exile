@@ -8,8 +8,8 @@ if (isServer) then {
 	private _newmoney = _moneyonplayer+_tabs;
 	private _newRespect = _playerRespect+_respect;
 	
-	_player setVariable ['ExileMoney',_newmoney,true];
-	_player setVariable ['ExileScore',_newRespect,true];
+	_player setVariable ["ExileMoney",_newmoney,true];
+	_player setVariable ["ExileScore",_newRespect];
     _title = "Reward!";
 	_msg = Format ["%1 tabs and %2 Respect",_tabs,_respect];
 	["SuccessTitleAndText", [_title, _msg]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_player]];
