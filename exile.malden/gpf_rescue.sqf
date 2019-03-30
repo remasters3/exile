@@ -37,8 +37,9 @@ _gpf_rescure_extras = {
 			_score = _unit getVariable 'gpf_reward';
 			_target = _unit getVariable 'gpf_target_pos';
 			_unitPos = GetPos _unit;
-			["title text",(Format ["%1 - %2 - %3 - %4 - %5 - %6",name _unit,_veh,_driver,_score,_target,_unitPos]),(selectrandom Allplayers)] execvm "gpf_fn_msg.sqf";
-			if ((_unitPos distance _target) < 40) Then {[_driver,_score]execVM 'gpf_score.sqf';};
+			_dist = _unitPos distance _target;
+			["Debug MSG",(Format ["_dist=%1 , _driver=%2 , _score=%3",_dist,_driver,_score]),(selectrandom Allplayers)] execvm "gpf_fn_msg.sqf";
+			if (_dist < 40) Then {[_driver,_score]execVM 'gpf_score.sqf';};
 		}];
 		
 	} Foreach units _group;
