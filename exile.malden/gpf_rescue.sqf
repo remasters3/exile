@@ -27,25 +27,25 @@ _gpf_rescure_extras = {
 		
 		
 		_x addEventHandler ["GetInMan", {
-		private _unit = _this select 0;
-		private _veh = vehicle _unit;
-		private _unit setVariable["gpf_rescue_veh",_veh,false];
+		 _unit = _this select 0;
+		 _veh = vehicle _unit;
+		 _unit setVariable["gpf_rescue_veh",_veh,false];
 		}];
 		
 		_x addEventHandler ["GetOutMan", {
-			private _unit = _this select 0;
-			private _veh = _unit getVariable 'gpf_rescue_veh';
-			private _driver = driver _veh;
-			private _reward = _unit getVariable 'gpf_reward';
-			private _target = _unit getVariable 'gpf_target_pos';
-			private _unitPos = GetPos _unit;
-			private _dist = _unitPos distance _target;
-			private _humanCrew = [];
+			 _unit = _this select 0;
+			 _veh = _unit getVariable 'gpf_rescue_veh';
+			 _driver = driver _veh;
+			 _reward = _unit getVariable 'gpf_reward';
+			 _target = _unit getVariable 'gpf_target_pos';
+			 _unitPos = GetPos _unit;
+			 _dist = _unitPos distance _target;
+			 _humanCrew = [];
 			{if(isplayer _x) Then {_humanCrew = _humanCrew+[_x]};} Foreach crew _veh;
-			private _crewCount = count _humanCrew;
-			private _score = floor (_reward/_crewCount);
+			 _crewCount = count _humanCrew;
+			 _score = floor (_reward/_crewCount);
 			_debugPlayer = (selectRandom Allplayers);
-			[(Format ["Debug MESSAGE!"]),(Format ["%1 has a crew of human %2",_veh ,_crewCount]),_debugPlayer] execvm "gpf_fn_msg.sqf";
+			[(Format ["Debug MESSAGE!"]),(Format ["%1 has a crew of human %2",_driver ,_crewCount]),_debugPlayer] execvm "gpf_fn_msg.sqf";
 			
 			
 			if (_dist < 40) Then {
