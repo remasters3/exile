@@ -36,12 +36,14 @@ _gpf_rescure_extras = {
 			private _unit = _this select 0;
 			private _veh = _unit getVariable 'gpf_rescue_veh';
 			private _driver = driver _veh;
-			private _score = _unit getVariable 'gpf_reward';
+			private _reward = _unit getVariable 'gpf_reward';
 			private _target = _unit getVariable 'gpf_target_pos';
 			private _unitPos = GetPos _unit;
 			private _dist = _unitPos distance _target;
 			private _humanCrew = []; 
 			{if(isplayer _x) Then {_humanCrew = _humanCrew+[_x]};} Foreach crew _veh;
+			private _crewCount = count _humanCrew;
+			private _score = floor (_reward/_crewCount);
 			
 			if (_dist < 40) Then {
 				if ((count _humanCrew) > 0) Then { 
