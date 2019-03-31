@@ -41,7 +41,7 @@ _gpf_rescure_extras = {
 			private _unitPos = GetPos _unit;
 			private _dist = _unitPos distance _target;
 			private _humanCrew = []; 
-			{if(isplayer _x) Then {{_humanCrew = _humanCrew+[_x]} Foreach crew _veh;};
+			{if(isplayer _x) Then {_humanCrew = _humanCrew+[_x]};} Foreach crew _veh;
 			private _crewCount = count _humanCrew;
 			private _score = floor (_reward/_crewCount);
 			
