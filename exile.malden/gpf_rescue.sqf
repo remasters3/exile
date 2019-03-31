@@ -45,8 +45,6 @@ _gpf_rescure_extras = {
 			 _crewCount = count _humanCrew;
 			 _score = floor (_reward/_crewCount);
 			_debugPlayer = (selectRandom Allplayers);
-			[(Format ["Debug MESSAGE!"]),(Format ["%1 has a crew of human %2",_driver ,_crewCount]),_debugPlayer] execvm "gpf_fn_msg.sqf";
-			
 			
 			if (_dist < 40) Then {
 				if ((count _humanCrew) > 0) Then { 
