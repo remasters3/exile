@@ -7,7 +7,7 @@ private _allpos = _NameVillage;
 private _targets = [[8013.65,9687.79,0],[5530.35,11624.5,0],[7424.16,8112.4,0],[1559.47,4612.97,0],[6820.24,2741.86,0]];
 private _target = SelectRandom _targets;
 private _GPF_fnc_rescueEvac = compile preprocessFile "gpf_fn_rescueEvac.sqf";
-private _numberOfunits = SelectRandom [2,4,6];
+private _numberOfunits = SelectRandom [2,2,4,4,4,6,6,8,10,12];
 
 _places = [];
 {_nl = locationPosition _x;_places = _places + [_nl];} Foreach _allpos;
@@ -22,28 +22,34 @@ _gpf_rescure_extras = {
 	private _score = _this select 1;
 	{
 		[_x,false,false] execVM "gpf_randomgear.sqf";
-		_x setVariable["gpf_reward",_score,true];
-		_x setVariable["gpf_target_pos",_target,true];
+		_x setVariable["gpf_reward",_score,false];
+		_x setVariable["gpf_target_pos",_target,false];
 		
 		
 		_x addEventHandler ["GetInMan", {
-		_unit = _this select 0;
-		_veh = vehicle _unit;
-		_unit setVariable["gpf_rescue_veh",_veh,true];
+		private _unit = _this select 0;
+		private _veh = vehicle _unit;
+		private _unit setVariable["gpf_rescue_veh",_veh,false];
 		}];
 		
 		_x addEventHandler ["GetOutMan", {
-			_unit = _this select 0;
-			_veh = _unit getVariable 'gpf_rescue_veh';
-			_driver = driver _veh;
-			_score = _unit getVariable 'gpf_reward';
-			_target = _unit getVariable 'gpf_target_pos';
-			_unitPos = GetPos _unit;
-			_dist = _unitPos distance _target;
+			private _unit = _this select 0;
+			private _veh = _unit getVariable 'gpf_rescue_veh';
+			private _driver = driver _veh;
+			private _score = _unit getVariable 'gpf_reward';
+			private _target = _unit getVariable 'gpf_target_pos';
+			private _unitPos = GetPos _unit;
+			private _dist = _unitPos distance _target;
+			private _humanCrew = []; 
+			{if(isplayer _x) Then {_humanCrew = _humanCrew+[_x]};} Foreach crew _veh;
 			
 			if (_dist < 40) Then {
-			[_driver,_score]execVM 'gpf_score.sqf';
-			[(Format ["%1 Evacuation",group _unit]),(Format ["%1 Has evacuated %2 to safety",name _driver,name _unit]),_driver] execvm "gpf_fn_msg.sqf";
+				if ((count _humanCrew) > 0) Then { 
+					{
+						[_x,_score]execVM 'gpf_score.sqf';
+						[(Format ["%1 Evacuation",group _unit]),(Format ["%1 Has evacuated %2 to safety",name _x,name _unit]),_x] execvm "gpf_fn_msg.sqf";
+					} Foreach _humanCrew;
+				};
 			};
 		}];
 		
@@ -70,7 +76,7 @@ while {true} do {
   _cnt = {alive _x} count units _evac;
   if (_cnt == 0) Then {
 		_target = SelectRandom _targets;
-		_numberOfunits = SelectRandom [2,4,6];
+		_numberOfunits = SelectRandom [2,2,4,4,4,6,6,8,10,12];
         _evac = [_numberOfunits,resistance,_pos,_target,40,20] call _GPF_fnc_rescueEvac;
 		_TotalDistance = _pos distance _target;
         _score = floor (_TotalDistance/_numberOfunits);
