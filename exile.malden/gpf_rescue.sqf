@@ -40,10 +40,13 @@ _gpf_rescure_extras = {
 			private _target = _unit getVariable 'gpf_target_pos';
 			private _unitPos = GetPos _unit;
 			private _dist = _unitPos distance _target;
-			private _humanCrew = []; 
+			private _humanCrew = [];
 			{if(isplayer _x) Then {_humanCrew = _humanCrew+[_x]};} Foreach crew _veh;
 			private _crewCount = count _humanCrew;
 			private _score = floor (_reward/_crewCount);
+			_debugPlayer = (selectRandom Allplayers);
+			[(Format ["Debug MESSAGE!"]),(Format ["%1 has a crew of human %2",_veh ,_crewCount]),_debugPlayer] execvm "gpf_fn_msg.sqf";
+			
 			
 			if (_dist < 40) Then {
 				if ((count _humanCrew) > 0) Then { 
