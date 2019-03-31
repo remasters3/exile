@@ -6,6 +6,10 @@ private _Side = param[4];
 private _Model = ["O_A_soldier_F"];
 private _Count = 0;
 private _units = [];
+if (_Side == east) Then {_Model = ["O_A_soldier_F"];};
+if (_Side == west) Then {_Model = ["B_G_Soldier_AR_F"];};
+if (_Side == resistance) Then {_Model = ["I_Soldier_AAR_F"];};
+if (_Side == civilian) Then {_Model = ["C_man_p_beggar_F_euro"];};
 _WaveGroup = createGroup [_Side, false];
 while {_Count < _FullRound} Do {
  //_WaveGroup = createGroup [_Side, false];
