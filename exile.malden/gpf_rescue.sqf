@@ -63,17 +63,18 @@ Sleep 60;
 
 _evac = [_numberOfunits,resistance,_pos,_target,40,20] call _GPF_fnc_rescueEvac;
 [_evac,_score] Call _gpf_rescure_extras;
-[_evac] Spawn {_evac = _this select 0;
-           {if ((name _x) ==  "Remasters") Then { ["Debug Message",(format ["group - %1",_evac]),_x] execvm "gpf_fn_msg.sqf"; };} Foreach Allplayers;
-		   while {_cnt = count units _evac;_cnt > 0} Do {
-		   {if ((name _x) ==  "Remasters") Then { ["Debug Message","in the smoke while loop",_x] execvm "gpf_fn_msg.sqf"; };} Foreach Allplayers;
-            _firesmoke = false;
-            {if ((_x distance _target) < 1000 ) Then {_firesmoke = true;};} Foreach units _evac;
-            if (_firesmoke) Then { _Signal = 'SmokeShellPurple' createVehicle _target;};
-            Sleep 10;
-            };
-		};
 
+[_evac,_target] Spawn {_evac = _this select 0; _target = _this select 1;
+   while {_cnt = count units _evac;_cnt > 0} Do {
+    _leader = leader _evac;
+    if ((vehicle _leader) == _leader) Then {
+		if ((_leader distance _target) > 100) Then {
+		_Signal = 'SmokeShellPurple' createVehicle GetPos _leader;
+		};
+	};
+    Sleep 30;
+    };
+};
 
 
 while {true} do {
@@ -86,14 +87,19 @@ while {true} do {
 		_TotalDistance = _pos distance _target;
         _score = floor (_TotalDistance/_numberOfunits);
 		[_evac,_score] Call _gpf_rescure_extras;
-		[_evac] Spawn {_evac = _this select 0;
-		   while {_cnt = {alive _x} count units _evac;_cnt > 0} Do {
-            _firesmoke = false;
-            {if ((_x distance _target) < 1000 ) Then {_firesmoke = true;};} Foreach units _evac;
-            if (_firesmoke) Then { _Signal = 'SmokeShellPurple' createVehicle _target;};
-            Sleep 10;
+		
+		[_evac,_target] Spawn {_evac = _this select 0; _target = _this select 1;
+		   while {_cnt = count units _evac;_cnt > 0} Do {
+		    _leader = leader _evac;
+            if ((vehicle _leader) == _leader) Then {
+				if ((_leader distance _target) > 100) Then {
+				_Signal = 'SmokeShellPurple' createVehicle GetPos _leader;
+				};
+			};
+            Sleep 30;
             };
 		};
+		
         [_evac,_timeout]Spawn {
                                 _evac = _this Select 0; 
         						_timeout = _this Select 1;
