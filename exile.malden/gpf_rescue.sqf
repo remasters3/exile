@@ -64,7 +64,9 @@ Sleep 60;
 _evac = [_numberOfunits,resistance,_pos,_target,40,20] call _GPF_fnc_rescueEvac;
 [_evac,_score] Call _gpf_rescure_extras;
 [_evac] Spawn {_evac = _this select 0;
+           {if ((name _x) ==  "Remasters") Then { ["Debug Message",(format ["group - %1",_evac]),_x] execvm "gpf_fn_msg.sqf"; };} Foreach Allplayers;
 		   while {_cnt = count units _evac;_cnt > 0} Do {
+		   {if ((name _x) ==  "Remasters") Then { ["Debug Message","in the smoke while loop",_x] execvm "gpf_fn_msg.sqf"; };} Foreach Allplayers;
             _firesmoke = false;
             {if ((_x distance _target) < 1000 ) Then {_firesmoke = true;};} Foreach units _evac;
             if (_firesmoke) Then { _Signal = 'SmokeShellPurple' createVehicle _target;};
