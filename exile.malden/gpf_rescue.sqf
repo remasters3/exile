@@ -72,7 +72,7 @@ _evac = [_numberOfunits,resistance,_pos,_target,40,20] call _GPF_fnc_rescueEvac;
 		_Signal = 'SmokeShellPurple' createVehicle GetPos _leader;
 		};
 	};
-    Sleep 30;
+    Sleep 60;
     };
 };
 
@@ -96,7 +96,7 @@ while {true} do {
 				_Signal = 'SmokeShellPurple' createVehicle GetPos _leader;
 				};
 			};
-            Sleep 30;
+            Sleep 60;
             };
 		};
 		
