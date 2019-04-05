@@ -101,7 +101,13 @@ private _walkers = units _rescuegroup;
    if ((_unit distance _targetPos) < _targetRadias) Then {
      _veh = vehicle _unit;
  	_list = (crew _veh) select {(assignedVehicleRole _x) select 0 isEqualTo 'cargo'};
- 	{_x EnableAI 'FSM';unassignVehicle _x;[_x] orderGetIn false;commandGetOut _x;} forEach _list;
+ 	{
+	if (!isPlayer _x) Then {
+		_x EnableAI 'FSM';
+		unassignVehicle _x;
+		[_x] orderGetIn false;
+		commandGetOut _x; };
+	} forEach _list;
    };
  } Foreach _riders;
  
