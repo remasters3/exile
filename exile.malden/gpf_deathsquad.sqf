@@ -15,7 +15,9 @@ sleep 5;
 };
 
 systemchat Format ["is %1 Alive? %2",name dsVictim,alive dsVictim];
-["InfoTitleAndText", ["Death Squad!",format ["A death squad hs been sent for %1",name dsVictim]]] call ExileClient_gui_toaster_addTemplateToast;
+{
+["InfoTitleAndText", ["Death Squad!",format ["A death squad is hunting %1",name _vic]]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_x]]; //call ExileClient_gui_toaster_addTemplateToast;
+} Foreach Allplayers;
 waitUntil {deathsqdon};
 
 // spawn the bandits

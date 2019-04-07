@@ -18,6 +18,9 @@ while {true} Do {
 	Sleep 30;
 	private _troops = [_pos,"O_Heli_Transport_04_bench_F",East,_npgcnt,900,_patrol] Call _gpf_TroopDrop;
 	{
+	["InfoTitleAndText", ["Bandit Guard!","Bandits have been deployed to defend the area. Dig in or Move out."]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_x]];
+	} foreach _RealPlayers;
+	{
 	  _x setSkill 0.85;
 	 _grp = _grp + [_x];
 	} foreach units _troops;
