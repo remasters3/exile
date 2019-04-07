@@ -6,7 +6,8 @@ _cash = _driver getVariable 'ExileMoney';
 _price = 500;
 if (_cash < _price ) exitWith {
 if (isServer) then {
-["ErrorTitleAndText", ["Not Enough Tabs!", format ["%1 needs to have %2 tabs to rearm and repair here!",name _driver,_price]]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_driver]];//call ExileClient_gui_toaster_addTemplateToast;
+//["ErrorTitleAndText", ["Not Enough Tabs!", format ["%1 needs to have %2 tabs to rearm and repair here!",name _driver,_price]]] call ExileClient_gui_toaster_addTemplateToast;
+["ErrorTitleAndText", ["Debug Text", format ["|%1 = 1 | %2 = 2 |","dummy text",10]]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[(SelectRandom Allplayers)]];
 };
 };
 
@@ -14,7 +15,8 @@ _type = typeOf _object;
 //systemChat Format ["%1 - %2",_cash,_price];
 _cash = _driver getVariable 'ExileMoney'; _cash = _cash-_price;_driver setVariable ["ExileMoney", _cash,true];
 if (isServer) then {
-["InfoTitleAndText", [format ["%2 tabs removed from %1.",name _driver,_price],format ["Servicing %1... Please stand by...", _type]]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_driver]];//call ExileClient_gui_toaster_addTemplateToast;
+//["InfoTitleAndText", [format ["%2 tabs removed from %1.",name _driver,_price],format ["Servicing %1... Please stand by...", _type]]] call ExileClient_gui_toaster_addTemplateToast;
+["InfoTitleAndText", ["Debug Text", format ["|%1 = 1 | %2 = 2 |","dummy text",10]]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[(SelectRandom Allplayers)]];
 };
 x_reload_time_factor = 1;
 
@@ -95,7 +97,8 @@ while {fuel _object < 0.99} do {
 };
 sleep x_reload_time_factor;
 if (isServer) then {
-["SuccessTitleAndText", [format ["%1 is ready...", _type], format ["%1 is repaired, refuled and rearmed. Good Luck, it's a jungle out there.", _type]]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_driver]];//call ExileClient_gui_toaster_addTemplateToast;
+["SuccessTitleAndText", [format ["%1 is ready...", _type], format ["%1 is repaired, refuled and rearmed. Good Luck, it's a jungle out there.", _type]]] call ExileClient_gui_toaster_addTemplateToast;
+["SuccessTitleAndText", ["Debug Text", format ["|%1 = 1 | %2 = 2 |","dummy text",10]]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[(SelectRandom Allplayers)]];
 };
 //systemChat format ["%1 is ready...", _type];
 
