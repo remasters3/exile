@@ -62,11 +62,23 @@ removeBackpack _unit;
 removeHeadgear _unit;
 removeGoggles _unit;
 //adding storage
-if ((side _unit) == resistance) Then {_unit forceAddUniform "U_B_GEN_Commander_F";} Else  {_unit forceAddUniform (SelectRandom _uni);};
+if ((side _unit) == resistance) Then {_unit forceAddUniform "U_Tank_green_F";};
+if ((side _unit) == west) Then {_unit forceAddUniform "U_B_GEN_Commander_F";}; 
+if ((side _unit) == east) Then {_unit forceAddUniform (SelectRandom _uni);};
+if ((side _unit) == civilian) Then {_unit forceAddUniform (SelectRandom _uni);};
+
+if ((side _unit) == resistance) Then {_unit addVest "V_TacVest_oli";};
+if ((side _unit) == west) Then {_unit addVest "V_TacVest_gen_F";}; 
+if ((side _unit) == east) Then {_unit addVest (SelectRandom _vests);};
+if ((side _unit) == civilian) Then {_unit addVest (SelectRandom _vests);};
+
 if ((side _unit) == resistance) Then {_unit addVest "V_TacVest_gen_F";} Else {_unit addVest (SelectRandom _vests);};
 
 if (_air) Then {_unit addBackpack "B_Parachute";} else {
-	if ((side _unit) == resistance) Then {_unit addBackpack "B_ViperHarness_blk_F";} Else {_unit addBackpack (SelectRandom _bags)};
+	if ((side _unit) == resistance) Then {_unit addBackpack "B_Carryall_oli";};
+	if ((side _unit) == west) Then {_unit addBackpack "B_ViperHarness_blk_F";};
+	if ((side _unit) == east) Then {_unit addBackpack (SelectRandom _bags);};
+	if ((side _unit) == civilian) Then {_unit addBackpack (SelectRandom _bags);};
 };
 
 
@@ -92,7 +104,11 @@ for "_i" from 1 to 2 do {_unit addItemToVest (SelectRandom _meds);};
 for "_i" from 1 to 2 do {_unit addItemToVest (SelectRandom _items);};
 
 //putting a hat on
-if ((side _unit) == resistance) Then {_unit addHeadgear "H_PASGT_basic_blue_F";} Else {_unit addHeadgear (SelectRandom _headgear)};
+if ((side _unit) == resistance) Then {_unit addHeadgear "H_PASGT_basic_olive_F";};
+if ((side _unit) == west) Then {_unit addHeadgear "H_PASGT_basic_blue_F";};
+if ((side _unit) == east) Then {_unit addHeadgear (SelectRandom _headgear);};
+if ((side _unit) == civilian) Then {_unit addHeadgear (SelectRandom _headgear);};
+//if ((side _unit) == resistance) Then {_unit addHeadgear "H_PASGT_basic_blue_F";} Else {_unit addHeadgear (SelectRandom _headgear)};
 
 //adding rifle
 _unit addWeapon _prigun;
