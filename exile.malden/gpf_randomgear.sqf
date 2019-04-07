@@ -72,7 +72,7 @@ if ((side _unit) == west) Then {_unit addVest "V_TacVest_gen_F";};
 if ((side _unit) == east) Then {_unit addVest (SelectRandom _vests);};
 if ((side _unit) == civilian) Then {_unit addVest (SelectRandom _vests);};
 
-if ((side _unit) == resistance) Then {_unit addVest "V_TacVest_gen_F";} Else {_unit addVest (SelectRandom _vests);};
+//if ((side _unit) == resistance) Then {_unit addVest "V_TacVest_gen_F";} Else {_unit addVest (SelectRandom _vests);};
 
 if (_air) Then {_unit addBackpack "B_Parachute";} else {
 	if ((side _unit) == resistance) Then {_unit addBackpack "B_Carryall_oli";};
