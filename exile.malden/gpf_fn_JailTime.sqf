@@ -1,7 +1,12 @@
+//[player,1] execVM "gpf_fn_JailTime.sqf";
 _convict = _this select 0;
 _sentence = _this select 1;
 _jailtime = _sentence*60;
 _freedom = GetPos _convict;
+["ErrorTitleAndText", ["Jail Time!", format ["You have been jailed for %1 minutes.",_sentence]]] call ExileClient_gui_toaster_addTemplateToast;
 _convict setpos [7405.92,8090.8,0.00143433];
-sleep _jailtime;
+sleep _jailtime-10;
+["InfoTitleAndText", [format ["Release Pending"],format ["Releasing %1 in 10 seconds... Please stand by...",name _convict]]] call ExileClient_gui_toaster_addTemplateToast;
+sleep 10;
+["SuccessTitleAndText", [format ["Freedom"], format ["%1 is now free. Don't do the crime if you can't do the time.", name _convict]]] call ExileClient_gui_toaster_addTemplateToast;
 _convict SetPos [7414.23,8101.78,0.00143433];

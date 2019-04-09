@@ -80,7 +80,9 @@ private _vehicles = [
 ["Land_WaterCooler_01_new_F", [7390.05, 8071.24, 170.215], [0.84198, -0.533521, 0.0801558], [-0.0947706, 0, 0.995499], false],
 ["Land_WaterCooler_01_old_F", [7390.28, 8071.6, 170.237], [0.833274, -0.547139, 0.079327], [-0.0947706, 0, 0.995499], false]
 ];
-
+//DeepFriedHaggis
+_vehicles = _vehicles + [
+];
 {
     private _vehicle = (_x select 0) createVehicle (_x select 1);
     _vehicle allowDamage false;

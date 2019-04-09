@@ -1,19 +1,30 @@
 // player addaction ["Name Target","Systemchat str(typeOf cursortarget); copyToClipboard str(typeOf cursortarget);"];
-/*
-private _centerWorld =  getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
+
+private _centerWorld =  getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition"); //GetMarkerPos "marker_debug";
+private _Size = GetMarkerSize "marker_debug";
 private _wreck = [];
 private _Allwreck = [];
 private _cnt = 0;
 private _wreckings = [
-"Land_UWreck_FishingBoat_F",
-"Land_Wreck_Traw2_F",
-"Land_Wreck_Traw_F"
+"Land_SharpRock_monolith",
+"Land_PierWooden_02_16m",
+"Land_PierWooden_02_barrel",
+"Land_PierWooden_02_30deg",
+"Land_Canal_Wall_10m",
+"Land_Canal_Wall_Stairs",
+"Land_Walkover_01",
+"Land_Tank_rust",
+"Land_SharpRock_spike",
+"Land_Shoot_House_Wall",
+"Land_SharpRock_wallH",
+"Land_PierWooden_02_hut",
+"Land_Shoot_House_Tunnel"
 ];
 
 
 {
  _model = _x;
- _wreck = _centerWorld nearObjects [_model, 25000];
+ _wreck = _centerWorld nearObjects [_model, 30000];
  systemChat format ["%1",_model ];
  _Allwreck = _Allwreck + _wreck;
 } Foreach _wreckings;
@@ -21,13 +32,18 @@ systemChat format ["%1",_Allwreck];
 
 private _wreckPos = [];
 {
- _wp = GetPos _x;
- _wreckPos = _wreckPos + [_wp];
- systemChat format ["%1",_wp];
+ _model = typeof _x;
+ _wp = GetPosWorld _x;
+ _vd = vectorDir _x;
+ _vu = vectorUp _x;
+ _txt = format ['[%1,%2,%3,%4,%5]',_model,_wp,_vd,_vu,false];
+ _wreckPos = _wreckPos + [[_model,_wp,_vd,_vu,false]];
  } Foreach _Allwreck;
-{player SetPos _x;sleep 2;} foreach _wreckPos;
-*/
-
+copyToClipboard str(_wreckPos);
+systemChat str(_wreckPos);
+//{player SetPos _x;sleep 2;} foreach _wreckPos;
+//[]
+[]
 /*[] Spawn {
   manhunton = false;
   while {!manhunton} Do {
@@ -55,7 +71,7 @@ _STR = Format ["%1",_all];
 copyToClipboard _STR;
 */
 
-_path = [];
+//_path = [];
 /*
 { 
  _pos = GetMarkerPos _x;
@@ -88,6 +104,8 @@ copyToClipboard Format ["%1",_path];
 
 //[_x,200,45,360] execVM "gpf_fn_enemyWave.sqf";
 
+
+/*
 _places = [];
 {
  if (typeof _x == "O_G_Soldier_LAT2_F") Then {
@@ -101,6 +119,8 @@ _places = [];
  };
 } Foreach allUnits;
 copyToClipboard Format ['%1',_places];
+*/
+
 //copyToClipboard Format ['%1',GetPosASL player];
 // [_posASL,_dirVector,_UpVector]
 // "%1 - %2,%3,%4],"
