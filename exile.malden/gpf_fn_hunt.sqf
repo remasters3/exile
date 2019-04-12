@@ -6,7 +6,7 @@ private _timeout = _mins*60;
 _target setVariable ["GPF_huntOn", true,false];
 {
 	if (isplayer _x) Then {
-		private _msg = format ["%1 Wanted Dead. %2 Tabs Bounty.   See the Map.",name _target,floor(_reward)];
+		private _msg = format ["- %1 Wanted Dead. - %2 Tabs Bounty.    - See the Map.",name _target,floor(_reward)];
 		["InfoTitleAndText", ["The Hunt is on!", _msg]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_x]];
 	};
 } Foreach AllPlayers;
@@ -23,7 +23,7 @@ _target setVariable ["GPF_huntOn", true,false];
 		[(_this Select 1),_score]execVM 'gpf_score.sqf';
 		};"
 	];
-	_txt = Format ["%2's Last Known Location. %1 Tabs Bounty.",_rewardr,name _target];
+	_txt = Format ["%2's Last Known Location. %1 Tabs Reward.",_rewardr,name _target];
 	_HuntPosMarker = createMarkerLocal [_txt,(GetPos _target)];
 	_HuntPosMarker setMarkerText _txt;
 	_HuntPosMarker setMarkerType "hd_destroy";
