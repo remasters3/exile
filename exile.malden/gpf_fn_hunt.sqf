@@ -45,7 +45,7 @@ _target setVariable ["GPF_huntOn", false,false];
 	
 	{
 		if (isplayer _x) Then {
-			private _msg = format ["%1 is no longer wanted dead.",name _target,floor(_reward)];
+			private _msg = format ["%1 is no longer wanted.",name _target,floor(_reward)];
 			["InfoTitleAndText", ["The Hunt is off!", _msg]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_x]];
 		};
 	} Foreach AllPlayers;
