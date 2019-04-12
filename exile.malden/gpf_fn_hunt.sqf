@@ -3,10 +3,10 @@ private _target = _this select 0;
 private _reward = _this select 1;
 private _mins = _this select 2;
 private _timeout = _mins*60;
-_target setVariable ["GPF_huntOn", true,false];
+_target setVariable ["GPF_huntOn", false,false];
 {
 	if (isplayer _x) Then {
-		private _msg = format ["- %1 Wanted Dead. - %2 Tabs Bounty.    - See the Map.",name _target,floor(_reward)];
+		private _msg = format ["%1 Wanted Dead.<br/> %2 Tabs Bounty.<br/> See the Map.<br/>",name _target,floor(_reward)];
 		["InfoTitleAndText", ["The Hunt is on!", _msg]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_x]];
 	};
 } Foreach AllPlayers;
@@ -28,6 +28,7 @@ _target setVariable ["GPF_huntOn", true,false];
 	_HuntPosMarker setMarkerText _txt;
 	_HuntPosMarker setMarkerType "hd_destroy";
 	_HuntPosMarker setMarkerAlpha 0.8;
+	_target setVariable ["GPF_huntOn", true,false];
 	while  {_target getVariable 'GPF_huntOn'} do {
 		if (_timeout > 0) Then {
 			if (Alive _target) Then {
