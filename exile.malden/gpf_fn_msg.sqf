@@ -3,8 +3,9 @@ if (isServer) then {
 	private _title = _this select 0;
 	private _msg = _this select 1;
 	private _player = _this select 2;
+	if ((_count _this) > 3) Then { _msgtype = _this select 3;} Else {_msgtype = "SuccessTitleAndText";};
 		if (isplayer _player) Then {
-			["SuccessTitleAndText", [_title, _msg]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_player]];
+			[_msgtype, [_title, _msg]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_player]];
 		};
 };
 if (true) ExitWith {};

@@ -7,7 +7,7 @@ _target setVariable ["GPF_huntOn", true,false];
 
 
 [_target,_reward,_timeout] Spawn {_target = _this select 0;_reward = _this select 1;_timeout = _this select 2;
-	private _sleeptime = 10;
+	private _sleeptime = 60;
     private _pos = GetPos _target;
 	private _rewardr = floor(_reward);
 	_target setVariable ["GPF_bounty",_rewardr,true];
