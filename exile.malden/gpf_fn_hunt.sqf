@@ -6,7 +6,7 @@ private _timeout = _mins*60;
 _target setVariable ["GPF_huntOn", false,false];
 {
 	if (isplayer _x) Then {
-		private _msg = format ["%1 Wanted Dead.<br/> %2 Tabs Bounty.<br/> See the Map.<br/>",name _target,floor(_reward)];
+		private _msg = format ["%1 Wanted Dead.<br/> %2 Tabs Reward.<br/> See the Map.<br/>",name _target,floor(_reward)];
 		["InfoTitleAndText", ["The Hunt is on!", _msg]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_x]];
 	};
 } Foreach AllPlayers;
