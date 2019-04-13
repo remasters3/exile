@@ -24,7 +24,7 @@ if (isServer) then {
 		// Update respect in database  
 		format["setAccountScore:%1:%2", _newRespect, _playerUID] call ExileServer_system_database_query_fireAndForget;
 		// Send updated respect value to client
-		ExileClientPlayerScore = _playerRespect;
+		ExileClientPlayerScore = _newRespect;
 		(owner _player) publicVariableClient "ExileClientPlayerScore";
 		ExileClientPlayerScore = nil;
 		};

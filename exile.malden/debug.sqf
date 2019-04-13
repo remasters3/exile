@@ -1,5 +1,19 @@
-// player addaction ["Name Target","Systemchat str(typeOf cursortarget); copyToClipboard str(typeOf cursortarget);"];
+allLocationTypes = [];
+"allLocationTypes pushBack configName _x" configClasses (configFile >> "CfgLocationTypes");
+_places = nearestLocations [player, allLocationTypes,500,player];
+{
+	systemChat format [
+		"| %1 | %2 | %3m |", 
+		_x, 
+		text _x, 
+		floor (position player distance _x)
+	];
+} forEach [(_places Select 0)];
+copyToClipboard Format ['%1',allLocationTypes];
+//["Mount","Name","Strategic","StrongpointArea","FlatArea","FlatAreaCity","FlatAreaCitySmall","CityCenter","Airport","NameMarine","NameCityCapital","NameCity","NameVillage","NameLocal","Hill","ViewPoint","RockArea","BorderCrossing","VegetationBroadleaf","VegetationFir","VegetationPalm","VegetationVineyard","fakeTown","Area","Flag","b_unknown","o_unknown","n_unknown","b_inf","o_inf","n_inf","b_motor_inf","o_motor_inf","n_motor_inf","b_mech_inf","o_mech_inf","n_mech_inf","b_armor","o_armor","n_armor","b_recon","o_recon","n_recon","b_air","o_air","n_air","b_plane","o_plane","n_plane","b_uav","o_uav","n_uav","b_naval","o_naval","n_naval","b_med","o_med","n_med","b_art","o_art","n_art","b_mortar","o_mortar","n_mortar","b_hq","o_hq","n_hq","b_support","o_support","n_support","b_maint","o_maint","n_maint","b_service","o_service","n_service","b_installation","o_installation","n_installation","u_installation","b_antiair","o_antiair","n_antiair","c_unknown","c_car","c_ship","c_air","c_plane","group_0","group_1","group_2","group_3","group_4","group_5","group_6","group_7","group_8","group_9","group_10","group_11","respawn_unknown","respawn_inf","respawn_motor","respawn_armor","respawn_air","respawn_plane","respawn_naval","respawn_para","ExileTerritory","Invisible","HistoricalSite","CivilDefense","CulturalProperty","DangerousForces","SafetyZone"]
 
+// player addaction ["Name Target","Systemchat str(typeOf cursortarget); copyToClipboard str(typeOf cursortarget);"];
+/*
 private _centerWorld =  getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition"); //GetMarkerPos "marker_debug";
 private _Size = GetMarkerSize "marker_debug";
 private _wreck = [];
@@ -41,9 +55,11 @@ private _wreckPos = [];
  } Foreach _Allwreck;
 copyToClipboard str(_wreckPos);
 systemChat str(_wreckPos);
+*/
+
 //{player SetPos _x;sleep 2;} foreach _wreckPos;
 //[]
-[]
+//[]
 /*[] Spawn {
   manhunton = false;
   while {!manhunton} Do {
