@@ -2,7 +2,7 @@
 if (isServer) then {
 	private _player = _this select 0;
 	private _tabs = _this select 1;
-	if (vehicle _player == _player) Then {
+
 		if (isplayer _player) Then {
 			private _respect = floor (_tabs/10);
 			private _playerUID = getPlayerUID _player;
@@ -30,6 +30,6 @@ if (isServer) then {
 			ExileClientPlayerScore = nil;
 			};
 		};
-	};
+
 };
 if (true) ExitWith {};
