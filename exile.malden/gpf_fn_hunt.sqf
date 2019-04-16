@@ -16,13 +16,13 @@ _target setVariable ["GPF_huntOn", false,false];
     private _pos = GetPos _target;
 	private _rewardr = floor(_reward);
 	_target setVariable ["GPF_bounty",_rewardr,true];
-	_target addMPEventHandler [
-	"MPKilled",
-	"if (isServer) Then {
-		_score = floor (_target getVariable 'GPF_bounty');
-		[(_this Select 1),_score]execVM 'gpf_score.sqf';
-		};"
-	];
+	//_target addMPEventHandler [
+	//"MPKilled",
+	//"if (isServer) Then {
+	//	_score = floor (_target getVariable 'GPF_bounty');
+	//	[(_this Select 1),_score]execVM 'gpf_score.sqf';
+	//	};"
+	//];
 	_txt = Format ["%2's Last Known Location. %1 Tabs Reward.",_rewardr,name _target];
 	_HuntPosMarker = createMarkerLocal [_txt,(GetPos _target)];
 	_HuntPosMarker setMarkerText _txt;
