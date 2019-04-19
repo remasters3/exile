@@ -10,7 +10,7 @@ private _startpos = _Path select 0;
 private _count = count _Path;
 
 troopson = troopson+1; publicVariable "troopson";
-private _Side = SelectRandom [east,east,east,east,east,east,east,east,east,West];
+private _Side = SelectRandom [east,east,east,east,east,east,east,east,West,West];
 private _Model = [];
 private _Timeout = 60*30;
 
