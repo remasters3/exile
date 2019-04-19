@@ -5,12 +5,12 @@ private _allPlaces = nearestLocations [_centerWorld, ["NameCity"], 20000];
 private _places = [];
 {_nl = locationPosition _x;_places = _places + [_nl];} Foreach _allPlaces;
 
-_EastLightVeh = ["B_Heli_Transport_01_F","B_Heli_Transport_03_F"];
-_WestLightVeh = _EastLightVeh;
+_EastLightVeh = ["O_Heli_Light_02_dynamicLoadout_F"];
+_WestLightVeh = ["B_Heli_Transport_01_F","B_Heli_Transport_03_F"];
 private _startpos = [7921.2,4094.34,0];
 
 heloOn = heloOn+1; publicVariable "heloOn";
-private _Side = west;
+private _Side = SelectRandom [west,west,west,west,west,west,west,west,west,east];
 private _Model = [];
 private _Timeout = 60*30;
 

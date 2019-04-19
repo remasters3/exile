@@ -3028,6 +3028,7 @@ class CfgExileArsenal
 	
 	class B_Heli_Transport_01_F                                 { quality = 5; price = 60000; };
 	class B_Heli_Light_01_dynamicLoadout_F                      { quality = 6; price = 120000;};
+	class O_Heli_Light_02_dynamicLoadout_F						{ quality = 6; price = 120000;};
 	class O_Heli_Attack_02_dynamicLoadout_F                     { quality = 6; price = 250000;};
 	
 	class B_T_LSV_01_armed_F                                      { quality = 4; price = 60000; };
@@ -6167,7 +6168,8 @@ class CfgTraderCategories
 			"Exile_Chopper_Hellcat_Green",
 			"B_Heli_Transport_01_F",
 			"O_Heli_Attack_02_dynamicLoadout_F",
-			"B_Heli_Light_01_dynamicLoadout_F"
+			"B_Heli_Light_01_dynamicLoadout_F",
+			"O_Heli_Light_02_dynamicLoadout_F"
 		};
 	};
 
