@@ -1,6 +1,6 @@
-_EastLightVeh = ["Exile_Car_Offroad_Armed_Guerilla11","Exile_Car_HMMWV_M2_Desert","Exile_Car_SUV_Armed_Black"];
+_EastLightVeh = ["Exile_Car_Offroad_Armed_Guerilla11","Exile_Car_HMMWV_M2_Desert"];
 				 
-_WestLightVeh = [];
+_WestLightVeh = ["Exile_Car_SUV_Armed_Black","B_LSV_01_armed_F"];
 
 _ResLightVeh = [];
 
@@ -9,7 +9,7 @@ private _Path = Call _GetWayPontPos;
 private _startpos = _Path select 0;
 private _count = count _Path;
 patrolon = patrolon+1; publicVariable "patrolon";
-private _Side = east;
+private _Side = SelectRandom [east,West];
 private _Model = [];
 private _Timeout = 60*30;
 
