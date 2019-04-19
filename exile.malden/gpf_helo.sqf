@@ -6,10 +6,11 @@ private _places = [];
 {_nl = locationPosition _x;_places = _places + [_nl];} Foreach _allPlaces;
 
 _EastLightVeh = ["B_Heli_Transport_01_F","B_Heli_Transport_03_F"];
+_WestLightVeh = _EastLightVeh;
 private _startpos = [7921.2,4094.34,0];
 
 heloOn = heloOn+1; publicVariable "heloOn";
-private _Side = east;
+private _Side = west;
 private _Model = [];
 private _Timeout = 60*30;
 
