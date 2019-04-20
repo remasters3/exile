@@ -12,7 +12,7 @@ if (isServer) then {
 			//private _newRespect = _playerRespect+_respect;
 			if (_newmoney > 0) Then {
 			_player setVariable ["ExileMoney",_newmoney,true];
-			_player setVariable ["ExileScore",_newRespect];
+			//_player setVariable ["ExileScore",_newRespect];
 			_title = "Reward!";
 			_msg = Format ["%1 tabs",_tabs];
 			["SuccessTitleAndText", [_title, _msg]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_player]];
