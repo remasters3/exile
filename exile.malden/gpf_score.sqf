@@ -14,7 +14,7 @@ if (isServer) then {
 			_player setVariable ["ExileMoney",_newmoney,true];
 			_player setVariable ["ExileScore",_newRespect];
 			_title = "Reward!";
-			_msg = Format ["+%1 Tabs<br/> +%2 Respect<br/>",_tabs,_newRespect];
+			_msg = Format ["+%1 Tabs<br/>+%2 Respect<br/>",_tabs,_respect];
 			["SuccessTitleAndText", [_title, _msg]] remoteExecCall ["ExileClient_gui_toaster_addTemplateToast",[_player]];
 			
 			// Update money in database
