@@ -3,7 +3,7 @@ if (isServer) then {
 	private _player = _this select 0;
 	private _tabs = _this select 1;
 
-		if (isplayer _player) Then {
+		if ((typeOf _player) == "Exile_Unit_Player") Then {
 			//private _respect = floor (_tabs/10);
 			private _playerUID = getPlayerUID _player;
 			private _moneyonplayer = _player getVariable ['ExileMoney',0];
