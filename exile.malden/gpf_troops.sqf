@@ -1,6 +1,6 @@
-_EastLightVeh = ["Exile_Car_Tempest","Exile_Car_Zamak"];
+_EastLightVeh = ["Exile_Car_Tempest","Exile_Car_Zamak","Exile_Car_Offroad_Guerilla03","Exile_Car_LandRover_Urban"];
 				 
-_WestLightVeh = ["Exile_Car_Van_Black","Exile_Car_HEMMT"];
+_WestLightVeh = ["Exile_Car_Van_Black","Exile_Car_HEMMT","Exile_Car_Offroad_Blue","Exile_Car_Ikarus_Blue"];
 
 _ResLightVeh = [];
 
@@ -25,7 +25,8 @@ _TroopTruckGroup = group _TroopTruckV;
 _crew = crew _TroopTruckV;
 (driver _TroopTruckV) action ["lightOn", _TroopTruckV];
 
-_grp = [ _startpos, _Side, 10] call BIS_fnc_spawnGroup;
+_count = _TroopTruckV emptyPositions "cargo";
+_grp = [ _startpos, _Side, _count] call BIS_fnc_spawnGroup;
 {[_x] join _TroopTruckGroup; _x moveInCargo _TroopTruckV; } ForEach units _grp;
 
 {[_x,false,true] execVM "gpf_randomgear.sqf";} ForEach units _TroopTruckGroup;
