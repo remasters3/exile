@@ -121,7 +121,7 @@ copyToClipboard Format ["%1",_path];
 //[_x,200,45,360] execVM "gpf_fn_enemyWave.sqf";
 
 
-/*
+
 _places = [];
 {
  if (typeof _x == "O_G_Soldier_LAT2_F") Then {
@@ -131,11 +131,12 @@ _places = [];
  _UpVector = vectorUp _x;
  _name = name _x;
  _txt = Format ['%1 - %2,%3,%4],',_name,_posASL,_dirVector,_UpVector];
- _places = _places + [_txt];
+
+ _places = _places + [_posASL];
  };
 } Foreach allUnits;
 copyToClipboard Format ['%1',_places];
-*/
+
 
 //copyToClipboard Format ['%1',GetPosASL player];
 // [_posASL,_dirVector,_UpVector]
