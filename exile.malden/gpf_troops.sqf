@@ -1,4 +1,4 @@
-_EastLightVeh = ["Exile_Car_Tempest","Exile_Car_Zamak","Exile_Car_Offroad_Guerilla03","Exile_Car_LandRover_Urban"];
+_EastLightVeh = ["Exile_Car_Tempest","Exile_Car_Zamak","Exile_Car_LandRover_Urban"];
 				 
 _WestLightVeh = ["Exile_Car_Van_Black","Exile_Car_HEMMT","Exile_Car_Offroad_Blue","Exile_Car_Ikarus_Blue"];
 
