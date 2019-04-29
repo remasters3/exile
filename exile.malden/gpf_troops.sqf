@@ -17,7 +17,7 @@ if (_Side == west) Then {_Model = SelectRandom _WestLightVeh;};
 if (_Side == east) Then {_Model = SelectRandom _EastLightVeh;}; 
 if (_Side == resistance) Then {_Model = SelectRandom _ResLightVeh;};  
 
-_Safepos = _startpos;
+_Safepos = [_startpos,0,100, 10, 0, 0.25, 0, [],_startpos] call BIS_fnc_findSafePos;
 _TroopTruck = [_Safepos, 0, _Model, _Side] call bis_fnc_spawnvehicle; //_TroopTruck setVariable ["ExileOwnerUID", nil];
 _TroopTruckV = _TroopTruck select 0; _TroopTruckV setVariable ["ExileIsPersistent", false];
 _TroopTruckGroup = group _TroopTruckV;
