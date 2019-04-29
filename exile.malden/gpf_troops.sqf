@@ -5,8 +5,7 @@ _WestLightVeh = ["Exile_Car_Van_Black","Exile_Car_HEMMT","Exile_Car_Offroad_Blue
 _ResLightVeh = [];
 
 private _GetWayPontPos = compile preprocessFile "gpf_roamingpaths.sqf";
-//private _Path = Call _GetWayPontPos;
-private _Path = [[7497.42,10599.8,0],[7217.88,10793.4,0],[6707.51,10890.6,0],[6437.11,10313,0],[5068.35,9828.51,0],[5215.8,9617.44,0],[5391.6,9301.26,0],[4893.17,8652.49,0],[5077.88,8426.07,0],[5171.29,8313.15,0],[5227.71,8258.9,0]];
+private _Path = Call _GetWayPontPos;
 private _startpos = _Path select 0;
 private _count = count _Path;
 troopson = troopson+1; publicVariable "troopson";
