@@ -3037,6 +3037,7 @@ class CfgExileArsenal
 	class O_LSV_02_armed_F                                      { quality = 4; price = 60000; };
 	class B_MRAP_01_hmg_F                                       { quality = 5; price = 65000; };
 	class I_MRAP_03_hmg_F                                       { quality = 5; price = 65000; };
+	class I_LT_01_cannon_F                                      { quality = 5; price = 90000; };
 	class B_APC_Wheeled_01_cannon_F                             { quality = 6; price = 125000;};
 	
 	class I_Boat_Armed_01_minigun_F								{ quality = 6; price = 60000; };
@@ -6128,6 +6129,7 @@ class CfgTraderCategories
 			"O_T_LSV_02_armed_F",
             "B_MRAP_01_hmg_F",
             "I_MRAP_03_hmg_F",
+			"I_LT_01_cannon_F ",
             "B_APC_Wheeled_01_cannon_F"
 		};
 	};

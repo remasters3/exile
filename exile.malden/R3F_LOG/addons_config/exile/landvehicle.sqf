@@ -414,7 +414,8 @@ ALL_CARS = [
 "B_AFV_Wheeled_01_cannon_F",
 "B_T_AFV_Wheeled_01_cannon_F",
 "B_AFV_Wheeled_01_up_cannon_F",
-"B_T_AFV_Wheeled_01_up_cannon_F"
+"B_T_AFV_Wheeled_01_up_cannon_F",
+"I_LT_01_cannon_F"
 ];
 R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow + ALL_CARS;
 
@@ -567,6 +568,8 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
             
     //Armed
     ["Offroad_01_military_base_F", 25],
+	["I_LT_01_cannon_F",50],
+	["B_APC_Wheeled_01_cannon_F",50],
 	          
     //Boats
 	["Boat_Transport_02_base_F", 25],
