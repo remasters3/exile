@@ -3041,6 +3041,8 @@ class CfgExileArsenal
 	
 	class I_Boat_Armed_01_minigun_F								{ quality = 6; price = 60000; };
 	
+	class I_Truck_02_ammo_F                                     { quality = 6; price = 160000; };
+	
 	///////////////////////////////////////////////////////////////////////////////
 	// Hatchback
 	///////////////////////////////////////////////////////////////////////////////
@@ -6143,6 +6145,7 @@ class CfgTraderCategories
 			"Exile_Car_Ural_Covered_Worker",
 			"Exile_Car_V3S_Covered",
 			"Exile_Car_Zamak",
+			"I_Truck_02_ammo_F",
 			"Exile_Car_Tempest",
 			"Exile_Car_HEMMT",
 			"Exile_Car_Ikarus_Blue"
@@ -6158,7 +6161,6 @@ class CfgTraderCategories
 			"Exile_Chopper_Hummingbird_Green",
 			"Exile_Chopper_Hummingbird_Civillian_Wasp",
 			"Exile_Chopper_Huey_Green",
-			"Exile_Chopper_Huey_Armed_Green",
 			"Exile_Chopper_Taru_Black",
 			"Exile_Chopper_Taru_Covered_Black",
 			"Exile_Chopper_Taru_Transport_Black",

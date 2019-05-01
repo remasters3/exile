@@ -1,6 +1,6 @@
-_EastLightVeh = ["Exile_Car_Van_Red","Exile_Car_Van_Red","Exile_Car_Van_Red","Exile_Car_Van_Red","Exile_Car_LandRover_Red","Exile_Car_LandRover_Red","Exile_Car_LandRover_Red","Exile_Car_LandRover_Red","Exile_Car_LandRover_Red","Exile_Car_Zamak"];
+_EastLightVeh = ["Exile_Car_Tempest","Exile_Car_Zamak"];
 				 
-_WestLightVeh = ["Exile_Car_Van_Black","Exile_Car_Van_Black","Exile_Car_Van_Black","Exile_Car_Van_Black","Exile_Car_LandRover_Urban","Exile_Car_LandRover_Urban","Exile_Car_LandRover_Urban","Exile_Car_LandRover_Urban","Exile_Car_LandRover_Urban","Exile_Car_HEMMT"];
+_WestLightVeh = ["Exile_Car_Van_Black","Exile_Car_HEMMT"];
 
 _ResLightVeh = [];
 
@@ -8,6 +8,7 @@ private _GetWayPontPos = compile preprocessFile "gpf_roamingpaths.sqf";
 private _Path = Call _GetWayPontPos;
 private _startpos = _Path select 0;
 private _count = count _Path;
+
 troopson = troopson+1; publicVariable "troopson";
 private _Side = SelectRandom [east,east,east,east,east,east,east,east,West,West];
 private _Model = [];
@@ -17,15 +18,14 @@ if (_Side == west) Then {_Model = SelectRandom _WestLightVeh;};
 if (_Side == east) Then {_Model = SelectRandom _EastLightVeh;}; 
 if (_Side == resistance) Then {_Model = SelectRandom _ResLightVeh;};  
 
-_Safepos = [_startpos,0,200, 20, 0, 0.25, 0, [],_startpos] call BIS_fnc_findSafePos;
+_Safepos = _startpos;
 _TroopTruck = [_Safepos, 0, _Model, _Side] call bis_fnc_spawnvehicle; //_TroopTruck setVariable ["ExileOwnerUID", nil];
 _TroopTruckV = _TroopTruck select 0; _TroopTruckV setVariable ["ExileIsPersistent", false];
 _TroopTruckGroup = group _TroopTruckV;
 _crew = crew _TroopTruckV;
 (driver _TroopTruckV) action ["lightOn", _TroopTruckV];
 
-private _Unitcount = _TroopTruckV emptyPositions "cargo";
-_grp = [ _startpos, _Side, _Unitcount] call BIS_fnc_spawnGroup;
+_grp = [ _startpos, _Side, 10] call BIS_fnc_spawnGroup;
 {[_x] join _TroopTruckGroup; _x moveInCargo _TroopTruckV; } ForEach units _grp;
 
 {[_x,false,true] execVM "gpf_randomgear.sqf";} ForEach units _TroopTruckGroup;

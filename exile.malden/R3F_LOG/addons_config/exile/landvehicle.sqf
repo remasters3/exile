@@ -50,7 +50,6 @@ ALL_CARS = [
 "O_Truck_02_medical_F",
 "O_Truck_02_Ammo_F",
 "O_Truck_02_fuel_F",
-"I_Truck_02_ammo_F",
 "I_Truck_02_box_F",
 "I_Truck_02_medical_F",
 "I_Truck_02_fuel_F",
@@ -563,7 +562,8 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["MRAP_02_base_F", 50],
 	
 	//Trucks
-	["Truck_F", 100],				
+	["Truck_F", 100],
+	["I_Truck_02_ammo_F",100],
             
     //Armed
     ["Offroad_01_military_base_F", 25],
