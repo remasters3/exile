@@ -217,7 +217,8 @@ gpf_SpawnSeaTransport = {
   [[7250.29,10462.4,0],"Shooting Range"],
   [[5551.19,7887.43,0],"FOB Hillside"],
   [[108.629,10302.2,0],"Fuel Dock"],
-  [[3028.8,7225.74,11.7131],"Pirate Cove"]
+  [[3028.8,7225.74,11.7131],"Pirate Cove"],
+  [[5034.32,5171.57,0],"Bandit Cave"]
  ];
 };
 
