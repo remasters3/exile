@@ -25,7 +25,8 @@ _TroopTruckGroup = group _TroopTruckV;
 _crew = crew _TroopTruckV;
 (driver _TroopTruckV) action ["lightOn", _TroopTruckV];
 
-_grp = [ _startpos, _Side, 10] call BIS_fnc_spawnGroup;
+private _Unitcount = _TroopTruckV emptyPositions "cargo";
+_grp = [ _startpos, _Side, _Unitcount] call BIS_fnc_spawnGroup;
 {[_x] join _TroopTruckGroup; _x moveInCargo _TroopTruckV; } ForEach units _grp;
 
 {[_x,false,true] execVM "gpf_randomgear.sqf";} ForEach units _TroopTruckGroup;
