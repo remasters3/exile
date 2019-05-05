@@ -1,6 +1,6 @@
-_EastLightVeh = ["Exile_Car_Tempest","Exile_Car_Zamak"];
+_EastLightVeh = ["Exile_Car_Van_Red","Exile_Car_Van_Red","Exile_Car_Van_Red","Exile_Car_Van_Red","Exile_Car_LandRover_Red","Exile_Car_LandRover_Red","Exile_Car_LandRover_Red","Exile_Car_LandRover_Red","Exile_Car_LandRover_Red","Exile_Car_Zamak"];
 				 
-_WestLightVeh = ["Exile_Car_Van_Black","Exile_Car_HEMMT"];
+_WestLightVeh = ["Exile_Car_Van_Black","Exile_Car_Van_Black","Exile_Car_Van_Black","Exile_Car_Van_Black","Exile_Car_LandRover_Urban","Exile_Car_LandRover_Urban","Exile_Car_LandRover_Urban","Exile_Car_LandRover_Urban","Exile_Car_LandRover_Urban","Exile_Car_HEMMT"];
 
 _ResLightVeh = [];
 
