@@ -83,8 +83,7 @@ _way setWaypointStatements ["true", "_veh = Vehicle this; {deleteVehicle _x;} Fo
 	_txt = Format["%1",_type];
 	sleep 1;
 	};
-  };
-
+	
   troopson = troopson-1; publicVariable "troopson";
 };
 

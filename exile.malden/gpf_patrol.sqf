@@ -74,6 +74,8 @@ _way setWaypointStatements ["true", "_veh = Vehicle this; {deleteVehicle _x;} Fo
 	if (_Side == resistance ) Then {_smc = "ColorGUER";};
 
  while {alive _leader} Do {
+ 	_driver = driver _PatrolCarV ;
+     if (!isPlayer _driver) Then {_PatrolCarV  SetDamage 0;};
     _leader = leader _PatrolCarGroup;
 	_lv = vehicle _leader;
     _pos = Getpos _leader;
