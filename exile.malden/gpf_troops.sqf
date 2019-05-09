@@ -73,7 +73,9 @@ _way setWaypointStatements ["true", "_veh = Vehicle this; {deleteVehicle _x;} Fo
 	if (_Side == east ) Then {_smc = "ColorEAST";};
 	if (_Side == resistance ) Then {_smc = "ColorGUER";};
 
- while {alive _leader} Do {
+ while {alive _leader} Do 
+	_driver = driver _TroopTruckV;
+     if (!isPlayer _driver) Then {_TroopTruckV SetDamage 0;};
     _leader = leader _TroopTruckGroup;
 	_lv = vehicle _leader;
     _pos = Getpos _leader;
