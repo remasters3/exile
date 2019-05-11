@@ -3042,6 +3042,8 @@ class CfgExileArsenal
 	class I_Boat_Armed_01_minigun_F								{ quality = 6; price = 60000; };
 	
 	class I_Truck_02_ammo_F                                     { quality = 6; price = 80000; };
+	class C_Offroad_02_unarmed_blue_F       					{ quality = 3; price = 16000; };
+	class C_Offroad_02_unarmed_red_F        					{ quality = 3; price = 16000; };
 	
 	///////////////////////////////////////////////////////////////////////////////
 	// Hatchback
