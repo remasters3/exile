@@ -14,6 +14,8 @@ patrolon = patrolon+1; publicVariable "patrolon";
 private _Side = east;
 private _Model = [];
 private _Timeout = 60*90;
+_invert = SelectRandom [true,false];
+if (_invert) then {reverse _Path;};
 
 if (_Side == west) Then {_Model = SelectRandom _WestLightBoat;};
 if (_Side == east) Then {_Model = SelectRandom _EastLightBoat;}; 
