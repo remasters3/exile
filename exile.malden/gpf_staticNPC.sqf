@@ -17,6 +17,3 @@ _units = _units + [_unit];
 //player SetPosASL _x; SystemChat Format ["%1 Units spawned",count _units];
 sleep 1;
 } Foreach _PositionsASL;
-
-
-

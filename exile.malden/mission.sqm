@@ -8,7 +8,7 @@ class EditorData
 	toggles=585;
 	class ItemIDProvider
 	{
-		nextID=3001;
+		nextID=3009;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4533.7983,389.36627,8062.6265};
-		dir[]={0.73135453,-0.37278494,0.57131338};
-		up[]={0.29385331,0.92784631,0.2295485};
-		aside[]={0.61568838,-6.3376501e-007,-0.7881726};
+		pos[]={12582.391,36.90168,12765.044};
+		dir[]={-0.96855819,-0.24067651,0.06322255};
+		up[]={-0.24018085,0.9706021,0.015678773};
+		aside[]={0.065141372,-1.2110213e-006,0.99788922};
 	};
 };
 binarizationWanted=0;
@@ -3758,7 +3758,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1056.0692,4.9626784,649.2879};
-				angles[]={0,1.5792987,-0};
+				angles[]={0,1.5792987,0};
 			};
 			side="Empty";
 			flags=5;
@@ -3791,7 +3791,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1043.3422,4.5194755,640.35846};
-				angles[]={0,4.7458124,-0};
+				angles[]={0,4.7458124,0};
 			};
 			side="Empty";
 			flags=1;
@@ -12572,17 +12572,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={117.3957,-19.24856,10292.371};
+				position[]={117.396,-19.248072,10292.371};
 			};
 			side="Empty";
 			flags=1;
 			class Attributes
 			{
+				init="_null = [rhis,false,false] execVM ""gpf_randomgear.sqf"";";
 				disableSimulation=1;
 			};
 			id=2218;
 			type="Land_Pier_Box_F";
-			atlOffset=100.05751;
+			atlOffset=100.058;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -13818,7 +13819,7 @@ class Mission
 			};
 			id=2305;
 			type="Land_FuelStation_Feed_F";
-			atlOffset=0.0051653385;
+			atlOffset=0.0046770573;
 			class CustomAttributes
 			{
 				class Attribute0
