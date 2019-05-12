@@ -8,7 +8,7 @@ class EditorData
 	toggles=585;
 	class ItemIDProvider
 	{
-		nextID=3009;
+		nextID=3015;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12582.391,36.90168,12765.044};
-		dir[]={-0.96855819,-0.24067651,0.06322255};
-		up[]={-0.24018085,0.9706021,0.015678773};
-		aside[]={0.065141372,-1.2110213e-006,0.99788922};
+		pos[]={8338.377,47.787174,2935.6301};
+		dir[]={-0.10247424,-0.73721784,0.66791564};
+		up[]={-0.11180012,0.67562276,0.7287097};
+		aside[]={0.98847926,1.1344746e-006,0.15164922};
 	};
 };
 binarizationWanted=0;
@@ -86,13 +86,15 @@ addons[]=
 	"A3_Structures_F_Households_Stone_Shed",
 	"A3_Structures_F_Argo_Civilian_House_Small01",
 	"A3_Rocks_F_Sharp",
-	"An2"
+	"An2",
+	"A3_Characters_F",
+	"A3_Characters_F_Mark"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=38;
+		items=40;
 		class Item0
 		{
 			className="exile_client";
@@ -355,6 +357,20 @@ class AddonsMetaData
 			className="An2";
 			name="An2";
 		};
+		class Item38
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item39
+		{
+			className="A3_Characters_F_Mark";
+			name="Arma 3 Marksmen - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=2218544;
@@ -386,7 +402,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=624;
+		items=625;
 		class Item0
 		{
 			dataType="Group";
@@ -20590,6 +20606,81 @@ class Mission
 			id=2996;
 			type="Land_Cargo_House_V2_F";
 			atlOffset=0.53317261;
+		};
+		class Item624
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8330.9678,21.466459,2957.925};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+						init="_null = this addaction [""Debug On"",""execVM 'debug.sqf';""]; " \n "_null = this addaction [""Debug Off"",""debug = false;""];";
+						name="DebugPlayer";
+						presence=0;
+					};
+					id=3014;
+					type="O_G_Sharpshooter_F";
+					atlOffset=-1.9073486e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3013;
+			atlOffset=-1.9073486e-006;
 		};
 	};
 };

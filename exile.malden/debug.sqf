@@ -1,4 +1,27 @@
-allLocationTypes = [];
+debug = true;
+// player addaction ["Debug On","execVM 'debug.sqf';"];
+// player addaction ["Debug Off","debug = false;"];
+private _GetWayPontPos = compile preprocessFile "gpf_roamingpaths.sqf";
+private _Path = Call _GetWayPontPos;
+private _cnt = 0;
+private _markers = [];
+{
+_txt = Format ["Marker_%1",_cnt];
+_mkr = createMarker [_txt, _x];
+_mkr setMarkerType "hd_destroy";
+_mkr setMarkerText _txt;
+_cnt = _cnt+1;
+_markers = _markers + [_mkr];
+player SetPos _x;
+sleep 1;
+} Foreach _path;
+waitUntil {!debug};
+{deleteMarker _x}Foreach _markers;
+
+
+
+
+/*allLocationTypes = [];
 "allLocationTypes pushBack configName _x" configClasses (configFile >> "CfgLocationTypes");
 _places = nearestLocations [player, allLocationTypes,500,player];
 {
@@ -11,7 +34,7 @@ _places = nearestLocations [player, allLocationTypes,500,player];
 } forEach [(_places Select 0)];
 copyToClipboard Format ['%1',allLocationTypes];
 //["Mount","Name","Strategic","StrongpointArea","FlatArea","FlatAreaCity","FlatAreaCitySmall","CityCenter","Airport","NameMarine","NameCityCapital","NameCity","NameVillage","NameLocal","Hill","ViewPoint","RockArea","BorderCrossing","VegetationBroadleaf","VegetationFir","VegetationPalm","VegetationVineyard","fakeTown","Area","Flag","b_unknown","o_unknown","n_unknown","b_inf","o_inf","n_inf","b_motor_inf","o_motor_inf","n_motor_inf","b_mech_inf","o_mech_inf","n_mech_inf","b_armor","o_armor","n_armor","b_recon","o_recon","n_recon","b_air","o_air","n_air","b_plane","o_plane","n_plane","b_uav","o_uav","n_uav","b_naval","o_naval","n_naval","b_med","o_med","n_med","b_art","o_art","n_art","b_mortar","o_mortar","n_mortar","b_hq","o_hq","n_hq","b_support","o_support","n_support","b_maint","o_maint","n_maint","b_service","o_service","n_service","b_installation","o_installation","n_installation","u_installation","b_antiair","o_antiair","n_antiair","c_unknown","c_car","c_ship","c_air","c_plane","group_0","group_1","group_2","group_3","group_4","group_5","group_6","group_7","group_8","group_9","group_10","group_11","respawn_unknown","respawn_inf","respawn_motor","respawn_armor","respawn_air","respawn_plane","respawn_naval","respawn_para","ExileTerritory","Invisible","HistoricalSite","CivilDefense","CulturalProperty","DangerousForces","SafetyZone"]
-
+*/
 // player addaction ["Name Target","Systemchat str(typeOf cursortarget); copyToClipboard str(typeOf cursortarget);"];
 /*
 private _centerWorld =  getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition"); //GetMarkerPos "marker_debug";
@@ -121,7 +144,7 @@ copyToClipboard Format ["%1",_path];
 //[_x,200,45,360] execVM "gpf_fn_enemyWave.sqf";
 
 
-
+/*
 _places = [];
 {
  if (typeof _x == "O_G_Soldier_LAT2_F") Then {
@@ -136,7 +159,7 @@ _places = [];
  };
 } Foreach allUnits;
 copyToClipboard Format ['%1',_places];
-
+*/
 
 //copyToClipboard Format ['%1',GetPosASL player];
 // [_posASL,_dirVector,_UpVector]

@@ -89,7 +89,10 @@ private _locs = [
  [[9260.73,6820.39,0],2,[]],	//taffhouse top trees
  [[9739.48,5921.2,0],2,[]],		//noctiLH rock
  [[9711.67,5933.29,0],6,[]],	//noctiLH bushes'n'rocks
- [[2832.54,7536.11,0],50,[]]	//harborPatrolStart
+ [[2832.54,7536.11,0],50,[]],	//harborPatrolStart
+ [[5088.02,8404.92,0],30,[]],    //isaro-milbase patrol
+ [[7648.4,10769.5,0],20,[]],	//milbase-isaro patrol
+ [[7511.58,10831.7,0],20,[]]	//mil base range patrol
 ];
 {
   private _loc = _x;
