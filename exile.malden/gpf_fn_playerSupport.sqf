@@ -19,7 +19,7 @@ _DropTroopsGroup = [_DropHeliSpawn, _Side,_Model] call BIS_fnc_spawnGroup;
 _DropHeliV flyInHeight 100;
 _DropHeliV limitSpeed 100;
 _DropHeliV addEventHandler ["GetOut", "_veh = _this Select 0; if (count crew _veh  <= 0) Then {deleteVehicle _veh;}"];
-_EvacHeliV addEventHandler ["GetOut", "_veh = _this Select 0; _alive = {alive _x} count crew _veh; if (_alive <= 0) Then {deleteVehicle _veh;}"];
+_DropHeliV addEventHandler ["GetOut", "_veh = _this Select 0; _alive = {alive _x} count crew _veh; if (_alive <= 0) Then {deleteVehicle _veh;}"];
 
 _way1 = _DropHeliGroup addWaypoint [_DropPos, 0];
 _way1 setWaypointType "MOVE";
