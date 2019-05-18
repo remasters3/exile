@@ -1,4 +1,4 @@
-"Backed up old pbo to exile.malden.pbo.2019_05_12-23.59.11. Starting build at 2019_05_12-23.59.11" 
+"Backed up old pbo to exile.malden.pbo.2019_05_18-16.27.54. Starting build at 2019_05_18-16.27.54" 
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\call.fsm
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\CfgRemoteExec.hpp
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\config.cpp
@@ -16,12 +16,14 @@ C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_fn_JailTime.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_fn_killmsg.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_fn_msg.sqf
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_fn_playerSupport.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_fn_rescueEvac.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_fn_targets.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_GuardNPC.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_helo.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_manhunt.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_patrol.sqf
+C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_player_support.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_randomgear.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_rearm.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\gpf_rescue.sqf
@@ -305,4 +307,3 @@ C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\R3F_LOG\usine_creation\revendre_direct.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\R3F_LOG\usine_creation\revendre_selection.sqf
 C:\Users\Gerry\Documents\Arma 3 - Other Profiles\Remasters\missions\exile.malden\R3F_LOG\usine_creation\usine_init.sqf
-"End build 12/05/2019 - 23:59:17.61" 

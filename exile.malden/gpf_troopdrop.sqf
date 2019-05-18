@@ -1,6 +1,5 @@
 // [_DropPos,_HeliModel,_Side,_Model,_timeout,_patrol] Call GPF_fnc_TroopDrop;
 private ["_DropPos","_HeliModel","_Side","_Model","_DropHeliSpawn","_DropHeli","_DropHeliV","_DropHeliGroup","_DropTroopsGroup","_way1","_way2","_way2Pos","_models"];
-
 _DropPos = param[0];
 _HeliModel = param[1];
 _Side = param[2];
