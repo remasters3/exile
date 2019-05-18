@@ -63,6 +63,8 @@ waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount)};
 	if ((typeof _unit) != "Exile_Unit_Player") Then {
 	unassignVehicle _unit;
 	doGetOut _unit;
+	doStop _unit;
+	_unit doFollow _player;	
 	//[_unit] orderGetIn false;
 	//commandGetOut _unit;
 	};
