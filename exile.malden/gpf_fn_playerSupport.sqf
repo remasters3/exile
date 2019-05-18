@@ -13,7 +13,8 @@ _DropHeli = [_DropHeliSpawn, 0, _HeliModel, _Side] call bis_fnc_spawnvehicle;
 _DropHeliV = _DropHeli select 0;
 _DropHeliGroup = group _DropHeliV;
 _DropTroopsGroup = [_DropHeliSpawn, _Side,_Model] call BIS_fnc_spawnGroup;
-{_x moveInCargo _DropHeliV;[_x] join _Group;} Foreach units _DropTroopsGroup;
+{[_x,false,true] execVM "gpf_randomgear.sqf";} foreach units _DropHeliGroup;
+{[_x,false,true] execVM "gpf_randomgear.sqf";_x moveInCargo _DropHeliV;[_x] join _Group;} Foreach units _DropTroopsGroup;
 _DropHeliV flyInHeight 100;
 _DropHeliV limitSpeed 100;
 
