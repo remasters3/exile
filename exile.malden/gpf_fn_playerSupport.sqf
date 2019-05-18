@@ -54,9 +54,9 @@ waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount)};
 
   _GetInVehicle = {_unit = _this select 0; _veh = _this select 1;
 	if ((typeof _unit) != "Exile_Unit_Player") Then {
-	if ((_veh emptyPositions "Gunner") > 0) Then {/*_unit moveInGunner _veh;*/_unit assignAsGunner _veh;};
-	if ((_veh emptyPositions "Commander") > 0) Then {/*_unit moveInCommander _veh;*/_unit assignAsCommander _veh;};
-	if ((_veh emptyPositions "Cargo") > 0) Then {/*_unit moveInCargo _veh;*/_unit assignAsCargo _veh;};
+	if ((_veh emptyPositions "Gunner") > 0) Then {/*_unit moveInGunner _veh;*/[_unit] orderGetIn true;_unit assignAsGunner _veh;};
+	if ((_veh emptyPositions "Commander") > 0) Then {/*_unit moveInCommander _veh;*/[_unit] orderGetIn true;_unit assignAsCommander _veh;};
+	if ((_veh emptyPositions "Cargo") > 0) Then {/*_unit moveInCargo _veh;*/[_unit] orderGetIn true;_unit assignAsCargo _veh;};
 	};
   };
   _GetOutVehicle = {_unit = _this select 0; _veh = _this select 1;
