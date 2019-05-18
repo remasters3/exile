@@ -11,6 +11,7 @@ _Group = group _player;
 _DropHeliSpawn = [_DropPos,900,1000, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 _DropHeli = [_DropHeliSpawn, 0, _HeliModel, _Side] call bis_fnc_spawnvehicle;
 _DropHeliV = _DropHeli select 0;
+_CargoCount = _DropHeliV emptyPositions "cargo";
 _DropHeliGroup = group _DropHeliV;
 _DropTroopsGroup = [_DropHeliSpawn, _Side,_Model] call BIS_fnc_spawnGroup;
 {[_x,false,true] execVM "gpf_randomgear.sqf";} foreach units _DropHeliGroup;
@@ -48,7 +49,7 @@ _way2 setWaypointStatements ["true", "_veh = vehicle this; _grp = group this;{de
 	};
 };
 
-waitUntil {((_DropHeliV emptyPositions "cargo") == 0)};
+waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount)};
 [_player] Spawn {_player = _this select 0;
 
   _GetInVehicle = {_unit = _this select 0; _veh = _this select 1;
