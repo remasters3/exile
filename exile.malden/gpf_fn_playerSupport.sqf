@@ -76,13 +76,13 @@ waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount) or (!alive _Drop
   };
   _cnt  =  {if (!isplayer _x) then {alive _x};} count units group _player;
   while {(_cnt > 0)} Do {
-    systemChat format ["alive -%1",_cnt];
+    //systemChat format ["alive -%1",_cnt];
 	if ((vehicle _player) != _player) then { {[_x,(vehicle _player)] call _GetInVehicle;} foreach units group _player;
 	} Else {
 	{
 	 if ((vehicle _x) != _x) Then {[_x] Call _GetOutVehicle;};
 	} Foreach units group _player; 
-	group _player setFormation "STAG COLUMN";
+	//group _player setFormation "STAG COLUMN";
 	};
 	sleep 1;
 	_cnt  =  {if (!isplayer _x) then {alive _x};} count units group _player;
