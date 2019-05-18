@@ -31,7 +31,7 @@ _way1 setWaypointTimeout [8, 9, 10];
 _way1 setWaypointStatements ["true","_veh = vehicle this;_list = (crew _veh) select {(assignedVehicleRole _x) select 0 isEqualTo 'cargo'};{doGetOut _x;} forEach _list;"];
 
 
-_way2Pos = [_DropPos,2000,2500, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+_way2Pos = [_DropPos,2000,2500, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 _way2 = _DropHeliGroup addWaypoint [_way2Pos, 0];
 _way2 setWaypointType "MOVE";
 _way2 setWaypointBehaviour "CARELESS";
@@ -46,4 +46,35 @@ _way2 setWaypointStatements ["true", "_veh = vehicle this; _grp = group this;{de
 		if (_alive <= 0) Then {deleteVehicle _DropHeliV;};
 		sleep 1;
 	};
+};
+
+[_player] Spawn {_player = _this select 0;
+
+  _GetInVehicle = {_unit = _this select 0; _veh = _this select 1;
+	if ((typeof _unit) != "Exile_Unit_Player") Then {
+	if ((_veh emptyPositions "Gunner") > 0) Then {_unit moveInGunner _veh;_unit assignAsGunner _veh;};
+	if ((_veh emptyPositions "Commander") > 0) Then {_unit moveInCommander _veh;_unit assignAsCommander _veh;};
+	if ((_veh emptyPositions "Cargo") > 0) Then {_unit moveInCargo _veh;_unit assignAsCargo _veh;};
+	};
+  };
+  _GetOutVehicle = {_unit = _this select 0; _veh = _this select 1;
+	if ((typeof _unit) != "Exile_Unit_Player") Then {
+	unassignVehicle _unit;
+	doGetOut _unit;
+	};
+  };
+  _cnt  =  {if (!isplayer _x) then {alive _x};} count units group _player;
+  while {(_cnt > 0)} Do {
+    systemChat format ["alive -%1",_cnt];
+	if ((vehicle _player) != _player) then { {[_x,(vehicle _player)] call _GetInVehicle;} foreach units group _player;
+	} Else {
+	{
+	 if ((vehicle _x) != _x) Then {[_x] Call _GetOutVehicle;};
+	} Foreach units group _player;
+	
+	};
+	sleep 1;
+	_cnt  =  {if (!isplayer _x) then {alive _x};} count units group _player;
+	};
+	
 };
