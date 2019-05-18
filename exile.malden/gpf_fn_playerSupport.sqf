@@ -48,6 +48,7 @@ _way2 setWaypointStatements ["true", "_veh = vehicle this; _grp = group this;{de
 	};
 };
 
+waitUntil {((_DropHeliV emptyPositions "cargo") == 0)};
 [_player] Spawn {_player = _this select 0;
 
   _GetInVehicle = {_unit = _this select 0; _veh = _this select 1;
