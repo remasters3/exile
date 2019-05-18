@@ -8,6 +8,7 @@ _Side = side _player;
 _DropPos = GetPos _player;
 _Group = group _player;
 { if (!isPlayer _x) Then {deleteVehicle _x;}; } forEach units _Group;
+if (!isNull _DropHeliV) then {{deleteVehicle _x} foreach crew _DropHeli;deleteVehicle _DropHeliV;};
 _DropHeliSpawn = [_DropPos,900,1000, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 _DropHeli = [_DropHeliSpawn, 0, _HeliModel, _Side] call bis_fnc_spawnvehicle;
 _DropHeliV = _DropHeli select 0;
