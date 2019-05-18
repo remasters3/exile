@@ -60,7 +60,8 @@ waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount)};
 	};
   };
   _GetOutVehicle = {_unit = _this select 0; _veh = _this select 1;
-	if ((typeof _unit) != "Exile_Unit_Player") Then {
+	//if ((typeof _unit) != "Exile_Unit_Player") Then {
+	if (!isPlayer _unit) Then {
 	unassignVehicle _unit;
 	doGetOut _unit;
 	doStop _unit;
