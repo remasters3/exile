@@ -43,8 +43,10 @@ _way2 setWaypointStatements ["true", "_veh = vehicle this; _grp = group this;{de
 
 [_DropHeliV] Spawn { _DropHeliV = _this select 0;
 	while {alive _DropHeliV} do {
-		_alive = {alive _x} count crew _DropHeliV; 
-		if (_alive <= 0) Then {deleteVehicle _DropHeliV;};
+		_DropHeliV SetDamage 0;
+		_DropHeliV Setfuel 1;
+		_crewAlive = {alive _x} count crew _DropHeliV; 
+		if (_crewAlive == 0) Then {deleteVehicle _DropHeliV;};
 		sleep 1;
 	};
 };
