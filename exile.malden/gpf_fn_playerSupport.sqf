@@ -8,7 +8,7 @@ _Side = side _player;
 _DropPos = GetPos _player;
 _Group = group _player;
 { if (!isPlayer _x) Then {deleteVehicle _x;}; } forEach units _Group;
-_DropHeliSpawn = [_DropPos,900,1000, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+_DropHeliSpawn = [_DropPos,900,1000, 5, 0, 60 * (pi / 180), 1, []] call BIS_fnc_findSafePos;
 _DropHeli = [_DropHeliSpawn, 0, _HeliModel, _Side] call bis_fnc_spawnvehicle;
 _DropHeliV = _DropHeli select 0;
 _DropHeliGroup = group _DropHeliV;
@@ -46,6 +46,4 @@ _way2 setWaypointStatements ["true", "_veh = vehicle this; _grp = group this;{de
 		if (_alive <= 0) Then {deleteVehicle _DropHeliV;};
 		sleep 1;
 	};
-
-
 };
