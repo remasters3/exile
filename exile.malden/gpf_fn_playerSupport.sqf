@@ -78,7 +78,7 @@ waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount) or (!alive _Drop
 	{
 	 if ((vehicle _x) != _x) Then {[_x] Call _GetOutVehicle;};
 	} Foreach units group _player; 
-	group _player setFormation "VEE";
+	group _player setFormation "STAG COLUMN";
 	};
 	sleep 1;
 	_cnt  =  {if (!isplayer _x) then {alive _x};} count units group _player;
