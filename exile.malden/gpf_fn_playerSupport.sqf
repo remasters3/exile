@@ -17,6 +17,8 @@ _DropTroopsGroup = [_DropHeliSpawn, _Side,_Model] call BIS_fnc_spawnGroup;
 {[_x,false,true] execVM "gpf_randomgear.sqf";_x moveInCargo _DropHeliV;[_x] join _Group;} Foreach units _DropTroopsGroup;
 _DropHeliV flyInHeight 100;
 _DropHeliV limitSpeed 100;
+_DropHeliV addEventHandler ["GetOut", "_veh = _this Select 0; if (count crew _veh  <= 0) Then {deleteVehicle _veh;}"];
+_EvacHeliV addEventHandler ["GetOut", "_veh = _this Select 0; _alive = {alive _x} count crew _veh; if (_alive <= 0) Then {deleteVehicle _veh;}"];
 
 _way1 = _DropHeliGroup addWaypoint [_DropPos, 0];
 _way1 setWaypointType "MOVE";
@@ -37,3 +39,13 @@ _way2 setWaypointCombatMode "GREEN";
 _way2 setWaypointSpeed "FULL";
 _way2 setWaypointCompletionRadius 1000;
 _way2 setWaypointStatements ["true", "_veh = vehicle this; _grp = group this;{deleteVehicle _x;} forEach units _grp; deleteVehicle _veh;"];
+
+[_DropHeliV] Spawn { _DropHeliV = _this select 0;
+	while {alive _DropHeliV} do {
+		_alive = {alive _x} count crew _DropHeliV; 
+		if (_alive <= 0) Then {deleteVehicle _DropHeliV;};
+		sleep 1;
+	};
+
+
+};
