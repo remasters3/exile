@@ -54,17 +54,17 @@ waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount)};
 
   _GetInVehicle = {_unit = _this select 0; _veh = _this select 1;
 	if ((typeof _unit) != "Exile_Unit_Player") Then {
-	if ((_veh emptyPositions "Gunner") > 0) Then {_unit assignAsGunner _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;_unit moveInGunner _veh;};/*_unit moveInGunner _veh;*/
-	if ((_veh emptyPositions "Commander") > 0) Then {_unit assignAsCommander _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;_unit moveInCommander _veh;};/*_unit moveInCommander _veh;*/
-	if ((_veh emptyPositions "Cargo") > 0) Then {_unit assignAsCargo _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;_unit moveInCargo _veh;};/*_unit moveInCargo _veh;*/
+	if ((_veh emptyPositions "Gunner") > 0) Then {_unit assignAsGunner _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInGunner _veh;};/*_unit moveInGunner _veh;*/
+	if ((_veh emptyPositions "Commander") > 0) Then {_unit assignAsCommander _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInCommander _veh;};/*_unit moveInCommander _veh;*/
+	if ((_veh emptyPositions "Cargo") > 0) Then {_unit assignAsCargo _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInCargo _veh;};/*_unit moveInCargo _veh;*/
 	};
   };
   _GetOutVehicle = {_unit = _this select 0; _veh = _this select 1;
 	if ((typeof _unit) != "Exile_Unit_Player") Then {
 	unassignVehicle _unit;
 	doGetOut _unit;
-	[_unit] orderGetIn false;
-	commandGetOut _unit;
+	//[_unit] orderGetIn false;
+	//commandGetOut _unit;
 	};
   };
   _cnt  =  {if (!isplayer _x) then {alive _x};} count units group _player;
