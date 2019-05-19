@@ -21,7 +21,7 @@ private _DropHeliGroup = group _DropHeliV;
 private _DropTroopsGroup = [_DropHeliSpawn, _Side,_Model] call BIS_fnc_spawnGroup;
 _player setVariable ["gpf_support_group",_DropTroopsGroup,true];
 [_player,_DropTroopsGroup] Spawn {_player = _this select 0; _unit = _this select 1;
-	waitUntil {!alive _player};
+	waitUntil { not alive _player };
 	{deleteVehicle _x;} foreach units _DropTroopsGroup;
 };
 
