@@ -57,7 +57,8 @@ _way2 setWaypointStatements ["true", "_veh = vehicle this; _grp = group this;{de
 
 waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount) or (!alive _DropHeliV)};
 [_player] Spawn {_player = _this select 0;
-_DropTroopsGroup = _player getVariable "gpf_support_group";
+private _DropTroopsGroup = _player getVariable "gpf_support_group";
+
   _GetInVehicle = {_unit = _this select 0; _veh = _this select 1;
 	if ((typeof _unit) != "Exile_Unit_Player") Then {
 		if ((_veh emptyPositions "Gunner") > 0) Then {doStop _unit;_unit assignAsGunner _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;/*_unit moveInGunner _veh;*/};
@@ -70,21 +71,33 @@ _DropTroopsGroup = _player getVariable "gpf_support_group";
 	unassignVehicle _unit;
 	doGetOut _unit;
 	commandGetOut _unit;
-	doStop _unit;
-	_unit doFollow _player;
 	[_unit] orderGetIn false;
 	commandGetOut _unit;
 	//};
   };
+  _followPlayer = { _unit = _this select 0;_player = _this select 1;
+	doStop _unit;
+	_unit doFollow _player;
+  };
   _cnt  =  {if (!isplayer _x) then {alive _x};} count units _DropTroopsGroup;
   while {(_cnt > 0)} Do {
     //systemChat format ["alive -%1",_cnt];
-	if ((vehicle _player) != _player) then { {[_x,(vehicle _player)] call _GetInVehicle;} foreach units _DropTroopsGroup;
-	} Else {
-	{
-	 if ((vehicle _x) != _x) Then {[_x] Call _GetOutVehicle;};
-	} Foreach units _DropTroopsGroup; 
-	//_DropTroopsGroup setFormation "STAG COLUMN";
+	if ((vehicle _player) != _player) then {
+			{
+			if ((vehicle _x) != (vehicle _player)) then {
+				[_x,(vehicle _player)] call _GetInVehicle;
+				} foreach units _DropTroopsGroup;
+			};
+	};
+	
+	if ((vehicle _player) == _player) then {
+			{
+			if ((vehicle _x) != _x) then {
+				[_x,(vehicle _player)] call _GetOutVehicle;
+				} else {
+				[_x,_player] call _followPlayer;
+				};
+			} foreach units _DropTroopsGroup;
 	};
 	sleep 1;
 	_cnt  =  {if (!isplayer _x) then {alive _x};} count units _DropTroopsGroup;
