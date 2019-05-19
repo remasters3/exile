@@ -1,6 +1,18 @@
+_Green_Debug_Player = _this select 0;
+if (Green_Debug_Player != _Green_Debug_Player) ExitWith {};
 debug = true;
+
+_DebugGroup = _Green_Debug_Player getVariable "gpf_support_group";
+if ((group _Green_Debug_Player) == _DebugGroup) Then {[_Green_Debug_Player] join grpNull;}
+Else {[_Green_Debug_Player] join _DebugGroup;_DebugGroup selectLeader _Green_Debug_Player;};
+
+
+
+
 // player addaction ["Debug On","execVM 'debug.sqf';"];
 // player addaction ["Debug Off","debug = false;"];
+
+/*
 private _GetWayPontPos = compile preprocessFile "gpf_roamingpaths.sqf";
 private _Path = Call _GetWayPontPos;
 private _cnt = 0;
@@ -18,7 +30,7 @@ sleep 1;
 waitUntil {!debug};
 {deleteMarker _x}Foreach _markers;
 
-
+*/
 
 
 /*allLocationTypes = [];
@@ -206,3 +218,5 @@ copyToClipboard Format ['%1',_places];
 //  sleep 1;
 //} Foreach _places;
 if (true) ExitWith {};
+*/
+debug = false;

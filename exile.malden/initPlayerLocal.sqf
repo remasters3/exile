@@ -3,6 +3,7 @@
  * www.exilemod.com
  * Exile.Malden by [FPS]kuplion
  */
+ [] Spawn {
 if (!hasInterface || isServer) exitWith {};
 
 // 34 NPCs
@@ -140,7 +141,7 @@ private _npcs = [
 	[_trader,false,false] execVM "gpf_randomgear.sqf";
 }
 forEach _npcs;
-
+};
 playerQuad = false;
 missionon = true;
 GPF_Target = false;

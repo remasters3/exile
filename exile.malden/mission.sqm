@@ -8,7 +8,7 @@ class EditorData
 	toggles=585;
 	class ItemIDProvider
 	{
-		nextID=3015;
+		nextID=3019;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8338.377,47.787174,2935.6301};
-		dir[]={-0.10247424,-0.73721784,0.66791564};
-		up[]={-0.11180012,0.67562276,0.7287097};
-		aside[]={0.98847926,1.1344746e-006,0.15164922};
+		pos[]={10041.355,18.751015,2231.4263};
+		dir[]={0.92932087,-0.3045204,-0.2089906};
+		up[]={0.29712352,0.95249957,-0.066818714};
+		aside[]={-0.21941122,-3.7638529e-007,-0.97565639};
 	};
 };
 binarizationWanted=0;
@@ -88,13 +88,21 @@ addons[]=
 	"A3_Rocks_F_Sharp",
 	"An2",
 	"A3_Characters_F",
-	"A3_Characters_F_Mark"
+	"A3_Weapons_F_Exp",
+	"A3_Weapons_F_Acc",
+	"A3_Weapons_F",
+	"A3_Weapons_F_Launchers_Titan",
+	"A3_Weapons_F_Pistols_Pistol_Heavy_01",
+	"A3_Characters_F_Orange_Headgear",
+	"A3_Characters_F_Tank_Uniforms",
+	"A3_Characters_F_Exp_Vests",
+	"A3_Weapons_F_Mark_Acc"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=40;
+		items=44;
 		class Item0
 		{
 			className="exile_client";
@@ -366,8 +374,36 @@ class AddonsMetaData
 		};
 		class Item39
 		{
-			className="A3_Characters_F_Mark";
-			name="Arma 3 Marksmen - Characters and Clothing";
+			className="A3_Weapons_F_Exp";
+			name="Arma 3 Apex - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item40
+		{
+			className="A3_Characters_F_Orange";
+			name="Arma 3 Orange - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item41
+		{
+			className="A3_Characters_F_Tank";
+			name="Arma 3 Tank - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item42
+		{
+			className="A3_Characters_F_Exp";
+			name="Arma 3 Apex - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item43
+		{
+			className="A3_Weapons_F_Mark";
+			name="Arma 3 Marksmen - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -20610,7 +20646,7 @@ class Mission
 		class Item624
 		{
 			dataType="Group";
-			side="East";
+			side="Independent";
 			class Entities
 			{
 				items=1;
@@ -20619,19 +20655,162 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8330.9678,21.466459,2957.925};
+						position[]={10044.161,15.481467,2231.2461};
+						angles[]={0,1.8856711,0};
 					};
-					side="East";
+					side="Independent";
 					flags=7;
 					class Attributes
 					{
-						init="_null = this addaction [""Debug On"",""execVM 'debug.sqf';""]; " \n "_null = this addaction [""Debug Off"",""debug = false;""];";
-						name="DebugPlayer";
-						presence=0;
+						init="_null = execvm ""initPlayerLocal.sqf"";this addaction [""gear"","" [(_this select 0),false] execVM 'gpf_randomgear.sqf';""]; this addaction [""Debug"",""[(_this select 0)]execVM 'debug.sqf'""];";
+						name="Green_Debug_Player";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="arifle_MX_GL_khk_F";
+								optics="optic_ERCO_khk_F";
+								muzzle="muzzle_snds_H_khk_F";
+								flashlight="acc_flashlight";
+								class primaryMuzzleMag
+								{
+									name="30Rnd_65x39_caseless_mag";
+									ammoLeft=30;
+								};
+							};
+							class secondaryWeapon
+							{
+								name="launch_I_Titan_short_F";
+								class primaryMuzzleMag
+								{
+									name="Titan_AT";
+									ammoLeft=1;
+								};
+							};
+							class handgun
+							{
+								name="hgun_Pistol_heavy_01_F";
+								optics="optic_MRD";
+								muzzle="muzzle_snds_acp";
+								flashlight="acc_flashlight_pistol";
+								class primaryMuzzleMag
+								{
+									name="11Rnd_45ACP_Mag";
+									ammoLeft=11;
+								};
+							};
+							class binocular
+							{
+								name="Rangefinder";
+							};
+							class uniform
+							{
+								typeName="U_Tank_green_F";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=4;
+									class Item0
+									{
+										name="Exile_Item_InstaDoc";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="Exile_Item_Vishpirin";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="Exile_Item_MountainDupe";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="Exile_Item_MacasCheese_Cooked";
+										count=1;
+										ammoLeft=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="V_HarnessO_ghex_F";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=5;
+									class Item0
+									{
+										name="MiniGrenade";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="Exile_Item_CanOpener";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="Exile_Item_PlasticBottleFreshWater";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="3Rnd_HE_Grenade_shell";
+										count=6;
+										ammoLeft=3;
+									};
+									class Item4
+									{
+										name="30Rnd_65x39_caseless_mag";
+										count=3;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="optic_AMS";
+										count=1;
+									};
+								};
+							};
+							class backpack
+							{
+								typeName="B_Carryall_oli";
+								isBackpack=1;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="Titan_AT";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="Exile_Item_XM8";
+							radio="ItemRadio";
+							gps="ItemGPS";
+							goggles="G_Bandanna_beast";
+							hmd="NVGogglesB_grn_F";
+							headgear="H_PASGT_basic_olive_F";
+						};
 					};
-					id=3014;
-					type="O_G_Sharpshooter_F";
-					atlOffset=-1.9073486e-006;
+					id=3018;
+					type="I_Soldier_A_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -20649,7 +20828,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male02GRE";
+									value="Male04GRE";
 								};
 							};
 						};
@@ -20668,7 +20847,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=1.02;
+									value=0.98000002;
 								};
 							};
 						};
@@ -20679,8 +20858,7 @@ class Mission
 			class Attributes
 			{
 			};
-			id=3013;
-			atlOffset=-1.9073486e-006;
+			id=3017;
 		};
 	};
 };
