@@ -60,9 +60,9 @@ waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount) or (!alive _Drop
 _DropTroopsGroup = _player getVariable "gpf_support_group";
   _GetInVehicle = {_unit = _this select 0; _veh = _this select 1;
 	if ((typeof _unit) != "Exile_Unit_Player") Then {
-		if ((_veh emptyPositions "Gunner") > 0) Then {_unit assignAsGunner _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInGunner _veh;};/*_unit moveInGunner _veh;*/
-		if ((_veh emptyPositions "Commander") > 0) Then {_unit assignAsCommander _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInCommander _veh;};/*_unit moveInCommander _veh;*/
-		if ((_veh emptyPositions "Cargo") > 0) Then {_unit assignAsCargo _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInCargo _veh;};/*_unit moveInCargo _veh;*/
+		if ((_veh emptyPositions "Gunner") > 0) Then {doStop _unit;_unit assignAsGunner _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;/*_unit moveInGunner _veh;*/};
+		if ((_veh emptyPositions "Commander") > 0) Then {doStop _unit;_unit assignAsCommander _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;/*_unit moveInCommander _veh;*/};
+		if ((_veh emptyPositions "Cargo") > 0) Then {doStop _unit;_unit assignAsCargo _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;/*_unit moveInCargo _veh;*/};
 	};
   };
    _GetOutVehicle = {_unit = _this select 0; _veh = _this select 1;
@@ -72,8 +72,8 @@ _DropTroopsGroup = _player getVariable "gpf_support_group";
 	commandGetOut _unit;
 	doStop _unit;
 	_unit doFollow _player;
-	//[_unit] orderGetIn false;
-	//commandGetOut _unit;
+	[_unit] orderGetIn false;
+	commandGetOut _unit;
 	//};
   };
   _cnt  =  {if (!isplayer _x) then {alive _x};} count units _DropTroopsGroup;
@@ -82,7 +82,7 @@ _DropTroopsGroup = _player getVariable "gpf_support_group";
 	if ((vehicle _player) != _player) then { {[_x,(vehicle _player)] call _GetInVehicle;} foreach units _DropTroopsGroup;
 	} Else {
 	{
-	 if ((vehicle _x) != _x) Then {[_x] Call _GetOutVehicle;sleep 1;};
+	 if ((vehicle _x) != _x) Then {[_x] Call _GetOutVehicle;};
 	} Foreach units _DropTroopsGroup; 
 	//_DropTroopsGroup setFormation "STAG COLUMN";
 	};
