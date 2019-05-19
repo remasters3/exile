@@ -1,23 +1,25 @@
 // [player,'B_Heli_Transport_01_camo_F','O_soldier_PG_F'] Call GPF_fnc_playerSupport;
 private ["_player"];
-_player = param[0];
-_HeliModel = param[1];
-_Model = param[2];
+private _player = param[0];
+private _HeliModel = param[1];
+private _Model = param[2];
+private _Side = side _player;
+private _DropPos = GetPos _player;
+private _Group = group _player;
 
-_Side = side _player;
-_DropPos = GetPos _player;
-_Group = group _player;
-{ if (!isPlayer _x) Then {deleteVehicle _x;}; } forEach units _Group;
+{ if (!isNull (_player getVariable "gpf_support_group")) Then {deleteVehicle _x;}; } forEach units (_player getVariable "gpf_support_group");
 sleep 2;
-//if (!isNull _DropHeliV) then {{deleteVehicle _x} foreach crew _DropHeli;deleteVehicle _DropHeliV;};
-_DropHeliSpawn = [_DropPos,900,1000, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
-_DropHeli = [_DropHeliSpawn, 0, _HeliModel, _Side] call bis_fnc_spawnvehicle;
-_DropHeliV = _DropHeli select 0;
-_CargoCount = _DropHeliV emptyPositions "cargo";
-_DropHeliGroup = group _DropHeliV;
-_DropTroopsGroup = [_DropHeliSpawn, _Side,_Model] call BIS_fnc_spawnGroup;
+if (!isNull "_DropHeliV") then {{deleteVehicle _x} foreach crew _DropHeli;deleteVehicle _DropHeliV;};
+private _DropHeliSpawn = [_DropPos,900,1000, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+private _DropHeli = [_DropHeliSpawn, 0, _HeliModel, _Side] call bis_fnc_spawnvehicle;
+private _DropHeliV = _DropHeli select 0;
+private _CargoCount = _DropHeliV emptyPositions "cargo";
+private _DropHeliGroup = group _DropHeliV;
+private _DropTroopsGroup = [_DropHeliSpawn, _Side,_Model] call BIS_fnc_spawnGroup;
+_player setVariable ["gpf_support_group",_DropTroopsGroup,true];
+
 {[_x,false,false] execVM "gpf_randomgear.sqf";} foreach units _DropHeliGroup;
-{[_x,false,false] execVM "gpf_randomgear.sqf";_x moveInCargo _DropHeliV;[_x] join _Group;} Foreach units _DropTroopsGroup;
+{[_x,false,false] execVM "gpf_randomgear.sqf";_x moveInCargo _DropHeliV;/*[_x] join _Group;*/} Foreach units _DropTroopsGroup;
 _DropHeliV flyInHeight 30;
 //_DropHeliV limitSpeed 100;
 _DropHeliV addEventHandler ["GetOut", "_veh = _this Select 0; if (count crew _veh  <= 0) Then {deleteVehicle _veh;}"];
@@ -55,12 +57,12 @@ _way2 setWaypointStatements ["true", "_veh = vehicle this; _grp = group this;{de
 
 waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount) or (!alive _DropHeliV)};
 [_player] Spawn {_player = _this select 0;
-
+_DropTroopsGroup = _player getVariable "gpf_support_group";
   _GetInVehicle = {_unit = _this select 0; _veh = _this select 1;
 	if ((typeof _unit) != "Exile_Unit_Player") Then {
-	if ((_veh emptyPositions "Gunner") > 0) Then {_unit assignAsGunner _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInGunner _veh;};/*_unit moveInGunner _veh;*/
-	if ((_veh emptyPositions "Commander") > 0) Then {_unit assignAsCommander _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInCommander _veh;};/*_unit moveInCommander _veh;*/
-	if ((_veh emptyPositions "Cargo") > 0) Then {_unit assignAsCargo _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInCargo _veh;};/*_unit moveInCargo _veh;*/
+		if ((_veh emptyPositions "Gunner") > 0) Then {_unit assignAsGunner _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInGunner _veh;};/*_unit moveInGunner _veh;*/
+		if ((_veh emptyPositions "Commander") > 0) Then {_unit assignAsCommander _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInCommander _veh;};/*_unit moveInCommander _veh;*/
+		if ((_veh emptyPositions "Cargo") > 0) Then {_unit assignAsCargo _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInCargo _veh;};/*_unit moveInCargo _veh;*/
 	};
   };
    _GetOutVehicle = {_unit = _this select 0; _veh = _this select 1;
@@ -74,18 +76,18 @@ waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount) or (!alive _Drop
 	//commandGetOut _unit;
 	//};
   };
-  _cnt  =  {if (!isplayer _x) then {alive _x};} count units group _player;
+  _cnt  =  {if (!isplayer _x) then {alive _x};} count units _DropTroopsGroup;
   while {(_cnt > 0)} Do {
     //systemChat format ["alive -%1",_cnt];
-	if ((vehicle _player) != _player) then { {[_x,(vehicle _player)] call _GetInVehicle;} foreach units group _player;
+	if ((vehicle _player) != _player) then { {[_x,(vehicle _player)] call _GetInVehicle;} foreach units _DropTroopsGroup;
 	} Else {
 	{
 	 if ((vehicle _x) != _x) Then {[_x] Call _GetOutVehicle;sleep 1;};
-	} Foreach units group _player; 
-	//group _player setFormation "STAG COLUMN";
+	} Foreach units _DropTroopsGroup; 
+	//_DropTroopsGroup setFormation "STAG COLUMN";
 	};
 	sleep 1;
-	_cnt  =  {if (!isplayer _x) then {alive _x};} count units group _player;
+	_cnt  =  {if (!isplayer _x) then {alive _x};} count units _DropTroopsGroup;
 	};
 	
 };
