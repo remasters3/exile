@@ -151,11 +151,6 @@ gpf_SpawnLandTransport = {
 	_quad addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
 	_quad addAction ["Convert to JetSki (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnSeaTransport;pveh SetDir _dir;pveh SetPos _pos;"];
 	_quad Addaction ["Call Air Evac (1000 tabs)",{[player] execVM 'gpf_call_evac.sqf';}];
-	_quad Addaction ["Call Support 1 Units ( 2000 tabs)",{[player,'I_Heli_light_03_unarmed_F',1] execVM 'gpf_fn_playerSupport.sqf';}];
-	_quad Addaction ["Call Support 2 Units ( 4000 tabs)",{[player,'I_Heli_light_03_unarmed_F',2] execVM 'gpf_fn_playerSupport.sqf';}];
-	_quad Addaction ["Call Support 3 Units ( 6000 tabs)",{[player,'I_Heli_light_03_unarmed_F',3] execVM 'gpf_fn_playerSupport.sqf';}];
-	_quad Addaction ["Call Support 4 Units ( 8000 tabs)",{[player,'I_Heli_light_03_unarmed_F',4] execVM 'gpf_fn_playerSupport.sqf';}];
-	_quad Addaction ["Call Support 5 Units (10000 tabs)",{[player,'I_Heli_light_03_unarmed_F',5] execVM 'gpf_fn_playerSupport.sqf';}];
 	_quad};
 	
 gpf_SpawnSeaTransport = {
@@ -164,11 +159,6 @@ gpf_SpawnSeaTransport = {
 	_jetski addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
 	_jetski addAction ["Convert to Quad (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnLandTransport;pveh SetDir _dir;pveh SetPos _pos;"];
 	_jetski Addaction ["Call Air Evac (1000 tabs)",{[player] execVM 'gpf_call_evac.sqf';}];
-	_jetski Addaction ["Call Support 1 Units ( 2000 tabs)",{[player,'I_Heli_light_03_unarmed_F',1] execVM 'gpf_fn_playerSupport.sqf';}];
-	_jetski Addaction ["Call Support 2 Units ( 4000 tabs)",{[player,'I_Heli_light_03_unarmed_F',2] execVM 'gpf_fn_playerSupport.sqf';}];
-	_jetski Addaction ["Call Support 3 Units ( 6000 tabs)",{[player,'I_Heli_light_03_unarmed_F',3] execVM 'gpf_fn_playerSupport.sqf';}];
-	_jetski Addaction ["Call Support 4 Units ( 8000 tabs)",{[player,'I_Heli_light_03_unarmed_F',4] execVM 'gpf_fn_playerSupport.sqf';}];
-	_jetski Addaction ["Call Support 5 Units (10000 tabs)",{[player,'I_Heli_light_03_unarmed_F',5] execVM 'gpf_fn_playerSupport.sqf';}];
 	_jetski};
 	
 
