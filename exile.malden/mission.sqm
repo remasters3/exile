@@ -8,7 +8,7 @@ class EditorData
 	toggles=585;
 	class ItemIDProvider
 	{
-		nextID=3019;
+		nextID=3020;
 	};
 	class MarkerIDProvider
 	{
@@ -96,13 +96,15 @@ addons[]=
 	"A3_Characters_F_Orange_Headgear",
 	"A3_Characters_F_Tank_Uniforms",
 	"A3_Characters_F_Exp_Vests",
-	"A3_Weapons_F_Mark_Acc"
+	"A3_Weapons_F_Mark_Acc",
+	"A3_Soft_F_Gamma_Van_01",
+	"A3_Soft_F_Bootcamp_Van_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=44;
+		items=46;
 		class Item0
 		{
 			className="exile_client";
@@ -407,6 +409,20 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item44
+		{
+			className="A3_Soft_F_Gamma";
+			name="Arma 3 - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item45
+		{
+			className="A3_Soft_F_Bootcamp";
+			name="Arma 3 Bootcamp Update - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=2218544;
@@ -438,7 +454,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=625;
+		items=626;
 		class Item0
 		{
 			dataType="Group";
@@ -20859,6 +20875,23 @@ class Mission
 			{
 			};
 			id=3017;
+		};
+		class Item625
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10052.377,15.438787,2228.0481};
+				angles[]={6.2144942,0,6.0333185};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=3019;
+			type="I_G_Van_01_transport_F";
+			atlOffset=-5.7220459e-005;
 		};
 	};
 };
