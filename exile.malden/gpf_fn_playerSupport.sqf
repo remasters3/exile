@@ -7,9 +7,9 @@ private _Side = side _player;
 private _DropPos = GetPos _player;
 private _Group = group _player;
 
-{ if (!isNull (_player getVariable "gpf_support_group")) Then {deleteVehicle _x;}; } forEach units (_player getVariable "gpf_support_group");
+{ if (!isNil (_player getVariable "gpf_support_group")) Then {deleteVehicle _x;}; } forEach units (_player getVariable "gpf_support_group");
 sleep 2;
-if (!isNull "_DropHeliV") then {{deleteVehicle _x} foreach crew _DropHeli;deleteVehicle _DropHeliV;};
+if (!isNil "_DropHeliV") then {{deleteVehicle _x} foreach crew _DropHeli;deleteVehicle _DropHeliV;};
 private _DropHeliSpawn = [_DropPos,900,1000, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 private _DropHeli = [_DropHeliSpawn, 0, _HeliModel, _Side] call bis_fnc_spawnvehicle;
 private _DropHeliV = _DropHeli select 0;
