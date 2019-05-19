@@ -3,7 +3,6 @@
  * www.exilemod.com
  * Exile.Malden by [FPS]kuplion
  */
-
 if (!hasInterface || isServer) exitWith {};
 
 // 34 NPCs
