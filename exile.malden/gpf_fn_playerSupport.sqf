@@ -63,7 +63,7 @@ waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount) or (!alive _Drop
 	if ((_veh emptyPositions "Cargo") > 0) Then {_unit assignAsCargo _veh;/*[_unit]allowGetIn true;[_unit] orderGetIn true;*/_unit moveInCargo _veh;};/*_unit moveInCargo _veh;*/
 	};
   };
-  _GetOutVehicle = {_unit = _this select 0; _veh = _this select 1;
+   _GetOutVehicle = {_unit = _this select 0; _veh = _this select 1;
 	//if ((typeof _unit) != "Exile_Unit_Player") Then {
 	unassignVehicle _unit;
 	doGetOut _unit;
@@ -80,7 +80,7 @@ waitUntil {((_DropHeliV emptyPositions "cargo") == _CargoCount) or (!alive _Drop
 	if ((vehicle _player) != _player) then { {[_x,(vehicle _player)] call _GetInVehicle;} foreach units group _player;
 	} Else {
 	{
-	 if ((vehicle _x) != _x) Then {[_x] Call _GetOutVehicle;};
+	 if ((vehicle _x) != _x) Then {[_x] Call _GetOutVehicle;sleep 1;};
 	} Foreach units group _player; 
 	//group _player setFormation "STAG COLUMN";
 	};
