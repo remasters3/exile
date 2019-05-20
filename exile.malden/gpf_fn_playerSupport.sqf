@@ -53,6 +53,7 @@ _way1 setWaypointTimeout [8, 9, 10];
 //_way1 setWaypointStatements ["true","_veh = vehicle this;_veh limitSpeed 900; _list = (crew _veh) select {(assignedVehicleRole _x) select 0 isEqualTo 'cargo'};{unassignVehicle _x; _x action ['GetOut', vehicle _x];} forEach _list;"];
 _way1 setWaypointStatements ["true","_veh = vehicle this;_list = (crew _veh) select {(assignedVehicleRole _x) select 0 isEqualTo 'cargo'};{doGetOut _x;[_x] orderGetIn false;} forEach _list;_veh lock true;"];
 _Signal = "SmokeShellPurple" createVehicle _DropPos;
+systemChat Format ["%1 Support units on route to %2",_Model,name _player];
 
 _way2Pos = [_DropPos,2000,2500, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 _way2 = _DropHeliGroup addWaypoint [_way2Pos, 0];
@@ -128,18 +129,21 @@ private _DropTroopsGroup = _player getVariable "gpf_support_group";
 private _DropTroopsGroup = _player getVariable "gpf_support_group";
 private _cnt  =  {if (!isplayer _x) then {alive _x};} count units _DropTroopsGroup;
 	while {(_cnt > 0)} Do {
-		if ((vehicle _player) == _player) then {
-			while {(count (waypoints _DropTroopsGroup)) > 0} do
-			{
-			deleteWaypoint ((waypoints _DropTroopsGroup) select 0);
-			};
-		private _pos = GetPos _player;
-		_way = _DropTroopsGroup addWaypoint [_pos, 0];
-		_way setWaypointType "Move";
-		_way setWaypointSpeed "FULL";
-		sleep 10;
-		_cnt  =  {if (!isplayer _x) then {alive _x};} count units _DropTroopsGroup;
-	};
-
+			if ((vehicle _player) == _player) then {
+				if (!(surfaceIsWater GetPos _player)) Then {
+					while {(count (waypoints _DropTroopsGroup)) > 0} do
+					{
+						deleteWaypoint ((waypoints _DropTroopsGroup) select 0);
+					};
+					private _pos = GetPos _player;
+					_way = _DropTroopsGroup addWaypoint [_pos, 0];
+					_way setWaypointType "Move";
+					_way setWaypointSpeed "FULL";
+					};
+			
+			
+		};
+	_cnt  =  {if (!isplayer _x) then {alive _x};} count units _DropTroopsGroup;
+	sleep 10;
 	};
 };
