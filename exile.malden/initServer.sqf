@@ -368,7 +368,7 @@ deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {wait
 
 GPF_Benifits = [
 "76561198121313381", //sadass.insane
-/*"76561197971753110",*/ //remasters
+"76561197971753110", //remasters
 "76561197969191559", //stig
 "76561197970725589", //budpico
 "76561198073182638", //tafster
