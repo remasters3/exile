@@ -154,11 +154,13 @@ gpf_SpawnLandTransport = {
 	private _uid = getPlayerUID player;
     private _isBenifit = _uid in GPF_Benifits;
 	if (_isBenifit) Then {
-		_quad Addaction ["Call Support 1 Units ( 2000 tabs)",{[player,'I_Heli_light_03_unarmed_F',1] execVM 'gpf_fn_playerSupport.sqf';}];
-		_quad Addaction ["Call Support 2 Units ( 4000 tabs)",{[player,'I_Heli_light_03_unarmed_F',2] execVM 'gpf_fn_playerSupport.sqf';}];
-		_quad Addaction ["Call Support 3 Units ( 6000 tabs)",{[player,'I_Heli_light_03_unarmed_F',3] execVM 'gpf_fn_playerSupport.sqf';}];
-		_quad Addaction ["Call Support 4 Units ( 8000 tabs)",{[player,'I_Heli_light_03_unarmed_F',4] execVM 'gpf_fn_playerSupport.sqf';}];
-		_quad Addaction ["Call Support 5 Units (10000 tabs)",{[player,'I_Heli_light_03_unarmed_F',5] execVM 'gpf_fn_playerSupport.sqf';}];
+		_quad addaction ["<t color='#ff0000'>------------VIP Section----------</t>",{}];
+		_quad Addaction ["<t color='#ff0000'>Call Support 1 Units ( 2000 tabs)</t>",{[player,'I_Heli_light_03_unarmed_F',1] execVM 'gpf_fn_playerSupport.sqf';}];
+		_quad Addaction ["<t color='#ff0000'>Call Support 2 Units ( 4000 tabs)</t>",{[player,'I_Heli_light_03_unarmed_F',2] execVM 'gpf_fn_playerSupport.sqf';}];
+		_quad Addaction ["<t color='#ff0000'>Call Support 3 Units ( 6000 tabs)</t>",{[player,'I_Heli_light_03_unarmed_F',3] execVM 'gpf_fn_playerSupport.sqf';}];
+		_quad Addaction ["<t color='#ff0000'>Call Support 4 Units ( 8000 tabs)</t>",{[player,'I_Heli_light_03_unarmed_F',4] execVM 'gpf_fn_playerSupport.sqf';}];
+		_quad Addaction ["<t color='#ff0000'>Call Support 5 Units (10000 tabs)</t>",{[player,'I_Heli_light_03_unarmed_F',5] execVM 'gpf_fn_playerSupport.sqf';}];
+		_quad addaction ["<t color='#ff0000'>---------------------------------</t>",{}];
 		};
 	_quad
 	};
@@ -169,11 +171,17 @@ gpf_SpawnSeaTransport = {
 	_jetski addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
 	_jetski addAction ["Convert to Quad (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnLandTransport;pveh SetDir _dir;pveh SetPos _pos;"];
 	_jetski Addaction ["Call Air Evac (1000 tabs)",{[player] execVM 'gpf_call_evac.sqf';}];
-		_jetski Addaction ["Call Support 1 Units ( 2000 tabs)",{[player,'I_Heli_light_03_unarmed_F',1] execVM 'gpf_fn_playerSupport.sqf';}];
-		_jetski Addaction ["Call Support 2 Units ( 4000 tabs)",{[player,'I_Heli_light_03_unarmed_F',2] execVM 'gpf_fn_playerSupport.sqf';}];
-		_jetski Addaction ["Call Support 3 Units ( 6000 tabs)",{[player,'I_Heli_light_03_unarmed_F',3] execVM 'gpf_fn_playerSupport.sqf';}];
-		_jetski Addaction ["Call Support 4 Units ( 8000 tabs)",{[player,'I_Heli_light_03_unarmed_F',4] execVM 'gpf_fn_playerSupport.sqf';}];
-		_jetski Addaction ["Call Support 5 Units (10000 tabs)",{[player,'I_Heli_light_03_unarmed_F',5] execVM 'gpf_fn_playerSupport.sqf';}];
+	private _uid = getPlayerUID player;
+    private _isBenifit = _uid in GPF_Benifits;
+	if (_isBenifit) Then {
+		_jetski addaction ["<t color='#ff0000'>------------VIP Section----------</t>",{}];
+		_jetski Addaction ["<t color='#ff0000'>Call Support 1 Units ( 2000 tabs)</t>",{[player,'I_Heli_light_03_unarmed_F',1] execVM 'gpf_fn_playerSupport.sqf';}];
+		_jetski Addaction ["<t color='#ff0000'>Call Support 2 Units ( 4000 tabs)</t>",{[player,'I_Heli_light_03_unarmed_F',2] execVM 'gpf_fn_playerSupport.sqf';}];
+		_jetski Addaction ["<t color='#ff0000'>Call Support 3 Units ( 6000 tabs)</t>",{[player,'I_Heli_light_03_unarmed_F',3] execVM 'gpf_fn_playerSupport.sqf';}];
+		_jetski Addaction ["<t color='#ff0000'>Call Support 4 Units ( 8000 tabs)</t>",{[player,'I_Heli_light_03_unarmed_F',4] execVM 'gpf_fn_playerSupport.sqf';}];
+		_jetski Addaction ["<t color='#ff0000'>Call Support 5 Units (10000 tabs)</t>",{[player,'I_Heli_light_03_unarmed_F',5] execVM 'gpf_fn_playerSupport.sqf';}];
+		_jetski addaction ["<t color='#ff0000'>---------------------------------</t>",{}];
+		};
 	_jetski
 	};
 	
