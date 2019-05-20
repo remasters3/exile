@@ -11,6 +11,7 @@ if (!isNil "_oldGroup") Then {
 {deleteVehicle _x;} forEach units (_player getVariable "gpf_support_group");
 //[_player] join grpNull;
 };
+playSound "BIS_WL_Airdrop_WEST";
 sleep 5;
 if (!isNil "_DropHeliV") then {{deleteVehicle _x} foreach crew _DropHeli;deleteVehicle _DropHeliV;};
 private _DropHeliSpawn = [_DropPos,900,1000, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
