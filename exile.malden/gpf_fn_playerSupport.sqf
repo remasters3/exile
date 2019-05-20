@@ -128,6 +128,7 @@ private _DropTroopsGroup = _player getVariable "gpf_support_group";
 private _DropTroopsGroup = _player getVariable "gpf_support_group";
 private _cnt  =  {if (!isplayer _x) then {alive _x};} count units _DropTroopsGroup;
 	while {(_cnt > 0)} Do {
+		if ((vehicle _player) == _player) then {
 			while {(count (waypoints _DropTroopsGroup)) > 0} do
 			{
 			deleteWaypoint ((waypoints _DropTroopsGroup) select 0);
@@ -138,5 +139,7 @@ private _cnt  =  {if (!isplayer _x) then {alive _x};} count units _DropTroopsGro
 		_way setWaypointSpeed "FULL";
 		sleep 10;
 		_cnt  =  {if (!isplayer _x) then {alive _x};} count units _DropTroopsGroup;
+	};
+
 	};
 };
