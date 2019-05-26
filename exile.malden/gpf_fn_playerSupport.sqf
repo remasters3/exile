@@ -30,7 +30,7 @@ _player setVariable ["gpf_support_group",_DropTroopsGroup,true];
 {[_x,false,false] execVM "gpf_randomgear.sqf";} foreach units _DropHeliGroup;
 {
 	[_x,false,false] execVM "gpf_randomgear.sqf";_x moveInCargo _DropHeliV;
-	_x Addaction ["Retire Unit","{_unit = _this select 0;deleteVehicle _unit;}"];
+	_x Addaction ["Retire Unit",{SystemChat Format ["%1",_this Select 0];}];
 } Foreach units _DropTroopsGroup;
 _DropHeliV flyInHeight 30;
 //_DropHeliV limitSpeed 100;
