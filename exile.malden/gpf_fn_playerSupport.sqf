@@ -76,10 +76,17 @@ private _DropTroopsGroup = _player getVariable "gpf_support_group";
 
   _GetInVehicle = {_unit = _this select 0; _veh = _this select 1;
 	if ((typeof _unit) != "Exile_Unit_Player") Then {
-		if ((_veh emptyPositions "Gunner") > 0) Then {_unit assignAsGunner _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;/*_unit moveInGunner _veh;*/};
-		if ((_veh emptyPositions "Commander") > 0) Then {_unit assignAsCommander _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;/*_unit moveInCommander _veh;*/};
-		if ((_veh emptyPositions "Cargo") > 0) Then {_unit assignAsCargo _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;/*_unit moveInCargo _veh;*/};
-		if ((leader group _unit) == _unit) Then {};
+		if ((vehicle _unit) != _veh) Then {
+			if ((_veh emptyPositions "Gunner") > 0) Then {
+				_unit assignAsGunner _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;/*_unit moveInGunner _veh;*/
+			} Else {
+				if ((_veh emptyPositions "Commander") > 0) Then {
+					_unit assignAsCommander _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;/*_unit moveInCommander _veh;*/
+					} Else {
+						if ((_veh emptyPositions "Cargo") > 0) Then {_unit assignAsCargo _veh;[_unit]allowGetIn true;[_unit] orderGetIn true;/*_unit moveInCargo _veh;*/};
+				};
+			};
+		};
 	};
   };
    _GetOutVehicle = {_unit = _this select 0; _veh = _this select 1;
