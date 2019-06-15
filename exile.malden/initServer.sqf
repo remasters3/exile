@@ -374,7 +374,8 @@ GPF_Benifits = [
 "76561198073182638", //tafster
 "76561198072402038", //BillyBob
 "76561198134042521", //Nocti aka spsch
-"76561198007836691"  //Esset
+"76561198007836691", //Esset
+"76561197988774700"  //Major Gun
 ];
 publicVariable "GPF_Benifits";
 
