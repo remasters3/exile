@@ -373,8 +373,8 @@ GPF_Benifits = [
 "76561197970725589", //budpico
 "76561198073182638", //tafster
 "76561198072402038", //BillyBob
-"76561198134042521", //Nocti
-"76561197965283104"  //Daft Vader
+"76561198134042521", //Nocti aka spsch
+"76561198007836691"  //Esset
 ];
 publicVariable "GPF_Benifits";
 
