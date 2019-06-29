@@ -95,7 +95,7 @@ private _npcs = [
 ["Exile_Trader_WasteDump", ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"], "Exile_Trader_WasteDump", "WhiteHead_11", [[],[],[],["U_Tank_green_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","",[],["","","","","",""]],[1580.69,4623.31,3.05133],[-0.981005,0.193983,0],[0,0,1]],
 ["Exile_Trader_Vehicle", ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"], "Exile_Trader_Vehicle", "AfricanHead_01", [[],[],[],["U_C_Driver_1_red",[]],[],[],"H_RacingHelmet_1_red_F","",[],["","","","","",""]], [1562.38,4577.53,2.93144], [0, 0, 0], [0, 0, 1]],
 ["Exile_Trader_Boat", ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"], "Exile_Trader_Boat", "GreekHead_A3_06", [[],[],[],["U_OrestesBody",[]],[],[],"H_Cap_surfer","G_Tactical_Black",[],["","","","","",""]], [1556.74,4573.52,2.9433],[-0.581708,0.813398,0],[0,0,1]],
-["Exile_Trader_Aircraft", ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"], "Exile_Trader_Aircraft", "GreekHead_A3_06", [[],[],[],["U_I_pilotCoveralls",[]],[],[],"H_PilotHelmetHeli_O","G_Tactical_Clear",[],["","","","","",""]],[1555.12,4551.67,3.38077],[-0.97659,0.215111,0],[0,0,1]],
+["Exile_Trader_Aircraft", ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"], "Exile_Trader_Aircraft", "GreekHead_A3_06", [[],[],[],["U_I_pilotCoveralls",[]],[],[],"H_PilotHelmetHeli_O","G_Tactical_Clear",[],["","","","","",""]],[1555.12,4551.67,3.38077],[-0.97659,0.215111,0],[0,0,1]]/*,
 // Deep Fried Haggis
 ["Exile_Trader_SpecialOperations", ["HubStanding_idle1","HubStanding_idle2","HubStanding_idle3"], "Exile_Trader_SpecialOperations", "GreekHead_A3_05", [["MMG_01_tan_F","","","optic_Hamr",["150Rnd_93x64_Mag",150],[],"bipod_01_F_blk"],[],[],["U_B_CTRG_1",[]],["V_PlateCarrierGL_blk",[["150Rnd_93x64_Mag",1,150]]],["B_Parachute",[]],"H_HelmetB_light_black","G_Balaclava_lowprofile",[],["","","","","","NVGoggles_OPFOR"]],[8685.89,6450.81,2.35],[-0.999798,0.0201226,0],[0,0,1]],
 ["Exile_Trader_Diving", ["HubStanding_idle1","HubStanding_idle2","HubStanding_idle3"], "Exile_Trader_Diving", "WhiteHead_01", [["arifle_SDAR_F","","","",["20Rnd_556x45_UW_mag",20],[],""],[],[],["U_I_Wetsuit",[["20Rnd_556x45_UW_mag",3,20]]],["V_RebreatherIA",[]],[],"","Exile_Glasses_Diving_AAF",[],["","","","","",""]],[8652.42,6418.22,0.5],[-0.329131,0.944284,0],[0,0,1]],
@@ -107,7 +107,7 @@ private _npcs = [
 ["Exile_Trader_WasteDump", ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"], "Exile_Trader_WasteDump", "WhiteHead_11", [[],[],[],["U_Tank_green_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","",[],["","","","","",""]],[8665.46,6421.71,2],[-0.901885,0.431975,0],[0,0,1]],
 ["Exile_Trader_Vehicle", ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"], "Exile_Trader_Vehicle", "AfricanHead_01", [[],[],[],["U_C_Driver_1_red",[]],[],[],"H_RacingHelmet_1_red_F","",[],["","","","","",""]],[8680.96,6460.58,6.29489],[0.662493,0.749068,0],[0,0,1]],
 ["Exile_Trader_Boat", ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"], "Exile_Trader_Boat", "GreekHead_A3_06", [[],[],[],["U_OrestesBody",[]],[],[],"H_Cap_surfer","G_Tactical_Black",[],["","","","","",""]],[8673.37,6427.29,1.6],[-0.897413,0.441192,0],[0,0,1]],
-["Exile_Trader_Aircraft", ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"], "Exile_Trader_Aircraft", "GreekHead_A3_06", [[],[],[],["U_I_pilotCoveralls",[]],[],[],"H_PilotHelmetHeli_O","G_Tactical_Clear",[],["","","","","",""]],[8682.88,6462.63,6.26478],[-0.707796,-0.706417,0],[0,0,1]]
+["Exile_Trader_Aircraft", ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"], "Exile_Trader_Aircraft", "GreekHead_A3_06", [[],[],[],["U_I_pilotCoveralls",[]],[],[],"H_PilotHelmetHeli_O","G_Tactical_Clear",[],["","","","","",""]],[8682.88,6462.63,6.26478],[-0.707796,-0.706417,0],[0,0,1]]*/
 ];
 
 {
@@ -243,7 +243,9 @@ gpf_SpawnSeaTransport = {
   [[5551.19,7887.43,0],"FOB Hillside"],
   [[108.629,10302.2,0],"Fuel Dock"],
   [[3028.8,7225.74,11.7131],"Pirate Cove"],
-  [[5034.32,5171.57,0],"Bandit Cave"]
+  [[5034.32,5171.57,0],"Bandit Cave"],
+  [[4641.64,10174,2.12099],"Grumpy Old Castle"],
+  [[8662.6,6465.91,0],"The Rock"]
  ];
 };
 
