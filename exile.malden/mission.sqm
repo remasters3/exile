@@ -8,7 +8,7 @@ class EditorData
 	toggles=585;
 	class ItemIDProvider
 	{
-		nextID=3102;
+		nextID=3110;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8641.333,37.928143,6467.7578};
-		dir[]={0.64923882,-0.75879163,0.053105954};
-		up[]={0.75626701,0.65132481,0.061860427};
-		aside[]={0.08152923,-3.5842322e-007,-0.99672145};
+		pos[]={8653.5566,30.094654,6484.834};
+		dir[]={0.17734094,-0.38695931,-0.90501988};
+		up[]={0.074420266,0.9220469,-0.37980029};
+		aside[]={-0.98146576,9.1009861e-007,-0.19232078};
 	};
 };
 binarizationWanted=0;
@@ -4609,7 +4609,7 @@ class Mission
 			};
 			id=775;
 			type="Land_WaterCooler_01_new_F";
-			atlOffset=0.51630831;
+			atlOffset=0.51566315;
 		};
 		class Item119
 		{
@@ -7463,13 +7463,12 @@ class Mission
 				angles[]={0,3.3358388,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 			};
 			id=1069;
 			type="Exile_Construction_FloodLight_Static";
-			atlOffset=0.1421814;
+			atlOffset=0.406811;
 		};
 		class Item223
 		{
@@ -7486,7 +7485,7 @@ class Mission
 			};
 			id=1070;
 			type="Exile_Construction_FloodLight_Static";
-			atlOffset=0.0012824535;
+			atlOffset=0.21640635;
 		};
 		class Item224
 		{
@@ -10186,7 +10185,6 @@ class Mission
 				angles[]={0,0.62582266,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				init="this setVariable [""R3F_LOG_disabled"",true];";
@@ -10194,7 +10192,7 @@ class Mission
 			};
 			id=1414;
 			type="Box_NATO_WpsSpecial_F";
-			atlOffset=0.0035879612;
+			atlOffset=0.20878577;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17079,18 +17077,20 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8683.1758,7.6933074,6462.6001};
-				angles[]={0,0.93867218,0};
+				position[]={8683.1758,7.6931601,6462.6001};
+				angles[]={0,0.93867302,0};
 			};
 			side="Empty";
 			flags=1;
 			class Attributes
 			{
+				presence=0;
+				presenceCondition="false";
 				disableSimulation=1;
 			};
 			id=2748;
 			type="Exile_Sign_Aircraft_Small";
-			atlOffset=0.26531792;
+			atlOffset=0.26517057;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17507,18 +17507,20 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8680.7051,7.7472157,6460.46};
-				angles[]={0,4.1379013,0};
+				position[]={8680.7051,7.7467275,6460.46};
+				angles[]={0,4.1378965,0};
 			};
 			side="Empty";
 			flags=1;
 			class Attributes
 			{
+				presence=0;
+				presenceCondition="false";
 				disableSimulation=1;
 			};
 			id=2758;
 			type="Exile_Sign_Vehicles_Small";
-			atlOffset=0.31922626;
+			atlOffset=0.31873798;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -20430,7 +20432,7 @@ class Mission
 			};
 			id=3042;
 			type="Land_Cargo10_light_green_F";
-			atlOffset=0.029518127;
+			atlOffset=0.04557991;
 			class CustomAttributes
 			{
 				class Attribute0

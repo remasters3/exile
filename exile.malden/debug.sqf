@@ -165,8 +165,8 @@ _places = [];
  _dirVector = vectorDir _x;
  _UpVector = vectorUp _x;
  _name = name _x;
- _txt = Format ['%1 - %2,%3,%4],',_name,_posASL,_dirVector,_UpVector];
-
+ //_txt = Format ['%1 - %2,%3,%4],',_name,_posASL,_dirVector,_UpVector];
+ _txt = Format ['%1',_posASL];
  _places = _places + [_posASL];
  };
 } Foreach allUnits;
