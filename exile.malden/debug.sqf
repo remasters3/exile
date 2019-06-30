@@ -1,10 +1,10 @@
-_Green_Debug_Player = _this select 0;
-if (Green_Debug_Player != _Green_Debug_Player) ExitWith {};
-debug = true;
-
-_DebugGroup = _Green_Debug_Player getVariable "gpf_support_group";
-if ((group _Green_Debug_Player) == _DebugGroup) Then {[_Green_Debug_Player] join grpNull;}
-Else {[_Green_Debug_Player] join _DebugGroup;_DebugGroup selectLeader _Green_Debug_Player;};
+//_Green_Debug_Player = _this select 0;
+//if (Green_Debug_Player != _Green_Debug_Player) ExitWith {};
+//debug = true;
+//
+//_DebugGroup = _Green_Debug_Player getVariable "gpf_support_group";
+//if ((group _Green_Debug_Player) == _DebugGroup) Then {[_Green_Debug_Player] join grpNull;}
+//Else {[_Green_Debug_Player] join _DebugGroup;_DebugGroup selectLeader _Green_Debug_Player;};
 
 
 
@@ -156,7 +156,7 @@ copyToClipboard Format ["%1",_path];
 //[_x,200,45,360] execVM "gpf_fn_enemyWave.sqf";
 
 
-/*
+
 _places = [];
 {
  if (typeof _x == "O_G_Soldier_LAT2_F") Then {
@@ -171,7 +171,7 @@ _places = [];
  };
 } Foreach allUnits;
 copyToClipboard Format ['%1',_places];
-*/
+
 
 //copyToClipboard Format ['%1',GetPosASL player];
 // [_posASL,_dirVector,_UpVector]
