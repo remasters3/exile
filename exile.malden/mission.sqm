@@ -8,7 +8,7 @@ class EditorData
 	toggles=585;
 	class ItemIDProvider
 	{
-		nextID=3110;
+		nextID=3203;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8653.5566,30.094654,6484.834};
-		dir[]={0.17734094,-0.38695931,-0.90501988};
-		up[]={0.074420266,0.9220469,-0.37980029};
-		aside[]={-0.98146576,9.1009861e-007,-0.19232078};
+		pos[]={4663.7603,70.816299,10152.709};
+		dir[]={0.62155557,-0.38054666,0.68489385};
+		up[]={0.25577289,0.92470986,0.28183782};
+		aside[]={0.74059886,-1.4916877e-006,-0.67211074};
 	};
 };
 binarizationWanted=0;
@@ -87,8 +87,11 @@ addons[]=
 	"A3_Structures_F_Argo_Civilian_House_Small01",
 	"A3_Rocks_F_Sharp",
 	"An2",
+	"A3_Structures_F_Argo_Infrastructure_WaterSupply",
 	"A3_Structures_F_Dominants_Castle",
-	"A3_Structures_F_Argo_Infrastructure_WaterSupply"
+	"A3_Structures_F_Households_Stone_Small",
+	"A3_Structures_F_Households_Stone_Big",
+	"A3_Structures_F_Argo_Civilian_Stone_Shed_01"
 };
 class AddonsMetaData
 {
@@ -388,7 +391,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=633;
+		items=638;
 		class Item0
 		{
 			dataType="Group";
@@ -4609,7 +4612,7 @@ class Mission
 			};
 			id=775;
 			type="Land_WaterCooler_01_new_F";
-			atlOffset=0.51566315;
+			atlOffset=0.51630831;
 		};
 		class Item119
 		{
@@ -7463,12 +7466,13 @@ class Mission
 				angles[]={0,3.3358388,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 			};
 			id=1069;
 			type="Exile_Construction_FloodLight_Static";
-			atlOffset=0.406811;
+			atlOffset=0.1421814;
 		};
 		class Item223
 		{
@@ -7485,7 +7489,7 @@ class Mission
 			};
 			id=1070;
 			type="Exile_Construction_FloodLight_Static";
-			atlOffset=0.21640635;
+			atlOffset=0.0012824535;
 		};
 		class Item224
 		{
@@ -10185,6 +10189,7 @@ class Mission
 				angles[]={0,0.62582266,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="this setVariable [""R3F_LOG_disabled"",true];";
@@ -10192,7 +10197,7 @@ class Mission
 			};
 			id=1414;
 			type="Box_NATO_WpsSpecial_F";
-			atlOffset=0.20878577;
+			atlOffset=0.0035879612;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -20432,7 +20437,7 @@ class Mission
 			};
 			id=3042;
 			type="Land_Cargo10_light_green_F";
-			atlOffset=0.04557991;
+			atlOffset=0.029518127;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -20665,23 +20670,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4641.6431,59.788406,10173.995};
-				angles[]={0,1.5707964,0};
-			};
-			side="Empty";
-			flags=1;
-			class Attributes
-			{
-			};
-			id=3063;
-			type="Land_Castle_01_tower_F";
-			atlOffset=2.1209831;
-		};
-		class Item627
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={106.477,18.116407,10302.843};
 			};
 			side="Empty";
@@ -20717,7 +20705,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item628
+		class Item627
 		{
 			dataType="Object";
 			class PositionInfo
@@ -20734,7 +20722,7 @@ class Mission
 			type="Land_LampAirport_F";
 			atlOffset=99.681396;
 		};
-		class Item629
+		class Item628
 		{
 			dataType="Object";
 			class PositionInfo
@@ -20751,7 +20739,7 @@ class Mission
 			type="Land_LampAirport_F";
 			atlOffset=99.790916;
 		};
-		class Item630
+		class Item629
 		{
 			dataType="Object";
 			class PositionInfo
@@ -20792,7 +20780,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item631
+		class Item630
 		{
 			dataType="Object";
 			class PositionInfo
@@ -20833,7 +20821,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item632
+		class Item631
 		{
 			dataType="Object";
 			class PositionInfo
@@ -20850,6 +20838,225 @@ class Mission
 			id=3088;
 			type="Land_Pier_addon";
 			atlOffset=19.195536;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item632
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4641.6431,59.788406,10173.995};
+				angles[]={0,1.5707964,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=3063;
+			type="Land_Castle_01_tower_F";
+			atlOffset=2.1209831;
+		};
+		class Item633
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4627.6187,41.73457,10207.257};
+				angles[]={0,5.3308115,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=3135;
+			type="Land_d_Stone_HouseSmall_V1_F";
+			atlOffset=-0.041927338;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item634
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4653.2881,44.160423,10214.48};
+				angles[]={0,4.3665867,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=3141;
+			type="Land_d_Stone_HouseBig_V1_F";
+			atlOffset=2.5279999;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item635
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4664.0464,44.906273,10164.292};
+				angles[]={0,2.3548505,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=3156;
+			type="Land_d_Stone_Shed_V1_F";
+			atlOffset=1.7945709;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item636
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4675.7769,47.749729,10177.508};
+				angles[]={0,0.80187404,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=3158;
+			type="Land_d_Stone_HouseBig_V1_F";
+			atlOffset=2.7369995;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item637
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4627.3667,50.566601,10173.761};
+				angles[]={0,3.116956,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=3185;
+			type="Land_Stone_Shed_01_b_raw_ruins_F";
+			atlOffset=1.5686378;
 			class CustomAttributes
 			{
 				class Attribute0

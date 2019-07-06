@@ -155,7 +155,7 @@ copyToClipboard Format ["%1",_path];
 
 //[_x,200,45,360] execVM "gpf_fn_enemyWave.sqf";
 
-
+//_txt = Format ['%1',GetPosASL box];copyToClipboard Format ['%1',_txt];
 
 _places = [];
 {
@@ -169,7 +169,7 @@ _places = [];
  _txt = Format ['%1',_posASL];
  _places = _places + [_posASL];
  };
-} Foreach allUnits;
+} forEach allUnits;// (allMissionObjects "");//allUnits;
 copyToClipboard Format ['%1',_places];
 
 
