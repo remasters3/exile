@@ -155,7 +155,19 @@ copyToClipboard Format ["%1",_path];
 
 //[_x,200,45,360] execVM "gpf_fn_enemyWave.sqf";
 
-//_txt = Format ['%1',GetPosASL box];copyToClipboard Format ['%1',_txt];
+//copyToClipboard Format ['%1',GetPosASL player];
+
+_statisPos = [
+	[4673.28,10182.2,45.8736], //0-bighouse entrance step
+	[4658.39,10169.8,44.1546], //1-small house entance X
+	[4673.26,10172.9,45.9087], //2-bighouse entance upper X
+	[4641.49,10174.4,67.731], //3-castle top
+	[4653.81,10215,45.344], //4-bighouse seaside upper
+	[4626.22,10196.1,42.5326], //5-seaside ground
+	[4636.44,10212.5,40.8005], //6 -rockside ground X
+	[4624.84,10173.6,51.6185] //7-broken castle smallhouse
+	];
+player setposASL (_statisPos select 7);
 
 _places = [];
 {
@@ -171,7 +183,6 @@ _places = [];
  };
 } forEach allUnits;// (allMissionObjects "");//allUnits;
 copyToClipboard Format ['%1',_places];
-
 
 //copyToClipboard Format ['%1',GetPosASL player];
 // [_posASL,_dirVector,_UpVector]
