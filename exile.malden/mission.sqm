@@ -8,7 +8,7 @@ class EditorData
 	toggles=585;
 	class ItemIDProvider
 	{
-		nextID=3230;
+		nextID=3232;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5028.0107,139.90944,5178.0732};
-		dir[]={-0.43365547,-0.33699507,-0.83577824};
-		up[]={-0.15519483,0.94151497,-0.29910466};
-		aside[]={-0.88769644,4.3231557e-007,0.46059409};
+		pos[]={5017.7163,136.51398,5108.3457};
+		dir[]={0.1446673,-0.079915039,0.98636633};
+		up[]={0.011602213,0.99678153,0.079098731};
+		aside[]={0.98953402,-7.4553827e-007,-0.14513056};
 	};
 };
 binarizationWanted=0;
@@ -15016,7 +15016,7 @@ class Mission
 			};
 			id=2450;
 			type="Land_Pier_Box_F";
-			atlOffset=0.9336853;
+			atlOffset=1.7489777;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -19466,7 +19466,7 @@ class Mission
 			};
 			id=2669;
 			type="Land_PierWooden_02_16m_F";
-			atlOffset=10.211752;
+			atlOffset=10.984217;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -21301,17 +21301,40 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5020.0508,134.93541,5144.9644};
-				angles[]={6.2767816,0,6.2160869};
+				position[]={5013.8398,134.28442,5124.7007};
+				angles[]={0,0.82041359,-0};
 			};
 			side="Empty";
-			flags=4;
+			flags=5;
 			class Attributes
 			{
+				disableSimulation=1;
 			};
-			id=3229;
-			type="Box_IND_AmmoVeh_F";
-			atlOffset=-0.016555786;
+			id=3231;
+			type="Land_CncBarrierMedium4_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };
