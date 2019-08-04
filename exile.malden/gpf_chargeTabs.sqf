@@ -10,13 +10,11 @@ private _valid = false;
 		private _newmoney = _moneyonplayer-_costtabs;
 			if (_costtabs <= _moneyonplayer) Then { _valid = true;
 			_player setVariable ["ExileMoney",_newmoney,true];
-			_title = "Tabs removed!";
-			_msg = Format ["-%1 Tabs<br/>",_costtabs];
-			["InfoTitleAndText", [_title, _msg]] Call ExileClient_gui_toaster_addTemplateToast;
+			["InfoTitleAndText", ["Tabs removed!", Format ["-%1 Tabs<br/>",_costtabs]]] Call ExileClient_gui_toaster_addTemplateToast;
 			// Update money in database
 			format["setPlayerMoney:%1:%2", _newmoney, _player getVariable ["ExileDatabaseID", 0]] call ExileServer_system_database_query_fireAndForget;	
 		} else { _valid = false;
-			["ErrorTitleAndText", ["Not enough Tabs", format ["You only have %2 Tabs!<br/> You need %1 Tabs to buy this."],_costtabs,_moneyonplayer]] call ExileClient_gui_toaster_addTemplateToast;
+			["ErrorTitleAndText", ["Not enough Tabs", format ["You only have %2 Tabs!<br/> You need %1 Tabs to buy this.",_costtabs,_moneyonplayer]]] call ExileClient_gui_toaster_addTemplateToast;
 		};
 	};
 _valid;
