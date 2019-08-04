@@ -12,7 +12,9 @@ private _valid = 0;
 			_player setVariable ["ExileMoney",_newmoney,true];
 			["InfoTitleAndText", ["Tabs removed!", Format ["-%1 Tabs<br/>",_costtabs]]] Call ExileClient_gui_toaster_addTemplateToast;
 			// Update money in database
-			format["setPlayerMoney:%1:%2", _newmoney, _player getVariable ["ExileDatabaseID", 0]] call ExileServer_system_database_query_fireAndForget;	
+			//format["setPlayerMoney:%1:%2", _newmoney, _player getVariable ["ExileDatabaseID", 0]] call ExileServer_system_database_query_fireAndForget;
+			private _string = format["setPlayerMoney:%1:%2", _newmoney, _player getVariable ["ExileDatabaseID", 0]]
+			_string remoteExecCall ["ExileServer_system_database_query_fireAndForget",2];
 		} else { _valid = 0;
 			["ErrorTitleAndText", ["Not enough Tabs", format ["You only have %2 Tabs!<br/>You need %1 Tabs to buy this.",_costtabs,_moneyonplayer]]] call ExileClient_gui_toaster_addTemplateToast;
 		};
