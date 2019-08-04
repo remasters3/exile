@@ -4,9 +4,9 @@ _numberOfUnits = _this select 1;
 _costtabs = _numberOfUnits*10000;
 _gpf_chargeTabs = compile preprocessFile "gpf_chargeTabs.sqf";
 _transaction = [player,_costtabs] Call _gpf_chargeTabs;
-if (_transaction) {
-[player,'I_Heli_light_03_unarmed_F',_numberOfUnits] execVM 'gpf_fn_playerSupport.sqf';
-};
+if (_transaction == true) {
+[_player,'I_Heli_light_03_unarmed_F',_numberOfUnits] execVM 'gpf_fn_playerSupport.sqf';
+} else {systemchat FORMAT ["failed on %1",_transaction];};
 
 
 
