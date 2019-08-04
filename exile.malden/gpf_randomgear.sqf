@@ -48,6 +48,7 @@ _nvgs = [];
 _foods = ["Exile_Item_EMRE","Exile_Item_MountainDupe","Exile_Item_MacasCheese_Cooked"];
 _meds = ["Exile_Item_InstaDoc","Exile_Item_Vishpirin"];
 _items = ["Exile_Item_DuctTape","1Rnd_HE_Grenade_shell"];
+_greenuni = SelectRandom ["U_I_CombatUniform","U_Tank_green_F","U_I_OfficerUniform","U_I_CombatUniform_shortsleeve"];
 
 private _fetchrifle = SelectRandom _priweapons;
 private _fetchpistol = SelectRandom _pistols;
@@ -64,7 +65,7 @@ removeBackpack _unit;
 removeHeadgear _unit;
 removeGoggles _unit;
 //adding storage
-if ((side _unit) == resistance) Then {_unit forceAddUniform "U_Tank_green_F";};
+if ((side _unit) == resistance) Then {_unit forceAddUniform _greenuni;};
 if ((side _unit) == west) Then {_unit forceAddUniform "U_B_GEN_Commander_F";}; 
 if ((side _unit) == east) Then {_unit forceAddUniform (SelectRandom _uni);};
 if ((side _unit) == civilian) Then {_unit forceAddUniform (SelectRandom _uni);};

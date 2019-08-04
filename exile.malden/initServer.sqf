@@ -398,10 +398,11 @@ publicVariable "GPF_Benifits";
 	[[9739.08,3954.33,0],300,6,false], //milbase truck
 	[[10116.1,4035.11,0],300,6,false], //milbase banana
 	[[7228.2,10581.6,0],200,6,false], //milbase box
-	[[9521,4238.48,0],200,4,false], //SandMilBase
+	[[9521,4238.48,0],200,4,false],   //SandMilBase
 	[[7728.5,4186.25,0],100,4,false], //montimilbase
 	[[1005.39,12348.4,0],50,4,false], //morrayHummingBird
-	[[5551.19,7887.43,0],100,4,false] //FOB Hillside
+	[[5551.19,7887.43,0],100,4,false],//FOB Hillside
+	[[1059.92,637.339,0],50,6,false]  //Faro SW Harbor
 	];
 };
 
