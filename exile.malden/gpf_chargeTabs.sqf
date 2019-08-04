@@ -7,7 +7,7 @@ private _valid = false;
 	if ((typeOf _player) == "Exile_Unit_Player") Then {
 		private _playerUID = getPlayerUID _player;
 		private _moneyonplayer = _player getVariable ['ExileMoney',0];
-		private _newmoney = _moneyonplayer+_costtabs;
+		private _newmoney = _moneyonplayer-_costtabs;
 			if (_costtabs <= _moneyonplayer) Then { _valid = true;
 			_player setVariable ["ExileMoney",_newmoney,true];
 			_title = "Tabs removed!";
