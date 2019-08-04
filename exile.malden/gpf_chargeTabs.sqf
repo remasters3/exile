@@ -14,7 +14,7 @@ private _valid = false;
 			// Update money in database
 			format["setPlayerMoney:%1:%2", _newmoney, _player getVariable ["ExileDatabaseID", 0]] call ExileServer_system_database_query_fireAndForget;	
 		} else { _valid = false;
-			["ErrorTitleAndText", ["Not enough Tabs", format ["You only have %2 Tabs!<br/> You need %1 Tabs to buy this.",_costtabs,_moneyonplayer]]] call ExileClient_gui_toaster_addTemplateToast;
+			["ErrorTitleAndText", ["Not enough Tabs", format ["You only have %2 Tabs!<br/>You need %1 Tabs to buy this.",_costtabs,_moneyonplayer]]] call ExileClient_gui_toaster_addTemplateToast;
 		};
 	};
 _valid;

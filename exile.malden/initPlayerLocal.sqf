@@ -155,11 +155,11 @@ gpf_SpawnLandTransport = {
     private _isBenifit = _uid in GPF_Benifits;
 	if (_isBenifit) Then {
 		_quad addaction ["<t color='#ff0000'>-----------EXPERIMENTAL--------</t>",{}];
-		_quad Addaction ["<t color='#ff0000'>Call Support 1 Units ( 0 tabs )</t>",{[player,'I_Heli_light_03_unarmed_F',1] execVM 'gpf_fn_playerSupport.sqf';}];
-		_quad Addaction ["<t color='#ff0000'>Call Support 2 Units ( 0 tabs )</t>",{[player,'I_Heli_light_03_unarmed_F',2] execVM 'gpf_fn_playerSupport.sqf';}];
-		_quad Addaction ["<t color='#ff0000'>Call Support 3 Units ( 0 tabs )</t>",{[player,'I_Heli_light_03_unarmed_F',3] execVM 'gpf_fn_playerSupport.sqf';}];
-		_quad Addaction ["<t color='#ff0000'>Call Support 4 Units ( 0 tabs )</t>",{[player,'I_Heli_light_03_unarmed_F',4] execVM 'gpf_fn_playerSupport.sqf';}];
-		_quad Addaction ["<t color='#ff0000'>Call Support 5 Units ( 0 tabs )</t>",{[player,'I_Heli_light_03_unarmed_F',5] execVM 'gpf_fn_playerSupport.sqf';}];
+		_quad Addaction ["<t color='#ff0000'>Call Support 1 Units ( 10k tabs )</t>",{[player,1] execVM 'gpf_call_support_units.sqf';}];
+		_quad Addaction ["<t color='#ff0000'>Call Support 2 Units ( 20k tabs )</t>",{[player,2] execVM 'gpf_call_support_units.sqf';}];
+		_quad Addaction ["<t color='#ff0000'>Call Support 3 Units ( 30k tabs )</t>",{[player,3] execVM 'gpf_call_support_units.sqf';}];
+		_quad Addaction ["<t color='#ff0000'>Call Support 4 Units ( 40k tabs )</t>",{[player,4] execVM 'gpf_call_support_units.sqf';}];
+		_quad Addaction ["<t color='#ff0000'>Call Support 5 Units ( 50k tabs )</t>",{[player,5] execVM 'gpf_call_support_units.sqf';}];
 		_quad addaction ["<t color='#ff0000'>---------------------------------</t>",{}];
 		};
 	_quad
@@ -175,11 +175,11 @@ gpf_SpawnSeaTransport = {
     private _isBenifit = _uid in GPF_Benifits;
 	if (_isBenifit) Then {
 		_jetski addaction ["<t color='#ff0000'>-----------EXPERIMENTAL--------</t>",{}];
-		_jetski Addaction ["<t color='#ff0000'>Call Support 1 Units ( 0 tabs )</t>",{[player,'I_Heli_light_03_unarmed_F',1] execVM 'gpf_fn_playerSupport.sqf';}];
-		_jetski Addaction ["<t color='#ff0000'>Call Support 2 Units ( 0 tabs )</t>",{[player,'I_Heli_light_03_unarmed_F',2] execVM 'gpf_fn_playerSupport.sqf';}];
-		_jetski Addaction ["<t color='#ff0000'>Call Support 3 Units ( 0 tabs )</t>",{[player,'I_Heli_light_03_unarmed_F',3] execVM 'gpf_fn_playerSupport.sqf';}];
-		_jetski Addaction ["<t color='#ff0000'>Call Support 4 Units ( 0 tabs )</t>",{[player,'I_Heli_light_03_unarmed_F',4] execVM 'gpf_fn_playerSupport.sqf';}];
-		_jetski Addaction ["<t color='#ff0000'>Call Support 5 Units ( 0 tabs )</t>",{[player,'I_Heli_light_03_unarmed_F',5] execVM 'gpf_fn_playerSupport.sqf';}];
+		_jetski Addaction ["<t color='#ff0000'>Call Support 1 Units ( 10k tabs )</t>",{[player,1] execVM 'gpf_call_support_units.sqf';}];
+		_jetski Addaction ["<t color='#ff0000'>Call Support 2 Units ( 20k tabs )</t>",{[player,2] execVM 'gpf_call_support_units.sqf';}];
+		_jetski Addaction ["<t color='#ff0000'>Call Support 3 Units ( 30k tabs )</t>",{[player,3] execVM 'gpf_call_support_units.sqf';}];
+		_jetski Addaction ["<t color='#ff0000'>Call Support 4 Units ( 40k tabs )</t>",{[player,4] execVM 'gpf_call_support_units.sqf';}];
+		_jetski Addaction ["<t color='#ff0000'>Call Support 5 Units ( 50k tabs )</t>",{[player,5] execVM 'gpf_call_support_units.sqf';}];
 		_jetski addaction ["<t color='#ff0000'>---------------------------------</t>",{}];
 		};
 	_jetski
