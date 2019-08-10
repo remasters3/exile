@@ -376,7 +376,9 @@ GPF_Benifits = [
 "76561198134042521", //Nocti aka spsch
 "76561198007836691", //Esset
 "76561198051860460", //Bazzoka
-"76561197988774700"  //Major Gun
+"76561197988774700",  //Major Gun
+"76561197984067176", //fraz
+"76561197969969342"  //Harbo
 ];
 publicVariable "GPF_Benifits";
 
