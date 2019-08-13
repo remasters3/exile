@@ -8,7 +8,7 @@ ExileRouletteChairs = [];
 ExileRouletteChairPositions = [];
 
 // 70 Vehicles
-private _vehicles = [
+private _vehicles = [/*
 ["Exile_Sign_WasteDump", [7410.4, 8074.21, 170.342], [-0.535676, -0.844424, 0], [0, 0, 1], false],
 ["Land_HelipadEmpty_F", [7436.66, 8117.48, 169.252], [0, 1, 0], [0, 0, 1], true],
 ["Exile_Sign_VehicleCustoms", [7431.35, 8129.08, 170.311], [0.069323, 0.997594, 0], [0, 0, 1], false],
@@ -78,7 +78,7 @@ private _vehicles = [
 ["Exile_Sign_TraderCity", [7253.03, 8172.67, 168.661], [0.423437, -0.905926, 0], [0, 0, 1], false],
 ["KartSteertingWheel_01_orange_F", [7443.3, 8127.19, 169.252], [0.996059, -0.0801971, -0.0378807], [0.0374495, -0.00687427, 0.999275], false],
 ["Land_WaterCooler_01_new_F", [7390.05, 8071.24, 170.215], [0.84198, -0.533521, 0.0801558], [-0.0947706, 0, 0.995499], false],
-["Land_WaterCooler_01_old_F", [7390.28, 8071.6, 170.237], [0.833274, -0.547139, 0.079327], [-0.0947706, 0, 0.995499], false]
+["Land_WaterCooler_01_old_F", [7390.28, 8071.6, 170.237], [0.833274, -0.547139, 0.079327], [-0.0947706, 0, 0.995499], false*/
 ];
 //DeepFriedHaggis
 _vehicles = _vehicles + [
@@ -101,7 +101,7 @@ forEach _vehicles;
 
 // 242 Simple Objects
 private _invisibleSelections = ["zasleh", "zasleh2", "box_nato_grenades_sign_f", "box_nato_ammoord_sign_f", "box_nato_support_sign_f"];
-private _simpleObjects = [
+private _simpleObjects = /*
 ["a3\structures_f_heli\furniture\officechair_01_f.p3d", [7409.96, 8075.54, 169.927], [-0.849555, -0.527426, 0.00880506], [0.00639417, 0.00639427, 0.999959]],
 ["a3\structures_f\wrecks\wreck_cardismantled_f.p3d", [7448.36, 8117.03, 170.036], [0.282878, 0.958305, -0.0404029], [0.0343797, 0.0319659, 0.998897]],
 ["a3\structures_f\walls\cncbarrier_f.p3d", [6067.03, 10764.2, 120.641], [0.611081, 0.791568, 0], [0, 0, 1]],
@@ -341,7 +341,7 @@ private _simpleObjects = [
 ["a3\structures_f_exp\naval\piers\pierwooden_03_f.p3d", [7726.54, 5074.11, -19.0521], [-0.493987, 0.869469, 0], [0, 0, 1]],
 ["a3\structures_f\naval\rowboats\rowboat_v3_f.p3d", [7743.54, 5065.64, -0.0297874], [0, 0.998436, -0.0559124], [-0.045553, 0.0558544, 0.997399]],
 ["a3\structures_f_exp\civilian\accessories\plank_01_4m_f.p3d", [7737.05, 5047.35, 0.344399], [0, 1, 0], [0, 0, 1]],
-["a3\structures_f_exp\naval\piers\pierwooden_03_f.p3d", [7742.09, 5046.91, -19.0746], [-0.493987, 0.869469, 0], [0, 0, 1]]
+["a3\structures_f_exp\naval\piers\pierwooden_03_f.p3d", [7742.09, 5046.91, -19.0746], [-0.493987, 0.869469, 0], [0, 0, 1*/
 ];
 
 {
@@ -359,12 +359,12 @@ private _simpleObjects = [
 forEach _simpleObjects;
 
 
-Seapatrolon = 0; publicVariable "Seapatrolon";[] Spawn { while {true} Do {if (Seapatrolon < 5) Then {sleep 240;[]execVM "gpf_boats.sqf";};Sleep 300;};};
-patrolon = 0; publicVariable "patrolon";[] Spawn { while {true} Do {if (patrolon < 6) Then {sleep 60;[]execVM "gpf_patrol.sqf";};Sleep 300;};};
-heloOn = 0; publicVariable "heloOn";[] Spawn { while {true} Do {if (heloOn < 2) Then {sleep 60;[]execVM "gpf_helo.sqf";};Sleep 300;};};
-troopson = 0; publicVariable "troopson";[] Spawn { while {true} Do {if (troopson < 3) Then {sleep 30;[]execVM "gpf_troops.sqf";};Sleep 300;};};
+//Seapatrolon = 0; publicVariable "Seapatrolon";[] Spawn { while {true} Do {if (Seapatrolon < 5) Then {sleep 240;[]execVM "gpf_boats.sqf";};Sleep 300;};};
+//patrolon = 0; publicVariable "patrolon";[] Spawn { while {true} Do {if (patrolon < 6) Then {sleep 60;[]execVM "gpf_patrol.sqf";};Sleep 300;};};
+//heloOn = 0; publicVariable "heloOn";[] Spawn { while {true} Do {if (heloOn < 2) Then {sleep 60;[]execVM "gpf_helo.sqf";};Sleep 300;};};
+//troopson = 0; publicVariable "troopson";[] Spawn { while {true} Do {if (troopson < 3) Then {sleep 30;[]execVM "gpf_troops.sqf";};Sleep 300;};};
 deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {waituntil {((count AllPlayers) > 3)}; if (!deathsqdon) Then {[]execVM "gpf_deathsquad.sqf";};sleep 2700;};};
-[]Spawn{[]execVM "gpf_rescue.sqf";};
+//[]Spawn{[]execVM "gpf_rescue.sqf";};
 
 GPF_Benifits = [
 "76561198121313381", //sadass.insane
@@ -376,25 +376,27 @@ GPF_Benifits = [
 "76561198134042521", //Nocti aka spsch
 "76561198007836691", //Esset
 "76561198051860460", //Bazzoka
-"76561197988774700"  //Major Gun
+"76561197988774700",  //Major Gun
+"76561197984067176", //fraz
+"76561197969969342"  //Harbo
 ];
 publicVariable "GPF_Benifits";
 
 [] spawn {
     //waituntil {((count AllPlayers) > 0)};
-	{_x execVM "gpf_BambiNPC.sqf" } Foreach [
+	{_x execVM "gpf_BambiNPC.sqf" } Foreach [/*
 	[[3823.36,3280.39],300,1],
 	[[3151.14,6339.17],300,1],
 	[[7121.23,6079.1],300,1],
 	[[5558.22,11197.1],200,1],
 	[[6010.19,8635.74],400,2],
 	[[8237.62,3175.62],300,1],
-	[[5403.96,2785.38],300,1]
+	[[5403.96,2785.38],300,1*/
 	];
 };
 
 [] spawn { 
-	{_x execVM "gpf_GuardNPC.sqf";} Foreach [
+	{_x execVM "gpf_GuardNPC.sqf";} Foreach [/*
 	[[9739.08,3954.33,0],300,6,false], //milbase truck
 	[[10116.1,4035.11,0],300,6,false], //milbase banana
 	[[7228.2,10581.6,0],200,6,false], //milbase box
@@ -402,18 +404,18 @@ publicVariable "GPF_Benifits";
 	[[7728.5,4186.25,0],100,4,false], //montimilbase
 	[[1005.39,12348.4,0],50,4,false], //morrayHummingBird
 	[[5551.19,7887.43,0],100,4,false],//FOB Hillside
-	[[1059.92,637.339,0],50,6,false]  //Faro SW Harbor
+	[[1059.92,637.339,0],50,6,false]  //Faro SW Harbor*/
 	];
 };
 
 [] Spawn {
- {[(_x Select 0),(_x Select 1)] execVM "gpf_staticNPC.sqf";} Foreach [
+ {[(_x Select 0),(_x Select 1)] execVM "gpf_staticNPC.sqf";} Foreach [/*
  [[[12573.8,12774,0.00143909+10],[12664.1,12774.8,0.00118256+10],[12581.3,12745.6,0.00143814+20],[12588.2,12745,0.861816+20],[12581.3,12799.8,0.00143814+20],[12657.6,12799.8,0.00143242+20],[12648.9,12794.8,0.00120163+20],[12656.6,12745.9,0.00143814+20],[12620.1,12748.4,0.00143909+6],[12618,12794.4,0.00143909+6],[12586,12774.6,0.00143909+6],[12654.1,12776.1,0.00143862+6],[12582.1,12762,0.00141692+2],[12582,12786.2,0.00142622+2],[12657.1,12785.4,0.00142288+2],[12657.2,12761.9,0.00142097+2],[12615.7,12808.6,0.00143909+10],[12624,12736.5,0.00143909+10],[12648.9,12752.4,0.00143814+20],[12589.6,12793.4,0+20]],west],//seafort
  [[[2913.62,48.2814,21.0014],[2921.13,46.5778,21.0014],[2913.63,41.0477,20.0014],[2926.08,55.3898,42.0007],[2920.78,50.5389,46.0014],[3025.89,124.953,15.0014],[3140.46,102.58,14.0014],[2863.35,101.73,17.0016],[2895.39,31.4037,25.0014],[2982.52,121.034,20.0014],[2838.23,82.5841,8.00144],[2935.65,48.9374,20.0014],[2903.28,49.1912,20.0014]],west], //ussfreedom
  [[[150.659,10306,7.00144],[142.021,10298.6,7.00144],[157.659,10291.6,7.00144],[132.494,10314.3,7.00144],[145.119,10314.7,4.00144],[157.463,10313.2,7.00144],[157.185,10304.6,4.00144],[143.517,10290.8,4.00144],[133.414,10292.2,7.00144],[140.123,10303.8,5.00186]],west], //fuel dock
  [[[3019.65,7215.73,3.00143],[3053.23,7221.1,14.0014],[3050,7217.65,3.00142],[3050.08,7219.42,7.0029],[3021.06,7227.51,4.00143],[3044.4,7212.24,14.0014],[3050.09,7214.7,10.0014],[3044.67,7224.08,4.00142],[3028.86,7210.61,0.00143909]],east], //Pirate Cove
  [[[5021.91,5149.99,134.068],[5021.92,5147.49,134.052],[5021.69,5145.19,134.052],[5027.81,5180.67,137.168],[5025.85,5179.77,137.13],[5035.53,5181.49,136.473],[5036.37,5187.61,137.677],[5029,5189.15,138.83],[5031.22,5190.04,138.64],[5024.29,5167.88,134.748],[5021.18,5166.79,134.383],[5014.05,5171.99,134.876],[5016.7,5153.63,133.987],[5020.23,5172.55,135.321]],east] //Pirate Cave
- ];
+*/];
 };
 
 
