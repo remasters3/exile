@@ -8,7 +8,7 @@ class EditorData
 	toggles=585;
 	class ItemIDProvider
 	{
-		nextID=3316;
+		nextID=3321;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=364;
+		nextID=374;
 	};
 	class Camera
 	{
-		pos[]={833.01422,72.874962,12198.292};
-		dir[]={-0.89769346,-0.3225984,-0.30055028};
-		up[]={-0.3059411,0.94648838,-0.1024332};
-		aside[]={-0.31751892,1.8683204e-006,0.94839203};
+		pos[]={591.24017,43.527603,12266.401};
+		dir[]={0.88626641,-0.26685166,-0.37891981};
+		up[]={0.24541143,0.96368009,-0.10491768};
+		aside[]={-0.39318231,1.3751123e-006,-0.91961259};
 	};
 };
 binarizationWanted=0;
@@ -90,26 +90,15 @@ addons[]=
 	"A3_Rocks_F_Sharp",
 	"A3_Structures_F_Argo_Industrial_Agriculture",
 	"A3_Structures_F_Ind_Transmitter_Tower",
-	"sab_ultralight",
-	"sab_C130",
-	"sab_aircodh2",
 	"A3_Characters_F",
 	"A3_Characters_F_Mark",
-	"sab_f3",
-	"sab_camel",
-	"sab_brisfit",
-	"sab_junkers",
-	"sab_pfalzxii",
-	"sab_albatrosbc",
-	"sab_hansa",
-	"sab_boat",
-	"sab_gotha"
+	"sab_boat"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=49;
+		items=38;
 		class Item0
 		{
 			className="exile_client";
@@ -355,94 +344,22 @@ class AddonsMetaData
 		};
 		class Item35
 		{
-			className="sab_ultralight";
-			name="sab_ultralight";
-			author="[Dust]Sabre";
-		};
-		class Item36
-		{
-			className="sab_C130";
-			name="sab_C130";
-			author="[Dust]Sabre";
-		};
-		class Item37
-		{
-			className="sab_aircodh2";
-			name="sab_aircodh2";
-			author="[Dust]Sabre";
-			url="http://www.arma3.com";
-		};
-		class Item38
-		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item39
+		class Item36
 		{
 			className="A3_Characters_F_Mark";
 			name="Arma 3 Marksmen - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item40
-		{
-			className="sab_f3";
-			name="sab_f3";
-			author="[Dust]Sabre";
-			url="http://www.arma3.com";
-		};
-		class Item41
-		{
-			className="sab_camel";
-			name="Sopwith Camel";
-			author="[Dust]Sabre";
-			url="http://www.arma3.com";
-		};
-		class Item42
-		{
-			className="sab_brisfit";
-			name="sab_brisfit";
-			author="[Dust]Sabre";
-		};
-		class Item43
-		{
-			className="sab_junkers";
-			name="sab_junkers";
-			author="[Dust]Sabre";
-		};
-		class Item44
-		{
-			className="sab_pfalzxii";
-			name="pfalzxii";
-			author="sab/Sab";
-			url="http://www.arma3.com";
-		};
-		class Item45
-		{
-			className="sab_albatrosbc";
-			name="Albatros B,C";
-			author="[Dust]Sabre";
-			url="http://www.arma3.com";
-		};
-		class Item46
-		{
-			className="sab_hansa";
-			name="sab_hansa";
-			author="[Dust]Sabre";
-		};
-		class Item47
+		class Item37
 		{
 			className="sab_boat";
 			name="sab_boat";
-		};
-		class Item48
-		{
-			className="sab_gotha";
-			name="sab_gotha";
-			author="[Dust]Sabre";
-			url="http://www.arma3.com";
 		};
 	};
 };
@@ -475,7 +392,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=213;
+		items=200;
 		class Item0
 		{
 			dataType="Group";
@@ -21436,73 +21353,6 @@ class Mission
 		};
 		class Item198
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={800.50098,30.626381,12104.167};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3280;
-			type="sab_ultralight";
-		};
-		class Item199
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={695.25665,34.76495,12168.074};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-				reportRemoteTargets=1;
-				receiveRemoteTargets=1;
-				reportOwnPosition=1;
-			};
-			id=3281;
-			type="sab_C130_J_C";
-		};
-		class Item200
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={814.151,30.626381,12103.704};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3282;
-			type="sab_ultralight";
-		};
-		class Item201
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={855.59296,30.985176,12137.603};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3284;
-			type="sab_aircodh2";
-		};
-		class Item202
-		{
 			dataType="Group";
 			side="East";
 			class Entities
@@ -21577,138 +21427,7 @@ class Mission
 			id=3287;
 			atlOffset=112.53968;
 		};
-		class Item203
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={871.52399,30.985176,12145.137};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3290;
-			type="sab_aircodh2";
-		};
-		class Item204
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={776.72406,0.55788541,12432.85};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3291;
-			type="sab_f3";
-			atlOffset=2.112;
-		};
-		class Item205
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={944.95001,30.868589,12161.762};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3293;
-			type="sab_camel_b";
-		};
-		class Item206
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={914.54901,30.49659,12157.219};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3298;
-			type="sab_brisfit";
-		};
-		class Item207
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={858.5238,30.994812,12202.226};
-				angles[]={0,3.034482,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3304;
-			type="sab_junkers";
-		};
-		class Item208
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={835.32397,30.576912,12187.248};
-				angles[]={0,3.2822487,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3308;
-			type="sab_pfalzxii";
-		};
-		class Item209
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={899.53796,29.707504,12199.091};
-				angles[]={0,2.8424957,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3310;
-			type="sab_albatrosbc2";
-		};
-		class Item210
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={753.06146,1.4938388,12411.411};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3311;
-			type="sab_hansa";
-			atlOffset=1.1160001;
-		};
-		class Item211
+		class Item199
 		{
 			dataType="Object";
 			class PositionInfo
@@ -21723,22 +21442,6 @@ class Mission
 			id=3312;
 			type="sab_boat";
 			atlOffset=2.6823425;
-		};
-		class Item212
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={766.70795,31.7987,12139.101};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3315;
-			type="sab_gotha";
 		};
 	};
 };
