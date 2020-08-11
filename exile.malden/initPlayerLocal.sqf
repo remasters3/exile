@@ -150,6 +150,7 @@ gpf_SpawnLandTransport = {
 	_quad = createVehicle ['B_Quadbike_01_F', _pos, [], 0, 'FORM'];
 	_quad addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
 	_quad addAction ["Convert to JetSki (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnSeaTransport;pveh SetDir _dir;pveh SetPos _pos;"];
+	_quad addAction ["Convert to Ultralite (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnAirTransport;pveh SetDir _dir;pveh SetPos _pos;"];
 	_quad Addaction ["Call Air Evac (1000 tabs)",{[player] execVM 'gpf_call_evac.sqf';}];
 	private _uid = getPlayerUID player;
     private _isBenifit = _uid in GPF_Benifits;
@@ -170,6 +171,7 @@ gpf_SpawnSeaTransport = {
 	_jetski = createVehicle ['C_Scooter_Transport_01_F', _pos, [], 0, 'FORM'];
 	_jetski addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
 	_jetski addAction ["Convert to Quad (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnLandTransport;pveh SetDir _dir;pveh SetPos _pos;"];
+	_jetski addAction ["Convert to Ultralite (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnAirTransport;pveh SetDir _dir;pveh SetPos _pos;"];
 	_jetski Addaction ["Call Air Evac (1000 tabs)",{[player] execVM 'gpf_call_evac.sqf';}];
 	private _uid = getPlayerUID player;
     private _isBenifit = _uid in GPF_Benifits;
@@ -183,6 +185,27 @@ gpf_SpawnSeaTransport = {
 		_jetski addaction ["<t color='#ff0000'>---------------------------------</t>",{}];
 		//};
 	_jetski
+	};
+	
+gpf_SpawnAirTransport = {
+	_pos = _this Select 0;
+	_air = createVehicle ['sab_ultralight', _pos, [], 0, 'FORM'];
+	_air addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
+	_air addAction ["Convert to Quad (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnLandTransport;pveh SetDir _dir;pveh SetPos _pos;"];
+	_air addAction ["Convert to JetSki (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnSeaTransport;pveh SetDir _dir;pveh SetPos _pos;"];
+	_air Addaction ["Call Air Evac (1000 tabs)",{[player] execVM 'gpf_call_evac.sqf';}];
+	private _uid = getPlayerUID player;
+    private _isBenifit = _uid in GPF_Benifits;
+	//if (_isBenifit) Then {
+		_air addaction ["<t color='#ff0000'>-----------EXPERIMENTAL--------</t>",{}];
+		_air Addaction ["<t color='#ff0000'>Call Support 1 Units ( 10k tabs )</t>",{[player,1] execVM 'gpf_call_support_units.sqf';}];
+		_air Addaction ["<t color='#ff0000'>Call Support 2 Units ( 20k tabs )</t>",{[player,2] execVM 'gpf_call_support_units.sqf';}];
+		_air Addaction ["<t color='#ff0000'>Call Support 3 Units ( 30k tabs )</t>",{[player,3] execVM 'gpf_call_support_units.sqf';}];
+		_air Addaction ["<t color='#ff0000'>Call Support 4 Units ( 40k tabs )</t>",{[player,4] execVM 'gpf_call_support_units.sqf';}];
+		_air Addaction ["<t color='#ff0000'>Call Support 5 Units ( 50k tabs )</t>",{[player,5] execVM 'gpf_call_support_units.sqf';}];
+		_air addaction ["<t color='#ff0000'>---------------------------------</t>",{}];
+		//};
+	_air
 	};
 	
 
