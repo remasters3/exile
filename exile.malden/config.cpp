@@ -3045,6 +3045,18 @@ class CfgExileArsenal
 	class C_Offroad_02_unarmed_blue_F       					{ quality = 3; price = 16000; };
 	class C_Offroad_02_unarmed_red_F        					{ quality = 3; price = 16000; };
 	
+	//sabs civ aircraft
+	class sab_piper_3                 							{ quality = 2; price = 15000; };
+	class sab_sikorskys38                 						{ quality = 3; price = 25000; };
+	class sab_trimotor                 							{ quality = 5; price = 30000; };
+	class sab_dc3                 							    { quality = 5; price = 35000; };
+	class sab_C130_J_C                 							{ quality = 6; price = 40000; };
+	
+	//mossie
+	class RwG_Mozzie_Carl_Black                                 { quality = 2; price = 6000; };
+
+	
+	
 	///////////////////////////////////////////////////////////////////////////////
 	// Hatchback
 	///////////////////////////////////////////////////////////////////////////////
@@ -6212,6 +6224,12 @@ class CfgTraderCategories
 			"Exile_Plane_BlackfishInfantry",
 			"Exile_Plane_BlackfishVehicle",
 			"B_Plane_CAS_01_dynamicLoadout_F",
+			"sab_piper_3",       
+            "sab_sikorskys38",
+            "sab_trimotor",     
+            "sab_dc3",        
+            "sab_C130_J_C",
+            "RwG_Mozzie_Carl_Black", 
 			"GNT_C185T"
 		};
 	};
