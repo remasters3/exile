@@ -3060,7 +3060,7 @@ class CfgExileArsenal
 	class sab_hansa												{ quality = 6; price = 30000; };
 	
 	//sabs little boat
-	class 														{ quality = 4; price = 20000; };
+	class 	sab_boat											{ quality = 4; price = 20000; };
 
 	
 	
