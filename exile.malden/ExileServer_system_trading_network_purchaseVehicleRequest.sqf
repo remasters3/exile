@@ -51,6 +51,11 @@ try
 	if (_vehicleClass isKindOf "Ship") then 
 	{
 		_position = [(getPosATL _playerObject), 100, 20] call ExileClient_util_world_findWaterPosition;
+		{
+			if ((_playerObject distance _x) <= 50 ) Then {_position = _x};
+		} foreach [
+		[7706.18,5126.3,1.8285]
+		];
 		_vehicleObject = [_vehicleClass, _position, (random 360), false, _pinCode] call ExileServer_object_vehicle_createPersistentVehicle;
 	}
 	else 
