@@ -3060,7 +3060,7 @@ class CfgExileArsenal
 	class sab_hansa												{ quality = 6; price = 30000; };
 	
 	//sabs little boat
-	class 	sab_boat											{ quality = 4; price = 20000; };
+	class sab_boat											    { quality = 4; price = 20000; };
 
 	
 	
@@ -6216,8 +6216,8 @@ class CfgTraderCategories
 			"Exile_Boat_WaterScooter",
 			"Exile_Boat_RHIB",
 			"I_Boat_Armed_01_minigun_F",
-			"sab_f3",
-            "sab_hansa",
+			/*"sab_f3",
+            "sab_hansa",*/
             "sab_boat"
 		};
 	};
