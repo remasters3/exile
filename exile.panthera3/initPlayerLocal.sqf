@@ -89,6 +89,7 @@ private _npcs = [
     _trader attachTo [_logic, [0, 0, 0]];
     _trader switchMove (_animations select 0);
     _trader addEventHandler ["AnimDone", {_this call ExileClient_object_trader_event_onAnimationDone}];
+	[_trader,false,false] execVM "gpf_randomgear.sqf";
 }
 forEach _npcs;
 
