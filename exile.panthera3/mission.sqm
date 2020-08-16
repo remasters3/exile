@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=98;
+		nextID=110;
 	};
 	class Camera
 	{
-		pos[]={9940.0518,59.186546,374.37732};
-		dir[]={-0.68169588,-0.26381069,0.68242943};
-		up[]={-0.1864443,0.96457291,0.18664473};
-		aside[]={0.70749152,4.8428774e-008,0.70673156};
+		pos[]={8305.5723,74.24353,5000.3486};
+		dir[]={-0.58372623,-0.3893114,0.71256965};
+		up[]={-0.24671575,0.9211002,0.30117223};
+		aside[]={0.77359885,-2.8703653e-007,0.63371772};
 	};
 };
 binarizationWanted=0;
@@ -31,46 +31,55 @@ addons[]=
 {
 	"exile_client",
 	"A3_Ui_F",
-	"CUP_Hotfix_Data",
-	"CUP_Hotfix_Config"
+	"A3_Characters_F"
 };
-class AddonsMetaData {
-	class List {
-		items = 2;
-		
-		class Item0 {
-			className = "exile_client";
-			name = "exile_client";
+class AddonsMetaData
+{
+	class List
+	{
+		items=3;
+		class Item0
+		{
+			className="exile_client";
+			name="exile_client";
 		};
-		
-		class Item1 {
-			className = "A3_Ui_F";
-			name = "Arma 3 - User Interface";
-			author = "Bohemia Interactive";
-			url = "https://www.arma3.com";
+		class Item1
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
-randomSeed = 2218544;
-
-class ScenarioData {
-	author = "Exile Mod";
+randomSeed=2218544;
+class ScenarioData
+{
+	author="Exile Mod";
 };
-
-class Mission {
-	class Intel {
-		startWeather = 0.0;
-		startWind = 0.0;
-		forecastWeather = 0.0;
-		forecastWind = 0.0;
-		forecastWaves = 0.0;
-		year = 1944;
-		month = 7;
-		day = 14;
-		hour = 6;
-		minute = 45;
-		startFogDecay = 0.0;
-		forecastFogDecay = 0.0;
+class Mission
+{
+	class Intel
+	{
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0;
+		forecastWind=0;
+		forecastWaves=0;
+		year=1944;
+		month=7;
+		day=14;
+		hour=6;
+		minute=45;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 	class Entities
 	{
@@ -1811,48 +1820,6 @@ class Mission {
 					drawBorder=1;
 					id=103;
 					atlOffset=8.7245836;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item1
 				{
@@ -1879,48 +1846,6 @@ class Mission {
 					drawBorder=1;
 					id=105;
 					atlOffset=0.00016784668;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item3
 				{
@@ -1947,48 +1872,6 @@ class Mission {
 					drawBorder=1;
 					id=107;
 					atlOffset=0.00041484833;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item5
 				{
@@ -2014,48 +1897,6 @@ class Mission {
 					drawBorder=1;
 					id=111;
 					atlOffset=2.8534851;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item7
 				{
@@ -2082,48 +1923,6 @@ class Mission {
 					drawBorder=1;
 					id=115;
 					atlOffset=1.9073486e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item9
 				{
@@ -2135,7 +1934,7 @@ class Mission {
 				};
 			};
 			id=1;
-			atlOffset=34.415089;
+			atlOffset=-60.818848;
 		};
 		class Item2
 		{
@@ -2158,48 +1957,6 @@ class Mission {
 					b=200;
 					drawBorder=1;
 					id=101;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item1
 				{
@@ -2235,48 +1992,6 @@ class Mission {
 					drawBorder=1;
 					id=123;
 					atlOffset=0.028261662;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item4
 				{
@@ -2301,48 +2016,6 @@ class Mission {
 					b=200;
 					drawBorder=1;
 					id=126;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item6
 				{
@@ -2359,48 +2032,6 @@ class Mission {
 					drawBorder=1;
 					id=125;
 					atlOffset=43.981003;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item7
 				{
@@ -2417,48 +2048,6 @@ class Mission {
 					drawBorder=1;
 					id=127;
 					atlOffset=308.75299;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item8
 				{
@@ -2475,48 +2064,6 @@ class Mission {
 					drawBorder=1;
 					id=129;
 					atlOffset=281.26999;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 			};
 			id=2;
@@ -2579,48 +2126,6 @@ class Mission {
 					drawBorder=1;
 					id=161;
 					atlOffset=-3.0899999;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item1
 				{
@@ -2652,48 +2157,6 @@ class Mission {
 					b=50;
 					drawBorder=1;
 					id=156;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 			};
 			id=6;
@@ -2738,48 +2201,6 @@ class Mission {
 					drawBorder=1;
 					id=151;
 					atlOffset=-0.51553291;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item3
 				{
@@ -2796,48 +2217,6 @@ class Mission {
 					drawBorder=1;
 					id=152;
 					atlOffset=-0.6578424;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item4
 				{
@@ -2862,48 +2241,6 @@ class Mission {
 					b=200;
 					drawBorder=1;
 					id=154;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ExileMarkerZone";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ExileMarkerIcon";
-							expression="false";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="";
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 			};
 			id=145;
@@ -2922,7 +2259,7 @@ class Mission {
 					class PositionInfo
 					{
 						position[]={9981.9668,7.73,336.39832};
-						angles[]={-0,6.165729,0};
+						angles[]={0,6.165729,0};
 					};
 					name="HC";
 					isPlayable=1;

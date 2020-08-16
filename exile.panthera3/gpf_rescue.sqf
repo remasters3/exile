@@ -4,7 +4,11 @@ private _centerWorld =  [5491.72,6267.94,0];
 private _NameVillage = nearestLocations [_centerWorld, ["NameVillage"], 10000];
 //private _NameLocal = nearestLocations [_centerWorld, ["NameLocal"], 10000];
 private _allpos = _NameVillage;
-private _targets = [[8013.65,9687.79,0],[5530.35,11624.5,0],[7424.16,8112.4,0],[1559.47,4612.97,0],[6820.24,2741.86,0]];
+private _targets = [
+[1923.45,1907.91,0],
+[8286.7,5153.12,0],
+[2334.76,9187.14,0]
+];
 private _target = SelectRandom _targets;
 private _GPF_fnc_rescueEvac = compile preprocessFile "gpf_fn_rescueEvac.sqf";
 private _numberOfunits = SelectRandom [2,2,4,4,4,6,6,8,6,5];
