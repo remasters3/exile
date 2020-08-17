@@ -81,7 +81,7 @@ disableSerialization;
 		_hours = (floor(_time/60));
 		_minutes = (_time - (_hours * 60));
         _bodyTemperature = round((ExileClientPlayerAttributes select 5) *10)/10.0; //call ExileClient_util_math_round;//body temp
-        _environmentTemperature = round (ExileClientEnvironmentTemperature * 10) /10.0;//air temp
+        _environmentTemperature = 0; // round (ExileClientEnvironmentTemperature * 10) /10.0;//air temp
 		switch(_minutes) do
 	{
 		case 9: {_minutes = "09"};
@@ -185,8 +185,8 @@ disableSerialization;
 			<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\fps.paa' color='%10'/> %7</t>
 			<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\compass.paa' color='%10'/> %17</t> 
 			<t shadow='1' shadowColor='#000000' color='%10'><img size='1.2'  shadowColor='#000000' image='addons\statusbar\icons\restart.paa' color='%10'/>%18:%19</t>
-			<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\body.paa' color='%10'/> %21</t>
-			<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\temp.paa' color='%10'/> %22</t>",				
+			<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\body.paa' color='%10'/> %21</t>"
+			/*<t shadow='1' shadowColor='#000000' color='%15'><img size='1.0'  shadowColor='#000000' image='addons\statusbar\icons\temp.paa' color='%10'/> %22</t>"*/,				
 					"%",                       //1
 					count playableUnits,       //2
 					_damage,                  //3
