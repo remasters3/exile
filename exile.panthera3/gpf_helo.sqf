@@ -10,7 +10,7 @@ _WestLightVeh = ["B_Heli_Transport_01_F","B_Heli_Transport_03_F"];
 private _startpos = [7921.2,4094.34,0];
 
 heloOn = heloOn+1; publicVariable "heloOn";
-private _Side = SelectRandom [west,west,west,west,west,west,west,west,west,east];
+private _Side = SelectRandom [east];
 private _Model = [];
 private _Timeout = 60*30;
 
