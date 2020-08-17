@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=158;
+		nextID=161;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=110;
+		nextID=116;
 	};
 	class Camera
 	{
-		pos[]={8305.5723,74.24353,5000.3486};
-		dir[]={-0.58372623,-0.3893114,0.71256965};
-		up[]={-0.24671575,0.9211002,0.30117223};
-		aside[]={0.77359885,-2.8703653e-007,0.63371772};
+		pos[]={8335.5615,36.070549,5111.832};
+		dir[]={0.13873473,-0.94197464,-0.30594406};
+		up[]={0.38900316,0.33580121,-0.85783923};
+		aside[]={-0.91081882,-2.387038e-006,-0.41302532};
 	};
 };
 binarizationWanted=0;
@@ -31,13 +31,14 @@ addons[]=
 {
 	"exile_client",
 	"A3_Ui_F",
-	"A3_Characters_F"
+	"A3_Characters_F",
+	"A3_Misc_F_Helpers"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			className="exile_client";
@@ -54,6 +55,13 @@ class AddonsMetaData
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Misc_F";
+			name="Arma 3 - 3D Aids and Helpers";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -83,7 +91,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			dataType="Group";
@@ -2268,6 +2276,22 @@ class Mission
 				};
 			};
 			id=149;
+		};
+		class Item7
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8339.1816,10.943414,5104.104};
+				angles[]={6.2531939,2.4552076,6.2073312};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=160;
+			type="Sign_Arrow_Direction_Green_F";
 		};
 	};
 };

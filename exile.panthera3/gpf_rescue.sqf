@@ -1,7 +1,8 @@
-private _centerWorld =  [5491.72,6267.94,0];
+private _cotw = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
+private _centerWorld = [(_cotw select 0),(_cotw select 1),0];
 //private _NameCity = nearestLocations [_centerWorld, ["NameCity"], 10000];
 //private _NameCityCapital = nearestLocations [_centerWorld, ["NameCityCapital"], 10000];
-private _NameVillage = nearestLocations [_centerWorld, ["NameVillage"], 10000];
+private _NameVillage = nearestLocations [_centerWorld, ["NameVillage"], 15000];
 //private _NameLocal = nearestLocations [_centerWorld, ["NameLocal"], 10000];
 private _allpos = _NameVillage;
 private _targets = [
