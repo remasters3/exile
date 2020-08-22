@@ -11,19 +11,20 @@ if ((count _vlist) > 0) Then {
 		_crw = crew _x;
 		_list = _list+_crw;
 	} foreach _vlist;
-	
+};
+
+if ((count _list) > 0) Then {
 	{
 		if (isPlayer _x) Then {_RealPlayers = _RealPlayers + [_x];}; 
 	} Foreach _list;
 
-	};
+};
 	
 if ((count _RealPlayers) == 0) Then {
-
 	_FinalCount = 0;
 	} else {
 	 _FinalCount = count _RealPlayers;
-	};
+};
 
 _OUTPUT = [_FinalCount,_RealPlayers];
 _OUTPUT 
