@@ -1396,7 +1396,7 @@ publicVariable "GPF_Benifits";
 	while {true} Do {
 			{
 			_pos = GetMarkerPos _x;
-			_men = _pos nearObjects ["Man", 50];
+			_men = _pos nearObjects ["Man", 60];
 				{
 				_man = _x;
 				if ((side _man) == East) Then {deleteVehicle _man};

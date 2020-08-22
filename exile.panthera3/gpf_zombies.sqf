@@ -204,7 +204,7 @@ _Spawns = [
 	    _Side = EAST;
 	    _Timeout = -1;
 	    _Blacklist = ["marker_17","marker_18","marker_19"];
-	    _SpawnerModel = "FlagCarrierWhite_EP1"; //"HeliHEmpty";
+	    _SpawnerModel = "HeliHEmpty"; //"FlagCarrierWhite_EP1"; //
 		_rad = 300;
 	    while {true} Do {
 			

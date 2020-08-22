@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=188;
+		nextID=194;
 	};
 	class Camera
 	{
-		pos[]={8295.5752,36.310001,5138.5459};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={2315.937,100.99,9074.1572};
+		dir[]={0.46679422,-0.29180384,0.83485913};
+		up[]={0.14240851,0.95648044,0.2546967};
+		aside[]={0.87284875,5.6701538e-008,-0.48803493};
 	};
 };
 binarizationWanted=0;
@@ -2047,15 +2047,15 @@ class Mission
 				class Item0
 				{
 					dataType="Marker";
-					position[]={2361.1289,75.989998,9133.4854};
+					position[]={2333.792,75.989998,9141.4346};
 					name="ExileMarker111";
 					text="Mello Trader";
 					markerType="ELLIPSE";
 					type="ExileTraderZone";
 					colorName="ColorBlack";
 					fillName="Border";
-					a=50;
-					b=50;
+					a=60;
+					b=60;
 					drawBorder=1;
 					id=101;
 				};
@@ -2087,8 +2087,8 @@ class Mission
 					type="ExileTraderZone";
 					colorName="ColorBlack";
 					fillName="Border";
-					a=50;
-					b=50;
+					a=60;
+					b=60;
 					drawBorder=1;
 					id=123;
 					atlOffset=0.028261662;
@@ -2112,23 +2112,23 @@ class Mission
 					type="ExileTraderZone";
 					colorName="ColorBlack";
 					fillName="Border";
-					a=50;
-					b=50;
+					a=60;
+					b=60;
 					drawBorder=1;
 					id=126;
 				};
 				class Item6
 				{
 					dataType="Marker";
-					position[]={2361.0071,119.971,9133.3809};
+					position[]={2334.01,119.971,9141.29};
 					name="marker_17";
 					text="Mello Trader - No PVP";
 					markerType="ELLIPSE";
 					type="ellipse";
 					colorName="ColorRed";
 					fillName="Border";
-					a=50;
-					b=50;
+					a=60;
+					b=60;
 					drawBorder=1;
 					id=125;
 					atlOffset=43.981003;
@@ -2143,8 +2143,8 @@ class Mission
 					type="ellipse";
 					colorName="ColorRed";
 					fillName="Border";
-					a=50;
-					b=50;
+					a=60;
+					b=60;
 					drawBorder=1;
 					id=127;
 					atlOffset=308.75299;
@@ -2159,15 +2159,15 @@ class Mission
 					type="ellipse";
 					colorName="ColorRed";
 					fillName="Border";
-					a=50;
-					b=50;
+					a=60;
+					b=60;
 					drawBorder=1;
 					id=129;
 					atlOffset=281.26999;
 				};
 			};
 			id=2;
-			atlOffset=65.75267;
+			atlOffset=65.565521;
 		};
 		class Item3
 		{
