@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=206;
+		nextID=222;
 	};
 	class MarkerIDProvider
 	{
@@ -16,26 +16,23 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=140;
+		nextID=170;
 	};
 	class Camera
 	{
-		pos[]={2785.5579,57.525558,8112.0601};
-		dir[]={-0.85621834,-0.059723884,0.51324636};
-		up[]={-0.051267963,0.99820328,0.030731808};
-		aside[]={0.51416504,1.1201701e-006,0.85775542};
+		pos[]={10033.868,20.872461,506.86673};
+		dir[]={-0.60860848,-0.3072215,0.73169541};
+		up[]={-0.19646229,0.95163596,0.23619546};
+		aside[]={0.7688821,3.5844278e-007,0.63953978};
 	};
 };
 binarizationWanted=0;
-	addons[]=
-	{
-		"exile_client",
-		"Ryanzombies",
-		"ryanzombiesfunctions",
-		"A3_Ui_F",
-		"A3_Characters_F"
-	};
-
+addons[]=
+{
+	"exile_client",
+	"A3_Ui_F",
+	"A3_Characters_F"
+};
 class AddonsMetaData
 {
 	class List
@@ -86,7 +83,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=8;
+		items=9;
 		class Item0
 		{
 			dataType="Group";
@@ -2394,7 +2391,37 @@ class Mission
 			};
 			id=204;
 			type="Exile_Plane_Ceasar";
-			atlOffset=-1.9073486e-006;
+			atlOffset=-0.12924194;
+		};
+		class Item8
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10005.821,1.0982769,529.27393};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=218;
+					type="B_Soldier_A_F";
+					atlOffset=-2.3841858e-007;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=217;
+			atlOffset=-2.3841858e-007;
 		};
 	};
 };

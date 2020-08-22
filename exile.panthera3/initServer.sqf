@@ -1368,6 +1368,7 @@ heloOn = 0; publicVariable "heloOn";[] Spawn { while {true} Do {if (heloOn < 2) 
 //troopson = 0; publicVariable "troopson";[] Spawn { while {true} Do {if (troopson < 3) Then {sleep 30;[]execVM "gpf_troops.sqf";};Sleep 300;};};
 deathsqdon = false; publicVariable "deathsqdon";[] Spawn { while {true} Do {waituntil {((count AllPlayers) > 3)}; if (!deathsqdon) Then {[]execVM "gpf_deathsquad.sqf";};sleep 2700;};};
 []Spawn{[]execVM "gpf_rescue.sqf";};
+[]Spawn{[]execVM "gpf_zombies.sqf";};
 
 GPF_Benifits = [
 "76561198121313381", //sadass.insane
