@@ -8,22 +8,22 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=226;
+		nextID=228;
 	};
 	class MarkerIDProvider
 	{
-		nextID=26;
+		nextID=27;
 	};
 	class LayerIndexProvider
 	{
-		nextID=206;
+		nextID=212;
 	};
 	class Camera
 	{
-		pos[]={2282.6729,100.99,9184.083};
-		dir[]={-0.86989915,-0.26474166,-0.4162178};
-		up[]={-0.23881716,0.96432084,-0.11426593};
-		aside[]={-0.43161926,2.9423973e-008,0.90208918};
+		pos[]={8422.1514,35.27,4910.3896};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -2112,7 +2112,7 @@ class Mission
 				class Item5
 				{
 					dataType="Marker";
-					position[]={8295.5752,11.31,5163.5459};
+					position[]={8310.7627,11.31,5150.1899};
 					name="ExileMarker116";
 					text="Vrba Trader";
 					markerType="ELLIPSE";
@@ -2159,7 +2159,7 @@ class Mission
 				class Item8
 				{
 					dataType="Marker";
-					position[]={8295.5752,292.57999,5163.5459};
+					position[]={8310.6318,292.57999,5150.0601};
 					name="marker_19";
 					text="Vrba Trader - No PVP";
 					markerType="ELLIPSE";
@@ -2174,7 +2174,7 @@ class Mission
 				};
 			};
 			id=2;
-			atlOffset=65.565521;
+			atlOffset=66.04985;
 		};
 		class Item3
 		{

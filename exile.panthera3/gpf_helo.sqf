@@ -1,4 +1,6 @@
-private _centerWorld =  [5491.72,6267.94,0];
+// private _centerWorld =  [5491.72,6267.94,0];
+private _cotw = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
+private _centerWorld = [(_cotw select 0),(_cotw select 1),0];
 private _timeout = 600;
 private _maxunits = 60;
 private _allPlaces = nearestLocations [_centerWorld, ["NameCity"], 20000];
@@ -10,7 +12,7 @@ _WestLightVeh = ["B_Heli_Transport_01_F","B_Heli_Transport_03_F"];
 private _startpos = [7921.2,4094.34,0];
 
 heloOn = heloOn+1; publicVariable "heloOn";
-private _Side = SelectRandom [east];
+private _Side = SelectRandom [west];
 private _Model = [];
 private _Timeout = 60*30;
 

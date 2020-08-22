@@ -1,47 +1,28 @@
-_Zombies = [
-	"RyanZombieC_man_1walkerOpfor", 
-    "RyanZombieC_man_hunter_1_FwalkerOpfor",
-    "RyanZombieC_man_pilot_FwalkerOpfor",
-    "RyanZombieC_journalist_FwalkerOpfor",
-    "RyanZombieC_OresteswalkerOpfor",
-    "RyanZombieC_NikoswalkerOpfor",
-    "RyanZombie19walkerOpfor",
-    "RyanZombie21walkerOpfor",
-    "RyanZombie22walkerOpfor",
-    "RyanZombieC_man_polo_2_FwalkerOpfor",
-    "RyanZombie32walkerOpfor",
-    "RyanZombie32walkerOpfor",
-    "RyanZombieC_man_polo_5_FwalkerOpfor",
-    "RyanZombieC_man_p_fugitive_FwalkerOpfor",
-    "RyanZombieC_scientist_FwalkerOpfor",
-    "RyanZombieB_RangeMaster_FwalkerOpfor",
-    "RyanZombieC_NikoswalkerOpfor",
-    "RyanZombie21walkerOpfor"
-];
+private _cotw = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
+private _centerWorld = [(_cotw select 0),(_cotw select 1),0];
 
 
-_SpawnPos = [9977.05,312.305,0];
-_target = _target;
-_minZombies = 3;
-_RespawnTime = 5;
-_Side = WEST;
-_ZombieModels = _Zombies;
-_Direction = 0;
-_Timeout = 0;
-_Blacklist = [];
-_SpawnerModel = "HeliHEmpty";
+_path =[];
+_cnt = 0;
+_names =[];
+while {(_cnt <= 1)} do {
+  _markerName = Format ["path_%1",_cnt];
+  systemChat _markerName;
+  _pos = GetMarkerPos _markerName;
+  _path = _path + [_pos];
+  _cnt = _cnt+1;
+  _names = _names + [_markerName];
 
-gpf_fn_zpawner = compile preprocessFile "gpf_fn_zpawner.sqf"; 
-_Zombies = [_SpawnPos,_target,_minZombies,_RespawnTime,_Side,_ZombieModels,_Direction,_Timeout,_Blacklist,_SpawnerModel] Call gpf_fn_zpawner;
+};
+copyToClipboard Format ["%1",_path];
 
 //_Green_Debug_Player = _this select 0;
 //if (Green_Debug_Player != _Green_Debug_Player) ExitWith {};
 //debug = true;
-//
+//[[0,0,0],[0,0,0]]
 //_DebugGroup = _Green_Debug_Player getVariable gpf_support_group;
 //if ((group _Green_Debug_Player) == _DebugGroup) Then {[_Green_Debug_Player] join grpNull;}
 //Else {[_Green_Debug_Player] join _DebugGroup;_DebugGroup selectLeader _Green_Debug_Player;};
-
 
 
 
@@ -167,14 +148,9 @@ copyToClipboard _STR;
 */
 
 //hint str(typeOf cursortarget); copyToClipboard str(typeOf cursortarget);
-/*
-for _i from 1 to 13 do {
-  _markerName = Format [path_%1,_i];
- _pos = GetMarkerPos _markerName;
- _path = _path + [_pos];
 
-};
-copyToClipboard Format [%1,_path];
+
+/*
 [[5707.67,2005.71,0],[8622.13,2741.32,0],[8902.38,4883.91,0],[8935.06,8600.58,0],[7309.82,11777.1,0],[6078.81,12144.2,0],[3423.31,10117,0],[7735.03,5445.5,0],[2299.42,7478.4,0],[1155.36,5925.76,0],[1021.24,2485.33,0],[3318.59,2143.9,0],[947.376,84.5116,0]]
 //_txt = Format [%1,%2,%3,GetPosASL player,vectorDir player,vectorUp player]; copyToClipboard _txt;diag_log _txt; 
 //copyToClipboard str(GetPosASL Player); systemChat Format [%1,GetPosASL Player];
