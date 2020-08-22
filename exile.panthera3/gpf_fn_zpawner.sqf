@@ -40,17 +40,26 @@ If (_Timeout > 0 ) Then {
 	[_Barraks,_Timeout] Spawn {_Barraks = _this Select 0; _Timeout = _this Select 1;Sleep _Timeout; deleteVehicle _Barraks;};
 };
 
+_gpf_fn_PlayerCount = compile preprocessFile "gpf_fn_PlayerCount.sqf";
 while {_BarraksAlive} do {
    _groupcount = {alive _x} count units _BarraksGroup;
    IF (_groupcount < _MinUnitsPerSide) THEN {
-	    _SafePos = [_SpawnPos,1,(100+_dir), 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+		_OUTPUT = [_SpawnPos,_dir] call _gpf_fn_PlayerCount;
+		_PlayerCount = _OUTPUT select 0;
+		if (_PlayerCount > 0) Then {
+		_player = selectRandom _Players;
+	    _SafePos = [(GetPos _player),1,100, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 	    _unit = _BarraksGroup createUnit [(selectRandom _Model), _SafePos,[], 0,"FORM"];
 	    [_unit]execVM "gpf_zombieloot.sqf";
+		};
 	    };
    _Count = _Count+_RespawnTime;
-   sleep _RespawnTime;
-   _gpf_fn_PlayerCount = compile preprocessFile "gpf_fn_PlayerCount.sqf";
-   if (([_SpawnPos,_dir] call _gpf_fn_PlayerCount) <= 0) Then {{deleteVehicle _x;} foreach units _BarraksGroup; deleteVehicle _Barraks;};
+   sleep _RespawnTime;  
+   _OUTPUT = [_SpawnPos,_dir] call _gpf_fn_PlayerCount;
+   _PlayerCount = _OUTPUT select 0;
+   _Players = _OUTPUT select 1;
+   _player = selectRandom _Players;
+   if ( _PlayerCount <= 0) Then {{deleteVehicle _x;} foreach units _BarraksGroup; deleteVehicle _Barraks;};
    _BarraksAlive = alive _Barraks;
   };
   {deleteVehicle _x;} foreach units _BarraksGroup; deleteVehicle _Barraks;

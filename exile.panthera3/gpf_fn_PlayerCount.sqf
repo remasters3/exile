@@ -17,4 +17,5 @@ if ((count _RealPlayers) == 0) Then {
 	 _FinalCount = count _RealPlayers;
 	};
 
-_FinalCount 
+_OUTPUT = [_FinalCount,_RealPlayers];
+_OUTPUT 
