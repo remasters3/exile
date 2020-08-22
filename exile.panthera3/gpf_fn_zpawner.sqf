@@ -46,6 +46,7 @@ while {_BarraksAlive} do {
    IF (_groupcount < _MinUnitsPerSide) THEN {
 		_OUTPUT = [_SpawnPos,_dir] call _gpf_fn_PlayerCount;
 		_PlayerCount = _OUTPUT select 0;
+		_Players = _OUTPUT select 1;
 		if (_PlayerCount > 0) Then {
 		_player = selectRandom _Players;
 	    _SafePos = [(GetPos _player),1,100, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
@@ -57,7 +58,6 @@ while {_BarraksAlive} do {
    sleep _RespawnTime;  
    _OUTPUT = [_SpawnPos,_dir] call _gpf_fn_PlayerCount;
    _PlayerCount = _OUTPUT select 0;
-   _Players = _OUTPUT select 1;
    _player = selectRandom _Players;
    if ( _PlayerCount <= 0) Then {{deleteVehicle _x;} foreach units _BarraksGroup; deleteVehicle _Barraks;};
    _BarraksAlive = alive _Barraks;
