@@ -203,7 +203,7 @@ _Spawns = [
 	    _Timeout = -1;
 	    _Blacklist = ["marker_17","marker_18","marker_19"];
 	    _SpawnerModel = "FlagCarrierWhite_EP1"; //"HeliHEmpty";
-		_rad = 100;
+		_rad = 300;
 
 	    
 	    while {true} Do {
