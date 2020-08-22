@@ -9,7 +9,7 @@ private _Path = Call _GetWayPontPos;
 private _startpos = _Path select 0;
 private _count = count _Path;
 patrolon = patrolon+1; publicVariable "patrolon";
-private _Side = SelectRandom [east,east,east,east,east,east,east,east,West,West];
+private _Side = SelectRandom [West];
 private _Model = [];
 private _Timeout = 60*30;
 

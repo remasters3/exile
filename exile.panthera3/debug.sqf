@@ -5,16 +5,16 @@ private _centerWorld = [(_cotw select 0),(_cotw select 1),0];
 _path =[];
 _cnt = 0;
 _names =[];
-while {(_cnt <= 1)} do {
+while {(_cnt <= 21)} do {
   _markerName = Format ["path_%1",_cnt];
   systemChat _markerName;
-  _pos = GetMarkerPos _markerName;
+  _pos = GetMarkerPos "debug_marker";
   _path = _path + [_pos];
   _cnt = _cnt+1;
   _names = _names + [_markerName];
 
 };
-copyToClipboard Format ["%1",_path];
+copyToClipboard Format [" %2 ",_names,_path];
 
 //_Green_Debug_Player = _this select 0;
 //if (Green_Debug_Player != _Green_Debug_Player) ExitWith {};
@@ -23,9 +23,6 @@ copyToClipboard Format ["%1",_path];
 //_DebugGroup = _Green_Debug_Player getVariable gpf_support_group;
 //if ((group _Green_Debug_Player) == _DebugGroup) Then {[_Green_Debug_Player] join grpNull;}
 //Else {[_Green_Debug_Player] join _DebugGroup;_DebugGroup selectLeader _Green_Debug_Player;};
-
-
-
 // player addaction [Debug On,execVM 'debug.sqf';];
 // player addaction [Debug Off,debug = false;];
 

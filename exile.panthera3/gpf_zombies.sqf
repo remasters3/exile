@@ -8,6 +8,7 @@ _ZombieModels = [];
 
 } foreach _zombies; 
 
+_debug = true;
 _Spawns = [         
 [4353.97,7495.4,0], //Arnoldstein Airport  
 [8622.31,4784.41,0], //Airport Lesce  
@@ -193,9 +194,12 @@ _Spawns = [
 [1036.78,9370.18,0], //Vatra, 
 [8511.16,9110.22,0] //Workers Village
 ];
-/*_Spawns = [ 
-[9993.1,386.963,0]
-];*/
+
+if (_debug) Then {
+_Spawns = [ 
+[9993.1,386.963,0] //debug island
+];
+};
 {	// systemchat "echo";
 	[_x,_ZombieModels] Spawn { _SpawnPos = _this select 0; _ZombieModels = _this select 1;
 
