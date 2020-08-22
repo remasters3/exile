@@ -1390,6 +1390,23 @@ GPF_Benifits = [
 ];
 publicVariable "GPF_Benifits";
 
+
+//remove enemy's form safezones
+[] Spawn {
+	while {true} Do {
+			{
+			_pos = GetMarkerPos _x;
+			_men = _pos nearObjects ["Man", 50];
+				{
+				_man = _x;
+				if ((side _man) == East) Then {deleteVehicle _man};
+				if ((side _man) == West) Then {deleteVehicle _man};
+				} foreach _men;
+			} foreach ["marker_17","marker_18","marker_19","debug_marker"];
+	Sleep 10;
+	};
+
+};
 /*
 [] spawn {
     //waituntil {((count AllPlayers) > 0)};

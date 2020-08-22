@@ -165,9 +165,9 @@ _Spawns = [
 [9595.67,7669.63,0], //Grimsted's Farm
 [8273.71,8624.22,100], //Malcolm's Hacienda
 [9324.03,8874,100], //Central Paddocks                             
-[2609.78,1480.82,0], /*Rontus*/
-[1041.7,6307.94,0], /*Citta Rubina*/
-[8721.05,2390.73,0], /*Porto Ritmo*/        
+[2609.78,1480.82,0], //Rontus
+[1041.7,6307.94,0], //Citta Rubina
+[8721.05,2390.73,0], //Porto Ritmo        
 [3217.66,3344.35,0], //Kobarid, 
 [3321.08,6670.45,0], //Tarvisio, 
 [7461.03,5799.64,0], //Jesenice, 
@@ -192,7 +192,9 @@ _Spawns = [
 [1036.78,9370.18,0], //Vatra, 
 [8511.16,9110.22,0] //Workers Village
 ];
-
+/*_Spawns = [ 
+[9993.1,386.963,0]
+];*/
 {	// systemchat "echo";
 	[_x,_ZombieModels] Spawn { _SpawnPos = _this select 0; _ZombieModels = _this select 1;
 
@@ -204,9 +206,8 @@ _Spawns = [
 	    _Blacklist = ["marker_17","marker_18","marker_19"];
 	    _SpawnerModel = "FlagCarrierWhite_EP1"; //"HeliHEmpty";
 		_rad = 300;
-
-	    
 	    while {true} Do {
+			
 	    	_active = false;
 	        _list = _SpawnPos nearObjects ["Man", _rad];
 	        _RealPlayers = [];

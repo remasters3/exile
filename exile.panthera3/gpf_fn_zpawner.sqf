@@ -43,16 +43,10 @@ If (_Timeout > 0 ) Then {
 _gpf_fn_PlayerCount = compile preprocessFile "gpf_fn_PlayerCount.sqf";
 while {_BarraksAlive} do {
    _groupcount = {alive _x} count units _BarraksGroup;
-   {
-	_blpos = GetMarkerPos = _x;
-		{
-		    if ((_x distance _blpos) <= 50) then {deleteVehicle _x;};
-		} foreach units _BarraksGroup;
-   } foreach _blackList;
    IF (_groupcount < _MinUnitsPerSide) THEN {
-		_BitchCount = [_SpawnPos,_dir] call _gpf_fn_PlayerCount;
-		_PlayerCount = _BitchCount select 0;
-		_Players = _BitchCount select 1;
+		_returned = [_SpawnPos,_dir] call _gpf_fn_PlayerCount;
+		_PlayerCount = _returned select 0;
+		_Players = _returned select 1;
 		if (_PlayerCount > 0) Then {
 		_player = selectRandom _Players;
 	    _SafePos = [(GetPos _player),1,100, 5, 1, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
@@ -62,8 +56,8 @@ while {_BarraksAlive} do {
 	    };
    _Count = _Count+_RespawnTime;
    sleep _RespawnTime;  
-   _BitchCount = [_SpawnPos,_dir] call _gpf_fn_PlayerCount;
-   _PlayerCount = _BitchCount select 0;
+   _returned = [_SpawnPos,_dir] call _gpf_fn_PlayerCount;
+   _PlayerCount = _returned select 0;
    if ( _PlayerCount <= 0) Then {{deleteVehicle _x;} foreach units _BarraksGroup; deleteVehicle _Barraks;};
    _BarraksAlive = alive _Barraks;
   };
