@@ -13,13 +13,13 @@ if (_loot) Then {
 };
 
 //exile cash
-_AIMoney = SelectRandom [1,11,2,3,4,15,10,16,17,18,19,15,10,20,3,4,5,6,8,9];
-_unit setVariable
-[
-	"ExileMoney",
-	_AIMoney,
-	true
-];
+// _AIMoney = SelectRandom [1,11,2,3,4,15,10,16,17,18,19,15,10,20,3,4,5,6,8,9];
+// _unit setVariable
+// [
+// 	"ExileMoney",
+// 	_AIMoney,
+// 	true
+// ];
 _unit addMPEventHandler ["MPKilled",'if (isServer) Then {_dst = (_this Select 0) distance (_this Select 1); _score = floor (_dst/2); [(_this Select 1),_score]execVM "gpf_score.sqf";};'];
 
 if (true) ExitWith {};

@@ -43,6 +43,12 @@ If (_Timeout > 0 ) Then {
 _gpf_fn_PlayerCount = compile preprocessFile "gpf_fn_PlayerCount.sqf";
 while {_BarraksAlive} do {
    _groupcount = {alive _x} count units _BarraksGroup;
+   {
+	_blpos = GetMarkerPos = _x;
+		{
+		    if ((_x distance _blpos) <= 50) then {deleteVehicle _x;};
+		} foreach units _BarraksGroup;
+   } foreach _blackList;
    IF (_groupcount < _MinUnitsPerSide) THEN {
 		_OUTPUT = [_SpawnPos,_dir] call _gpf_fn_PlayerCount;
 		_PlayerCount = _OUTPUT select 0;
