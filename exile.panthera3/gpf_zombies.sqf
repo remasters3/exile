@@ -8,7 +8,7 @@ _ZombieModels = [];
 
 } foreach _zombies; 
 
-_debug = true;
+_debug = false;
 _Spawns = [         
 [4353.97,7495.4,0], //Arnoldstein Airport  
 [8622.31,4784.41,0], //Airport Lesce  
