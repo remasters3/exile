@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=182;
+		nextID=188;
 	};
 	class Camera
 	{
@@ -2047,16 +2047,15 @@ class Mission
 				class Item0
 				{
 					dataType="Marker";
-					position[]={2374.894,75.989998,9141.8262};
+					position[]={2361.1289,75.989998,9133.4854};
 					name="ExileMarker111";
 					text="Mello Trader";
 					markerType="ELLIPSE";
 					type="ExileTraderZone";
 					colorName="ColorBlack";
-					alpha=0;
 					fillName="Border";
-					a=200;
-					b=200;
+					a=50;
+					b=50;
 					drawBorder=1;
 					id=101;
 				};
@@ -2087,10 +2086,9 @@ class Mission
 					markerType="ELLIPSE";
 					type="ExileTraderZone";
 					colorName="ColorBlack";
-					alpha=0;
 					fillName="Border";
-					a=200;
-					b=200;
+					a=50;
+					b=50;
 					drawBorder=1;
 					id=123;
 					atlOffset=0.028261662;
@@ -2113,10 +2111,9 @@ class Mission
 					markerType="ELLIPSE";
 					type="ExileTraderZone";
 					colorName="ColorBlack";
-					alpha=0;
 					fillName="Border";
-					a=200;
-					b=200;
+					a=50;
+					b=50;
 					drawBorder=1;
 					id=126;
 				};
@@ -2170,7 +2167,7 @@ class Mission
 				};
 			};
 			id=2;
-			atlOffset=65.772919;
+			atlOffset=65.75267;
 		};
 		class Item3
 		{
