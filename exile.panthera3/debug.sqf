@@ -20,7 +20,6 @@ while {(_cnt <= 26)} do {
 } foreach _names;
 copyToClipboard Format [" %2 ",_names,_path];
 
- 
 
 //_Green_Debug_Player = _this select 0;
 //if (Green_Debug_Player != _Green_Debug_Player) ExitWith {};

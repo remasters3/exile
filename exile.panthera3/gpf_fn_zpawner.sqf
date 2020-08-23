@@ -53,7 +53,7 @@ while {_BarraksAlive} do {
 	    _unit = _BarraksGroup createUnit [(selectRandom _Model), _SafePos,[], 0,"FORM"];
 	    [_unit]execVM "gpf_zombieloot.sqf";
 		};
-	    };
+	 };
    _Count = _Count+_RespawnTime;
    sleep _RespawnTime;  
    _returned = [_SpawnPos,_dir] call _gpf_fn_PlayerCount;

@@ -6,9 +6,9 @@ private _allPlaces = nearestLocations [_centerWorld, ["NameCity","NameVillage","
 private _places = [];
 {_nl = locationPosition _x;_places = _places + [_nl];} Foreach _allPlaces;
 private _start = selectRandom _places;
-private _allPlaces = nearestLocations [_start, ["NameCity","NameVillage","NameLocal","Airport"], 5000];
+private _allPlaces = nearestLocations [_start, ["NameCity","NameVillage"], 5000];
 private _places = [];
-{_nl = locationPosition _x;_places = _places + [_nl];} Foreach _allPlaces;
+{_nl = locationPosition _x;_pos = [(_nl select 0),(_nl select 1),0];_places = _places + [_pos];} Foreach _allPlaces;
 _Path = _places;
 if (_invert) then {reverse _Path;};
 _Path 
