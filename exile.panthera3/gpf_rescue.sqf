@@ -6,9 +6,9 @@ private _NameVillage = nearestLocations [_centerWorld, ["NameVillage"], 15000];
 //private _NameLocal = nearestLocations [_centerWorld, ["NameLocal"], 10000];
 private _allpos = _NameVillage;
 private _targets = [
-[1923.45,1907.91,0],
-[8286.7,5153.12,0],
-[2334.76,9187.14,0]
+[8355.2,2162.67,0],
+[2031.52,498.051,0],
+[2761.81,8339.09,0]
 ];
 private _target = SelectRandom _targets;
 private _GPF_fnc_rescueEvac = compile preprocessFile "gpf_fn_rescueEvac.sqf";

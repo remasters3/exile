@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=428;
+		nextID=437;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=247;
+		nextID=258;
 	};
 	class Camera
 	{
-		pos[]={10024.167,32.73,389.15601};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={8373.0918,18.627197,2193.3606};
+		dir[]={-0.77597219,-0.179067,-0.60491872};
+		up[]={-0.14124238,0.9838236,-0.11010841};
+		aside[]={-0.61485243,-9.3516428e-007,0.78872234};
 	};
 };
 binarizationWanted=0;
@@ -37,13 +37,14 @@ addons[]=
 	"A3_Structures_F_Exp_Industrial_SurfaceMine_01",
 	"A3_Characters_F_Tank",
 	"CUP_Misc3_Config",
-	"A3_Missions_F_Oldman"
+	"A3_Missions_F_Oldman",
+	"A3_Structures_F_Civ_Lamps"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=9;
+		items=10;
 		class Item0
 		{
 			className="exile_client";
@@ -102,6 +103,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item9
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=2218544;
@@ -128,7 +136,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=54;
+		items=63;
 		class Item0
 		{
 			dataType="Group";
@@ -2194,7 +2202,7 @@ class Mission
 					b=60;
 					drawBorder=1;
 					id=127;
-					atlOffset=302.37723;
+					atlOffset=302.37741;
 				};
 				class Item8
 				{
@@ -2343,8 +2351,8 @@ class Mission
 					type="ExileTraderZone";
 					colorName="ColorBlack";
 					fillName="Border";
-					a=200;
-					b=200;
+					a=70;
+					b=70;
 					drawBorder=1;
 					id=151;
 					atlOffset=-0.51553291;
@@ -2352,18 +2360,18 @@ class Mission
 				class Item3
 				{
 					dataType="Marker";
-					position[]={1972.5863,2.8610229,7879.7515};
+					position[]={1972.5861,2.8610001,7879.751};
 					name="ExileMarker114_2";
 					text="Boat Dealer";
 					markerType="ELLIPSE";
 					type="ExileTraderZone";
 					colorName="ColorBlack";
 					fillName="Border";
-					a=200;
-					b=200;
+					a=70;
+					b=70;
 					drawBorder=1;
 					id=152;
-					atlOffset=-0.6578424;
+					atlOffset=-0.65787339;
 				};
 				class Item4
 				{
@@ -2377,21 +2385,22 @@ class Mission
 				class Item5
 				{
 					dataType="Marker";
-					position[]={9109.6797,-5.1118531,9928.0947};
+					position[]={9109.6797,-5.112,9928.0947};
 					name="ExileMarker114_3";
 					text="Boat Dealer";
 					markerType="ELLIPSE";
 					type="ExileTraderZone";
 					colorName="ColorBlack";
 					fillName="Border";
-					a=200;
-					b=200;
+					a=70;
+					b=70;
 					drawBorder=1;
 					id=154;
+					atlOffset=-0.00014686584;
 				};
 			};
 			id=145;
-			atlOffset=26.554642;
+			atlOffset=26.554565;
 		};
 		class Item6
 		{
@@ -3275,11 +3284,10 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								disableSimulation=1;
 							};
 							id=285;
 							type="Land_SM_01_shed_F";
-							atlOffset=0.81700087;
+							atlOffset=0.81700039;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -4074,7 +4082,6 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								disableSimulation=1;
 							};
 							id=330;
 							type="Land_SM_01_shed_F";
@@ -4700,7 +4707,7 @@ class Mission
 					name="CustomTrader_TPL_2";
 					class Entities
 					{
-						items=18;
+						items=16;
 						class Item0
 						{
 							dataType="Object";
@@ -4787,18 +4794,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2004.0945,10.722477,496.30011};
-								angles[]={0,3.0589304,0};
+								position[]={2004.094,10.722301,496.29999};
+								angles[]={0,3.058934,0};
 							};
 							side="Empty";
 							flags=1;
 							class Attributes
 							{
-								disableSimulation=1;
 							};
 							id=349;
 							type="Land_SM_01_shed_F";
-							atlOffset=1.0371752;
+							atlOffset=1.0369997;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -4830,7 +4836,7 @@ class Mission
 																"SCALAR"
 															};
 														};
-														value=43690;
+														value=0;
 													};
 												};
 												class Item1
@@ -5189,7 +5195,7 @@ class Mission
 							};
 							id=357;
 							type="Exile_Sign_Equipment_Small";
-							atlOffset=0.31309414;
+							atlOffset=0.31326866;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -5229,7 +5235,7 @@ class Mission
 							};
 							id=358;
 							type="Exile_Sign_Armory_Small";
-							atlOffset=0.29973984;
+							atlOffset=0.29992104;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -5269,7 +5275,7 @@ class Mission
 							};
 							id=359;
 							type="Exile_Sign_SpecialOperations_Small";
-							atlOffset=0.27965355;
+							atlOffset=0.27982426;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -5309,7 +5315,7 @@ class Mission
 							};
 							id=360;
 							type="Exile_Sign_Office_Small";
-							atlOffset=0.31093597;
+							atlOffset=0.3111124;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -5349,7 +5355,7 @@ class Mission
 							};
 							id=361;
 							type="Exile_Sign_Food_Small";
-							atlOffset=0.30751228;
+							atlOffset=0.30768871;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -5379,87 +5385,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={1987.8721,9.208477,495.15451};
-								angles[]={0,1.4881068,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=363;
-							type="Exile_Sign_Boat_Small";
-							atlOffset=9.5367432e-007;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item16
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={1988.0081,9.2537174,493.52124};
-								angles[]={0,1.4881068,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=364;
-							type="Exile_Sign_BoatCustoms_Small";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item17
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={1996.373,10.508831,486.97198};
 								angles[]={0,3.058934,0};
 							};
@@ -5470,7 +5395,7 @@ class Mission
 							};
 							id=426;
 							type="Exile_Sign_Diving_Small";
-							atlOffset=0.28982544;
+							atlOffset=0.29000282;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -5505,7 +5430,7 @@ class Mission
 					name="CustomTrader_TPL_3";
 					class Entities
 					{
-						items=18;
+						items=16;
 						class Item0
 						{
 							dataType="Object";
@@ -5601,7 +5526,6 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								disableSimulation=1;
 							};
 							id=368;
 							type="Land_SM_01_shed_F";
@@ -6189,88 +6113,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2763.8655,18.772036,8359.0869};
-								angles[]={0,4.6962566,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=382;
-							type="Exile_Sign_Boat_Small";
-							atlOffset=0.17056847;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item16
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={2763.8447,18.772036,8360.7217};
-								angles[]={0,4.7057819,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=383;
-							type="Exile_Sign_BoatCustoms_Small";
-							atlOffset=0.17056847;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item17
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={2755.9751,19.922466,8367.8604};
 								angles[]={0,6.2729225,0};
 							};
@@ -6339,7 +6181,7 @@ class Mission
 					};
 					id=385;
 					type="O_G_Soldier_LAT2_F";
-					atlOffset=-1.001358e-005;
+					atlOffset=-4.4345856e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6388,7 +6230,7 @@ class Mission
 			{
 			};
 			id=384;
-			atlOffset=-1.001358e-005;
+			atlOffset=-4.4345856e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6452,6 +6294,7 @@ class Mission
 					};
 					id=411;
 					type="O_GEN_Commander_F";
+					atlOffset=-4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6500,6 +6343,7 @@ class Mission
 			{
 			};
 			id=410;
+			atlOffset=-4.7683716e-007;
 		};
 		class Item42
 		{
@@ -7412,6 +7256,228 @@ class Mission
 			};
 			id=423;
 			atlOffset=-1.0490417e-005;
+		};
+		class Item54
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8355.1973,10.059094,2162.6716};
+				angles[]={0.012496647,0,6.2630024};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="debug_flag_1";
+			};
+			id=428;
+			type="HeliHCivil";
+			atlOffset=0.018396378;
+		};
+		class Item55
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2031.5153,8,498.05096};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="debug_flag_2";
+			};
+			id=429;
+			type="HeliHCivil";
+		};
+		class Item56
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2761.8105,17.459999,8339.0938};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="debug_flag_3";
+			};
+			id=430;
+			type="HeliHCivil";
+		};
+		class Item57
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2737.436,30.275686,8361.1816};
+				angles[]={0,1.5707964,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=431;
+			type="Land_LampAirport_F";
+		};
+		class Item58
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2734.6299,20.255985,8356.5098};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=432;
+			type="Exile_Sign_TraderCity";
+			atlOffset=0.36800003;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item59
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1983.9728,10.172901,497.88269};
+				angles[]={0,3.5438261,-0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=433;
+			type="Exile_Sign_TraderCity";
+			atlOffset=0.36543846;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item60
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1987.1479,20.916845,491.30042};
+				angles[]={0,1.4395825,-0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=434;
+			type="Land_LampAirport_F";
+			atlOffset=0.28825855;
+		};
+		class Item61
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8373.376,12.388015,2152.6667};
+				angles[]={0,0.93283939,-0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=435;
+			type="Exile_Sign_TraderCity";
+			atlOffset=0.37416077;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item62
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8395.6719,22.378201,2168.7344};
+				angles[]={0,4.0849829,-0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=436;
+			type="Land_LampAirport_F";
+			atlOffset=-5.8174133e-005;
 		};
 	};
 };

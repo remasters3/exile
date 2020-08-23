@@ -1403,7 +1403,7 @@ publicVariable "GPF_Benifits";
 				if ((side _man) == East) Then {deleteVehicle _man};
 				if ((side _man) == West) Then {deleteVehicle _man};
 				} foreach _men;
-			} foreach ["marker_17","marker_18","marker_19","debug_marker"];
+			} foreach ["marker_17","marker_18","marker_19","ExileMarker114_1","ExileMarker114_2","ExileMarker114_3","debug_marker"];
 	Sleep 10;
 	};
 
