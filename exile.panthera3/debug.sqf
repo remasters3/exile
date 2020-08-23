@@ -5,16 +5,22 @@ private _centerWorld = [(_cotw select 0),(_cotw select 1),0];
 _path =[];
 _cnt = 0;
 _names =[];
-while {(_cnt <= 21)} do {
+while {(_cnt <= 26)} do {
   _markerName = Format ["path_%1",_cnt];
   systemChat _markerName;
-  _pos = GetMarkerPos "debug_marker";
-  _path = _path + [_pos];
   _cnt = _cnt+1;
   _names = _names + [_markerName];
 
 };
+{
+ _pos = GetMarkerPos _x;
+ _pos = GetMarkerPos _markerName;
+ _path = _path + [_pos];
+ systemChat format ["%1",_pos];
+} foreach _names;
 copyToClipboard Format [" %2 ",_names,_path];
+
+ 
 
 //_Green_Debug_Player = _this select 0;
 //if (Green_Debug_Player != _Green_Debug_Player) ExitWith {};
