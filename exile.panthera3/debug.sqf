@@ -188,7 +188,7 @@ player setposASL (_statisPos select 7);
 
 _traders = [];
 {
- if (typeof _x == O_G_Soldier_LAT2_F) Then {
+ if (typeof _x == "O_G_Soldier_LAT2_F") Then {
  _posASL = GetPosASL _x;
  _dir = GetDir _x;
  _dirVector = vectorDir _x;
@@ -197,8 +197,6 @@ _traders = [];
  _animations = ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"];
  _head = "WhiteHead_05";
  _modelinfo = [[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]];
- // [_name, _animations, _name, _head, _modelinfo, _posASL, _dirVector, _UpVector],
- //_txt = Format ["[%1,%2,%3,%4,%3,%4,%5,%6,%7,%8],",_name, _animations, _name, _head, _modelinfo, _posASL, _dirVector, _UpVector];
  _txt = [_name, _animations, _name, _head, _modelinfo, _posASL, _dirVector, _UpVector];
  _traders = _traders + [_txt];
  };

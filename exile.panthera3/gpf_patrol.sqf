@@ -1,7 +1,6 @@
 _EastLightVeh = ["Exile_Car_Offroad_Armed_Guerilla11","Exile_Car_HMMWV_M2_Desert"];
 				 
-_WestLightVeh = ["Exile_Car_SUV_Armed_Black","B_LSV_01_armed_F",];
-_WestLightVeh = _WestLightVeh+["Exile_Car_HMMWV_M2_Desert"];
+_WestLightVeh = ["Exile_Car_SUV_Armed_Black","B_LSV_01_armed_F","Exile_Car_HMMWV_M2_Desert"];
 
 _ResLightVeh = [];
 

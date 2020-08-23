@@ -192,7 +192,8 @@ _Spawns = [
 [8906.2,8235.43,0], //Diego's Farm, 
 [9401.98,7579.66,0], //Old Village (Ruins), 
 [1036.78,9370.18,0], //Vatra, 
-[8511.16,9110.22,0] //Workers Village
+[8511.16,9110.22,0], //Workers Village
+[2735.84,8127.8,0] //NorthWest Island Trader Airfield
 ];
 
 if (_debug) Then {

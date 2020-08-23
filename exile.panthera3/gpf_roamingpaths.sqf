@@ -10,5 +10,6 @@ private _allPlaces = nearestLocations [_start, ["NameCity","NameVillage"], 5000]
 private _places = [];
 {_nl = locationPosition _x;_pos = [(_nl select 0),(_nl select 1),0];_places = _places + [_pos];} Foreach _allPlaces;
 _Path = _places;
+private _invert = selectRandom [true,false];
 if (_invert) then {reverse _Path;};
 _Path 
