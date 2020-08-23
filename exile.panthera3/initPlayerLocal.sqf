@@ -59,7 +59,21 @@ private _npcs = [
 ["Exile_Trader_WasteDump", ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"], "Exile_Trader_WasteDump", "WhiteHead_03", [[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Tactical_Clear",[],["","","","","",""]], [9114.95, 9927.72, 3.08393], [-0.999574, 0.0291692, 0], [0, 0, 1]],
 ["Exile_Trader_BoatCustoms", ["HubStandingUA_idle1","HubStandingUA_idle2","HubStandingUA_idle3","HubStandingUA_move1","HubStandingUA_move2"], "Exile_Trader_BoatCustoms", "WhiteHead_09", [[],[],[],["U_B_T_Soldier_AR_F",[]],[],[],"","G_Aviator",[],["","","","","",""]], [9107.19, 9930.01, 3.08772], [0.996336, -0.0855289, 0], [0, 0, 1]],
 ["Exile_Trader_Boat", ["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"], "Exile_Trader_Boat", "WhiteHead_11", [[],[],[],["U_BG_Guerilla1_1",[]],[],[],"","G_Tactical_Clear",[],["","","","","",""]], [9108.98, 9931.16, 3.08685], [-0.0808572, -0.996726, 0], [0, 0, 1]],
-["Exile_Trader_Diving", ["c4coming2cDf_genericstani1","c4coming2cDf_genericstani2","c4coming2cDf_genericstani3"], "Exile_Trader_Diving", "WhiteHead_03", [["arifle_SDAR_F","","","",[],[],""],[],[],["U_I_Wetsuit",[]],["V_RebreatherIA",[]],[],"","G_I_Diving",[],["","","","","",""]], [9109.09, 9925.65, 3.0868], [0.712961, -0.701203, 0], [0, 0, 1]]
+["Exile_Trader_Diving", ["c4coming2cDf_genericstani1","c4coming2cDf_genericstani2","c4coming2cDf_genericstani3"], "Exile_Trader_Diving", "WhiteHead_03", [["arifle_SDAR_F","","","",[],[],""],[],[],["U_I_Wetsuit",[]],["V_RebreatherIA",[]],[],"","G_I_Diving",[],["","","","","",""]], [9109.09, 9925.65, 3.0868], [0.712961, -0.701203, 0], [0, 0, 1]],
+/* chch customs*/
+["Exile_Trader_Vehicle",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Trader_Vehicle","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10021.2,447.001,6.63123],[-8.74228e-008,-1,0],[0,0,1]],
+["Exile_Trader_WasteDump",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Trader_WasteDump","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10027.8,446.883,6.40368],[-8.74228e-008,-1,0],[0,0,1]],
+["Exile_Trader_AircraftCustoms",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Trader_AircraftCustoms","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10034.7,447.001,6.13053],[-8.74228e-008,-1,0],[0,0,1]],
+["Exile_Trader_Aircraft",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Trader_Aircraft","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10032.6,447.001,6.21296],[-8.74228e-008,-1,0],[0,0,1]],
+["Exile_Trader_Boat",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Trader_Boat","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10042.7,449.52,5.69022],[1,-4.37114e-008,0],[0,0,1]],
+["Exile_Trader_BoatCustoms",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Trader_BoatCustoms","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10042.7,451.159,5.57218],[1,-4.37114e-008,0],[0,0,1]],
+["Exile_Trader_Equipment",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Trader_Equipment","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10034.4,448.406,7.19141],[0,1,0],[0,0,1]],
+["Exile_Trader_Armory",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Trader_Armory","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10029.4,448.406,7.18601],[0,1,0],[0,0,1]],
+["Exile_Guard_01",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Guard_01","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10034.4,457.824,7.18838],[-8.74228e-008,-1,0],[0,0,1]],
+["Exile_Trader_Food",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Trader_Food","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10029.4,457.824,7.20146],[-8.74228e-008,-1,0],[0,0,1]],
+["Exile_Trader_Office",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Trader_Office","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10024.4,457.824,7.20163],[-8.74228e-008,-1,0],[0,0,1]],
+["Exile_Trader_SpecialOperations",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Trader_SpecialOperations","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10024.4,448.406,7.17698],[0,1,0],[0,0,1]],
+["Exile_Trader_VehicleCustoms",["HubBriefing_loop","HubBriefing_scratch","HubBriefing_stretch","HubBriefing_think"],"Exile_Trader_VehicleCustoms","WhiteHead_05",[[],[],[],["U_I_G_Story_Protagonist_F",[]],["V_Rangemaster_belt",[]],[],"H_MilCap_gry","G_Combat",[],["","","","","",""]],[10023.2,447.001,6.57595],[-8.74228e-008,-1,0],[0,0,1]]
 ];
 
 {
@@ -166,11 +180,11 @@ gpf_SpawnSeaTransport = {
 };
 
 
-/*
+
 [] Spawn {
  while {missionon} Do {
     _Zones = [
-      [ussfreedom,200]
+      [debug_flag,300]
      ];
     sleep 20;
 	private _isVil = false;
@@ -182,7 +196,7 @@ gpf_SpawnSeaTransport = {
 		};
  };
 };
-*/
+
 [] Spawn {
  {
     _location = createLocation [ "NameLocal" ,(_x select 0), 30, 30];
