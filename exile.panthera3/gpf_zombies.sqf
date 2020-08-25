@@ -206,7 +206,7 @@ _Spawns = [
 
 	    _target = _SpawnPos;
 	    _minZombies = 10;
-	    _RespawnTime = 60;
+	    _RespawnTime = 30;
 	    _Side = EAST;
 	    _Timeout = -1;
 	    _Blacklist = ["marker_17","marker_18","marker_19"];
