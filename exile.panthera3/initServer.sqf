@@ -1274,9 +1274,7 @@ publicVariable "GPF_Benifits";
 //remove enemy's form safezones
 [] Spawn {
 	while {true} Do {
-	    _positions = [
-		[9933.72,214.869,0]
-		];
+	    _positions = [];
 		_vehicles = [];
 		_men = [];
 
