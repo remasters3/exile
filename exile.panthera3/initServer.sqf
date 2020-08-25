@@ -1274,20 +1274,45 @@ publicVariable "GPF_Benifits";
 //remove enemy's form safezones
 [] Spawn {
 	while {true} Do {
+	    _positions = [
+		[9933.72,214.869,0]
+		];
+		_vehicles = [];
+		_men = [];
+
+		{
+		_positions = _positions+[(GetMarkerPos _x)];
+		} foreach ["marker_17","marker_18","marker_19","ExileMarker114_1","ExileMarker114_2","ExileMarker114_3","debug_marker"];
+
+	    {
+		_vehicles = vehicles;
+	    if ((typeof _x) =="Exile_Construction_Flag_Static") then {
+	        	_positions = _positions+[(GetPos _x)];
+	        	};
+	    } foreach _vehicles;
+
+		{
 			{
-			_pos = GetMarkerPos _x;
+			_pos = _x;
 			_men = _pos nearObjects ["Man", 70];
-				{
-				_man = _x;
-				if ((side _man) == East) Then {deleteVehicle _man};
-				if ((side _man) == West) Then {deleteVehicle _man};
-				} foreach _men;
-			} foreach ["marker_17","marker_18","marker_19","ExileMarker114_1","ExileMarker114_2","ExileMarker114_3","debug_marker"];
+			_man = _x;
+			if ((side _man) == East) Then {deleteVehicle _man};
+			if ((side _man) == West) Then {deleteVehicle _man};
+			} foreach _men;
+		} foreach _positions;			
 	Sleep 10;
 	};
-
 };
-/*
+
+
+[] spawn {
+    while {true} Do {
+		{
+		
+		} foreach ["Exile_Construction_Flag_Static"];
+	};
+};
+/*  Exile_Construction_Flag_Static
 [] spawn {
     //waituntil {((count AllPlayers) > 0)};
 	{_x execVM "gpf_BambiNPC.sqf" } Foreach [

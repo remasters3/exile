@@ -64,8 +64,10 @@ private _locs = [
 
   };
  } Foreach [
-			["Land_Flush_Light_green_F",[2789.19,7917.05,0],0,25,18,20]/*,
-			["Land_Flush_Light_green_F",[2329.97,9110.34,0],289,20,18,20]
+			["Land_Flush_Light_green_F",[2789.19,7917.05,0],0,25,18,20],
+			["Land_Flush_Light_green_F",[9933.72,214.869,0],0,20,12,20],
+			["Land_Flush_Light_red_F",[9954.48,214.869,0],0,40,6,20],
+			["Land_Flush_Light_green_F",[9975.24,214.869,0],0,20,12,20]/*
             ["Land_LampAirport_F",[1569.25,4572.7,0],20,25,3],
 			["Land_Flush_Light_red_F",[1542.67,4838.78,0],270,3,14],
 			["Land_Flush_Light_red_F",[1542.67,4848.78,0],270,3,14],
