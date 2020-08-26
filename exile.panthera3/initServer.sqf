@@ -1290,9 +1290,9 @@ publicVariable "GPF_Benifits";
 	    } foreach _vehicles;
 
 		{
-			{
 			_pos = _x;
 			_men = _pos nearObjects ["Man", 70];
+			{
 			_man = _x;
 			if ((side _man) == East) Then {deleteVehicle _man};
 			if ((side _man) == West) Then {deleteVehicle _man};
