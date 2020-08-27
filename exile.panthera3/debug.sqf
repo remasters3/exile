@@ -1,3 +1,4 @@
+/*
 private _cotw = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
 private _centerWorld = [(_cotw select 0),(_cotw select 1),0];
 
@@ -19,7 +20,7 @@ while {(_cnt <= 26)} do {
  systemChat format ["%1",_pos];
 } foreach _names;
 copyToClipboard Format [" %2 ",_names,_path];
-
+*/
 
 //_Green_Debug_Player = _this select 0;
 //if (Green_Debug_Player != _Green_Debug_Player) ExitWith {};
@@ -185,7 +186,7 @@ player setposASL (_statisPos select 7);
 */
 
 ///// trader positioms
-
+/*
 _traders = [];
 {
  if (typeof _x == "O_G_Soldier_LAT2_F") Then {
@@ -202,7 +203,7 @@ _traders = [];
  };
 } forEach allUnits;
 copyToClipboard Format ['%1',_traders];
-
+*/
 //copyToClipboard Format ['%1',GetPosASL player];
 // [_posASL,_dirVector,_UpVector]
 // %1 - %2,%3,%4],

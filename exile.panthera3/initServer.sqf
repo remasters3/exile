@@ -1281,10 +1281,10 @@ publicVariable "GPF_Benifits";
 		{
 		_positions = _positions+[(GetMarkerPos _x)];
 		} foreach ["marker_17","marker_18","marker_19","ExileMarker114_1","ExileMarker114_2","ExileMarker114_3","debug_marker"];
-
-	    {
+		
 		_vehicles = vehicles;
-	    if ((typeof _x) =="Exile_Construction_Flag_Static") then {
+	    {
+	    if ((typeof _x) == "Exile_Construction_Flag_Static") then {
 	        	_positions = _positions+[(GetPos _x)];
 	        	};
 	    } foreach _vehicles;
