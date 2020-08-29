@@ -148,13 +148,16 @@ gpf_SpawnSeaTransport = {
 	};
 	
 gpf_TempTransport = {
-	_pos = _this Select 0;
+	_plyrpos = _this Select 0;
+	_dir = _this select 1;
 	_isWater = surfaceIsWater _pos;
 	_uid = getPlayerUID player;
     _isBenifit = _uid in GPF_Benifits;
 	_TempTransport = [];
+	_pos = [_plyrpos,2,_dir] call BIS_fnc_relPos;
+	_posASL = [(_pos select 0),(_pos select 1),(_plyrpos select 2)];
 	if (_isWater) Then {
-	_TempTransport = createVehicle ['C_Scooter_Transport_01_F', _pos, [], 0, 'FORM'];
+	_TempTransport = createVehicle ['C_Scooter_Transport_01_F', [0,0,0], [], 0, 'FORM'];
 	} else {
 	_TempTransport = createVehicle ['B_Quadbike_01_F', [0,0,0], [], 0, 'FORM'];
 	};
@@ -167,7 +170,8 @@ gpf_TempTransport = {
 	_TempTransport Addaction ["<t color='#ff0000'>Call Support 4 Units ( 40k tabs )</t>",{[player,4] execVM 'gpf_call_support_units.sqf';}];
 	_TempTransport Addaction ["<t color='#ff0000'>Call Support 5 Units ( 50k tabs )</t>",{[player,5] execVM 'gpf_call_support_units.sqf';}];
 	_TempTransport addaction ["<t color='#ff0000'>---------------------------------</t>",{}];
-	_TempTransport setposASL _pos;
+	_TempTransport setdir _dir;
+	_TempTransport setposASL _posASL;
 	_TempTransport 
 };
 	
@@ -178,9 +182,9 @@ gpf_TempTransport = {
 	   player enableFatigue false;
 	   waitUntil {inputAction "User20" > 0};
 	   if (vehicle player != player) then {systemchat "Get out of the vehicle first!"} else {
-			if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPosASL player)] Call gpf_TempTransport; playerQuad = true;} 
-							Else {pveh = [(GetPosASL player)] Call gpf_TempTransport; playerQuad = true;};
-			player moveInDriver pveh;
+			if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPosASL player),(getDir player)] Call gpf_TempTransport; playerQuad = true;} 
+							Else {pveh = [(GetPosASL player),(getDir player)] Call gpf_TempTransport; playerQuad = true;};
+			// player moveInDriver pveh;
 		};
 	sleep 1;
 	};
