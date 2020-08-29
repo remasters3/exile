@@ -152,6 +152,7 @@ gpf_TempTransport = {
 	_isWater = surfaceIsWater _pos;
 	_uid = getPlayerUID player;
     _isBenifit = _uid in GPF_Benifits;
+	_TempTransport = [];
 	if (_isWater) Then {
 	_TempTransport = createVehicle ['C_Scooter_Transport_01_F', _pos, [], 0, 'FORM'];
 	} else {
@@ -167,7 +168,7 @@ gpf_TempTransport = {
 	_TempTransport Addaction ["<t color='#ff0000'>Call Support 5 Units ( 50k tabs )</t>",{[player,5] execVM 'gpf_call_support_units.sqf';}];
 	_TempTransport addaction ["<t color='#ff0000'>---------------------------------</t>",{}];
 	_TempTransport
-	};
+};
 	
 
 [] Spawn {
