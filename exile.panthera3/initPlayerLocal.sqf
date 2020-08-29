@@ -172,13 +172,16 @@ gpf_TempTransport = {
 	
 
 [] Spawn {
+	pveh = [];
     while {missionon} Do {
 	   player enableFatigue false;
 	   waitUntil {inputAction "User20" > 0};
-	   if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPos player)] Call gpf_TempTransport; playerQuad = true;} 
-					   Else {pveh = [(GetPos player)] Call gpf_TempTransport; playerQuad = true;}; 
+	   if (vehicle player != player) then {systemchat "Get out of the vehicle first!"} else {
+			if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPos player)] Call gpf_TempTransport; playerQuad = true;} 
+							Else {pveh = [(GetPos player)] Call gpf_TempTransport; playerQuad = true;}; 
+		};
 	sleep 1;
-	   };
+	};
 };
 
 
