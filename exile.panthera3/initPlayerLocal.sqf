@@ -171,7 +171,7 @@ gpf_TempTransport = {
 	_TempTransport Addaction ["<t color='#ff0000'>Call Support 5 Units ( 50k tabs )</t>",{[player,5] execVM 'gpf_call_support_units.sqf';}];
 	_TempTransport addaction ["<t color='#ff0000'>---------------------------------</t>",{}];
 	_TempTransport setdir _dir;
-	_TempTransport setposASL _posASL;
+	_TempTransport setposASL _pos;
 	_TempTransport 
 };
 	
@@ -184,7 +184,7 @@ gpf_TempTransport = {
 	   if (vehicle player != player) then {systemchat "Get out of the vehicle first!"} else {
 			if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPosASL player),(getDir player)] Call gpf_TempTransport; playerQuad = true;} 
 							Else {pveh = [(GetPosASL player),(getDir player)] Call gpf_TempTransport; playerQuad = true;};
-			// player moveInDriver pveh;
+			player moveInDriver pveh;
 		};
 	sleep 1;
 	};

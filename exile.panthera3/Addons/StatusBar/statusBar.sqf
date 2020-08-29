@@ -81,7 +81,7 @@ disableSerialization;
 		_hours = (floor(_time/60));
 		_minutes = (_time - (_hours * 60));
         _bodyTemperature = round((ExileClientPlayerAttributes select 5) *10)/10.0; //call ExileClient_util_math_round;//body temp
-        _environmentTemperature = 0; // round (ExileClientEnvironmentTemperature * 10) /10.0;//air temp
+        _environmentTemperature = round (ExileClientEnvironmentTemperature * 10) /10.0;//air temp
 		switch(_minutes) do
 	{
 		case 9: {_minutes = "09"};
