@@ -156,7 +156,7 @@ gpf_TempTransport = {
 	if (_isWater) Then {
 	_TempTransport = createVehicle ['C_Scooter_Transport_01_F', _pos, [], 0, 'FORM'];
 	} else {
-	_TempTransport = createVehicle ['B_Quadbike_01_F', _pos, [], 0, 'FORM'];
+	_TempTransport = createVehicle ['B_Quadbike_01_F', [0,0,0], [], 0, 'FORM'];
 	};
 	_TempTransport addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
 	_TempTransport Addaction ["Call Air Evac (1000 tabs)",{[player] execVM 'gpf_call_evac.sqf';}];
@@ -167,7 +167,8 @@ gpf_TempTransport = {
 	_TempTransport Addaction ["<t color='#ff0000'>Call Support 4 Units ( 40k tabs )</t>",{[player,4] execVM 'gpf_call_support_units.sqf';}];
 	_TempTransport Addaction ["<t color='#ff0000'>Call Support 5 Units ( 50k tabs )</t>",{[player,5] execVM 'gpf_call_support_units.sqf';}];
 	_TempTransport addaction ["<t color='#ff0000'>---------------------------------</t>",{}];
-	_TempTransport
+	_TempTransport setposASL _pos;
+	_TempTransport 
 };
 	
 
@@ -177,8 +178,8 @@ gpf_TempTransport = {
 	   player enableFatigue false;
 	   waitUntil {inputAction "User20" > 0};
 	   if (vehicle player != player) then {systemchat "Get out of the vehicle first!"} else {
-			if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPos player)] Call gpf_TempTransport; playerQuad = true;} 
-							Else {pveh = [(GetPos player)] Call gpf_TempTransport; playerQuad = true;}; 
+			if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPosASL player)] Call gpf_TempTransport; playerQuad = true;} 
+							Else {pveh = [(GetPosASL player)] Call gpf_TempTransport; playerQuad = true;}; 
 		};
 	sleep 1;
 	};
