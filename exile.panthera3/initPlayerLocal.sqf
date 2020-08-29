@@ -147,13 +147,35 @@ gpf_SpawnSeaTransport = {
 	_jetski
 	};
 	
+gpf_TempTransport = {
+	_pos = _this Select 0;
+	_isWater = surfaceIsWater _pos;
+	_uid = getPlayerUID player;
+    _isBenifit = _uid in GPF_Benifits;
+	if (_isWater) Then {
+	_TempTransport = createVehicle ['C_Scooter_Transport_01_F', _pos, [], 0, 'FORM'];
+	} else {
+	_TempTransport = createVehicle ['B_Quadbike_01_F', _pos, [], 0, 'FORM'];
+	};
+	_TempTransport addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
+	_TempTransport Addaction ["Call Air Evac (1000 tabs)",{[player] execVM 'gpf_call_evac.sqf';}];
+	_TempTransport addaction ["<t color='#ff0000'>-----------EXPERIMENTAL--------</t>",{}];
+	_TempTransport Addaction ["<t color='#ff0000'>Call Support 1 Units ( 10k tabs )</t>",{[player,1] execVM 'gpf_call_support_units.sqf';}];
+	_TempTransport Addaction ["<t color='#ff0000'>Call Support 2 Units ( 20k tabs )</t>",{[player,2] execVM 'gpf_call_support_units.sqf';}];
+	_TempTransport Addaction ["<t color='#ff0000'>Call Support 3 Units ( 30k tabs )</t>",{[player,3] execVM 'gpf_call_support_units.sqf';}];
+	_TempTransport Addaction ["<t color='#ff0000'>Call Support 4 Units ( 40k tabs )</t>",{[player,4] execVM 'gpf_call_support_units.sqf';}];
+	_TempTransport Addaction ["<t color='#ff0000'>Call Support 5 Units ( 50k tabs )</t>",{[player,5] execVM 'gpf_call_support_units.sqf';}];
+	_TempTransport addaction ["<t color='#ff0000'>---------------------------------</t>",{}];
+	_TempTransport
+	};
+	
 
 [] Spawn {
     while {missionon} Do {
 	   player enableFatigue false;
 	   waitUntil {inputAction "User20" > 0};
-	   if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPos player)] Call gpf_SpawnLandTransport; playerQuad = true;} 
-					   Else {pveh = [(GetPos player)] Call gpf_SpawnLandTransport; playerQuad = true;}; 
+	   if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPos player)] Call gpf_TempTransport; playerQuad = true;} 
+					   Else {pveh = [(GetPos player)] Call gpf_TempTransport; playerQuad = true;}; 
 	sleep 1;
 	   };
 };
