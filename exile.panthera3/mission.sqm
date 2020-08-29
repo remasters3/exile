@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=440;
+		nextID=441;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=269;
+		nextID=280;
 	};
 	class Camera
 	{
-		pos[]={8365.2744,12.77874,2182.8647};
-		dir[]={0.7113601,-0.19647782,-0.67498255};
-		up[]={0.14260201,0.98041153,-0.13531348};
-		aside[]={-0.68840945,-2.7946953e-007,-0.72550076};
+		pos[]={10037.63,16.00345,417.75177};
+		dir[]={0.29115805,-0.20578022,0.93431544};
+		up[]={0.061224092,0.97859776,0.19646543};
+		aside[]={0.95474982,7.6339347e-008,-0.29752538};
 	};
 };
 binarizationWanted=0;
@@ -142,7 +142,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=63;
+		items=64;
 		class Item0
 		{
 			dataType="Group";
@@ -7483,6 +7483,23 @@ class Mission
 			};
 			id=438;
 			type="HeliHEmpty";
+		};
+		class Item63
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10042.691,17.572723,453.39243};
+				angles[]={0,4.712389,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=440;
+			type="Land_LampAirport_F";
+			atlOffset=-0.15164328;
 		};
 	};
 };

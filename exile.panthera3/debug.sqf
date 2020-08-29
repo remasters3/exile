@@ -1,3 +1,14 @@
+_positions = [];
+_vehicles = vehicles;
+{
+
+if ((typeof _x) == "Exile_Construction_Flag_Static") then {
+    	_positions = _positions+[(GetPos _x)];
+    	};
+} foreach _vehicles;
+systemchat format ["%1",_vehicles];
+
+
 /*
 private _cotw = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
 private _centerWorld = [(_cotw select 0),(_cotw select 1),0];
