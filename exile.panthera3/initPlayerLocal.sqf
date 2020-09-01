@@ -184,7 +184,7 @@ gpf_TempTransport = {
 	   if (vehicle player != player) then {systemchat "Get out of the vehicle first!"} else {
 			if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPosASL player),(getDir player)] Call gpf_TempTransport; playerQuad = true;} 
 							Else {pveh = [(GetPosASL player),(getDir player)] Call gpf_TempTransport; playerQuad = true;};
-			/*player moveInDriver pveh;*/
+	    /*player moveInDriver pveh;*/
 		};
 	sleep 1;
 	};
