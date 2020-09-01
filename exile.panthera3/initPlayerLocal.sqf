@@ -153,11 +153,12 @@ gpf_TempTransport = {
 	_uid = getPlayerUID player;
     _isBenifit = _uid in GPF_Benifits;
 	_TempTransport = [];
-	_pos = [_plyrpos,2,_dir] call BIS_fnc_relPos;
+	_pos = [_plyrpos,3,_dir] call BIS_fnc_relPos;
 	_posASL = [(_pos select 0),(_pos select 1),(_plyrpos select 2)];
 	_isWater = surfaceIsWater _pos;
 	if (_isWater) Then {
 	_TempTransport = createVehicle ['C_Scooter_Transport_01_F', [0,0,0], [], 0, 'FORM'];
+	_posASL = [(_pos select 0),(_pos select 1),2];
 	} else {
 	_TempTransport = createVehicle ['B_Quadbike_01_F', [0,0,0], [], 0, 'FORM'];
 	};
