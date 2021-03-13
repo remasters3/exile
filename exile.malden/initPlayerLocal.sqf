@@ -171,7 +171,7 @@ gpf_SpawnSeaTransport = {
 	_jetski = createVehicle ['C_Scooter_Transport_01_F', _pos, [], 0, 'FORM'];
 	_jetski addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
 	_jetski addAction ["Convert to Quad (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnLandTransport;pveh SetDir _dir;pveh SetPos _pos;"];
-	_jetski addAction ["Convert to Ultralite (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnAirTransport;pveh SetDir _dir;pveh SetPos _pos;"];
+	_jetski addAction ["Convert to Mozzie (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnAirTransport;pveh SetDir _dir;pveh SetPos _pos;"];
 	_jetski Addaction ["Call Air Evac (1000 tabs)",{[player] execVM 'gpf_call_evac.sqf';}];
 	private _uid = getPlayerUID player;
     private _isBenifit = _uid in GPF_Benifits;
