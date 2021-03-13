@@ -1,4 +1,4 @@
-version=53;
+version=54;
 class EditorData
 {
 	moveGridStep=1;
@@ -8,7 +8,7 @@ class EditorData
 	toggles=585;
 	class ItemIDProvider
 	{
-		nextID=3321;
+		nextID=3333;
 	};
 	class MarkerIDProvider
 	{
@@ -16,17 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=374;
+		nextID=384;
 	};
 	class Camera
 	{
-		pos[]={591.24017,43.527603,12266.401};
-		dir[]={0.88626641,-0.26685166,-0.37891981};
-		up[]={0.24541143,0.96368009,-0.10491768};
-		aside[]={-0.39318231,1.3751123e-006,-0.91961259};
+		pos[]={9919.0195,63.604996,5966.4629};
+		dir[]={-0.27348617,-0.70621872,-0.6530394};
+		up[]={-0.27280051,0.70799375,-0.65140212};
+		aside[]={-0.92238021,-1.4901161e-008,0.38628334};
 	};
 };
 binarizationWanted=0;
+sourceName="exile";
 addons[]=
 {
 	"exile_client",
@@ -90,9 +91,9 @@ addons[]=
 	"A3_Rocks_F_Sharp",
 	"A3_Structures_F_Argo_Industrial_Agriculture",
 	"A3_Structures_F_Ind_Transmitter_Tower",
+	"sab_boat",
 	"A3_Characters_F",
-	"A3_Characters_F_Mark",
-	"sab_boat"
+	"A3_Characters_F_Mark"
 };
 class AddonsMetaData
 {
@@ -344,22 +345,22 @@ class AddonsMetaData
 		};
 		class Item35
 		{
+			className="sab_boat";
+			name="sab_boat";
+		};
+		class Item36
+		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item36
+		class Item37
 		{
 			className="A3_Characters_F_Mark";
 			name="Arma 3 Marksmen - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
-		};
-		class Item37
-		{
-			className="sab_boat";
-			name="sab_boat";
 		};
 	};
 };
@@ -21353,6 +21354,22 @@ class Mission
 		};
 		class Item198
 		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={724.83539,5.4074302,12431.862};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="this setVariable [""ExileIsPersistent"", false];";
+			};
+			id=3312;
+			type="sab_boat";
+			atlOffset=2.6823425;
+		};
+		class Item199
+		{
 			dataType="Group";
 			side="East";
 			class Entities
@@ -21363,20 +21380,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6211.0664,28.931438,12971.163};
+						position[]={9895.1201,5.2593236,5916.4819};
 						angles[]={0,1.4416593,0};
 					};
 					side="East";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="_null = this addaction [""CopyPosition"",{copyToClipboard Format ['%1',GetPosASL player];}]; _null = [this,false,true]execvm'gpf_randomgear.sqf'; _null = this addaction [""Random Gear"",{[(_this select 0),false,true]execvm'gpf_randomgear.sqf';}]; ";
 						presence=0;
 						presenceCondition="false";
 					};
-					id=3288;
+					id=3322;
 					type="O_G_Sharpshooter_F";
-					atlOffset=112.53968;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21424,24 +21440,7 @@ class Mission
 			class Attributes
 			{
 			};
-			id=3287;
-			atlOffset=112.53968;
-		};
-		class Item199
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={724.83539,5.4074302,12431.862};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="this setVariable [""ExileIsPersistent"", false];";
-			};
-			id=3312;
-			type="sab_boat";
-			atlOffset=2.6823425;
+			id=3321;
 		};
 	};
 };

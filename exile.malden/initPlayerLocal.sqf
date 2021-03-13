@@ -187,9 +187,11 @@ gpf_SpawnSeaTransport = {
 	_jetski
 	};
 	
+    
 gpf_SpawnAirTransport = {
 	_pos = _this Select 0;
-	_air = createVehicle ['sab_ultralight', _pos, [], 0, 'FORM'];
+    _model = selectRandom ["RwG_Mozzie_Carl_Black","RwG_Mozzie_Carl_Blue","RwG_Mozzie_Carl_Exile","RwG_Mozzie_Carl_Green","RwG_Mozzie_Carl_Orange","RwG_Mozzie_Carl_Pink","RwG_Mozzie_Carl_Red","RwG_Mozzie_Carl_White","RwG_Mozzie_Carl_Yellow"];
+	_air = createVehicle [_model, _pos, [], 0, 'FORM'];
 	_air addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
 	_air addAction ["Convert to Quad (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnLandTransport;pveh SetDir _dir;pveh SetPos _pos;"];
 	_air addAction ["Convert to JetSki (free)","_veh = (_this Select 0); _dir = GetDir _veh;_pos = GetPos _veh;deleteVehicle _veh;pveh = [_pos] Call gpf_SpawnSeaTransport;pveh SetDir _dir;pveh SetPos _pos;"];
