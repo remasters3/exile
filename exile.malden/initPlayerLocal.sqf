@@ -230,7 +230,7 @@ gpf_SpawnAirTransport = {
 	'Temporary transport will disappear after use.',
 	'For more details about the server please see www.chernochumz.com',
 	'Protection money for your base needs to be paid every 7 days or your base will be deleted',
-	'Flag ransom needs to be paid within 48 hours or the base will be delted'
+	'Flag ransom needs to be paid within 48 hours or the base will be deleted'
 	];
 	_txt = SelectRandom _msgs;
     SystemChat Format ["%1",_txt];
