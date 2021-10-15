@@ -384,7 +384,8 @@ GPF_Benifits = [
 "76561198142649422", //ultracores
 "76561198380422020",  //ihate
 "76561197998636347", //heppy
-"76561197989449088" //hatchethero
+"76561197989449088", //hatchethero
+"76561198075299194" //Solid
 ];
 publicVariable "GPF_Benifits";
 
